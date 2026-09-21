@@ -6,6 +6,8 @@ Every new or changed player-facing feature must update its English phrases and e
 
 Rime Djinn: all 20 new tooltip, interface, guide and release phrases are translated and proofread in all 32 supported languages. Canonical text and placeholders were checked on 2026-09-14. The stronger Rime Shatter and Cove Mantle map bonus were translated and checked on 2026-09-15.
 
+Cavalry guide: all 12 revised or added rule phrases are translated and proofread in all 32 languages. Account and character levels, targeting, rescue duration, nearby-player restrictions, respawns and cooldowns were checked against the current handlers on 2026-09-21.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.
