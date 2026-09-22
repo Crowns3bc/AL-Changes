@@ -811,6 +811,7 @@ function quick_hash(str) {
 
 function verify_steam_ticket(player, ticket) {
 	try {
+		if (!mode.legacy_steam_auth) return false;
 		if (typeof ticket !== "string" || ticket.length > 8192 || !/^(?:[0-9a-f]{2})+$/i.test(ticket)) return false;
 		if (!/^[0-9a-f]{64}$/i.test(keys.steam_key || "")) return false;
 		var encoded = Buffer.from(ticket, "hex");

@@ -247,6 +247,7 @@ var mode = {
 	pve_safe_magiports: 1,
 	instant_monster_attacks: 1, // #TODO: Consider dynamically sending target data instantly too
 	drm_check: 1,
+	legacy_steam_auth: 0,
 	all_roam: 0,
 	all_smart: 1,
 	prevent_external: 0, // for "test" / "hardcore"
