@@ -98,6 +98,13 @@ try {
 
 // ==================== ROUTES ====================
 
+// Auth callbacks bypass common's development URL logger: OpenID queries contain credentials.
+var steam_auth_app = express.Router();
+steam_auth_app.use(express.urlencoded({ extended: false, limit: "4kb" }));
+steam_auth_app.use(express.json({ limit: "4kb" }));
+steam_auth_app.use(cookieParser());
+steam_auth_app.use(localization.middleware((req) => get_user(req)));
+
 var steam_signup = require("./steam_signup").create_steam_signup({
 	key: () => keys.steam_publisher_web_apikey,
 	get_user,
@@ -112,15 +119,53 @@ var steam_signup = require("./steam_signup").create_steam_signup({
 		res.send(nunjucks.render("htmls/steam_signup.html", { domain, ...form }));
 	},
 });
-app.get("/steam-signup", steam_signup.page);
-app.post("/steam-signup/start", steam_signup.start);
-app.get("/steam-signup/callback", steam_signup.callback);
-app.post("/steam-signup/complete", steam_signup.complete);
+steam_auth_app.get("/steam-signup", steam_signup.page);
+steam_auth_app.post("/steam-signup/start", steam_signup.start);
+steam_auth_app.get("/steam-signup/callback", steam_signup.callback);
+steam_auth_app.post("/steam-signup/complete", steam_signup.complete);
+
+var steam_signin = require("./steam_signin").create_steam_signin({
+	client,
+	collection: db.collection("steam_auth"),
+	users: db.collection("user"),
+	get_user,
+	hash_password,
+	get_new_auth,
+	set_link: set_steam_login,
+	auth_cookie: options.cookie_key,
+	local_origin: Local ? options.base_url : null,
+	preference(req, user) {
+		return localization.explicit_cookie(req) || !localization.initialized(user) ? localization.preference_fields(req, user) : {};
+	},
+	async finish_login(req, res, user, auth) {
+		localization.bind_user(req, user);
+		var domain = await get_domain(req, user);
+		set_cookie(res, options.cookie_key, get_id(user) + "-" + auth, domain.domain);
+	},
+	async render(req, res, form) {
+		var domain = await get_domain(req);
+		res.send(nunjucks.render("htmls/steam_signin.html", { domain, ...form }));
+	},
+});
+steam_auth_app.get("/steam-signin", steam_signin.page);
+steam_auth_app.post("/steam-signin/start", steam_signin.start);
+steam_auth_app.get("/steam-signin/callback", steam_signin.callback);
+steam_auth_app.get("/steam-signin/accounts", steam_signin.accounts);
+steam_auth_app.post("/steam-signin/accounts", steam_signin.accounts);
+steam_auth_app.post("/steam-signin/complete", steam_signin.complete);
+steam_auth_app.post("/steam-signin/cancel", steam_signin.cancel);
+steam_auth_app.get("/steam-signin/link", steam_signin.link_page);
+steam_auth_app.post("/steam-signin/link/start", steam_signin.link_start);
+steam_auth_app.get("/steam-signin/link/callback", steam_signin.link_callback);
+steam_auth_app.get("/steam-signin/link/confirm", steam_signin.link_confirm);
+steam_auth_app.post("/steam-signin/link/complete", steam_signin.link_complete);
+steam_auth_app.post("/steam-signin/link/disable", steam_signin.link_disable);
 
 // Main page / Selection
 app.get("/", async (req, res, next) => {
 	var user = await get_user(req),
 		domain = await get_domain(req, user);
+	domain.login_mode = req.query.login === "1";
 	await render_selection(req, res, user, domain);
 });
 
@@ -818,6 +863,10 @@ const PORT = process.env.PORT || options.port;
 const http_app = express();
 http_app.enable("trust proxy");
 http_app.use(web_assets.serve_static);
+http_app.use((req, res, next) => {
+	if (!/^\/steam-sign(?:in|up)(?:\/|$)/.test(req.url.split("?")[0])) return next();
+	steam_auth_app(req, res, (error) => res.status(error ? (error.status === 413 ? 413 : 503) : 404).end());
+});
 http_app.use(app);
 web_assets.start();
 const http_server = http_app.listen(PORT, () => {

@@ -318,12 +318,33 @@ function hash_password(password, salt) {
 }
 
 function get_new_auth(user) {
-	var auth = random_string(20);
+	var auth = crypto.randomBytes(32).toString("hex");
 	user.info.auths = user.info.auths || [];
 	user.info.last_auth = new Date();
-	if (user.info.auths.length >= 200) user.info.auths = [];
+	if (user.info.auths.length >= 200) {
+		user.info.auths = [];
+		user.info.steam_auths = [];
+	}
 	user.info.auths.push(auth);
 	return auth;
+}
+
+function set_steam_login(user, steamid, source) {
+	if (steamid !== null && (typeof steamid !== "string" || !/^[0-9]{16,20}$/.test(steamid))) throw new Error("Invalid Steam identity");
+	const previous = user.steam_login || {},
+		sessions = new Set(user.info.steam_auths || []);
+	user.info.auths = (user.info.auths || []).filter((auth) => !sessions.has(auth));
+	user.info.steam_auths = [];
+	user.steam_auth_revision = crypto.randomBytes(32).toString("hex");
+	user.steam_login = {
+		steamid: steamid || previous.steamid || "",
+		enabled: !!steamid,
+		version: crypto.randomBytes(32).toString("hex"),
+		source,
+		verified_at: steamid ? new Date() : previous.verified_at || null,
+		enabled_at: steamid ? new Date() : previous.enabled_at || null,
+		disabled_at: steamid ? null : new Date(),
+	};
 }
 
 // ==================== USER / AUTH ====================
@@ -1614,6 +1635,7 @@ function set_cookie(res, name, value, domain_host) {
 		path: "/",
 		domain: "." + domain_host,
 		secure: secure_cookies,
+		sameSite: "lax",
 	});
 }
 

@@ -4,6 +4,8 @@ English phrases live in `en/*.js`. Each entry has a stable semantic identifier a
 
 Every new or changed player-facing feature must update its English phrases and every supported language in the same change. This includes the website, login, game UI, messages, descriptions, dialogue, tutorials, guides, public CODE documentation and player-facing tools. Developer-facing proposals, experiments, prototypes, internal scripts and operational logs are outside this scope. When prototype content enters the live product, the translation requirements apply.
 
+Steam sign-in: all 21 account-choice, enrollment, disable and signup phrases are translated and proofread in all 32 supported languages. Account-menu terminology, Steam/Adventure Land names and placeholders were checked on 2026-09-22.
+
 Rime Djinn: all 20 new tooltip, interface, guide and release phrases are translated and proofread in all 32 supported languages. Canonical text and placeholders were checked on 2026-09-14. The stronger Rime Shatter and Cove Mantle map bonus were translated and checked on 2026-09-15.
 
 Cavalry guide: all 12 revised or added rule phrases are translated and proofread in all 32 languages. Account and character levels, targeting, rescue duration, nearby-player restrictions, respawns and cooldowns were checked against the current handlers on 2026-09-21.

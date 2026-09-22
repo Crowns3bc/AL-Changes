@@ -103,12 +103,15 @@ function setup({ beforeCommit, host = "adventure.land", local = false } = {}) {
 	}
 	Object.assign(s, transactions(context, [], beforeCommit), { context });
 	load(context, "common/js/common_functions.js", ["isEmailValid", "purify_email"]);
-	load(context, "adventure_functions.js", ["hash_password", "get_new_auth", "set_cookie"]);
+	load(context, "adventure_functions.js", ["hash_password", "get_new_auth", "set_cookie", "set_steam_login"]);
 	load(context, "api.js", ["signup_or_login_api"]);
 	// Execute the actual main.js wiring, including response initialization.
 	const main = read("main.js");
 	vm.runInContext(
-		main.slice(main.indexOf('var steam_signup = require("./steam_signup")'), main.indexOf('app.get("/steam-signup"')),
+		main.slice(
+			main.indexOf('var steam_signup = require("./steam_signup")'),
+			main.indexOf('steam_auth_app.get("/steam-signup"'),
+		),
 		context,
 	);
 	s.call = async (
@@ -252,6 +255,17 @@ test("Steam account ID, not a family lender ID, is stored", async () => {
 	await s.verify();
 	await s.complete();
 	assert.equal([...s.records.values()].find((record) => record._id.startsWith("US_")).pid, PID);
+});
+
+test("new accounts enable Steam login only through the explicit verified signup checkbox", async () => {
+	for (const enabled of [false, true]) {
+		const s = setup();
+		await s.verify();
+		await s.complete(enabled ? { steam_login: "yes" } : { enable_login: true });
+		const user = [...s.records.values()].find((record) => record._id.startsWith("US_"));
+		assert.equal(!!user.steam_login?.enabled, enabled);
+		if (enabled) assert.equal(user.steam_login.steamid, PID);
+	}
 });
 
 test("a stalled Steam request is aborted without leaving the signup request hanging", async (t) => {

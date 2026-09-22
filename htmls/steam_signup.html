@@ -8,13 +8,8 @@
 		<link rel="icon" href="/images/favicon.png">
 		<link href="/css/common.css?v={{domain.v}}" rel="stylesheet">
 		<link href="/css/index.css?v={{domain.v}}" rel="stylesheet">
+		<link href="/css/steam_auth.css?v={{domain.v}}" rel="stylesheet">
 		{% include "htmls/language.html" %}
-		<style>
-			html, body { margin: 0; height: auto; min-height: 100%; overflow: auto; background: black; color: white; font-family: var(--pixel-font, pixel); font-size: 28px; }
-			main { max-width: 520px; margin: 8vh auto; padding: 16px; }
-			.selectioninput { box-sizing: border-box; width: 100%; }
-			main .gamebutton { box-sizing: border-box; width: 100%; font-family: inherit; white-space: normal; }
-		</style>
 	</head>
 	<body>
 		<main>
@@ -28,6 +23,7 @@
 					<input class="selectioninput" id="email" name="email" type="email" dir="ltr" autocomplete="email" maxlength="254" required>
 					<label class="whiteheader block mt5 mb4" for="password">{{ phrase("pages.contents.login.password") }}</label>
 					<input class="selectioninput" id="password" name="password" type="password" dir="ltr" autocomplete="new-password" maxlength="1024" required>
+					<label class="steam-optin"><input type="checkbox" name="steam_login" value="yes"> {{ phrase("pages.steam_signin.new_account") }}</label>
 					<button class="gamebutton block clickable mt5" type="submit">{{ phrase("pages.contents.login.signup") }}</button>
 				</form>
 			{% elif state %}

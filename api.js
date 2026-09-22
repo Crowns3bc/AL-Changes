@@ -95,6 +95,7 @@ async function signup_or_login_api(args, steam_signup) {
 
 	if (existing && !args.only_signup) {
 		if (existing.password == hash_password(password, gf(existing, "salt", "5"))) {
+			if (typeof steam_signin !== "undefined") await steam_signin.invalidate(args.req, args.res);
 			var R = await tx(
 				async () => {
 					R.user = await tx_get(A.user);
@@ -132,6 +133,7 @@ async function signup_or_login_api(args, steam_signup) {
 	var referrer = await get_referrer(args.req, ip);
 
 	if (gf(ip, "limit_signups", 0) >= 3) return { failed: true, reason: "too_many_signups_from_ip_wait" };
+	if (typeof steam_signin !== "undefined") await steam_signin.invalidate(args.req, args.res);
 
 	var R = await tx(
 		async () => {
@@ -178,6 +180,7 @@ async function signup_or_login_api(args, steam_signup) {
 				},
 				blobs: ["info"],
 			};
+			if (A.steam_signup && A.steam_signup.enable_login) set_steam_login(R.user, A.steam_signup.steamid, "signup_openid");
 			R.auth = get_new_auth(R.user);
 			await tx_save(R.user);
 			await tx_save({ _id: "MK_email-" + A.email, type: "email", phrase: A.email, owner: get_id(R.user), created: new Date() });
@@ -302,6 +305,7 @@ async function change_password_api(args) {
 			R.user = await tx_get(A.user);
 			R.user.info.salt = random_string(20);
 			R.user.password = hash_password(A.newpass1, R.user.info.salt);
+			R.user.steam_auth_revision = crypto.randomBytes(32).toString("hex");
 			await tx_save(R.user);
 		},
 		{ user: user, newpass1: args.newpass1 },
@@ -322,12 +326,14 @@ async function reset_password_api(args) {
 	var R = await tx(
 		async () => {
 			R.user = await tx_get(A.user);
+			if (!R.user || gf(R.user, "password_key") !== A.key || R.user.server) ex("invalid_key");
 			R.user.info.salt = random_string(20);
 			R.user.password = hash_password(A.newpass1, R.user.info.salt);
 			R.user.info.password_key = random_string(20);
+			set_steam_login(R.user, null, "password_recovery");
 			await tx_save(R.user);
 		},
-		{ user: user, newpass1: args.newpass1 },
+		{ user: user, newpass1: args.newpass1, key: args.key },
 	);
 
 	if (R.failed) return { failed: true, reason: R.reason };
@@ -365,6 +371,7 @@ async function password_reminder_api(args) {
 }
 
 async function logout_api(args) {
+	if (typeof steam_signin !== "undefined") await steam_signin.invalidate(args.req, args.res);
 	await delete_auth_cookies(args.req, args.res);
 	args.res.infs.push({ type: "message", message: phrase_html("server.api.logged_out") });
 	return { success: true };
@@ -378,12 +385,15 @@ async function logout_everywhere_api(args) {
 		async () => {
 			R.user = await tx_get(A.user);
 			R.user.info.auths = [];
+			R.user.info.steam_auths = [];
+			R.user.steam_auth_revision = crypto.randomBytes(32).toString("hex");
 			await tx_save(R.user);
 		},
 		{ user: user },
 	);
 
 	if (R.failed) return { failed: true, reason: R.reason };
+	if (typeof steam_signin !== "undefined") await steam_signin.invalidate(args.req, args.res);
 	await delete_auth_cookies(args.req, args.res);
 	args.res.infs.push({ type: "message", message: phrase_html("server.api.logged_out_everywhere") });
 	return { success: true };

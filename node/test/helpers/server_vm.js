@@ -66,6 +66,7 @@ function extract(source, name) {
 }
 
 function localize(context) {
+	if (!context.crypto) context.crypto = require("node:crypto");
 	if (!context.localization) context.localization = localization;
 	if (!context.phrase) context.phrase = phrase;
 	if (!context.phrase_html) context.phrase_html = localization.phrase_html;

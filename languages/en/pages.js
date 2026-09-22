@@ -1,5 +1,47 @@
 // English page catalog. Usage notes protect code, names and dynamic parameters.
 module.exports = {
+	// Browser Steam login title; signs into an existing account. Keep Steam unchanged.
+	"pages.steam_signin.title": "Sign In with Steam",
+	// Steam identity verification precedes the Adventure Land account chooser. Keep both proper names unchanged.
+	"pages.steam_signin.intro": "Verify your Steam account, then choose an Adventure Land account to sign in to.",
+	// Button leaving Adventure Land to verify identity on Steam. It does not yet sign into the game.
+	"pages.steam_signin.continue": "Continue to Steam",
+	// Heading and accessible name for the account radio group.
+	"pages.steam_signin.choose": "Choose an account",
+	// Only accounts explicitly enrolled for the verified Steam identity are listed. Keep Adventure Land and Steam unchanged.
+	"pages.steam_signin.choose_help": "Choose an Adventure Land account that has Steam sign-in enabled for this Steam account.",
+	// Verified Steam identity summary; {digits} is the last four decimal digits of its ID. Preserve placeholder and Steam.
+	"pages.steam_signin.identity": "Verified Steam account ending in {digits}",
+	// Chooser account label; {name} is raw account display text. Preserve placeholder; do not translate its value.
+	"pages.steam_signin.account": "Account {name}",
+	// Final button signs into the account explicitly selected above.
+	"pages.steam_signin.action": "Sign in to this account",
+	// No enrolled account matches. Email and Account is the existing account-menu label; use its established translation. Keep Adventure Land and Steam unchanged.
+	"pages.steam_signin.empty": "No Adventure Land accounts have Steam sign-in enabled for this Steam account. Sign in with your email and password, then enable Steam sign-in under Email and Account.",
+	// Opens the existing email/password login form.
+	"pages.steam_signin.email": "Sign in with email",
+	// Account-menu link and heading for managing Steam sign-in. Keep Steam unchanged.
+	"pages.steam_signin.settings": "Steam sign-in",
+	// Explicit confirmation to enable Steam as an account login method. Keep Steam unchanged.
+	"pages.steam_signin.enable": "Enable Steam sign-in",
+	// Disables Steam login for this game account. Keep Steam unchanged.
+	"pages.steam_signin.disable": "Disable Steam sign-in",
+	// Confirm the current Adventure Land password before verifying Steam. These are game credentials, not Steam credentials.
+	"pages.steam_signin.setup": "Confirm your Adventure Land password, then continue to Steam.",
+	// Final linking consent after both credentials were verified. {account} is raw game account display text. Keep placeholder, Steam and Adventure Land unchanged.
+	"pages.steam_signin.confirm": "Allow this Steam account to sign in to {account} without entering your Adventure Land password.",
+	// This account currently permits its linked Steam identity to log in.
+	"pages.steam_signin.enabled": "Steam sign-in is enabled for this account.",
+	// Steam sign-in is disabled for this game account, which may still use email/password.
+	"pages.steam_signin.disabled": "Steam sign-in is disabled for this account.",
+	// Password confirmation before disabling Steam login for this account. Does not promise to disconnect running game sessions.
+	"pages.steam_signin.disable_help": "Confirm your Adventure Land password to disable Steam sign-in.",
+	// Unchecked optional enrollment during verified Steam signup; affects only the new game account.
+	"pages.steam_signin.new_account": "Enable Steam sign-in for this new account.",
+	// Shows the next page of eligible game accounts, never a public account search.
+	"pages.steam_signin.next": "More accounts",
+	// Compact signup link next to Steam Login on the entry panel. Preserve the leading > navigation arrow.
+	"pages.steam_signin.signup_label": "> Sign Up",
 	// Browser signup page and entry button. Creates a NEW Adventure Land account, not a Steam login to an existing account. Keep Steam unchanged.
 	"pages.steam_signup.title": "Sign Up with Steam",
 	// Browser signup introduction. Steam verifies ownership before the player chooses Adventure Land credentials. Keep Adventure Land and Steam unchanged.
