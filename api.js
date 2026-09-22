@@ -180,7 +180,6 @@ async function signup_or_login_api(args, steam_signup) {
 				},
 				blobs: ["info"],
 			};
-			if (A.steam_signup && A.steam_signup.enable_login) set_steam_login(R.user, A.steam_signup.steamid, "signup_openid");
 			R.auth = get_new_auth(R.user);
 			await tx_save(R.user);
 			await tx_save({ _id: "MK_email-" + A.email, type: "email", phrase: A.email, owner: get_id(R.user), created: new Date() });
@@ -234,17 +233,28 @@ async function settings_api(args) {
 	var domain = await get_domain(args.req),
 		user = args.user;
 	if (user.server) return { failed: true, reason: "cant_make_changes_while_in_bank" };
-	var R = await tx(
-		async () => {
-			R.user = await tx_get(A.user);
-			if (A.setting === "email") {
-				if (A.value) R.user.info.dont_send_emails = false;
-				else R.user.info.dont_send_emails = true;
-			}
-			await tx_save(R.user);
-		},
-		{ user: user, setting: args.setting, value: args.value },
-	);
+	var R;
+	if (args.setting === "steam_login") {
+		try {
+			R = { user: await steam_signin.setting(args.req, user, args.value) };
+			await steam_signin.invalidate(args.req, args.res);
+		} catch (_) {
+			return { failed: true, reason: "invalid_field" };
+		}
+		domain.section = "email";
+	} else {
+		R = await tx(
+			async () => {
+				R.user = await tx_get(A.user);
+				if (A.setting === "email") {
+					if (A.value) R.user.info.dont_send_emails = false;
+					else R.user.info.dont_send_emails = true;
+				}
+				await tx_save(R.user);
+			},
+			{ user: user, setting: args.setting, value: args.value },
+		);
+	}
 	if (R.failed) return { failed: true, reason: R.reason };
 	args.res.infs.push({ type: "success", message: phrase_html("server.api.setting_changed") });
 	args.res.infs.push(await selection_info(args.req, R.user, domain));
@@ -330,7 +340,7 @@ async function reset_password_api(args) {
 			R.user.info.salt = random_string(20);
 			R.user.password = hash_password(A.newpass1, R.user.info.salt);
 			R.user.info.password_key = random_string(20);
-			set_steam_login(R.user, null, "password_recovery");
+			set_steam_login(R.user, false);
 			await tx_save(R.user);
 		},
 		{ user: user, newpass1: args.newpass1, key: args.key },

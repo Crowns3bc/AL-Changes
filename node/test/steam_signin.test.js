@@ -45,11 +45,17 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			db: { collection: (name) => (name === "user" ? users : flows) },
 			options: { cookie_key: "auth" },
 			Local: false,
+			Dev: false,
 			secure_cookies: true,
 			get: (id) => users.findOne({ _id: id }),
 			initialize_user_language: async (req, user) => user,
 			get_domain: async () => ({ domain: "adventure.land", language: "en" }),
 			get_id: (user) => user._id,
+			selection_info: async (req, user, domain) => ({
+				type: "content",
+				section: domain.section,
+				enabled: user.steam_login?.enabled !== false,
+			}),
 			steam_auth_app: Object.fromEntries(
 				["get", "post"].map((method) => [
 					method,
@@ -84,6 +90,7 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			"hash_password",
 			"get_new_auth",
 			"set_steam_login",
+			"get_steam_login_id",
 			"normalize_user_id",
 			"get_user",
 			"set_cookie",
@@ -99,6 +106,16 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			);
 		s.rewire();
 		s.context = context;
+		load(context, "api.js", ["settings_api"]);
+		load(context, "common/handlers.js", ["handle_api_call"]);
+		context.REF = {
+			settings: { F: context.settings_api, P: true, U: true, setting: { type: "string" }, value: { type: "any" } },
+		};
+		context.send_json = (res, value) => res.send({ ...value, infs: res.infs });
+		s.routes.set("POST /api/settings", (req, res) => {
+			req.params = { method: "settings" };
+			return context.handle_api_call(req, res);
+		});
 		s.add = async (id = "US_first", steamid = s.steamid) => {
 			const user = {
 				_id: id,
@@ -108,10 +125,11 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 				language: "en",
 				language_set: "explicit",
 				banned: false,
+				platform: steamid ? "steam" : "",
+				pid: steamid || "",
 				server: "",
 				info: { salt: "fixture-salt", auths: ["passwordsession"], characters: [{ name: "Meadow" }] },
 			};
-			if (steamid) context.set_steam_login(user, steamid, "password_openid");
 			await users.insertOne(user);
 			return user;
 		};
@@ -168,13 +186,13 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			});
 			return res;
 		};
-		s.begin = async (link = false) => {
-			const base = "/steam-signin" + (link ? "/link" : "");
+		s.begin = async () => {
+			const base = "/steam-signin";
 			const page = await s.call(base);
 			assert.equal(page.code, 200);
 			const start = await s.call(base + "/start", {
 				method: "POST",
-				body: { state: page.data.state, password: "fixture-password" },
+				body: { state: page.data.state },
 			});
 			assert.equal(start.code, 303);
 			const target = new URL(new URL(start.location).searchParams.get("openid.return_to"));
@@ -194,8 +212,8 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			s.callback = target;
 			return target;
 		};
-		s.verify = async (link = false) => {
-			await s.begin(link);
+		s.verify = async () => {
+			await s.begin();
 			const response = await s.call(s.callback.pathname + s.callback.search);
 			assert.equal(response.code, 303);
 			const page = await s.call(response.location);
@@ -208,10 +226,12 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 				method: "POST",
 				body: { state: s.form.state, account: s.form.accounts[0]?.handle, ...extra },
 			});
+		s.toggle = (enabled, options = {}) =>
+			s.call("/api/settings", { method: "POST", body: { setting: "steam_login", value: enabled }, ...options });
 		return s;
 	}
 	await t.test(
-		"lists only enrolled identity matches, escapes private projection, and signs into the chosen account",
+		"existing Steam accounts are enabled by default; verified identity and explicit choice select the account",
 		async () => {
 			const s = await setup();
 			await s.add("US_first");
@@ -221,11 +241,11 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 			await s.users.updateOne({ _id: legacy._id }, { $set: { platform: "steam", pid: s.steamid } });
 			const page = await s.verify();
 			assert.equal(s.jar.auth, undefined);
-			assert.equal(page.data.accounts.length, 2);
+			assert.equal(page.data.accounts.length, 3);
 			assert.equal(JSON.stringify(page.data).includes("fixture@example.invalid"), false);
 			assert.equal(JSON.stringify(page.data).includes("US_victim"), false);
 			const response = await s.complete({
-				account: s.form.accounts[1].handle,
+				account: s.form.accounts.find((account) => account.name === "US_second").handle,
 				pid: "76561198000000002",
 				user: "US_victim",
 				email: "victim@example.invalid",
@@ -331,14 +351,7 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 		const login = { ...s.jar },
 			body = { state: s.form.state, account: s.form.accounts[0].handle };
 		s.jar = { auth: "US_first-passwordsession" };
-		const page = await s.call("/steam-signin/link");
-		await Promise.all([
-			s.call("/steam-signin/complete", { method: "POST", body, jar: login }),
-			s.call("/steam-signin/link/disable", {
-				method: "POST",
-				body: { state: page.data.state, password: "fixture-password" },
-			}),
-		]);
+		await Promise.all([s.call("/steam-signin/complete", { method: "POST", body, jar: login }), s.toggle(false)]);
 		const user = await s.users.findOne({ _id: "US_first" });
 		assert.equal(user.steam_login.enabled, false);
 		assert.equal(user.info.steam_auths.length, 0);
@@ -347,6 +360,8 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 	await t.test("link, revision, ban and bank changes after listing prevent login", async () => {
 		for (const fields of [
 			{ "steam_login.enabled": false },
+			{ pid: "76561198000000002" },
+			{ platform: "mas" },
 			{ "steam_login.version": "changed" },
 			{ "steam_login.steamid": "76561198000000002" },
 			{ steam_auth_revision: "changed" },
@@ -379,59 +394,51 @@ test("Steam sign-in routes and Mongo transactions", { skip: !process.env.AL_STEA
 		assert.equal(response.code, 503);
 		assert.equal(JSON.stringify(response.data).includes("PRIVATE_FIXTURE_DETAIL"), false);
 	});
-	await t.test("linking requires the password, Steam proof and final explicit confirmation", async () => {
-		const s = await setup();
-		await s.add("US_first", null);
-		s.jar.auth = "US_first-passwordsession";
-		const page = await s.call("/steam-signin/link");
-		assert.equal(
-			(
-				await s.call("/steam-signin/link/start", {
-					method: "POST",
-					body: { state: page.data.state, password: "wrong" },
-				})
-			).code,
-			400,
-		);
-		await s.verify(true);
-		assert.equal((await s.users.findOne({ _id: "US_first" })).steam_login, undefined);
-		const response = await s.call("/steam-signin/link/complete", {
-			method: "POST",
-			body: { state: s.form.state, user: "US_victim", steamid: "76561198000000002" },
-		});
-		assert.equal(response.code, 200);
-		assert.equal((await s.users.findOne({ _id: "US_first" })).steam_login.steamid, s.steamid);
-	});
-	await t.test("revoked session or changed password stops linking; disabling revokes Steam sessions only", async () => {
-		for (const update of [{ $set: { password: "changed" } }, { $set: { "info.auths": [] } }]) {
-			const s = await setup();
-			await s.add("US_first", null);
-			s.jar.auth = "US_first-passwordsession";
-			await s.verify(true);
-			await s.users.updateOne({ _id: "US_first" }, update);
-			await s.call("/steam-signin/link/complete", { method: "POST", body: { state: s.form.state } });
-			assert.equal((await s.users.findOne({ _id: "US_first" })).steam_login, undefined);
-		}
+	await t.test("the existing settings API toggles Steam login without a password or new page", async () => {
 		const s = await setup();
 		await s.add();
 		await s.verify();
 		await s.complete();
-		s.jar.auth = "US_first-passwordsession";
-		const page = await s.call("/steam-signin/link");
-		assert.equal(
-			(
-				await s.call("/steam-signin/link/disable", {
-					method: "POST",
-					body: { state: page.data.state, password: "fixture-password" },
-				})
-			).code,
-			200,
-		);
-		const user = await s.users.findOne({ _id: "US_first" });
-		assert.equal(user.steam_login.enabled, false);
-		assert.equal(user.info.steam_auths.length, 0);
-		assert.ok(user.info.auths.includes("passwordsession"));
+		const current = s.jar.auth;
+		const response = await s.toggle(false);
+		assert.equal(response.data.success, true);
+		assert.equal(response.data.infs.at(-1).section, "email");
+		assert.equal(response.data.infs.at(-1).enabled, false);
+		assert.equal(s.jar.auth, current);
+		const saved = await s.users.findOne({ _id: "US_first" });
+		assert.ok(saved.info.auths.includes(current.split("-")[1]));
+		assert.ok(saved.info.steam_auths.includes(current.split("-")[1]));
+		const jar = s.jar;
+		s.jar = {};
+		await s.verify();
+		assert.equal(s.form.accounts.length, 0);
+		s.jar = jar;
+		assert.equal((await s.toggle(true)).data.success, true);
+		s.jar = {};
+		await s.verify();
+		assert.equal(s.form.accounts.length, 1);
 	});
+	await t.test(
+		"the toggle rejects foreign requests, invalid values, revoked sessions and another account ID",
+		async () => {
+			const s = await setup();
+			await s.add();
+			await s.add("US_victim", "76561198000000002");
+			s.jar.auth = "US_first-passwordsession";
+			for (const origin of [undefined, "null", "https://attacker.invalid"])
+				assert.equal((await s.toggle(false, { headers: { origin } })).data.failed, true);
+			for (const value of ["false", 0, null, [], { $ne: true }])
+				assert.equal((await s.toggle(value)).data.failed, true);
+			assert.equal(
+				(await s.toggle(false, { body: { setting: "steam_login", value: false, user: "US_victim" } })).data.failed,
+				true,
+			);
+			assert.equal((await s.users.findOne({ _id: "US_victim" })).steam_login, undefined);
+			await s.users.updateOne({ _id: "US_first" }, { $set: { "info.auths": [] } });
+			assert.equal((await s.toggle(false)).data.failed, true);
+			assert.equal((await s.users.findOne({ _id: "US_first" })).steam_login, undefined);
+		},
+	);
 });
 
 test("password recovery disables Steam login and revokes its sessions in the real reset handler", async () => {
@@ -476,8 +483,13 @@ test("all Steam sign-in phrases and real templates cover every locale and escape
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(root), { autoescape: true });
 	const english = require("../../languages/en/pages");
 	const ids = Object.keys(english).filter((id) => id.startsWith("pages.steam_signin."));
-	assert.equal(ids.length, 21);
+	assert.equal(ids.length, 14);
 	const placeholders = (value) => (value.match(/\{\w+\}/g) || []).sort();
+	const selection = fs.readFileSync(root + "/htmls/contents/selection.html", "utf8");
+	const account_menu = selection.slice(
+		selection.indexOf('<div class="accountui'),
+		selection.indexOf('<div class="emailcui'),
+	);
 	for (const { code } of require("../../js/phrases").languages) {
 		const catalog =
 			code === "en" ? english : JSON.parse(fs.readFileSync(root + "/languages/" + code + "/pages.json", "utf8"));
@@ -486,10 +498,27 @@ test("all Steam sign-in phrases and real templates cover every locale and escape
 			assert.deepEqual(placeholders(catalog[id]), placeholders(english[id]), code + ": " + id);
 			for (const fixed of ["Steam", "Adventure Land"])
 				if (english[id].includes(fixed)) assert.ok(catalog[id].includes(fixed), code + ": " + fixed);
-			assert.equal(/<[^>]+>/.test(catalog[id]), false);
+			assert.equal(/<[^>]+>/.test(catalog[id]), ["pages.steam_signin.on", "pages.steam_signin.off"].includes(id));
 		}
 		env.addGlobal("phrase", (id, args) => localization.phrase(id, args, code));
-		for (const view of ["start", "accounts", "settings", "confirm", "done", "error"]) {
+		env.addGlobal(
+			"phrase_html",
+			(id, args) => new nunjucks.runtime.SafeString(localization.phrase_html(id, args, code)),
+		);
+		for (const enabled of [undefined, true, false]) {
+			const menu = env.renderString(account_menu, {
+				domain: {},
+				user: { info: {}, steam_login: enabled === undefined ? undefined : { enabled } },
+			});
+			assert.ok(menu.includes("setting:'steam_login',value:" + (enabled === false ? "true" : "false")), code);
+			assert.ok(
+				menu.includes(localization.phrase("pages.steam_signin." + (enabled === false ? "off" : "on"), {}, code)),
+				code,
+			);
+			assert.equal(menu.includes("/steam-signin/link"), false);
+			assert.equal(menu.includes('type="password"'), false);
+		}
+		for (const view of ["start", "accounts", "error"]) {
 			const html = env.render("htmls/steam_signin.html", {
 				domain: { language: code },
 				view,

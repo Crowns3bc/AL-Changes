@@ -39,35 +39,10 @@
 					</form>
 				{% endif %}
 				<a class="textbutton block mt10" href="/?login=1">{{ phrase("pages.steam_signin.email") }}</a>
-			{% elif view == "settings" %}
-				<h1 class="whiteheader">{{ phrase("pages.steam_signin.settings") }}</h1>
-				<p>{{ phrase("pages.steam_signin.enabled" if enabled else "pages.steam_signin.disabled") }}</p>
-				<p>{{ phrase("pages.steam_signin.setup") }}</p>
-				<form method="post" action="/steam-signin/link/start">
-					<input type="hidden" name="state" value="{{state|escape}}">
-					<label class="whiteheader block mb4" for="password">{{ phrase("pages.contents.login.password") }}</label>
-					<input class="selectioninput" id="password" name="password" type="password" autocomplete="current-password" maxlength="1024" required>
-					<button class="gamebutton block clickable mt5" type="submit">{{ phrase("pages.steam_signin.continue") }}</button>
-					{% if enabled %}
-						<p>{{ phrase("pages.steam_signin.disable_help") }}</p>
-						<button class="gamebutton block clickable mt5" type="submit" formaction="/steam-signin/link/disable">{{ phrase("pages.steam_signin.disable") }}</button>
-					{% endif %}
-				</form>
-			{% elif view == "confirm" %}
-				<h1 class="whiteheader">{{ phrase("pages.steam_signin.enable") }}</h1>
-				<p class="gray">{{ phrase("pages.steam_signin.identity", {"digits": digits})|escape }}</p>
-				<p>{{ phrase("pages.steam_signin.confirm", {"account": account})|escape }}</p>
-				<form method="post" action="/steam-signin/link/complete">
-					<input type="hidden" name="state" value="{{state|escape}}">
-					<button class="gamebutton block clickable mt5" type="submit">{{ phrase("pages.steam_signin.enable") }}</button>
-				</form>
-			{% elif view == "done" %}
-				<h1 class="whiteheader">{{ phrase("pages.steam_signin.settings") }}</h1>
-				<p>{{ phrase("pages.steam_signin.disabled" if disabled else "pages.steam_signin.enabled") }}</p>
 			{% elif view == "error" %}
 				<h1 class="whiteheader">{{ phrase("pages.steam_signin.title") }}</h1>
 				<p class="steam-error" role="alert">{{ phrase(error) }}</p>
-				<a class="gamebutton block mt5" href="{{ '/steam-signin/link' if link else '/steam-signin' }}">{{ phrase("pages.steam_signin.settings" if link else "pages.steam_signin.title") }}</a>
+				<a class="gamebutton block mt5" href="/steam-signin">{{ phrase("pages.steam_signin.title") }}</a>
 			{% else %}
 				<h1 class="whiteheader">{{ phrase("pages.steam_signin.title") }}</h1>
 				<p>{{ phrase("pages.steam_signin.intro") }}</p>

@@ -106,7 +106,8 @@
 			<div class="textbutton mt5" onclick="if(bc(this)) return; api_call_l('settings',{setting:'email',value:'1'},{disable:$(this)})">{{ phrase_html("pages.contents.selection.emails-off") }}</div>
 			{% endif %}
 			<div class="textbutton mt5 mb5" onclick="if(bc(this)) return; $('.accountui').hide(); $('.passwordui').show(); resize();">{{ phrase_html("pages.contents.selection.change-password") }}</div>
-			{% if not domain.electron and not domain.tauri %}<a class="textbutton block mt5" href="/steam-signin/link">&gt; {{ phrase("pages.steam_signin.settings") }}</a>{% endif %}
+			{% set steam_enabled = not user.steam_login or user.steam_login.enabled != false %}
+			<div class="textbutton mt5" onclick="if(bc(this)) return; api_call_l('settings',{setting:'steam_login',value:{{ 'false' if steam_enabled else 'true' }}},{disable:$(this)})">{{ phrase_html("pages.steam_signin.on" if steam_enabled else "pages.steam_signin.off") }}</div>
 			<div class="textbutton mt5" onclick="if(bc(this)) return; $('.accountui').hide(); $('.emailcui').show(); resize();">
 				<span style="color: #df6b81">*</span> {% if not user.info.verified%}{{ phrase("pages.contents.selection.re-verify-email") }}{%else%}{{ phrase("pages.contents.selection.change-email") }}{% endif %}
 			</div>

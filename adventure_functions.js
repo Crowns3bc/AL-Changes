@@ -329,21 +329,24 @@ function get_new_auth(user) {
 	return auth;
 }
 
-function set_steam_login(user, steamid, source) {
-	if (steamid !== null && (typeof steamid !== "string" || !/^[0-9]{16,20}$/.test(steamid))) throw new Error("Invalid Steam identity");
+function get_steam_login_id(user) {
+	if (!user || user.steam_login?.enabled === false) return "";
+	var id = user.steam_login?.steamid || (user.platform === "steam" ? user.pid : "");
+	return typeof id === "string" && /^[0-9]{16,20}$/.test(id) ? id : "";
+}
+
+function set_steam_login(user, enabled) {
+	if (typeof enabled !== "boolean") throw new Error("Invalid Steam setting");
 	const previous = user.steam_login || {},
 		sessions = new Set(user.info.steam_auths || []);
 	user.info.auths = (user.info.auths || []).filter((auth) => !sessions.has(auth));
 	user.info.steam_auths = [];
 	user.steam_auth_revision = crypto.randomBytes(32).toString("hex");
 	user.steam_login = {
-		steamid: steamid || previous.steamid || "",
-		enabled: !!steamid,
+		...previous,
+		enabled,
 		version: crypto.randomBytes(32).toString("hex"),
-		source,
-		verified_at: steamid ? new Date() : previous.verified_at || null,
-		enabled_at: steamid ? new Date() : previous.enabled_at || null,
-		disabled_at: steamid ? null : new Date(),
+		changed_at: new Date(),
 	};
 }
 

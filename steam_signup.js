@@ -216,7 +216,7 @@ function create_steam_signup({ key, get_user, render, signup, purify_email, loca
 			}
 			if (limited(req)) throw new Error("unavailable");
 			await ownership(state.steamid);
-			const result = await signup({ req, res, email, password: req.body.password, only_signup: true }, { id: state.id, steamid: state.steamid, enable_login: req.body.steam_login === "yes" });
+			const result = await signup({ req, res, email, password: req.body.password, only_signup: true }, { id: state.id, steamid: state.steamid });
 			if (!result.success) {
 				const reason = ["already_signed_up", "email_exists", "too_many_signups_from_ip_wait", "invalid_field"].includes(result.reason) ? "error." + result.reason : "pages.steam_signup.failed";
 				return render(req, res, { state: state.id, verified: true, error: reason });

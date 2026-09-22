@@ -129,9 +129,9 @@ var steam_signin = require("./steam_signin").create_steam_signin({
 	collection: db.collection("steam_auth"),
 	users: db.collection("user"),
 	get_user,
-	hash_password,
 	get_new_auth,
-	set_link: set_steam_login,
+	get_steam_id: get_steam_login_id,
+	set_enabled: set_steam_login,
 	auth_cookie: options.cookie_key,
 	local_origin: Local ? options.base_url : null,
 	preference(req, user) {
@@ -154,12 +154,6 @@ steam_auth_app.get("/steam-signin/accounts", steam_signin.accounts);
 steam_auth_app.post("/steam-signin/accounts", steam_signin.accounts);
 steam_auth_app.post("/steam-signin/complete", steam_signin.complete);
 steam_auth_app.post("/steam-signin/cancel", steam_signin.cancel);
-steam_auth_app.get("/steam-signin/link", steam_signin.link_page);
-steam_auth_app.post("/steam-signin/link/start", steam_signin.link_start);
-steam_auth_app.get("/steam-signin/link/callback", steam_signin.link_callback);
-steam_auth_app.get("/steam-signin/link/confirm", steam_signin.link_confirm);
-steam_auth_app.post("/steam-signin/link/complete", steam_signin.link_complete);
-steam_auth_app.post("/steam-signin/link/disable", steam_signin.link_disable);
 
 // Main page / Selection
 app.get("/", async (req, res, next) => {
