@@ -1,5 +1,5 @@
-// Shared game-server scope. One bounded character query and indexed group mark
-// per five minutes or login. Combat and loot use only memory.
+// One bounded character query and indexed group mark per five minutes or login.
+// Platform logins also read previous owner marks. Combat and loot use only memory.
 var encouragement_groups = new Map();
 var encouragement_visits = new Map();
 var encouragement_names = ["encouragement_new", "encouragement_lonewolf", "encouragement_returning"];
@@ -72,6 +72,21 @@ async function encouragement_load(player, previous_online) {
 			if (saved && saved.group === identity.key) {
 				oldest = Math.min(oldest, saved.oldest || 0);
 				returning = Math.max(returning, saved.return_until || 0);
+			}
+			// Linking an account must keep its earned time and activity history.
+			if (previous_online !== undefined && identity.query.pid && characters.length && characters.length < 25) {
+				var owners = [...new Set(characters.map((character) => "MK_encouragement-owner:" + character.owner))];
+				var histories = await db
+					.collection("mark")
+					.find({ _id: { $in: owners } }, { projection: { oldest: 1, last_online: 1, return_until: 1 } })
+					.limit(25)
+					.maxTimeMS(3000)
+					.toArray();
+				for (var history of histories) {
+					oldest = Math.min(oldest, history.oldest || 0);
+					latest = Math.max(latest, history.last_online || 0);
+					returning = Math.max(returning, history.return_until || 0);
+				}
 			}
 			group.characters = characters;
 			group.oldest = oldest;

@@ -42,6 +42,7 @@ function harness() {
 		sequence = 0,
 		records = [],
 		queries = [],
+		historyQueries = [],
 		writes = 0;
 	const histories = new Map();
 	const events = [],
@@ -96,6 +97,28 @@ function harness() {
 			collection(name) {
 				if (name === "mark")
 					return {
+						find(query, options) {
+							const request = { query, options };
+							historyQueries.push(request);
+							return {
+								limit(n) {
+									request.limit = n;
+									return this;
+								},
+								maxTimeMS(n) {
+									request.timeout = n;
+									return this;
+								},
+								async toArray() {
+									return structuredClone(
+										query._id.$in
+											.map((id) => histories.get(id))
+											.filter(Boolean)
+											.slice(0, request.limit),
+									);
+								},
+							};
+						},
 						async findOneAndUpdate(query, update, options) {
 							assert.equal(options.upsert, true);
 							assert.equal(options.returnDocument, "after");
@@ -352,6 +375,7 @@ function harness() {
 		inventory,
 		events,
 		queries,
+		historyQueries,
 		histories,
 		setRecords(list) {
 			records = list;
@@ -886,6 +910,167 @@ test("login keeps one shared return window; reconnects and siblings cannot exten
 	h.setRecords([h.record(p), h.record(other)]);
 	assert(await h.c.encouragement_login(other, new Date(h.now() - day)));
 	assert.equal(other.p.encouragement.return_until, until);
+});
+
+test("Steam linking preserves the earned owner bonus, including after saved character state is lost", async () => {
+	const h = harness(),
+		p = h.player("Return", { created: h.now() - 500 * day });
+	h.setRecords([h.record(p)]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 400 * day)));
+	const until = p.p.encouragement.return_until;
+	assert.equal(until, h.now() + 90 * day);
+	assert.equal(h.historyQueries.length, 0);
+
+	h.time(h.now() + day);
+	p.pid = "shared-steam";
+	p.p.steam_id = p.pid;
+	h.setRecords([h.record(p, { info: { p: { encouragement: plain(p.p.encouragement) } } })]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - day)));
+	assert.equal(p.s.encouragement_returning.expires, until);
+	assert.equal(h.histories.get("MK_encouragement-owner:" + p.owner).return_until, until);
+	assert.equal(h.histories.get("MK_encouragement-pid:" + p.pid).return_until, until);
+	assert.deepEqual(plain(h.historyQueries[0].query), { _id: { $in: ["MK_encouragement-owner:" + p.owner] } });
+	assert.equal(h.historyQueries[0].limit, 25);
+	assert.equal(h.historyQueries[0].timeout, 3000);
+	assert.deepEqual(plain(h.historyQueries[0].options.projection), { oldest: 1, last_online: 1, return_until: 1 });
+
+	// Reproduce an already-stranded bonus: only the old owner mark still has it.
+	h.c.encouragement_groups.clear();
+	h.histories.get("MK_encouragement-pid:" + p.pid).return_until = 0;
+	delete p.p.encouragement;
+	h.time(h.now() + 60000);
+	h.setRecords([h.record(p)]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 60000)));
+	assert.equal(p.s.encouragement_returning.expires, until);
+	assert.equal(h.historyQueries.length, 2);
+
+	h.time(h.now() + 5 * 60000);
+	await h.c.encouragement_load(p);
+	assert.equal(h.historyQueries.length, 2, "routine refreshes do not read owner marks");
+	assert.equal(p.p.encouragement.return_until, until);
+});
+
+test("linked accounts inherit the latest existing expiry without stacking or shortening it", async () => {
+	const h = harness(),
+		p = h.player("Recovered", { pid: "shared", created: h.now() - 500 * day }),
+		sibling = h.player("Secondary", { pid: "shared", created: h.now() - 400 * day });
+	const until = h.now() + 70 * day;
+	h.histories.set("MK_encouragement-owner:" + p.owner, {
+		oldest: p.created,
+		last_online: h.now() - 2 * day,
+		return_until: h.now() + 30 * day,
+	});
+	h.histories.set("MK_encouragement-owner:" + sibling.owner, {
+		oldest: sibling.created,
+		last_online: h.now() - day,
+		return_until: until,
+	});
+	h.setRecords([h.record(p), h.record(sibling), h.record(sibling, { _id: "CH_merchant", type: "merchant" })]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 400 * day)));
+	assert.equal(p.s.encouragement_returning.expires, until);
+	assert.equal(h.historyQueries[0].query._id.$in.length, 2, "one lookup per distinct linked owner");
+	assert(await h.c.encouragement_login(sibling, new Date(h.now() - 60000)));
+	assert.equal(sibling.s.encouragement_returning.expires, until);
+
+	const longer = h.now() + 80 * day;
+	h.histories.get("MK_encouragement-pid:shared").return_until = longer;
+	h.c.encouragement_groups.clear();
+	h.time(h.now() + 60000);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 60000)));
+	assert.equal(p.s.encouragement_returning.expires, longer);
+	h.time(longer);
+	h.setRecords([h.record(p), h.record(sibling)]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 60000)));
+	assert(!p.s.encouragement_returning, "expired owner marks cannot restart the bonus");
+});
+
+test("owner history prevents newcomer and returning bonuses from resetting after Steam linking", async () => {
+	const h = harness(),
+		p = h.player("Replacement", { pid: "shared" });
+	h.histories.set("MK_encouragement-owner:" + p.owner, {
+		oldest: h.now() - 500 * day,
+		last_online: h.now() - day,
+		return_until: 0,
+	});
+	h.setRecords([h.record(p)]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 400 * day)));
+	assert(!p.s.encouragement_new);
+	assert(!p.s.encouragement_returning);
+	assert.equal(p.p.encouragement.oldest, h.now() - 500 * day);
+});
+
+test("migration reads only linked owner marks, never unrelated owners or previous platform bonuses", async () => {
+	const h = harness(),
+		p = h.player("Linked", { pid: "current", created: h.now() - 500 * day });
+	const saved = { oldest: p.created, last_online: h.now() - day, return_until: h.now() + 90 * day };
+	h.histories.set("MK_encouragement-owner:US_unrelated", saved);
+	h.histories.set("MK_encouragement-pid:previous", saved);
+	p.p.encouragement = { group: "pid:previous", oldest: p.created, return_until: saved.return_until };
+	h.setRecords([h.record(p, { info: { p: { encouragement: plain(p.p.encouragement) } } })]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - day)));
+	assert(!p.s.encouragement_returning);
+	assert.deepEqual(plain(h.historyQueries[0].query._id.$in), ["MK_encouragement-owner:" + p.owner]);
+});
+
+test("owner history cannot bypass the character limit or an empty platform roster", async () => {
+	for (const count of [0, 24, 25, 26]) {
+		const h = harness(),
+			p = h.player("Linked", { pid: "shared", created: h.now() - 500 * day });
+		h.histories.set("MK_encouragement-owner:" + p.owner, {
+			oldest: p.created,
+			last_online: h.now() - day,
+			return_until: h.now() + 70 * day,
+		});
+		h.setRecords(Array.from({ length: count }, (_, i) => h.record(p, { _id: i ? "CH_" + i : p.real_id })));
+		assert(await h.c.encouragement_login(p, new Date(h.now() - day)));
+		assert.equal(!!p.s.encouragement_returning, count === 24);
+		assert.equal(h.historyQueries.length, count === 24 ? 1 : 0);
+		assert.equal(p.encouragement.blocked, count !== 24);
+	}
+});
+
+test("a restored group mark reaches online characters and survives stale character saves", async () => {
+	const h = harness(),
+		p = h.player("Online", { pid: "shared", created: h.now() - 500 * day });
+	h.setRecords([h.record(p)]);
+	assert(await h.c.encouragement_login(p, new Date(h.now() - day)));
+	assert(!p.s.encouragement_returning);
+	const stale = plain(p.p.encouragement),
+		until = h.now() + 70 * day;
+	h.histories.get("MK_encouragement-pid:shared").return_until = until;
+	h.time(h.now() + 5 * 60000);
+	await h.c.encouragement_load(p);
+	h.c.encouragement_update(p, true);
+	assert.equal(p.s.encouragement_returning.expires, until);
+	assert.equal(h.historyQueries.length, 1);
+
+	h.time(h.now() + 5 * 60000);
+	p.p.encouragement = stale;
+	h.setRecords([h.record(p, { info: { p: { encouragement: stale } } })]);
+	h.c.encouragement_groups.clear();
+	assert(await h.c.encouragement_login(p, new Date(h.now() - 60000)));
+	assert.equal(p.s.encouragement_returning.expires, until);
+	assert.equal(h.histories.get("MK_encouragement-pid:shared").return_until, until);
+});
+
+test("an unavailable owner-history lookup cannot admit a character with unchecked bonuses", async () => {
+	const h = harness(),
+		p = h.player("Linked", { pid: "shared" }),
+		collection = h.c.db.collection;
+	h.setRecords([h.record(p)]);
+	h.c.db.collection = (name) => {
+		const result = collection(name);
+		if (name === "mark")
+			result.find = () => {
+				throw Error("fixture history unavailable");
+			};
+		return result;
+	};
+	h.c.log_trace = () => {};
+	assert.equal(await h.c.encouragement_login(p, new Date(h.now())), false);
+	assert.equal(h.writes(), 0);
+	assert(!p.s.encouragement_returning);
+	assert.equal(h.c.encouragement_groups.get("pid:shared").next, h.now() + 60000);
 });
 
 test("invalidation during a query cannot resurrect an older eligible snapshot", async () => {
