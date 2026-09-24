@@ -1,0 +1,26 @@
+<div class="title">Pale Dino</div>
+<p>{{ phrase("monster.paledino.explanation") }}</p>
+<p>{{ phrase("docs.guide.pale-dino.about") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="pale-dino-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.pale-dino.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="pale-dino-code">async function hunt_pale_dino() {
+    if (character.rip || character.hp &lt;= character.max_hp / 2) return;
+    var target = get_nearest_monster({ type: "paledino" });
+    if (!target || !can_attack(target)) return;
+    return await attack(target);
+}
+
+hunt_pale_dino().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".pale-dino-drops").html(G.drops.monsters.paledino.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

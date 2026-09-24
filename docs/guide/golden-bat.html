@@ -1,0 +1,27 @@
+<div class="title">Golden Bat</div>
+<p>{{ phrase("monster.goldenbat.explanation") }}</p>
+<p>{{ phrase("docs.guide.golden-bat.intro") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="golden-bat-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.golden-bat.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="golden-bat-code">async function catch_golden_bat() {
+    var bat = get_nearest_monster({ type: "goldenbat" });
+    if (character.rip || !bat) return;
+    var current = get_targeted_monster();
+    if (!current || current.id !== bat.id) change_target(bat);
+    if (can_attack(bat)) return await attack(bat);
+}
+
+catch_golden_bat().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/get_targeted_monster" target="_blank">get_targeted_monster</a> · <a href="/docs/code/functions/change_target" target="_blank">change_target</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".golden-bat-drops").html(G.drops.monsters.goldenbat.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

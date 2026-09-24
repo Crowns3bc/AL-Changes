@@ -1125,6 +1125,7 @@ function consider_interaction_context(key, id, c_distance, range, context, prior
 	candidate.priority = priority;
 	candidate.source = source;
 	if (visual) candidate.visual = visual;
+	else if (definition.skin) candidate.visual = { skin: definition.skin };
 	interaction_contexts.push(candidate);
 	if (interaction_context && (interaction_context.priority > priority || (interaction_context.priority == priority && interaction_context.distance <= c_distance))) return;
 	interaction_context = candidate;

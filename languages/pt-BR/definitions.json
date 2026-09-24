@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Drops Raros",
+	"interaction.cliffkobold.summary": "Quatro Cliff Kobold vagam por estes penhascos em pares. Traga um grupo para cada um.",
+	"interaction.mimic.summary": "Nem todo baú aqui embaixo é um baú. Este morde de volta.",
+	"interaction.manyeye.summary": "Às vezes um Many Eye se abre entre os One Eye. O olhar dele transforma você em pedra.",
+	"interaction.paledino.summary": "Às vezes um Pale Dino corre com os Dino, mais rápido e batendo mais forte.",
+	"interaction.goldenbat.summary": "Às vezes um Golden Bat esvoaça por estas cavernas. Pegue-o se puder.",
+	"interaction.cutebee.summary": "Muito de vez em quando, um Cute Bee se junta aos Bee de Mainland.",
+	"interaction.goldenbot.summary": "Às vezes um Golden Bot surge rolando entre os Targetron e os Spark Bot.",
 	"item.stonegaze.explanation": "Algumas disputas de encarada terminam em estátuas.",
 	"item.mummyhex.explanation": "Algo morto ainda tem contas a acertar.",
 	"item.harpyecho.explanation": "Um grito que deixa proteções em pedaços.",

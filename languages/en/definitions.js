@@ -1,7 +1,19 @@
 // English display text from loaded game definitions. Canonical G is not localized.
 module.exports = {
-	// Guide directory and article title for the rare accessories, the three rare variant monsters and their on-hit effects.
-	"directory.guide.rare-drops.title": "Rare Drops",
+	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Cliff Kobold guide. Cliff Kobolds and Underground Cliffs are fixed names.
+	"interaction.cliffkobold.summary": "Four Cliff Kobolds roam these cliffs in pairs. Bring a party for each one.",
+	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Mimic guide. The Mimic looks like a chest and never starts a fight.
+	"interaction.mimic.summary": "Not every chest down here is a chest. This one bites back.",
+	// Tooltip of the INFO button near the Underground West entrance; opens the Many Eye guide. Many Eye and One Eye are fixed names; its stare petrifies.
+	"interaction.manyeye.summary": "Sometimes a Many Eye opens among the One Eyes. Its stare turns you to stone.",
+	// Tooltip of the INFO button near the Mystical Forest entrance; opens the Pale Dino guide. Pale Dino and Dino are fixed names.
+	"interaction.paledino.summary": "A Pale Dino sometimes runs with the Dinos, faster and harder-hitting.",
+	// Tooltip of the INFO button near the Cave of Darkness entrance; opens the Golden Bat guide. Golden Bat is a fixed name.
+	"interaction.goldenbat.summary": "A Golden Bat sometimes flits through these caves. Catch it if you can.",
+	// Tooltip of the INFO button near the Mainland spawn; opens the Cute Bee guide. Cute Bee, Bee and Mainland are fixed names.
+	"interaction.cutebee.summary": "Once in a very long while, a Cute Bee joins the Bees of Mainland.",
+	// Tooltip of the INFO button near the Underground Hills entrance; opens the Golden Bot guide. Golden Bot, Targetron and Spark Bot are fixed names.
+	"interaction.goldenbot.summary": "A Golden Bot sometimes rolls out among the Targetrons and Spark Bots.",
 	// Rare drop tooltip flavor under Stonegaze Ring; one short in-world line. Item and monster names stay fixed.
 	"item.stonegaze.explanation": "Some staring contests end in statues.",
 	// Rare drop tooltip flavor under Mummy's Hex; one short in-world line. Item and monster names stay fixed.

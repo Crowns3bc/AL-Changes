@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Bottini rari",
+	"interaction.cliffkobold.summary": "Quattro Cliff Kobold si aggirano a coppie per queste scogliere. Porta un gruppo per ciascuno.",
+	"interaction.mimic.summary": "Non tutti i forzieri quaggiù sono forzieri. Questo morde a sua volta.",
+	"interaction.manyeye.summary": "A volte tra i One Eye si apre un Many Eye. Il suo sguardo ti trasforma in pietra.",
+	"interaction.paledino.summary": "A volte un Pale Dino corre con i Dino, più veloce e dai colpi più duri.",
+	"interaction.goldenbat.summary": "A volte un Golden Bat svolazza per queste grotte. Prendilo, se ci riesci.",
+	"interaction.cutebee.summary": "Molto, molto di rado, un Cute Bee si unisce ai Bee di Mainland.",
+	"interaction.goldenbot.summary": "A volte un Golden Bot rotola fuori tra i Targetron e gli Spark Bot.",
 	"item.stonegaze.explanation": "Certe gare di sguardi finiscono in statue.",
 	"item.mummyhex.explanation": "Qualcosa di morto ha ancora un conto in sospeso.",
 	"item.harpyecho.explanation": "Un grido che riduce le protezioni in pezzi.",

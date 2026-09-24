@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Harvinaiset saaliit",
+	"interaction.cliffkobold.summary": "Neljä Cliff Kobold -hirviötä kiertelee pareittain näillä kallioilla. Ota ryhmä mukaan jokaista varten.",
+	"interaction.mimic.summary": "Kaikki arkut täällä alhaalla eivät ole arkkuja. Tämä puree takaisin.",
+	"interaction.manyeye.summary": "Joskus One Eye -hirviöiden joukossa aukeaa Many Eye. Sen katse muuttaa sinut kiveksi.",
+	"interaction.paledino.summary": "Joskus Dino-hirviöiden mukana juoksee Pale Dino, nopeampi ja kovempilyöntinen.",
+	"interaction.goldenbat.summary": "Joskus Golden Bat lepattaa näiden luolien läpi. Nappaa se, jos pystyt.",
+	"interaction.cutebee.summary": "Hyvin, hyvin harvoin Cute Bee liittyy Mainland-alueen Bee-hirviöihin.",
+	"interaction.goldenbot.summary": "Joskus Targetron- ja Spark Bot -hirviöiden joukosta vierii esiin Golden Bot.",
 	"item.stonegaze.explanation": "Jotkin tuijotuskilpailut päättyvät patsaisiin.",
 	"item.mummyhex.explanation": "Jollakin kuolleella on vielä kana kynittävänä.",
 	"item.harpyecho.explanation": "Huuto, joka jättää suojaloitsut sirpaleiksi.",

@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Seltene Beute",
+	"interaction.cliffkobold.summary": "Vier Cliff Kobold streifen paarweise durch diese Klippen. Bring für jeden eine Gruppe mit.",
+	"interaction.mimic.summary": "Nicht jede Truhe hier unten ist eine Truhe. Diese beißt zurück.",
+	"interaction.manyeye.summary": "Manchmal öffnet sich unter den One Eye ein Many Eye. Sein Blick verwandelt dich in Stein.",
+	"interaction.paledino.summary": "Manchmal läuft ein Pale Dino mit den Dino, schneller und mit härteren Schlägen.",
+	"interaction.goldenbat.summary": "Manchmal flattert ein Golden Bat durch diese Höhlen. Fang ihn, wenn du kannst.",
+	"interaction.cutebee.summary": "Sehr, sehr selten gesellt sich ein Cute Bee zu den Bee von Mainland.",
+	"interaction.goldenbot.summary": "Manchmal rollt zwischen den Targetron und Spark Bot ein Golden Bot hervor.",
 	"item.stonegaze.explanation": "Manche Anstarr-Duelle enden als Statuen.",
 	"item.mummyhex.explanation": "Etwas Totes hat noch eine Rechnung offen.",
 	"item.harpyecho.explanation": "Ein Schrei, der Schutzzauber in Stücke reißt.",

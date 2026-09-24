@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Jarahan langka",
+	"interaction.cliffkobold.summary": "Empat Cliff Kobold berkeliaran berpasangan di tebing-tebing ini. Bawa grup untuk masing-masing.",
+	"interaction.mimic.summary": "Tidak semua peti di bawah sini adalah peti. Yang ini menggigit balik.",
+	"interaction.manyeye.summary": "Kadang sebuah Many Eye terbuka di antara One Eye. Tatapannya mengubahmu menjadi batu.",
+	"interaction.paledino.summary": "Kadang sebuah Pale Dino berlari bersama Dino, lebih cepat dan pukulannya lebih keras.",
+	"interaction.goldenbat.summary": "Kadang sebuah Golden Bat melayang-layang di gua-gua ini. Tangkap kalau bisa.",
+	"interaction.cutebee.summary": "Sangat jarang sekali, sebuah Cute Bee bergabung dengan Bee di Mainland.",
+	"interaction.goldenbot.summary": "Kadang sebuah Golden Bot menggelinding keluar di antara Targetron dan Spark Bot.",
 	"item.stonegaze.explanation": "Beberapa lomba saling tatap berakhir menjadi patung.",
 	"item.mummyhex.explanation": "Sesuatu yang sudah mati masih punya urusan yang belum selesai.",
 	"item.harpyecho.explanation": "Jeritan yang membuat pelindung sihir hancur berkeping-keping.",

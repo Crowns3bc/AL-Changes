@@ -1,0 +1,26 @@
+<div class="title">Many Eye</div>
+<p>{{ phrase("monster.manyeye.explanation") }}</p>
+<p>{{ phrase("docs.guide.many-eye.about") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="many-eye-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.many-eye.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="many-eye-code">async function face_many_eye() {
+    if (character.rip || character.s.stoned) return;
+    var target = get_nearest_monster({ type: "manyeye" });
+    if (!target || !can_attack(target)) return;
+    return await attack(target);
+}
+
+face_many_eye().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".many-eye-drops").html(G.drops.monsters.manyeye.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

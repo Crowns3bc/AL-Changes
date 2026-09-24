@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Ritka zsákmányok",
+	"interaction.cliffkobold.summary": "Négy Cliff Kobold kóborol párban ezeken a sziklákon. Mindegyikhez hozz egy csapatot.",
+	"interaction.mimic.summary": "Itt lent nem minden láda láda. Ez visszaharap.",
+	"interaction.manyeye.summary": "Néha a One Eye példányok között kinyílik egy Many Eye. A tekintete kővé dermeszt.",
+	"interaction.paledino.summary": "Néha egy Pale Dino is fut a Dino példányokkal, gyorsabb, és erősebben üt.",
+	"interaction.goldenbat.summary": "Néha egy Golden Bat röpköd át ezeken a barlangokon. Kapd el, ha tudod.",
+	"interaction.cutebee.summary": "Nagyon ritkán egy Cute Bee csatlakozik Mainland Bee példányaihoz.",
+	"interaction.goldenbot.summary": "Néha egy Golden Bot gurul elő a Targetron és Spark Bot példányok közül.",
 	"item.stonegaze.explanation": "Van, hogy a szemezésből szobor lesz.",
 	"item.mummyhex.explanation": "Valami halottnak még van elszámolnivalója.",
 	"item.harpyecho.explanation": "Sikoly, amelytől a védővarázsok darabokra hullanak.",

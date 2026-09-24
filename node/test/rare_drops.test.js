@@ -140,11 +140,13 @@ test("the new monsters are tougher than their farms and carry regular achievemen
 	assert.equal(G.sprites.creatures2.matrix[0][1], "manyeye");
 	assert.deepEqual(
 		JSON.parse(
-			JSON.stringify(G.maps.ucliffs.monsters.filter((p) => p.type === "cliffkobold").map((p) => [p.count, p.grow])),
+			JSON.stringify(
+				G.maps.ucliffs.monsters.filter((p) => p.type === "cliffkobold").map((p) => [p.count, p.grow, p.roam]),
+			),
 		),
 		[
-			[6, true],
-			[6, true],
+			[2, true, true],
+			[2, true, true],
 		],
 	);
 });
@@ -437,4 +439,54 @@ test("rare variants spawn inside their parent's packs, one at a time", () => {
 	vm.runInContext(block, loop);
 	assert.deepEqual(loop.calls, ["manyeye"], "no second Many Eye while one lives");
 	assert.equal(loop.edges.next_manyeye, 45000, "the counter still advances");
+});
+
+test("each monster guide opens from INFO at its map's entrance", () => {
+	const context = vm.createContext({});
+	vm.runInContext(fs.readFileSync(path.join(root, "docs/directory.js"), "utf8"), context);
+	const docs = context.docs;
+	const seo = fs.readFileSync(path.join(root, "seo_paths.js"), "utf8");
+	const mcp = fs.readFileSync(path.join(root, "mcp_api.js"), "utf8");
+	const english = Object.assign(
+		{},
+		require("../../languages/en/definitions.js"),
+		require("../../languages/en/docs.js"),
+	);
+	const world = docs.guide.find((entry) => entry[0] === "world")[4].map((entry) => entry[0]);
+	const GUIDES = {
+		cliffkobold: ["cliff-kobold", "ucliffs", 1],
+		mimic: ["mimic", "ucliffs", 1],
+		manyeye: ["many-eye", "level2w", 0],
+		paledino: ["pale-dino", "mforest", 0],
+		goldenbat: ["golden-bat", "cave", 0],
+		cutebee: ["cute-bee", "main", 0],
+		goldenbot: ["golden-bot", "uhills", 0],
+	};
+	for (const [monster, [slug, map, spawn]] of Object.entries(GUIDES)) {
+		const interaction = docs.interactions[monster];
+		assert.equal(interaction.article, slug, monster);
+		assert.equal(interaction.skin, monster, "the INFO button shows the monster itself");
+		assert.equal(interaction.proximity, true, monster);
+		assert.equal(docs.interaction_map.quirks[monster + "_info"], monster);
+		const quirks = G.maps[map].quirks.filter((quirk) => quirk[4] === monster + "_info");
+		assert.equal(quirks.length, 1, monster + " has one INFO spot on " + map);
+		const [x, y] = G.maps[map].spawns[spawn];
+		assert.deepEqual(
+			[quirks[0][0], quirks[0][1], quirks[0][2], quirks[0][3]],
+			[x, y, 0, 0],
+			"at the entry spawn, with no click area",
+		);
+		assert.ok(fs.existsSync(path.join(root, "docs/guide", slug + ".html")), slug);
+		const html = fs.readFileSync(path.join(root, "docs/guide", slug + ".html"), "utf8");
+		assert.match(html, new RegExp(`G\\.drops\\.monsters\\.${monster}\\.map`));
+		for (const id of html.match(/phrase\("([^"]+)"\)/g).map((m) => m.slice(8, -2)))
+			assert.ok(english[id] || id.startsWith("interface."), `${slug}: ${id}`);
+		assert.ok(english[`interaction.${monster}.summary`], monster);
+		assert.equal(english[`interaction.${monster}.summary`], interaction.summary);
+		assert.ok(world.includes(slug), slug + " is listed under World & Community");
+		assert.ok(seo.includes(`"/docs/guide/${slug}"`) && seo.includes(`"/docs/guide/world/${slug}"`), slug);
+		assert.ok(mcp.includes(`uri: "adventureland://guide/${slug}"`), slug);
+	}
+	assert.ok(!fs.existsSync(path.join(root, "docs/guide/rare-drops.html")));
+	assert.ok(!world.includes("rare-drops"));
 });

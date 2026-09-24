@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Zeldzame buit",
+	"interaction.cliffkobold.summary": "Vier Cliff Kobold zwerven in paren over deze kliffen. Neem voor elk een groep mee.",
+	"interaction.mimic.summary": "Niet elke kist hier beneden is een kist. Deze bijt terug.",
+	"interaction.manyeye.summary": "Soms gaat er tussen de One Eye een Many Eye open. Zijn blik verandert je in steen.",
+	"interaction.paledino.summary": "Soms rent er een Pale Dino met de Dino mee, sneller en harder slaand.",
+	"interaction.goldenbat.summary": "Soms fladdert er een Golden Bat door deze grotten. Vang hem als je kunt.",
+	"interaction.cutebee.summary": "Heel af en toe voegt een Cute Bee zich bij de Bee van Mainland.",
+	"interaction.goldenbot.summary": "Soms rolt er een Golden Bot tevoorschijn tussen de Targetron en Spark Bot.",
 	"item.stonegaze.explanation": "Sommige staarwedstrijden eindigen in standbeelden.",
 	"item.mummyhex.explanation": "Iets doods heeft nog een appeltje te schillen.",
 	"item.harpyecho.explanation": "Een schreeuw die beschermingen aan diggelen laat.",

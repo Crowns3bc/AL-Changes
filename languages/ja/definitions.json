@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "レアドロップ",
+	"interaction.cliffkobold.summary": "四体のCliff Koboldが二体ずつこの崖をうろついている。一体ごとにパーティーで挑もう。",
+	"interaction.mimic.summary": "ここの宝箱がすべて宝箱とは限らない。こいつは噛み返してくる。",
+	"interaction.manyeye.summary": "One Eyeの中に、ときどきMany Eyeが目を開く。その視線はあなたを石に変える。",
+	"interaction.paledino.summary": "ときどきDinoの群れにPale Dinoが混じる。より速く、より重い一撃を放つ。",
+	"interaction.goldenbat.summary": "ときどきGolden Batがこの洞窟を飛び回る。捕まえられるものなら捕まえてみよう。",
+	"interaction.cutebee.summary": "ごくまれに、MainlandのBeeの中にCute Beeが加わる。",
+	"interaction.goldenbot.summary": "ときどきTargetronとSpark Botの間からGolden Botが転がり出てくる。",
 	"item.stonegaze.explanation": "にらめっこの中には、石像で終わるものもある。",
 	"item.mummyhex.explanation": "死者にも、まだ晴らしたい恨みがある。",
 	"item.harpyecho.explanation": "結界を粉々にする叫び声。",

@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Butins rares",
+	"interaction.cliffkobold.summary": "Quatre Cliff Kobold arpentent ces falaises par deux. Viens en groupe pour chacun.",
+	"interaction.mimic.summary": "Tous les coffres d’ici ne sont pas des coffres. Celui-ci mord en retour.",
+	"interaction.manyeye.summary": "Parfois, un Many Eye s’ouvre parmi les One Eye. Son regard te change en pierre.",
+	"interaction.paledino.summary": "Parfois, un Pale Dino court avec les Dino, plus rapide et plus brutal.",
+	"interaction.goldenbat.summary": "Parfois, un Golden Bat voltige dans ces grottes. Attrape-le si tu peux.",
+	"interaction.cutebee.summary": "Très, très rarement, un Cute Bee rejoint les Bee de Mainland.",
+	"interaction.goldenbot.summary": "Parfois, un Golden Bot surgit en roulant parmi les Targetron et les Spark Bot.",
 	"item.stonegaze.explanation": "Certains concours de regards finissent en statues.",
 	"item.mummyhex.explanation": "Un mort a encore un compte à régler.",
 	"item.harpyecho.explanation": "Un cri qui met les protections en pièces.",

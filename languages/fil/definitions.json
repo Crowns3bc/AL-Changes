@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Mga bihirang samsam",
+	"interaction.cliffkobold.summary": "Apat na Cliff Kobold ang gumagala nang dalawahan sa mga bangin na ito. Magdala ng grupo para sa bawat isa.",
+	"interaction.mimic.summary": "Hindi lahat ng baul dito sa ibaba ay baul. Ang isang ito ay kumakagat pabalik.",
+	"interaction.manyeye.summary": "Paminsan-minsan, may Many Eye na dumidilat sa gitna ng mga One Eye. Ginagawa kang bato ng titig nito.",
+	"interaction.paledino.summary": "Paminsan-minsan, may Pale Dino na tumatakbo kasama ng mga Dino, mas mabilis at mas malakas tumama.",
+	"interaction.goldenbat.summary": "Paminsan-minsan, may Golden Bat na lumilipad-lipad sa mga kuwebang ito. Hulihin mo kung kaya mo.",
+	"interaction.cutebee.summary": "Napakabihira, may Cute Bee na sumasama sa mga Bee ng Mainland.",
+	"interaction.goldenbot.summary": "Paminsan-minsan, may Golden Bot na gumugulong palabas mula sa mga Targetron at Spark Bot.",
 	"item.stonegaze.explanation": "May mga paligsahan ng titigan na nauuwi sa estatwa.",
 	"item.mummyhex.explanation": "May patay na may atraso pang sisingilin.",
 	"item.harpyecho.explanation": "Isang sigaw na dumudurog sa mga panangga.",

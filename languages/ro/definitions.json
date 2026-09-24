@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Prăzi rare",
+	"interaction.cliffkobold.summary": "Patru Cliff Kobold bântuie în perechi prin aceste stânci. Adu un grup pentru fiecare.",
+	"interaction.mimic.summary": "Nu orice cufăr de aici de jos e un cufăr. Acesta mușcă înapoi.",
+	"interaction.manyeye.summary": "Uneori, printre One Eye se deschide un Many Eye. Privirea lui te preface în piatră.",
+	"interaction.paledino.summary": "Uneori, un Pale Dino aleargă cu Dino, mai rapid și cu lovituri mai grele.",
+	"interaction.goldenbat.summary": "Uneori, un Golden Bat fâlfâie prin aceste peșteri. Prinde-l dacă poți.",
+	"interaction.cutebee.summary": "Foarte, foarte rar, un Cute Bee se alătură Bee-urilor din Mainland.",
+	"interaction.goldenbot.summary": "Uneori, un Golden Bot se rostogolește dintre Targetron și Spark Bot.",
 	"item.stonegaze.explanation": "Unele concursuri de privit în ochi se termină cu statui.",
 	"item.mummyhex.explanation": "Ceva mort mai are o socoteală de încheiat.",
 	"item.harpyecho.explanation": "Un țipăt care lasă protecțiile în bucăți.",

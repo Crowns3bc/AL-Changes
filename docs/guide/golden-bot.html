@@ -1,0 +1,25 @@
+<div class="title">Golden Bot</div>
+<p>{{ phrase("monster.goldenbot.explanation") }}</p>
+<p>{{ phrase("docs.guide.golden-bot.intro") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="golden-bot-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.golden-bot.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="golden-bot-code">async function fight_golden_bot() {
+    var bot = get_nearest_monster({ type: "goldenbot" });
+    if (character.rip || !bot || !can_attack(bot)) return;
+    return await attack(bot);
+}
+
+fight_golden_bot().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".golden-bot-drops").html(G.drops.monsters.goldenbot.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

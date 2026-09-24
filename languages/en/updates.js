@@ -1,7 +1,7 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
-	// Release highlight. Cliff Kobolds, Underground Cliffs, Many Eye, Mimic, Pale Dino and Primal Frenzy follow their established names; GUIDE → Rare Drops is the guide path; CODE stays.
-	"update.24_09_26.rare_drops": "Fifteen rare accessories now drop from long farms, including the new Cliff Kobolds in Underground Cliffs and three rare variants: Many Eye, Mimic and Pale Dino. Some turn foes to stone, curse them, crack their wards or armor, or send you into a Primal Frenzy. GUIDE → Rare Drops covers the variants, effects and CODE.",
+	// Release highlight. Cliff Kobolds, Underground Cliffs, Many Eye, Mimic, Pale Dino, Golden Bat, Cute Bee, Golden Bot and Primal Frenzy follow their established names; INFO is the button label.
+	"update.24_09_26.rare_drops": "Fifteen rare accessories now drop from long farms, including the new Cliff Kobolds roaming Underground Cliffs and three rare monsters: Many Eye, Mimic and Pale Dino. Some turn foes to stone, curse them, crack their wards or armor, or send you into a Primal Frenzy. INFO near each monster's entrance now explains it, and the Golden Bat, Cute Bee and Golden Bot have guides too.",
 	// Cosmetic boxes, seller, exchanger and the seven head names are proper names. Lava Glass and Storm animate while idle as well as walking.
 	"update.20_09_26.head_cosmetics": "New Make-up and New Accessory are now available from Mr. Dworf. Take them to Haila for head sets, unique heads or accessories. New heads include Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass and Storm; Lava Glass and Storm animate even while standing still.",
 	// Release highlight. Cavalry and Tracktrix are fixed names.

@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "희귀 전리품",
+	"interaction.cliffkobold.summary": "네 마리의 Cliff Kobold가 둘씩 짝지어 이 절벽을 돌아다녀요. 한 마리마다 파티를 꾸려 오세요.",
+	"interaction.mimic.summary": "여기 있는 상자가 다 상자는 아니에요. 이건 맞으면 물어요.",
+	"interaction.manyeye.summary": "가끔 One Eye 사이에서 Many Eye가 눈을 떠요. 그 시선은 당신을 돌로 만들어요.",
+	"interaction.paledino.summary": "가끔 Dino 무리에 Pale Dino가 섞여 달려요. 더 빠르고 더 세게 때려요.",
+	"interaction.goldenbat.summary": "가끔 Golden Bat이 이 동굴을 날아다녀요. 잡을 수 있으면 잡아 보세요.",
+	"interaction.cutebee.summary": "아주 가끔, Mainland의 Bee 사이에 Cute Bee가 끼어들어요.",
+	"interaction.goldenbot.summary": "가끔 Targetron과 Spark Bot 사이에서 Golden Bot이 굴러 나와요.",
 	"item.stonegaze.explanation": "눈싸움이 조각상으로 끝나는 경우도 있어요.",
 	"item.mummyhex.explanation": "죽은 무언가가 아직 따질 게 남았어요.",
 	"item.harpyecho.explanation": "보호막을 산산조각 내는 비명.",

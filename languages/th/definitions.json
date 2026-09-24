@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "ของดรอปหายาก",
+	"interaction.cliffkobold.summary": "Cliff Kobold สี่ตัวเดินเตร่เป็นคู่ไปทั่วหน้าผานี้ แต่ละตัวต้องใช้ปาร์ตี้หนึ่งทีม",
+	"interaction.mimic.summary": "หีบทุกใบในนี้ไม่ได้เป็นหีบเสมอไป ใบนี้กัดกลับ",
+	"interaction.manyeye.summary": "บางครั้ง Many Eye จะลืมตาขึ้นท่ามกลาง One Eye สายตาของมันทำให้คุณกลายเป็นหิน",
+	"interaction.paledino.summary": "บางครั้ง Pale Dino จะวิ่งปนอยู่กับ Dino เร็วกว่าและตีแรงกว่า",
+	"interaction.goldenbat.summary": "บางครั้ง Golden Bat จะบินวนผ่านถ้ำเหล่านี้ จับให้ได้ถ้าคุณทำได้",
+	"interaction.cutebee.summary": "นานๆ ครั้งจริงๆ Cute Bee จะมาร่วมกับ Bee ใน Mainland",
+	"interaction.goldenbot.summary": "บางครั้ง Golden Bot จะกลิ้งออกมาจากกลุ่ม Targetron และ Spark Bot",
 	"item.stonegaze.explanation": "การจ้องตากันบางครั้งก็จบลงด้วยรูปปั้น",
 	"item.mummyhex.explanation": "สิ่งที่ตายไปแล้วยังมีบัญชีแค้นต้องชำระ",
 	"item.harpyecho.explanation": "เสียงกรีดร้องที่ทำให้เวทป้องกันแตกเป็นเสี่ยง",

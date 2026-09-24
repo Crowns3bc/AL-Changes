@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Σπάνια λάφυρα",
+	"interaction.cliffkobold.summary": "Τέσσερις Cliff Kobold περιφέρονται ανά δύο σε αυτούς τους γκρεμούς. Φέρε ομάδα για τον καθένα.",
+	"interaction.mimic.summary": "Δεν είναι κάθε σεντούκι εδώ κάτω σεντούκι. Αυτό δαγκώνει πίσω.",
+	"interaction.manyeye.summary": "Κάποιες φορές ανοίγει ένα Many Eye ανάμεσα στους One Eye. Το βλέμμα του σε κάνει πέτρα.",
+	"interaction.paledino.summary": "Κάποιες φορές ένας Pale Dino τρέχει με τους Dino, πιο γρήγορος και πιο βαρύς στα χτυπήματα.",
+	"interaction.goldenbat.summary": "Κάποιες φορές ένα Golden Bat φτερουγίζει μέσα σε αυτές τις σπηλιές. Πιάσ' το αν μπορείς.",
+	"interaction.cutebee.summary": "Πολύ, πολύ σπάνια, ένα Cute Bee μπαίνει στα Bee του Mainland.",
+	"interaction.goldenbot.summary": "Κάποιες φορές ένα Golden Bot κυλά ανάμεσα στα Targetron και τα Spark Bot.",
 	"item.stonegaze.explanation": "Κάποιοι διαγωνισμοί βλεμμάτων τελειώνουν σε αγάλματα.",
 	"item.mummyhex.explanation": "Κάτι νεκρό έχει ακόμα λογαριασμούς να κλείσει.",
 	"item.harpyecho.explanation": "Μια κραυγή που αφήνει τις προστασίες κομμάτια.",

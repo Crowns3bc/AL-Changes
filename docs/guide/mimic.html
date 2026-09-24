@@ -1,0 +1,26 @@
+<div class="title">Mimic</div>
+<p>{{ phrase("monster.mimic.explanation") }}</p>
+<p>{{ phrase("docs.guide.mimic.about") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="mimic-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.mimic.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="mimic-code">async function open_the_mimic() {
+    var mimic = get_nearest_monster({ type: "mimic" });
+    if (character.rip || !mimic || !can_attack(mimic)) return;
+    if (character.hp &lt; character.max_hp) return;
+    return await attack(mimic);
+}
+
+open_the_mimic().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".mimic-drops").html(G.drops.monsters.mimic.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

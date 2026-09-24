@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Редка плячка",
+	"interaction.cliffkobold.summary": "Четири Cliff Kobold бродят по двойки из тези скали. За всеки вземи група.",
+	"interaction.mimic.summary": "Не всеки сандък тук долу е сандък. Този хапе в отговор.",
+	"interaction.manyeye.summary": "Понякога сред One Eye се отваря Many Eye. Погледът му те превръща в камък.",
+	"interaction.paledino.summary": "Понякога с Dino тича Pale Dino – по-бърз и с по-тежки удари.",
+	"interaction.goldenbat.summary": "Понякога през тези пещери прелита Golden Bat. Хвани го, ако можеш.",
+	"interaction.cutebee.summary": "Много, много рядко към Bee в Mainland се присъединява Cute Bee.",
+	"interaction.goldenbot.summary": "Понякога измежду Targetron и Spark Bot се изтъркулва Golden Bot.",
 	"item.stonegaze.explanation": "Някои състезания по взиране завършват със статуи.",
 	"item.mummyhex.explanation": "Нещо мъртво още има сметки за уреждане.",
 	"item.harpyecho.explanation": "Писък, който оставя защитните заклинания на парчета.",

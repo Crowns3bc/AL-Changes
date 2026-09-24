@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Sjældent bytte",
+	"interaction.cliffkobold.summary": "Fire Cliff Kobold strejfer parvis rundt på disse klipper. Tag en gruppe med til hver af dem.",
+	"interaction.mimic.summary": "Ikke alle kister hernede er kister. Den her bider igen.",
+	"interaction.manyeye.summary": "Nogle gange åbner et Many Eye sig blandt One Eye. Dets blik forvandler dig til sten.",
+	"interaction.paledino.summary": "Nogle gange løber en Pale Dino med Dino, hurtigere og med hårdere slag.",
+	"interaction.goldenbat.summary": "Nogle gange flagrer en Golden Bat gennem disse huler. Fang den, hvis du kan.",
+	"interaction.cutebee.summary": "Meget, meget sjældent slutter en Cute Bee sig til Bee i Mainland.",
+	"interaction.goldenbot.summary": "Nogle gange ruller en Golden Bot frem blandt Targetron og Spark Bot.",
 	"item.stonegaze.explanation": "Nogle stirrekonkurrencer ender som statuer.",
 	"item.mummyhex.explanation": "Noget dødt har stadig en høne at plukke.",
 	"item.harpyecho.explanation": "Et skrig, der efterlader beskyttelser i stumper og stykker.",

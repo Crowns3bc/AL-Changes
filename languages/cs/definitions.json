@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Vzácná kořist",
+	"interaction.cliffkobold.summary": "Čtyři Cliff Kobold se po dvojicích toulají po těchto útesech. Na každého si vezmi družinu.",
+	"interaction.mimic.summary": "Ne každá truhla tady dole je truhla. Tahle kouše zpátky.",
+	"interaction.manyeye.summary": "Občas se mezi One Eye otevře Many Eye. Jeho pohled tě promění v kámen.",
+	"interaction.paledino.summary": "Občas s Dino běhá i Pale Dino – rychlejší a udeří tvrději.",
+	"interaction.goldenbat.summary": "Občas těmito jeskyněmi prolétne Golden Bat. Chyť ho, jestli dokážeš.",
+	"interaction.cutebee.summary": "Jen velmi vzácně se k Bee v Mainland přidá Cute Bee.",
+	"interaction.goldenbot.summary": "Občas se mezi Targetron a Spark Bot vykutálí Golden Bot.",
 	"item.stonegaze.explanation": "Některé souboje pohledem končí sochami.",
 	"item.mummyhex.explanation": "Něco mrtvého má ještě nevyřízené účty.",
 	"item.harpyecho.explanation": "Výkřik, po kterém z ochranných kouzel zbydou jen střepy.",

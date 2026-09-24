@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Nadir Ganimetler",
+	"interaction.cliffkobold.summary": "Dört Cliff Kobold bu uçurumlarda ikişer ikişer dolaşıyor. Her biri için bir grup getir.",
+	"interaction.mimic.summary": "Buradaki her sandık gerçekten sandık değil. Bu, saldırınca geri ısırıyor.",
+	"interaction.manyeye.summary": "Bazen One Eye'ların arasında bir Many Eye gözlerini açar. Bakışı seni taşa çevirir.",
+	"interaction.paledino.summary": "Bazen Dino'ların arasında bir Pale Dino koşar; daha hızlı ve daha sert vurur.",
+	"interaction.goldenbat.summary": "Bazen bu mağaralarda bir Golden Bat uçuşur. Yakalayabilirsen yakala.",
+	"interaction.cutebee.summary": "Çok uzun zamanda bir, Mainland'deki Bee'lere bir Cute Bee katılır.",
+	"interaction.goldenbot.summary": "Bazen Targetron'lar ve Spark Bot'lar arasından bir Golden Bot çıkagelir.",
 	"item.stonegaze.explanation": "Bazı bakışma yarışmaları heykellerle biter.",
 	"item.mummyhex.explanation": "Ölü bir şeyin hâlâ görülecek bir hesabı var.",
 	"item.harpyecho.explanation": "Korumaları paramparça eden bir çığlık.",

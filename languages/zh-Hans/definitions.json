@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "稀有掉落",
+	"interaction.cliffkobold.summary": "四只Cliff Kobold两两结伴在这片悬崖游荡。每一只都要带队伍来打。",
+	"interaction.mimic.summary": "这下面的箱子不一定都是箱子。这一个会反咬。",
+	"interaction.manyeye.summary": "One Eye之间偶尔会睁开一只Many Eye。它的凝视会把你变成石头。",
+	"interaction.paledino.summary": "偶尔会有一只Pale Dino混在Dino里奔跑，更快，也打得更狠。",
+	"interaction.goldenbat.summary": "偶尔会有一只Golden Bat在这些洞穴里飞来飞去。能抓就抓住它。",
+	"interaction.cutebee.summary": "极其偶尔，会有一只Cute Bee混进Mainland的Bee群。",
+	"interaction.goldenbot.summary": "偶尔会有一只Golden Bot从Targetron和Spark Bot之间滚出来。",
 	"item.stonegaze.explanation": "有些互相瞪眼的较量，最后以雕像收场。",
 	"item.mummyhex.explanation": "死去的东西，还有一笔账要算。",
 	"item.harpyecho.explanation": "一声尖啸，让结界支离破碎。",

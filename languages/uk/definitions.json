@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Рідкісна здобич",
+	"interaction.cliffkobold.summary": "Чотири Cliff Kobold блукають цими скелями парами. На кожного бери групу.",
+	"interaction.mimic.summary": "Не кожна скриня тут — скриня. Ця кусається у відповідь.",
+	"interaction.manyeye.summary": "Іноді серед One Eye розплющується Many Eye. Його погляд обертає тебе на камінь.",
+	"interaction.paledino.summary": "Іноді з Dino бігає Pale Dino — швидший і з важчими ударами.",
+	"interaction.goldenbat.summary": "Іноді цими печерами пролітає Golden Bat. Спіймай його, якщо зможеш.",
+	"interaction.cutebee.summary": "Дуже рідко до Bee в Mainland приєднується Cute Bee.",
+	"interaction.goldenbot.summary": "Іноді з-поміж Targetron і Spark Bot викочується Golden Bot.",
 	"item.stonegaze.explanation": "Деякі змагання в переглядки закінчуються статуями.",
 	"item.mummyhex.explanation": "Щось мертве ще має незведені рахунки.",
 	"item.harpyecho.explanation": "Крик, від якого захисні чари розлітаються на друзки.",

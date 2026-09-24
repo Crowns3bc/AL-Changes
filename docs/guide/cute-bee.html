@@ -1,0 +1,25 @@
+<div class="title">Cute Bee</div>
+<p>{{ phrase("monster.cutebee.explanation") }}</p>
+<p>{{ phrase("docs.guide.cute-bee.intro") }}</p>
+<div class="divider"></div>
+<div class="title">{{ phrase("interface.monster_info.drops") }}</div>
+<div class="cute-bee-drops"></div>
+<div class="divider"></div>
+<div class="title">CODE</div>
+<p>{{ phrase("docs.guide.cute-bee.code") }}</p>
+<!-- prettier-ignore -->
+<div class="code" id="cute-bee-code">async function catch_cute_bee() {
+    var bee = get_nearest_monster({ type: "cutebee" });
+    if (character.rip || !bee || !can_attack(bee)) return;
+    return await attack(bee);
+}
+
+catch_cute_bee().catch(show_json);</div>
+<p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
+<style>
+	.title { color: #467956; font-size: 36px; margin-top: 15px; }
+	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
+</style>
+<script>
+	$(".cute-bee-drops").html(G.drops.monsters.cutebee.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+</script>

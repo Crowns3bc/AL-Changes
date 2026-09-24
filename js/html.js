@@ -3121,7 +3121,8 @@ function render_monster_info(name) {
 	}
 	html += render_item("html", { pure: true, item: G.monsters[name], prop: G.monsters[name], monster: name, count: count, mcount: mcount, score: count + diff, mowner: mowner });
 	if (name === "rimedjinn") html += "<div class='textbutton' onclick=\"open_guide('rime-djinn','/docs/guide/world/rime-djinn')\">" + phrase.html("interface.item.info") + "</div>";
-	if (name === "manyeye" || name === "mimic" || name === "paledino") html += "<div class='textbutton' onclick=\"open_guide('rare-drops','/docs/guide/world/rare-drops')\">" + phrase.html("interface.item.info") + "</div>";
+	var monster_guide = G.docs && G.docs.interactions && G.docs.interactions[name];
+	if (monster_guide && monster_guide.skin === name) html += "<div class='textbutton' onclick=\"open_interaction_guide('" + name + "')\">" + phrase.html("interface.item.info") + "</div>";
 	if (MR && MR[name] && MR[name].length) {
 		html += "<div style='margin-top: 6px; margin-bottom: 3px; color:#2A9A3D'>" + phrase.html("interface.monster_info.drops") + "</div>";
 		MR[name].forEach(function (drop) {

@@ -1,5 +1,11 @@
 {
-	"directory.guide.rare-drops.title": "Rzadkie łupy",
+	"interaction.cliffkobold.summary": "Cztery Cliff Kobold krążą parami po tych klifach. Na każdego weź drużynę.",
+	"interaction.mimic.summary": "Nie każda skrzynia tutaj jest skrzynią. Ta odgryza się.",
+	"interaction.manyeye.summary": "Czasem wśród One Eye otwiera się Many Eye. Jego spojrzenie zamienia cię w kamień.",
+	"interaction.paledino.summary": "Czasem z Dino biega Pale Dino, szybszy i mocniej bijący.",
+	"interaction.goldenbat.summary": "Czasem przez te jaskinie przemyka Golden Bat. Złap go, jeśli zdołasz.",
+	"interaction.cutebee.summary": "Bardzo, bardzo rzadko do Bee z Mainland dołącza Cute Bee.",
+	"interaction.goldenbot.summary": "Czasem spośród Targetron i Spark Bot wytacza się Golden Bot.",
 	"item.stonegaze.explanation": "Niektóre pojedynki na spojrzenia kończą się posągami.",
 	"item.mummyhex.explanation": "Coś martwego wciąż ma rachunki do wyrównania.",
 	"item.harpyecho.explanation": "Krzyk, po którym osłony rozpadają się na kawałki.",
