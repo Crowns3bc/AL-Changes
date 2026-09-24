@@ -1783,8 +1783,8 @@ var maps = {
 		name: "Underground [Cliffs]",
 		npcs: [],
 		monsters: [
-			// {"type":"TBD","boundary":[586,-844,915,-589],"count":6,"grow":true},
-			// {"type":"TBD","boundary":[-455,-1126,-189,-898],"count":6,"grow":true},
+			{ type: "cliffkobold", boundary: [586, -844, 915, -589], count: 6, grow: true },
+			{ type: "cliffkobold", boundary: [-455, -1126, -189, -898], count: 6, grow: true },
 			// {"type":"TBD","boundary":[-135,-640,73,-545],"count":6,"grow":true},
 			// {"type":"TBD","boundary":[492,-238,647,-81],"count":6,"grow":true},
 		],

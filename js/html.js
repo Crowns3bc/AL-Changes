@@ -3121,6 +3121,7 @@ function render_monster_info(name) {
 	}
 	html += render_item("html", { pure: true, item: G.monsters[name], prop: G.monsters[name], monster: name, count: count, mcount: mcount, score: count + diff, mowner: mowner });
 	if (name === "rimedjinn") html += "<div class='textbutton' onclick=\"open_guide('rime-djinn','/docs/guide/world/rime-djinn')\">" + phrase.html("interface.item.info") + "</div>";
+	if (name === "manyeye" || name === "mimic" || name === "paledino") html += "<div class='textbutton' onclick=\"open_guide('rare-drops','/docs/guide/world/rare-drops')\">" + phrase.html("interface.item.info") + "</div>";
 	if (MR && MR[name] && MR[name].length) {
 		html += "<div style='margin-top: 6px; margin-bottom: 3px; color:#2A9A3D'>" + phrase.html("interface.monster_info.drops") + "</div>";
 		MR[name].forEach(function (drop) {
@@ -4930,6 +4931,22 @@ function render_item(selector, args) {
 			} else if (item.ability == "restore_mp") {
 				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.restore_mp"), "#5D9ED9");
 				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.instead_of_using_mp_skills_restore_2x_the_amount_with", { value: prop.attr0 }) + "</div>";
+				if (prop.attr1) html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.restore_mp_share_capped_at_20") + "</div>";
+			} else if (item.ability == "petrify") {
+				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.petrify"), "#A7A7AD");
+				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.turns_the_opponent_to_stone_with_a_chance", { value: prop.attr0 }) + "</div>";
+			} else if (item.ability == "hex") {
+				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.hex"), "#9B4DDB");
+				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.curses_the_opponent_with_a_chance", { value: prop.attr0 }) + "</div>";
+			} else if (item.ability == "shatter") {
+				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.shatter"), "#5E7CE2");
+				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.magical_hits_expose_the_opponent_with_a_chance", { value: prop.attr0 }) + "</div>";
+			} else if (item.ability == "sunder") {
+				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.sunder"), "#C87533");
+				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.physical_hits_sunder_the_opponent_with_a_chance", { value: prop.attr0 }) + "</div>";
+			} else if (item.ability == "frenzy") {
+				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.html("interface.item.primal_frenzy"), "#E0302F");
+				html += "<div style='color: #C3C3C3'>" + phrase.html("interface.item.hits_trigger_a_primal_frenzy_with_a_chance", { value: prop.attr0 }) + "</div>";
 			} else if (G.skills[item.ability]) {
 				html += bold_prop_line(phrase.html("interface.item.ability"), phrase.definition("skill", item.ability, "name", G.skills[item.ability].name), "#E1924D");
 				if (prop.attr0) html += bold_prop_line(phrase.html("interface.item.chance"), "%" + prop.attr0);

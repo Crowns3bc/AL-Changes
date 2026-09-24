@@ -1,5 +1,61 @@
 // English display text from loaded game definitions. Canonical G is not localized.
 module.exports = {
+	// Guide directory and article title for the rare accessories, the three rare variant monsters and their on-hit effects.
+	"directory.guide.rare-drops.title": "Rare Drops",
+	// Rare drop tooltip flavor under Stonegaze Ring; one short in-world line. Item and monster names stay fixed.
+	"item.stonegaze.explanation": "Some staring contests end in statues.",
+	// Rare drop tooltip flavor under Mummy's Hex; one short in-world line. Item and monster names stay fixed.
+	"item.mummyhex.explanation": "Something dead still has a bone to pick.",
+	// Rare drop tooltip flavor under Harpy's Echo; one short in-world line. Item and monster names stay fixed.
+	"item.harpyecho.explanation": "A scream that leaves wards in pieces.",
+	// Rare drop tooltip flavor under The Can Opener; one short in-world line. Item and monster names stay fixed.
+	"item.canopener.explanation": "Leaves a crack for everyone else.",
+	// Rare drop tooltip flavor under Blightcap Stud; one short in-world line. Item and monster names stay fixed.
+	"item.blightcap.explanation": "Even good medicine struggles with this rot.",
+	// Rare drop tooltip flavor under Gnomish Capacitor; one short in-world line. Item and monster names stay fixed.
+	"item.gnomecap.explanation": "One spark in. Two sparks out.",
+	// Rare drop tooltip flavor under Kobold's Backbone; one short in-world line. Item and monster names stay fixed.
+	"item.koboldbelt.explanation": "Plenty of spine. Some of it sticks out.",
+	// Rare drop tooltip flavor under Frostfang Earring; one short in-world line. Item and monster names stay fixed.
+	"item.frostfang.explanation": "A small fang with a cruel bite.",
+	// Rare drop tooltip flavor under Paleclaw Totem; one short in-world line. Item and monster names stay fixed.
+	"item.paleclaw.explanation": "Your heart races. Something older takes over.",
+	// Rare drop tooltip flavor under Mimic's Grin; one short in-world line. Item and monster names stay fixed.
+	"item.mimicgrin.explanation": "It still grins when you count your coins.",
+	// Rare drop tooltip flavor under Scorpion Seal; one short in-world line. Item and monster names stay fixed.
+	"item.scorpionseal.explanation": "It answers only to those who fight up close.",
+	// Rare drop tooltip flavor under Watcher's Earring; one short in-world line. Item and monster names stay fixed.
+	"item.watchersearring.explanation": "One eye is watching. Wear the other.",
+	// Rare drop tooltip flavor under Graveglass Lens; one short in-world line. Item and monster names stay fixed.
+	"item.graveglass.explanation": "The dead show up clearly through it.",
+	// Rare drop tooltip flavor under Heartwood Locket; one short in-world line. Item and monster names stay fixed.
+	"item.heartwoodlocket.explanation": "A little of the forest's patience, kept close.",
+	// Rare drop tooltip flavor under Grounding Strap; one short in-world line. Item and monster names stay fixed.
+	"item.groundingstrap.explanation": "Feet on the ground, whatever hits you.",
+	// Set tooltip for Watcher's Eyes (two Watcher's Earrings: +15 range, +15 Status Resistance, +2% evasion). Set and item names stay fixed.
+	"set.watchers.explanation": "Two watching eyes miss very little.",
+	// Monster tooltip; same pattern as Golden Bat. Many Eye, One Eye and Underground West are fixed names; keep 15,000 exact.
+	"monster.manyeye.explanation": "Spawns among the One Eyes in Underground West around every 15,000 One Eye spawns",
+	// Monster tooltip; same pattern as Golden Bat. Mimic, Cliff Kobold and Underground Cliffs are fixed names; keep 12,000 exact.
+	"monster.mimic.explanation": "Spawns among the Cliff Kobolds in Underground Cliffs around every 12,000 Cliff Kobold spawns",
+	// Monster tooltip; same pattern as Golden Bat. Pale Dino, Dino and Mystical Forest are fixed names; keep 30,000 exact.
+	"monster.paledino.explanation": "Spawns among the Dinos in Mystical Forest around every 30,000 Dino spawns",
+	// Condition name: a target's Resistance is reduced by 240 for 5 seconds (Harpy's Echo). Use the same term as the Shatter tooltip and guide.
+	"condition.exposed.name": "Exposed",
+	// Condition tooltip for Exposed; quantities exact.
+	"condition.exposed.explanation": "Resistance is reduced by 240 for 5 seconds.",
+	// Condition name: a target's Armor is reduced by 200 for 5 seconds (The Can Opener). Use the same term as the Sunder tooltip and guide.
+	"condition.sundered.name": "Sundered",
+	// Condition tooltip for Sundered; quantities exact.
+	"condition.sundered.explanation": "Armor is reduced by 200 for 5 seconds.",
+	// Condition name on the wearer: +40 attack speed for 6 seconds (Paleclaw Totem). Same wording as the Primal Frenzy ability label.
+	"condition.frenzied.name": "Primal Frenzy",
+	// Condition tooltip for Primal Frenzy; quantities exact.
+	"condition.frenzied.explanation": "Attack speed is increased by 40 for 6 seconds.",
+	// Hidden condition: after a Stonegaze stone the target cannot be petrified again for a while (14 seconds from the stone). Use the same term in the guide.
+	"condition.stonebreak.name": "Crumbling",
+	// Tooltip for Crumbling.
+	"condition.stonebreak.explanation": "Recently turned to stone. It can't be petrified again until this fades.",
 	// Fixed name of the four-sentry team.
 	"interaction.cavalry.title": "Cavalry",
 	// Fixed name of the four-sentry team.

@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "หิน!",
+	"server.floating.frenzy": "คลั่ง!",
 	"server.party.joined": "{player} เข้าร่วมปาร์ตี้แล้ว",
 	"server.party.joined_with_invite": "{player} เข้าร่วมปาร์ตี้ตามคำเชิญของ {inviter}",
 	"server.party.left": "{player} ออกจากปาร์ตี้แล้ว",

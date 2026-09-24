@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "PIATRĂ!",
+	"server.floating.frenzy": "FRENEZIE!",
 	"server.party.joined": "{player} s-a alăturat grupului",
 	"server.party.joined_with_invite": "{player} s-a alăturat grupului la invitația de la {inviter}",
 	"server.party.left": "{player} a părăsit grupul",

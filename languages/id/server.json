@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "BATU!",
+	"server.floating.frenzy": "AMUK!",
 	"server.party.joined": "{player} bergabung dengan grup",
 	"server.party.joined_with_invite": "{player} bergabung dengan grup melalui undangan {inviter}",
 	"server.party.left": "{player} keluar dari grup",

@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "KŐ!",
+	"server.floating.frenzy": "ŐRJÖNGÉS!",
 	"server.party.joined": "{player} csatlakozott a csapathoz",
 	"server.party.joined_with_invite": "{player} csatlakozott a csapathoz {inviter} meghívására",
 	"server.party.left": "{player} kilépett a csapatból",

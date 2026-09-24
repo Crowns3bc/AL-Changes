@@ -557,7 +557,7 @@ var sprites = {
 		rows: 2,
 		columns: 4,
 		matrix: [
-			["oneeye", null, null, null],
+			["oneeye", "manyeye", null, null],
 			[null, null, null, null],
 		],
 	},
@@ -1246,7 +1246,7 @@ var imagesets = {
 		size: 20,
 		rows: 40,
 		columns: 20,
-		file: "/images/tiles/items/raw_items.png?v=30",
+		file: "/images/tiles/items/raw_items.png?v=31",
 		load: true,
 	},
 };

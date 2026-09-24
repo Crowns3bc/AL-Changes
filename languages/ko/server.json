@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "석화!",
+	"server.floating.frenzy": "광란!",
 	"server.party.joined": "{player}님이 파티에 가입했어요",
 	"server.party.joined_with_invite": "{inviter}님의 초대로 {player}님이 파티에 가입했어요",
 	"server.party.left": "{player}님이 파티를 떠났어요",

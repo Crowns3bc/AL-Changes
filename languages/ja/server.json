@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "石化！",
+	"server.floating.frenzy": "狂乱！",
 	"server.party.joined": "{player}がパーティーに参加しました",
 	"server.party.joined_with_invite": "{inviter}の招待で{player}がパーティーに参加しました",
 	"server.party.left": "{player}がパーティーを抜けました",

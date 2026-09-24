@@ -1,5 +1,11 @@
 // Newest notes first. Add player-visible changes at the top with deployed: null.
 module.exports = [
+	{
+		phrase: "update.24_09_26.rare_drops",
+		deployed: null,
+		date: "[24/09/26]",
+		note: "Fifteen rare accessories now drop from long farms, including the new Cliff Kobolds in Underground Cliffs and three rare variants: Many Eye, Mimic and Pale Dino. Some turn foes to stone, curse them, crack their wards or armor, or send you into a Primal Frenzy. GUIDE → Rare Drops covers the variants, effects and CODE.",
+	},
 	{ phrase: "update.20_09_26.head_cosmetics", deployed: null, date: "[20/09/26]", note: "New Make-up and New Accessory are now available from Mr. Dworf. Take them to Haila for head sets, unique heads or accessories. New heads include Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass and Storm; Lava Glass and Storm animate even while standing still." },
 	{ phrase: "update.15_09_26.wheel", deployed: null, date: "[15/09/26]", note: "The Tavern now has Fortune's Wheel, three-reel slots, and a five-seat Texas Hold'em table. Poker blinds follow the server. Buy in for 40 to 200 big blinds; leaving cashes out after the hand. CODE can play with bet_wheel(), play_slots(), poker_join() and poker_act()." },
 	{ phrase: "update.14_09_26.cave", deployed: null, date: "[14/09/26]", note: "Enter the Cave of Many Dreams with your party. Explore changing floors, earn 10× enemy XP and spend cave gold at merchants. Find axes and scythes, or trade Cave Amber to craft rare equipment. Dying inside costs no XP or gold." },

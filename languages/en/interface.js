@@ -1625,6 +1625,28 @@ module.exports = {
 	"interface.item.charm": "Charm",
 	// js/html.js render_item; authored display label or status.
 	"interface.item.restore_mp": "Restore MP",
+	// js/html.js render_item; ability label for Stonegaze Ring.
+	"interface.item.petrify": "Petrify",
+	// js/html.js render_item; Stonegaze Ring. Parameters: value = chance per hit in percent. 4-second stone on any non-immune opponent; the same target cannot be petrified again for 10 seconds after it breaks.
+	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Turns the opponent to stone for 4 seconds with a {value}% chance. It can't be petrified again for 10 seconds after the stone breaks.",
+	// js/html.js render_item; ability label for Mummy's Hex.
+	"interface.item.hex": "Hex",
+	// js/html.js render_item; Mummy's Hex. Parameters: value = chance per hit. Applies the existing Cursed condition, the same as the Priest skill Curse; use that skill's name.
+	"interface.item.curses_the_opponent_with_a_chance": "Curses the opponent for 5 seconds with a {value}% chance, like a Priest's Curse.",
+	// js/html.js render_item; ability label for Harpy's Echo.
+	"interface.item.shatter": "Shatter",
+	// js/html.js render_item; Harpy's Echo. Parameters: value = chance per magical hit. Exposed is condition.exposed.name.
+	"interface.item.magical_hits_expose_the_opponent_with_a_chance": "Magical hits leave the opponent Exposed with a {value}% chance: 240 less Resistance for 5 seconds.",
+	// js/html.js render_item; ability label for The Can Opener.
+	"interface.item.sunder": "Sunder",
+	// js/html.js render_item; The Can Opener. Parameters: value = chance per physical hit. Sundered is condition.sundered.name.
+	"interface.item.physical_hits_sunder_the_opponent_with_a_chance": "Physical hits leave the opponent Sundered with a {value}% chance: 200 less Armor for 5 seconds.",
+	// js/html.js render_item; ability label for Paleclaw Totem; same as condition.frenzied.name.
+	"interface.item.primal_frenzy": "Primal Frenzy",
+	// js/html.js render_item; Paleclaw Totem. Parameters: value = chance per hit that lands.
+	"interface.item.hits_trigger_a_primal_frenzy_with_a_chance": "Your hits send you into a Primal Frenzy with a {value}% chance: +40 attack speed for 6 seconds. Hits during the frenzy can refresh it.",
+	// js/html.js render_item; extra line under Restore MP on the Gnomish Capacitor: its part can lift the combined restore chance to at most 20%; Mana Gloves and other sources keep their own chance.
+	"interface.item.restore_mp_share_capped_at_20": "This item can raise the combined chance to at most 20%. Other sources keep their own chance.",
 	// js/html.js load_nearby; authored display label or status.
 	"interface.load_nearby.none": "None",
 	// js/html.js load_mainframe_list; authored display label or status.

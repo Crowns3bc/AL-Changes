@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "BATO!",
+	"server.floating.frenzy": "SILAKBO!",
 	"server.party.joined": "Sumali si {player} sa grupo",
 	"server.party.joined_with_invite": "Sumali si {player} sa grupo sa imbitasyon ni {inviter}",
 	"server.party.left": "Umalis si {player} sa grupo",

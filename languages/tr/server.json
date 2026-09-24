@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "TAŞ!",
+	"server.floating.frenzy": "ÇILGINLIK!",
 	"server.party.joined": "{player} gruba katıldı",
 	"server.party.joined_with_invite": "{player}, {inviter} adlı oyuncunun davetiyle gruba katıldı",
 	"server.party.left": "{player} gruptan ayrıldı",

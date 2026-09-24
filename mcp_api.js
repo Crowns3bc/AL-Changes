@@ -2346,6 +2346,14 @@ var MCP_RESOURCE_GUIDES = [
 		priority: 0.7,
 	},
 	{
+		uri: "adventureland://guide/rare-drops",
+		name: "rare-drops",
+		title: "Rare Drops",
+		description: "Rare accessories, the Many Eye, Mimic and Pale Dino kill-counter variants, their drops, on-hit effect conditions, and CODE examples.",
+		article: "rare-drops",
+		priority: 0.6,
+	},
+	{
 		uri: "adventureland://guide/encouragement",
 		name: "encouragement",
 		title: "Encouragement Bonuses",

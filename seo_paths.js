@@ -80,6 +80,8 @@ const DOCS_PATHS = [
 	"/docs/guide/world/event-anniversary",
 	"/docs/guide/rime-djinn",
 	"/docs/guide/world/rime-djinn",
+	"/docs/guide/rare-drops",
+	"/docs/guide/world/rare-drops",
 	"/docs/ref/npc-merrit",
 	"/docs/guide/npc-merrit",
 	"/docs/guide/services/npc-merrit",

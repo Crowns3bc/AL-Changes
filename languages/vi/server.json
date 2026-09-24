@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "HÓA ĐÁ!",
+	"server.floating.frenzy": "CUỒNG NỘ!",
 	"server.party.joined": "{player} đã tham gia tổ đội",
 	"server.party.joined_with_invite": "{player} đã tham gia tổ đội theo lời mời của {inviter}",
 	"server.party.left": "{player} đã rời tổ đội",

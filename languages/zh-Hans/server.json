@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "石化！",
+	"server.floating.frenzy": "狂乱！",
 	"server.party.joined": "{player}加入了队伍",
 	"server.party.joined_with_invite": "{player}接受{inviter}的邀请加入了队伍",
 	"server.party.left": "{player}离开了队伍",

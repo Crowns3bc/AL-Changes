@@ -33,6 +33,9 @@ var edges = {
 	next_goldenbat: 80000,
 	next_cutebee: 480000,
 	next_goldenbot: 100000,
+	next_manyeye: 15000,
+	next_mimic: 12000,
+	next_paledino: 30000,
 };
 var NPC_prefix = "NPC0000000000000000NPC";
 
@@ -2141,6 +2144,24 @@ function spawn_special_monster(type) {
 		new_monster(pack.i, pack);
 		// broadcast("game_event",{name:"goldenbot",map:pack.i});
 	}
+	if (type == "manyeye" || type == "mimic" || type == "paledino") {
+		// Rare variants appear inside a random pack boundary of the monster they replace.
+		var parent = { manyeye: "oneeye", mimic: "cliffkobold", paledino: "odino" }[type];
+		var packs = [];
+		for (var m in G.maps) {
+			(G.maps[m].monsters || []).forEach(function (p) {
+				if (!p.boundaries && p.type === parent) {
+					// The Mimic waits in place like a chest; the others wander their pack's area.
+					packs.push({ type: type, boundary: p.boundary, count: 1, i: m, roam: type != "mimic" });
+				}
+			});
+		}
+		if (packs.length) {
+			var pack = packs[floor(Math.random() * packs.length)];
+			pack.gold = D.monster_gold[type];
+			new_monster(pack.i, pack);
+		}
+	}
 	if (type == "cutebee") {
 		var packs = [];
 		["main"].forEach(function (m) {
@@ -2558,6 +2579,18 @@ function event_loop() {
 			edges.next_cutebee += parseInt(events.cutebee * Math.random());
 			spawn_special_monster("cutebee");
 		}
+
+		// One of each rare variant at a time: an unkilled 2M+ HP variant should not pile up on its farm.
+		[
+			["manyeye", "oneeye"],
+			["mimic", "cliffkobold"],
+			["paledino", "odino"],
+		].forEach(function (v) {
+			if (events[v[0]] && stats.kills[v[1]] > edges["next_" + v[0]]) {
+				edges["next_" + v[0]] += parseInt(events[v[0]] * Math.random());
+				if (!monster_c[v[0]]) spawn_special_monster(v[0]);
+			}
+		});
 
 		if (!events.holidayseason && events.snowman && !monster_c.snowman) {
 			if (!timers.snowman) {
@@ -3298,7 +3331,13 @@ function consume_mp(player, mp, target) {
 	if (target && target.humanoid) {
 		mult = 5;
 	}
-	if (player.a.restore_mp && Math.random() < (player.a.restore_mp.attr0 * mult) / 100.0) {
+	var restore_chance = player.a.restore_mp ? player.a.restore_mp.attr0 * mult : 0;
+	if (player.a.restore_mp && player.a.restore_mp.attr1) {
+		// attr1 is the share (Gnomish Capacitor) that may lift the final chance to at most 20%;
+		// other sources such as Mana Gloves keep their own chance, even above 20%.
+		restore_chance = max(restore_chance - player.a.restore_mp.attr1 * mult, min(20, restore_chance));
+	}
+	if (player.a.restore_mp && Math.random() < restore_chance / 100.0) {
 		player.mp += mp * 2;
 		xy_emit(player, "ui", { id: player.id, type: "restore_mp", amount: mp * 2 });
 	} else {

@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "ΠΕΤΡΑ!",
+	"server.floating.frenzy": "ΜΑΝΙΑ!",
 	"server.party.joined": "{player}: μπήκε στην ομάδα",
 	"server.party.joined_with_invite": "{player}: μπήκε στην ομάδα με πρόσκληση από {inviter}",
 	"server.party.left": "{player}: αποχώρησε από την ομάδα",

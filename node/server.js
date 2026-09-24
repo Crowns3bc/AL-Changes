@@ -270,6 +270,9 @@ var events = {
 	goldenbat: 160000,
 	cutebee: 960000,
 	goldenbot: 200000,
+	manyeye: 30000,
+	mimic: 24000,
+	paledino: 60000,
 	hide_and_seek: 0,
 	// DAILIES
 	goobrawl: false,
@@ -3453,6 +3456,21 @@ function commence_attack(attacker, target, atype) {
 	if (info.procs && attacker.stun && Math.random() < attacker.stun / 100.0 && info.damage_type == "physical") {
 		info.conditions.push("stunned");
 	}
+	// Rare accessory passives: attr0 is the chance per hit. Heals and other positive actions never roll them.
+	if (info.procs && !info.heal && !info.positive) {
+		if (attacker.a.petrify && Math.random() < attacker.a.petrify.attr0 / 100.0) {
+			info.conditions.push("stoned");
+		}
+		if (attacker.a.hex && Math.random() < attacker.a.hex.attr0 / 100.0) {
+			info.conditions.push("cursed");
+		}
+		if (attacker.a.shatter && info.damage_type == "magical" && Math.random() < attacker.a.shatter.attr0 / 100.0) {
+			info.conditions.push("exposed");
+		}
+		if (attacker.a.sunder && info.damage_type == "physical" && Math.random() < attacker.a.sunder.attr0 / 100.0) {
+			info.conditions.push("sundered");
+		}
+	}
 
 	var pid = randomStr(6);
 	info.first_attack = info.attack = attack;
@@ -4005,13 +4023,32 @@ function complete_attack(attacker, target, info) {
 					add_condition(target, "stunned", { duration: 2000 });
 				}
 
+				// Petrify (Stonegaze Ring): any opponent that is not already stone and not still crumbling.
+				// Crumbling lasts 10 seconds past the 4-second stone, so no target is stone more than 4 of every 14 seconds.
+				if (
+					info.conditions.includes("stoned") &&
+					!target.immune &&
+					target.hp > attack &&
+					!target.s.stoned &&
+					!target.s.stonebreak &&
+					add_condition(target, "stoned") === true
+				) {
+					add_condition(target, "stonebreak");
+					disappearing_text(target.socket, target, localization.message("server.floating.stone", {}), {
+						xy: 1,
+						size: "huge",
+						color: "#A7A7AD",
+						nv: 1,
+					});
+				}
+
 				if (info.procs && target.a.putrid) {
 					add_condition(attacker, "poisoned");
 					add_condition(attacker, "cursed");
 					change = true;
 				}
 				info.conditions.forEach(function (c) {
-					if (["frozen", "burned", "woven", "stunned"].includes(c)) {
+					if (["frozen", "burned", "woven", "stunned", "stoned"].includes(c)) {
 						return;
 					}
 					if (target.hp > attack && !target.immune) {
@@ -4027,6 +4064,16 @@ function complete_attack(attacker, target, info) {
 						color: "sugar",
 						nv: 1,
 					}); //target.is_player&&"huge"||undefined
+				}
+				if (info.procs && attacker.a.frenzy && Math.random() < attacker.a.frenzy.attr0 / 100) {
+					add_condition(attacker, "frenzied");
+					disappearing_text(attacker.socket, attacker, localization.message("server.floating.frenzy", {}), {
+						xy: 1,
+						size: "huge",
+						color: "#E0302F",
+						nv: 1,
+					});
+					change = true;
 				}
 				if (attacker.s.invis) {
 					// && target.is_player

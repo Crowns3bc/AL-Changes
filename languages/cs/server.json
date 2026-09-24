@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "KÁMEN!",
+	"server.floating.frenzy": "BĚSNĚNÍ!",
 	"server.party.joined": "{player} se připojuje k družině",
 	"server.party.joined_with_invite": "{player} se připojuje k družině na pozvání od {inviter}",
 	"server.party.left": "{player} opouští družinu",

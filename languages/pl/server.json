@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "KAMIEŃ!",
+	"server.floating.frenzy": "SZAŁ!",
 	"server.party.joined": "{player} dołącza do drużyny",
 	"server.party.joined_with_invite": "{player} dołącza do drużyny na zaproszenie od {inviter}",
 	"server.party.left": "{player} opuszcza drużynę",

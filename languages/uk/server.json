@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "КАМІНЬ!",
+	"server.floating.frenzy": "ШАЛЕНСТВО!",
 	"server.party.joined": "До групи приєднується {player}",
 	"server.party.joined_with_invite": "До групи приєднується {player} на запрошення від {inviter}",
 	"server.party.left": "{player} залишає групу",

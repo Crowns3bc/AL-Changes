@@ -106,6 +106,10 @@ module.exports = {
 	"server.floating.stun": "STUN!",
 	// node/server.js:3851; floating authored display. Keep character, item, monster, map, and product names unchanged.
 	"server.floating.sugar_rush": "SUGAR RUSH!",
+	// node/server.js complete_attack; floating combat text when a Stonegaze Ring stone lands. Short shout like FREEZE!.
+	"server.floating.stone": "STONE!",
+	// node/server.js complete_attack; floating combat text over the player when Primal Frenzy starts. Short shout like SUGAR RUSH!.
+	"server.floating.frenzy": "FRENZY!",
 	// node/server.js:11642; game_chat authored display. Keep character, item, monster, map, and product names unchanged. Parameters: {player} = player.name.
 	"server.game_chat.joined_the_duel": "{player} joined the duel!",
 	// node/server.js:5106; game_chat authored display. Keep character, item, monster, map, and product names unchanged. Parameters: {target} = target.name.

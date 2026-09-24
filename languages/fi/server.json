@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "KIVI!",
+	"server.floating.frenzy": "VIMMA!",
 	"server.party.joined": "{player} liittyi ryhmään",
 	"server.party.joined_with_invite": "{player} liittyi ryhmään pelaajan {inviter} kutsusta",
 	"server.party.left": "{player} poistui ryhmästä",

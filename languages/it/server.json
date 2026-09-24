@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "PIETRA!",
+	"server.floating.frenzy": "FRENESIA!",
 	"server.party.joined": "{player} ora fa parte del gruppo",
 	"server.party.joined_with_invite": "{player} ora fa parte del gruppo su invito di {inviter}",
 	"server.party.left": "{player} ha lasciato il gruppo",

@@ -1,4 +1,6 @@
 {
+	"server.floating.stone": "حجر!",
+	"server.floating.frenzy": "هياج!",
 	"server.party.joined": "انضم اللاعب {player} إلى الفريق",
 	"server.party.joined_with_invite": "انضم اللاعب {player} إلى الفريق بدعوة من {inviter}",
 	"server.party.left": "غادر اللاعب {player} الفريق",
