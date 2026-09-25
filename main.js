@@ -541,8 +541,8 @@ app.post("/map/:name/:suffix?", async (req, res, next) => {
 	var user = await get_user(req),
 		domain = await get_domain(req, user);
 	if (!user || !name.startsWith(get_id(user) + "_")) return res.status(403).send("");
-	var number = name.split("_")[1];
-	if (["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"].indexOf(number) === -1) return res.status(400).send("");
+	var number = name.slice((get_id(user) + "_").length);
+	if (!/^(?:[1-9]|10)$/.test(number)) return res.status(400).send("");
 	var map = await get("MP_" + name);
 	if (!map) map = { _id: "MP_" + name, created: new Date(), info: {}, blobs: ["info"] };
 	if (typeof data === "string") data = JSON.parse(data);

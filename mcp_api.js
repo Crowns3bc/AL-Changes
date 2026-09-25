@@ -775,7 +775,8 @@ async function mcp_api_list_code_methods(args) {
 
 function mcp_api_find_code(code_list, identifier) {
 	identifier = "" + identifier;
-	for (var slot in code_list) {
+	if (Object.prototype.hasOwnProperty.call(code_list, identifier)) return { slot: identifier, name: code_list[identifier][0], version: code_list[identifier][1] };
+	for (var slot of Object.keys(code_list)) {
 		if (slot === identifier || ("" + code_list[slot][0]).toLowerCase() === identifier.toLowerCase()) {
 			return { slot: slot, name: code_list[slot][0], version: code_list[slot][1] };
 		}
@@ -787,7 +788,7 @@ async function mcp_api_list_codes(args) {
 	var data = await get_user_data(args.user);
 	var code_list = gf(data, "code_list", {});
 	var codes = [];
-	for (var slot in code_list) {
+	for (var slot of Object.keys(code_list)) {
 		codes.push({ slot: slot, name: code_list[slot][0], version: code_list[slot][1] });
 	}
 	return { success: true, codes: codes };

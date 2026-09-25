@@ -2970,7 +2970,7 @@ function say(message, code) {
 				add_chat("", phrase.html("client.say.number_can_be_from_1_to_100"));
 			} else {
 				if (!slot) slot = 1;
-				api_call("save_code", { code: codemirror_render.getValue(), slot: slot, name: name });
+				api_call_l("save_code", { code: codemirror_render.getValue(), slot: slot, name: name });
 			}
 		} else if (command == "loadcode" || command == "runcode") {
 			var args = rest.split(" "),
@@ -5851,7 +5851,7 @@ function load_code_s(num) {
 
 function save_code_s() {
 	if (!$(".csharp").val()) return;
-	api_call("save_code", { code: codemirror_render.getValue(), slot: $(".csharp").val(), name: $(".codename").val(), log: 1 });
+	api_call_l("save_code", { code: codemirror_render.getValue(), slot: $(".csharp").val(), name: $(".codename").val(), log: 1 });
 }
 
 var last_servers_and_characters = new Date();

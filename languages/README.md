@@ -10,6 +10,8 @@ Rime Djinn: all 20 new tooltip, interface, guide and release phrases are transla
 
 Cavalry guide: all 12 revised or added rule phrases are translated and proofread in all 32 languages. Account and character levels, targeting, rescue duration, nearby-player restrictions, respawns and cooldowns were checked against the current handlers on 2026-09-21.
 
+CODE storage: the three save errors and two guide/reference paragraphs are translated and proofread in all 32 supported languages. Storage limits, request timing and CODE identifiers were checked on 2026-09-25.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.

@@ -138,14 +138,15 @@ function to_legacy_filename(name) {
 }
 
 function find_code_slot(code_list, name) {
+	if (Object.prototype.hasOwnProperty.call(code_list, String(name))) return String(name);
 	var filename = to_filename(name);
-	for (var slot in code_list) {
+	for (var slot of Object.keys(code_list)) {
 		if ("" + slot === filename || ("" + code_list[slot][0]).toLowerCase() === filename.toLowerCase()) return slot;
 	}
 
 	var legacy_filename = to_legacy_filename(filename);
 	if (legacy_filename === filename) return null;
-	for (var legacy_slot in code_list) {
+	for (var legacy_slot of Object.keys(code_list)) {
 		if (("" + code_list[legacy_slot][0]).toLowerCase() === legacy_filename.toLowerCase()) return legacy_slot;
 	}
 	return null;

@@ -789,10 +789,14 @@ async function delete_character_api(args) {
 
 	var R = await tx(
 		async () => {
+			var current = await tx_get(A.character);
+			if (!current) ex("no_character");
+			if (current.owner !== get_id(A.user)) ex("not_owner");
+			if (is_in_game(current)) ex("character_in_game");
 			var mark = await tx_get("MK_character-" + simplify_name(A.name));
 			if (mark) await db.collection(get_kind(mark)).deleteOne({ _id: mark._id }, { session });
 			var owner = await tx_get(A.user);
-			var data = await get_user_data(owner);
+			var data = process_user_data(get_id(owner), await tx_get("IE_userdata-" + get_id(owner)));
 			var new_characters = [];
 			for (var i = 0; i < (owner.info.characters || []).length; i++) {
 				if (simplify_name(owner.info.characters[i].name) !== simplify_name(A.name)) new_characters.push(owner.info.characters[i]);
@@ -801,12 +805,14 @@ async function delete_character_api(args) {
 			if (simplify_name(owner.name) === simplify_name(A.name)) {
 				owner.name = owner.info.characters.length ? owner.info.characters[0].name : "#" + gf(owner, "signupth", "0");
 			}
-			try {
-				if (data.info.code_list && data.info.code_list[get_id(A.character)]) {
-					delete data.info.code_list[get_id(A.character)];
-					await tx_save(data);
-				}
-			} catch (e) {}
+			if (data.info.code_list) delete data.info.code_list[get_id(A.character)];
+			await tx_save(data);
+			await db.collection("infoelement").deleteOne({ _id: "IE_USERCODE-" + get_id(owner) + "-" + get_id(A.character) }, { session });
+			var code_limits = await tx_get("IE_code_limits-" + get_id(owner));
+			if (code_limits) {
+				code_limits.info.usage = null;
+				await tx_save(code_limits);
+			}
 			await db.collection(get_kind(A.character)).deleteOne({ _id: get_id(A.character) }, { session });
 			owner.info.last_delete = new Date();
 			await tx_save(owner);
@@ -1348,59 +1354,116 @@ async function pull_messages_api(args) {
 
 // ==================== CODE / TUTORIAL ====================
 
+function code_storage_limits() {
+	return { slot_bytes: 1024 * 1024, account_bytes: 128 * 1024 * 1024, slots: 118, burst: 10, interval_ms: 2000 };
+}
+
+async function code_storage_records(query, limit, session) {
+	// Project sizes in MongoDB so legacy scripts do not have to be downloaded to count them.
+	return await db
+		.collection("infoelement")
+		.aggregate(
+			[{ $match: query }, { $limit: limit }, { $project: { created: 1, bytes: { $cond: [{ $eq: [{ $type: "$info.code" }, "string"] }, { $strLenBytes: "$info.code" }, { $bsonSize: "$$ROOT" }] } } }],
+			{ session },
+		)
+		.toArray();
+}
+
+async function code_storage_usage(owner, session) {
+	var prefix = ("IE_USERCODE-" + owner + "-").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	var records = await code_storage_records({ _id: { $regex: "^" + prefix } }, code_storage_limits().slots + 1, session);
+	return { count: records.length, bytes: records.reduce((sum, record) => sum + record.bytes, 0), complete: records.length <= code_storage_limits().slots };
+}
+
 async function save_code_api(args) {
 	var user = args.user;
-	var code = args.code || "",
-		slot = "" + (args.slot || ""),
-		name = args.name;
-	var data = await get_user_data(user);
-	if (!gf(data, "code_list")) data.info.code_list = {};
+	var limits = code_storage_limits();
+	if (!user || !get_id(user)) return { failed: true, reason: "not_logged_in" };
+	if (!["string", "number"].includes(typeof args.slot)) return { failed: true, reason: "invalid_field", field: "slot" };
+	var slot = String(args.slot),
+		deleting = args.name === "DELETE";
 	if (!slot) return { failed: true, reason: "no_slot" };
-
-	var character = null;
-	var found = false;
-	var characters = gf(user, "characters", []);
-	for (var i = 0; i < characters.length; i++) {
-		if (characters[i].id === slot) {
-			found = true;
-			character = characters[i].name;
-		}
-	}
-	if (data.info.code_list[slot] && name === "DELETE") found = true;
-	if (!found) {
-		var num = parseInt(slot);
-		if (!isNaN(num)) slot = "" + Math.max(1, Math.min(100, num));
-	}
-
-	if (!name) name = data.info.code_list[slot] ? data.info.code_list[slot][0] : null;
-	if (!name) name = "" + (character || slot);
-	var old_name = data.info.code_list[slot] ? data.info.code_list[slot][0] : name;
-	name = to_filename(name).substring(0, 100);
+	if ((!deleting && slot.length > 100) || slot.includes("\0")) return { failed: true, reason: "invalid_field", field: "slot" };
+	if (args.name !== undefined && (typeof args.name !== "string" || args.name.length > 100)) return { failed: true, reason: "invalid_field", field: "name" };
+	var name = args.name ? to_filename(args.name) : "";
+	if (args.name && (!name || (!deleting && name === "DELETE"))) return { failed: true, reason: "invalid_field", field: "name" };
+	if (!deleting && typeof args.code !== "string") return { failed: true, reason: "invalid_field", field: "code" };
+	var bytes = deleting ? 0 : Buffer.byteLength(args.code, "utf8");
+	if (bytes > limits.slot_bytes) return { failed: true, reason: "code_too_large", max_bytes: limits.slot_bytes, received_bytes: bytes };
 
 	var R = await tx(
 		async () => {
-			var idata = await get_user_data(A.user);
-			if (!gf(idata, "code_list")) idata.info.code_list = {};
-			if (A.name === "DELETE") {
-				try {
-					delete idata.info.code_list[A.slot];
-					var code_entity = await tx_get("IE_USERCODE-" + get_id(A.user) + "-" + A.slot);
-					if (code_entity) await db.collection(get_kind(code_entity)).deleteOne({ _id: code_entity._id }, { session });
-				} catch (e) {}
-			} else {
-				await tx_save({ _id: "IE_USERCODE-" + get_id(A.user) + "-" + A.slot, created: new Date(), info: { code: A.code } });
-				idata.info.code_list[A.slot] = [A.name, parseInt((idata.info.code_list[A.slot] || [null, 0])[1]) + 1];
+			delete R.failure;
+			var owner = await tx_get(A.user);
+			if (!owner || owner.banned) ex("not_logged_in");
+			var character = gf(owner, "characters", []).find((entry) => entry.id === A.slot);
+			var valid_slot = /^(?:[1-9][0-9]?|100)$/.test(A.slot) || !!character;
+			if (!A.deleting && !valid_slot) ex("no_slot");
+			R.character = character && character.name;
+			var owner_id = get_id(owner),
+				code_id = "IE_USERCODE-" + owner_id + "-" + A.slot;
+			var state = (await tx_get("IE_code_limits-" + owner_id)) || { _id: "IE_code_limits-" + owner_id, info: {} };
+			var now = Date.now(),
+				limits = code_storage_limits();
+			var tokens = state.info.tokens === undefined ? limits.burst : Math.min(limits.burst, state.info.tokens + Math.max(0, now - state.info.at) / limits.interval_ms);
+			if (tokens < 1) {
+				R.failure = { failed: true, reason: "code_rate_limited", retry_after_ms: Math.max(1, Math.ceil((1 - tokens) * limits.interval_ms)) };
+				return;
 			}
+			state.info.tokens = tokens - 1;
+			state.info.at = now;
+			if (!state.info.usage) state.info.usage = await code_storage_usage(owner_id, session);
+			var usage = state.info.usage;
+			var previous = (await code_storage_records({ _id: code_id }, 1, session))[0];
+			var count = usage.count + (previous ? 0 : 1),
+				total = usage.bytes + A.bytes - (previous ? previous.bytes : 0);
+			if (!A.deleting && (!usage.complete || count > limits.slots || total > limits.account_bytes) && !(previous && A.bytes < previous.bytes)) {
+				await tx_save(state);
+				R.failure = { failed: true, reason: "code_storage_full", max_slots: limits.slots, max_bytes: limits.account_bytes };
+				return;
+			}
+			var idata = process_user_data(owner_id, await tx_get("IE_userdata-" + owner_id));
+			idata.info.code_list = Object.assign(Object.create(null), gf(idata, "code_list", {}));
+			if (A.deleting && !valid_slot && !previous && !Object.prototype.hasOwnProperty.call(idata.info.code_list, A.slot)) {
+				await tx_save(state);
+				R.failure = { failed: true, reason: "not_found" };
+				return;
+			}
+			var entry = idata.info.code_list[A.slot];
+			R.name = A.name || (entry && entry[0]) || R.character || A.slot;
+			R.old_name = entry ? entry[0] : R.name;
+			if (A.deleting) {
+				delete idata.info.code_list[A.slot];
+				await db.collection("infoelement").deleteOne({ _id: code_id }, { session });
+				if (!usage.complete && previous) state.info.usage = null;
+				else if (previous) {
+					usage.count--;
+					usage.bytes -= previous.bytes;
+				}
+			} else {
+				await tx_save({ _id: code_id, created: (previous && previous.created) || new Date(), info: { code: A.code } });
+				idata.info.code_list[A.slot] = [R.name, (parseInt((entry || [null, 0])[1]) || 0) + 1];
+				if (usage.complete) {
+					usage.count = count;
+					usage.bytes = total;
+				}
+			}
+			await tx_save(state);
 			await tx_save(idata);
 			R.data = idata;
 		},
-		{ user: user, slot: slot, name: name, code: code },
+		{ user: user, slot: slot, name: name, code: args.code, bytes: bytes, deleting: deleting },
+		3,
 	);
 
-	if (R.failed) return { failed: true, reason: "save_failed" };
-	data = R.data;
+	if (R.failed) return { failed: true, reason: R.reason === "exception" ? "save_failed" : R.reason };
+	if (R.failure) return R.failure;
+	var data = R.data,
+		character = R.character,
+		old_name = R.old_name;
+	name = R.name;
 
-	if (name === "DELETE") {
+	if (deleting) {
 		args.res.infs.push({ type: "code_info", num: slot, delete: true });
 		if (!args.electron) args.res.infs.push({ type: "eval", code: "code_slot=0;code_change=false;" });
 		if (args.log) args.res.infs.push({ type: "message", message: phrase_html("server.api.deleted_js", { old_name: String(old_name), slot: String(slot) }), color: "gray" });
@@ -1417,8 +1480,9 @@ async function save_code_api(args) {
 }
 
 async function load_code_api(args) {
+	if (!["string", "number"].includes(typeof args.name)) return { failed: true, reason: "invalid_field", field: "name" };
 	var user = args.user,
-		name = to_filename("" + args.name);
+		name = String(args.name);
 	var data = await get_user_data(user);
 
 	if (name === "0" || name === 0) {
@@ -2256,7 +2320,7 @@ var REF = {
 		U: true,
 		code: { type: "any", optional: true },
 		slot: { type: "any" },
-		name: { type: "string", optional: true },
+		name: { type: "any", optional: true },
 		log: { type: "any", optional: true },
 		auto: { type: "any", optional: true },
 		electron: { type: "any", optional: true },

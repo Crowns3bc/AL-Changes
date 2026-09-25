@@ -6239,3 +6239,7 @@ module.exports["docs.cave.return_code"] = "Use cave_enter() beside Dorr to retur
 
 // Cave rewards guide. Explicit exits and run completion settle shared Amber; disconnecting does not. Keep Amber and MAIL unchanged.
 module.exports["docs.cave.disconnect_purse"] = "Disconnecting does not pay out the shared purse. Amber stays in the cave until an explicit exit or the run ends. Each payout names the recipient and says whether it went to their bag or MAIL.";
+
+// CODE guide and upload_code reference. Exact owned slots only; limits also count legacy records. CODE writes share a ten-request allowance, refilling by one every two seconds. Preserve CODE, UTF-8, MiB, code_rate_limited and retry_after_ms.
+module.exports["docs.code.storage_limits"] = "Save to a numbered slot from 1 to 100 or the default slot of a character you currently own. Each newly saved script can use up to 1 MiB (1,048,576 bytes) of UTF-8 text. An account can store up to 118 scripts and 128 MiB in total. Older scripts remain available to load, export, or delete.";
+module.exports["docs.code.save_rate"] = "You can make up to 10 CODE saves or deletions in quick succession. The allowance recovers by one request every 2 seconds and is shared across all clients on your account. If a request returns code_rate_limited, wait retry_after_ms milliseconds before trying again.";
