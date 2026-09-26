@@ -521,10 +521,13 @@ test("each monster guide shows the monster from four sides, its spawn rule and i
 		// the number is the spawner's mean interval, and the translated caption states the same number
 		assert.equal(+spawn[2], events[monster] / 2, slug);
 		assert.ok(english[`monster.${monster}.explanation`].includes((+spawn[2]).toLocaleString("en-US")), slug);
-		const img = html.match(/<img src="(\/images\/guide\/[\w-]+\.png)\?v=\d+" width="(\d+)" height="(\d+)"/);
+		const img = html.match(/<img src="(\/images\/guide\/[\w-]+\.webp)\?v=[0-9a-f]+" width="(\d+)" height="(\d+)"/);
 		assert.ok(img, slug + " has a habitat map");
-		const png = fs.readFileSync(path.join(root, img[1]));
-		assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [+img[2], +img[3]], slug + " habitat size");
+		// a lossless WebP (VP8L): 14-bit width and height, minus one, right after the signature byte
+		const webp = fs.readFileSync(path.join(root, img[1]));
+		assert.equal(webp.toString("ascii", 12, 16), "VP8L", slug + " habitat is a lossless WebP");
+		const bits = webp.readUInt32LE(21);
+		assert.deepEqual([(bits & 0x3fff) + 1, ((bits >> 14) & 0x3fff) + 1], [+img[2], +img[3]], slug + " habitat size");
 		assert.ok(html.includes('stroke="#73FFAC"'), slug + " outlines where it appears");
 	}
 });

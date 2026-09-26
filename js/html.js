@@ -3518,6 +3518,21 @@ function open_article(name, url) {
 	api_call("load_article", { name: name, url: url });
 }
 
+// In the game, a docs link opens that page in the game; a middle or modified click still opens the link itself
+function docs_link_click(event) {
+	if (window.inside != "game" || event.defaultPrevented || event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+	var link = event.target && event.target.closest && event.target.closest("a[href]"),
+		url = link && link.getAttribute("href"),
+		match = url && url.match(/^\/docs\/(?:code\/functions|guide(?:\/[\w-]+)*)\/([\w-]+)$/);
+	if (url == "/docs/code/monster/reference") open_article("data-monster", url);
+	else if (match && url.indexOf("/docs/code/functions/") == 0) load_documentation(match[1]);
+	else if (match && get_guide_url(match[1]) == url) open_guide(match[1], url);
+	else return;
+	event.preventDefault();
+}
+
+if (typeof document != "undefined") document.addEventListener("click", docs_link_click, true);
+
 function open_guide(name, url) {
 	if (name === "events-and-home" || (typeof name === "string" && name.indexOf("event-") === 0)) tut("events");
 	if (name === "crafting") tut("recipes");
