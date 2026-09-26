@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "En forbedring, der skal løse problemerne med sammenstimlinger og monstre, der ikke forsvinder.",
 	"update.30_10_21.new_slenderman_dynamics": "Ny virkemåde for Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp trænger ikke længere gennem besværgelsesimmunitet; i stedet har de færdigheder, der gør det, flaget .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nye sjældne monstre og 15 stykker tilbehør",
 	"update.24_09_26.rare_drops.rare_monsters": "Hvert af dem kan dukke op efter det viste antal drab. INFO ved indgangen til hvert område har en guide.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nye sjældne monstre",
 	"update.24_09_26.rare_drops.accessories": "Hvert stykke falder kun fra ét monster. Klik på en genstand for at se, hvad den gør.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nye paladingenstande. Jo flere dele du bærer, jo mere HP, MP og panser får du.",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper-sættet",
 	"update.05_09_26.paladins.skill_mshield": "Æterskjold erstatter den, mens det er aktivt.",
-	"update.24_09_26.rare_drops": "15 stykker nyt tilbehør falder fra monstre over hele verden. Kobold strejfer nu rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjældne monstre.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf sælger nu New Make-up og New Accessory. Giv dem til Haila for et nyt hoved, ny makeup eller nyt tilbehør. Nye hoveder: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass og Storm. Lava Glass og Storm bevæger sig, selv når du står stille.",
 	"update.15_09_26.wheel": "Tavern har Fortune's Wheel, spilleautomater med tre hjul og et Texas Hold'em-bord til 5 spillere. CODE kan også spille: bet_wheel(), play_slots(), poker_join() og poker_act().",
 	"update.14_09_26.cavalry": "Tilkald Cavalry fra Tracktrix for at få hjælp mod monstre på niveau 3+ i nærheden. En kriger, en præst, en magiker og en paladin kommer og hjælper. Når mange spillere tilkalder, får spillere på lavere niveau hjælp først.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Ny præstestav: Worldroot Crook. Fremstil den af en Harbringer +8 og sjældne materialer. Den giver Intelligens, Styrke og modstandsgennemtrængning.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Stor CODE-opdatering: funktioner, der returnerer et promise, afsluttes nu med serverens rigtige resultat. Alle funktioner er dokumenteret, server.status viser live data, og egne klienter kan bruge MessagePack.",
 	"update.14_09_26.progression": "Udviklingsguiden foreslår, hvor du kan jage, og hvilket udstyr du kan arbejde på næste gang. Vælg et mål over dine HP- og MP-bjælker, eller slå den fra i Indstillinger ved siden af Introduktion. CODE kan læse den med get_progression().",
-	"update.14_09_26.cave": "En ny dungeon til din gruppe på op til 3. Du får 1 tur om dagen og 24 minutter til at komme gennem 3 etager. Monstre giver 10× XP, og at dø derinde koster hverken XP eller guld. Find økser, leer og Cave Amber, og brug Amber til at fremstille sjældent udstyr."
+	"update.14_09_26.cave": "En ny dungeon til din gruppe på op til 3. Du får 1 tur om dagen og 24 minutter til at komme gennem 3 etager. Monstre giver 10× XP, og at dø derinde koster hverken XP eller guld. Find økser, leer og Cave Amber, og brug Amber til at fremstille sjældent udstyr.",
+	"update.26_09_26.trade_offers": "Læg en genstand i din bod, og vælg TILBYD BYTTE for at bede om en anden genstand i stedet for guld. Angiv et minimumsniveau eller en titel, eller lad dem stå på ALLE. Købmænd under niveau 70 får XP for gennemførte byttehandler.",
+	"update.26_09_26.trade_offers.title": "Byttetilbud",
+	"update.24_09_26.rare_drops": "15 stykker nyt tilbehør falder fra monstre over hele verden. Kobold strejfer nu rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjældne monstre. Købmænd kan nu bytte en genstand for en anden.",
+	"update.24_09_26.rare_drops.title": "Sjældne monstre, 15 stykker tilbehør og byttetilbud"
 }

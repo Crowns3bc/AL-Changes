@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Hindi makapasok ang Cavalry rito.",
 	"interface.cavalry.guarded": "May manlalarong level 80+ na nasa loob ng 150 pixel mula sa mga halimaw na ito.",
 	"interface.cavalry.not_threatened": "Ang pinakamataas na level sa account mo ay {level}. Ang Cavalry ay lumalaban lang sa mga halimaw na umaatake na sa iyo o sa grupo mo.",
-	"interface.cavalry.call_short": "TAWAG"
+	"interface.cavalry.call_short": "TAWAG",
+	"interface.item.offer_for_trade": "IALOK SA PALITAN",
+	"interface.trade_offer.trade_for": "Ipagpalit sa",
+	"interface.trade_offer.trade_offer": "Alok na palitan",
+	"interface.trade_offer.min_level": "MIN. ANTAS:",
+	"interface.trade_offer.title": "TITULO:",
+	"interface.trade_offer.any": "KAHIT ANO",
+	"interface.trade_offer.give": "IBIBIGAY:",
+	"interface.trade_offer.wants": "HINAHANAP:",
+	"interface.trade_offer.any_level_title": "Kahit anong antas at titulo",
+	"interface.trade_offer.any_level": "Kahit anong antas",
+	"interface.trade_offer.any_title": "Kahit anong titulo",
+	"interface.trade_offer.or_higher": "O mas mataas",
+	"interface.trade_offer.or_higher_any_title": "O mas mataas, kahit anong titulo",
+	"interface.trade_offer.no_match": "Wala kang katugmang gamit",
+	"interface.trade_offer.choose": "Piliin ang gamit na ibibigay",
+	"interface.trade_offer.trade": "IPAGPALIT"
 }

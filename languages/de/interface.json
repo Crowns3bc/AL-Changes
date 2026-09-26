@@ -965,5 +965,21 @@
 	"interface.cavalry.location": "Cavalry kann diesen Ort nicht betreten.",
 	"interface.cavalry.guarded": "Ein Spieler ab Stufe 80 ist höchstens 150 Pixel von diesen Monstern entfernt.",
 	"interface.cavalry.not_threatened": "Das höchste Level auf deinem Konto ist {level}. Cavalry bekämpft nur Monster, die dich oder deine Gruppe bereits angreifen.",
-	"interface.cavalry.call_short": "RUFEN"
+	"interface.cavalry.call_short": "RUFEN",
+	"interface.item.offer_for_trade": "ZUM TAUSCH ANBIETEN",
+	"interface.trade_offer.trade_for": "Tauschen gegen",
+	"interface.trade_offer.trade_offer": "Tauschangebot",
+	"interface.trade_offer.min_level": "MIN. STUFE:",
+	"interface.trade_offer.title": "TITEL:",
+	"interface.trade_offer.any": "BELIEBIG",
+	"interface.trade_offer.give": "DU GIBST:",
+	"interface.trade_offer.wants": "SUCHT:",
+	"interface.trade_offer.any_level_title": "Jede Stufe, jeder Titel",
+	"interface.trade_offer.any_level": "Jede Stufe",
+	"interface.trade_offer.any_title": "Jeder Titel",
+	"interface.trade_offer.or_higher": "Oder höher",
+	"interface.trade_offer.or_higher_any_title": "Oder höher, jeder Titel",
+	"interface.trade_offer.no_match": "Du hast keinen passenden Gegenstand",
+	"interface.trade_offer.choose": "Wähle den Gegenstand, den du gibst",
+	"interface.trade_offer.trade": "TAUSCHEN"
 }

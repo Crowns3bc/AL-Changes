@@ -339,12 +339,19 @@ function calculate_xvalue(arr, rec, divide, mult) {
 	return value;
 }
 
-function add_to_trade_history(player, event, name, item, price) {
+function add_to_trade_history(player, event, name, item, price, received) {
 	if (!player.p.trade_history) {
 		player.p.trade_history = [];
 	}
 	var last = player.p.trade_history[player.p.trade_history.length - 1];
-	if (last && last[0] == event && last[1] == name && last[2].name == item.name && last[2].level == item.level) {
+	if (
+		!received &&
+		last &&
+		last[0] == event &&
+		last[1] == name &&
+		last[2].name == item.name &&
+		last[2].level == item.level
+	) {
 		last[2].q = (last[2].q || 1) + (item.q || 1);
 		last[3] += price;
 		return;
@@ -352,7 +359,8 @@ function add_to_trade_history(player, event, name, item, price) {
 	if (player.p.trade_history.length >= 40) {
 		player.p.trade_history.shift();
 	}
-	player.p.trade_history.push([event, name, item, price]);
+	// A swap records both sides: [event, name, given, 0, received]
+	player.p.trade_history.push(received ? [event, name, item, price, received] : [event, name, item, price]);
 }
 
 function add_to_history(player, event) {
@@ -740,6 +748,29 @@ function merchant_xp_logic(player, seller, price, tax) {
 		return;
 	}
 	player.xp += tax * 3.2;
+}
+
+function trade_swap_xp(player, partner, value) {
+	// A trade offer teaches a merchant below level 70 what selling the item at its value would.
+	// No gold changes hands, so each partner account adds at most one level's worth every five days.
+	if (player.type != "merchant" || player.level >= 70 || is_same(player, partner)) {
+		return 0;
+	}
+	if (!player.p.swapxp || !player.p.dt || !player.p.dt.swapxp || hsince(player.p.dt.swapxp) > 5 * 24) {
+		player.p.swapxp = {};
+		player.p.dt = player.p.dt || {};
+		player.p.dt.swapxp = new Date();
+	}
+	var known = Object.prototype.hasOwnProperty.call(player.p.swapxp, partner.owner);
+	if (!known && Object.keys(player.p.swapxp).length >= 120) {
+		return 0;
+	}
+	// The allowance is one level's worth at the merchant's current level, so it grows with a level-up in the window
+	var earned = (known && player.p.swapxp[partner.owner]) || 0;
+	var xp = max(0, min(round(value * player.tax * 3.2), G.levels[player.level] - earned));
+	player.p.swapxp[partner.owner] = earned + xp;
+	player.xp += xp;
+	return xp;
 }
 
 function normalise(data) {
@@ -4161,6 +4192,7 @@ var item_p_ignore = {
 	giveaway: true,
 	gf: true,
 	price: true,
+	want: true,
 	b: true,
 	rid: true,
 	list: true,
@@ -4193,6 +4225,7 @@ var item_trade_p_ignore = { grace: true, o: true, oo: true, src: true };
 
 // TRADE
 // .rid
+// .want -> trade offer, the item asked for in return {name, level, p, q}
 // .b -> buy order #CLASH
 // .r -> for rent
 // .giveaway
@@ -4225,6 +4258,25 @@ function cache_item(current, trade, override) {
 		}
 	}
 	return item;
+}
+
+function seen_item_matches(item, seen) {
+	// seen is the item as its owner's client received it (cache_item); only the stack size may differ since
+	if (!seen || typeof seen != "object" || Array.isArray(seen)) {
+		return false;
+	}
+	var shown = cache_item(item);
+	for (var p in shown) {
+		if (p != "q" && JSON.stringify(shown[p]) !== JSON.stringify(seen[p])) {
+			return false;
+		}
+	}
+	for (var p in seen) {
+		if (p != "q" && Object.prototype.hasOwnProperty.call(seen, p) && !Object.prototype.hasOwnProperty.call(shown, p)) {
+			return false;
+		}
+	}
+	return true;
 }
 
 function get_trade_slots(player) {

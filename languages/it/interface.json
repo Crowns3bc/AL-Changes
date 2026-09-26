@@ -969,5 +969,21 @@
 	"interface.cavalry.location": "Cavalry non può entrare qui.",
 	"interface.cavalry.guarded": "Un giocatore di livello 80+ si trova entro 150 pixel da questi mostri.",
 	"interface.cavalry.not_threatened": "Il livello più alto del tuo account è {level}. Cavalry combatte solo i mostri che stanno già attaccando te o il tuo gruppo.",
-	"interface.cavalry.call_short": "CHIAMA"
+	"interface.cavalry.call_short": "CHIAMA",
+	"interface.item.offer_for_trade": "OFFRI IN SCAMBIO",
+	"interface.trade_offer.trade_for": "In cambio di",
+	"interface.trade_offer.trade_offer": "Offerta di scambio",
+	"interface.trade_offer.min_level": "LIVELLO MIN.:",
+	"interface.trade_offer.title": "TITOLO:",
+	"interface.trade_offer.any": "QUALSIASI",
+	"interface.trade_offer.give": "DAI:",
+	"interface.trade_offer.wants": "CERCA:",
+	"interface.trade_offer.any_level_title": "Qualsiasi livello e titolo",
+	"interface.trade_offer.any_level": "Qualsiasi livello",
+	"interface.trade_offer.any_title": "Qualsiasi titolo",
+	"interface.trade_offer.or_higher": "O superiore",
+	"interface.trade_offer.or_higher_any_title": "O superiore, qualsiasi titolo",
+	"interface.trade_offer.no_match": "Non hai nessun oggetto adatto",
+	"interface.trade_offer.choose": "Scegli l'oggetto da dare",
+	"interface.trade_offer.trade": "SCAMBIA"
 }

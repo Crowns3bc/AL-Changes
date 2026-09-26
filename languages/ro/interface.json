@@ -969,5 +969,21 @@
 	"interface.cavalry.location": "Cavalry nu poate intra aici.",
 	"interface.cavalry.guarded": "Un jucător de nivel 80+ se află la cel mult 150 de pixeli de acești monștri.",
 	"interface.cavalry.not_threatened": "Cel mai mare nivel de pe contul tău este {level}. Cavalry luptă doar cu monștri care te atacă deja pe tine sau grupul tău.",
-	"interface.cavalry.call_short": "CHEAMĂ"
+	"interface.cavalry.call_short": "CHEAMĂ",
+	"interface.item.offer_for_trade": "OFERĂ LA SCHIMB",
+	"interface.trade_offer.trade_for": "Schimbă pe",
+	"interface.trade_offer.trade_offer": "Ofertă de schimb",
+	"interface.trade_offer.min_level": "NIVEL MIN.:",
+	"interface.trade_offer.title": "TITLU:",
+	"interface.trade_offer.any": "ORICARE",
+	"interface.trade_offer.give": "DAI:",
+	"interface.trade_offer.wants": "CAUTĂ:",
+	"interface.trade_offer.any_level_title": "Orice nivel și titlu",
+	"interface.trade_offer.any_level": "Orice nivel",
+	"interface.trade_offer.any_title": "Orice titlu",
+	"interface.trade_offer.or_higher": "Sau mai mare",
+	"interface.trade_offer.or_higher_any_title": "Sau mai mare, orice titlu",
+	"interface.trade_offer.no_match": "Nu ai niciun obiect potrivit",
+	"interface.trade_offer.choose": "Alege obiectul pe care îl dai",
+	"interface.trade_offer.trade": "SCHIMBĂ"
 }

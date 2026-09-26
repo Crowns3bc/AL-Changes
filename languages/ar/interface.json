@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "لا تستطيع Cavalry دخول هذا المكان.",
 	"interface.cavalry.guarded": "يوجد لاعب بمستوى 80 أو أعلى على بُعد لا يتجاوز 150 بكسل من هذه الوحوش.",
 	"interface.cavalry.not_threatened": "أعلى مستوى في حسابك هو {level}. لا تقاتل Cavalry إلا الوحوش التي تهاجمك أنت أو مجموعتك بالفعل.",
-	"interface.cavalry.call_short": "استدعاء"
+	"interface.cavalry.call_short": "استدعاء",
+	"interface.item.offer_for_trade": "عرض للمقايضة",
+	"interface.trade_offer.trade_for": "مقايضة مقابل",
+	"interface.trade_offer.trade_offer": "عرض مقايضة",
+	"interface.trade_offer.min_level": "أدنى مستوى:",
+	"interface.trade_offer.title": "اللقب:",
+	"interface.trade_offer.any": "غير محدد",
+	"interface.trade_offer.give": "تعطي:",
+	"interface.trade_offer.wants": "يطلب:",
+	"interface.trade_offer.any_level_title": "أي مستوى وأي لقب",
+	"interface.trade_offer.any_level": "أي مستوى",
+	"interface.trade_offer.any_title": "أي لقب",
+	"interface.trade_offer.or_higher": "أو أعلى",
+	"interface.trade_offer.or_higher_any_title": "أو أعلى، بأي لقب",
+	"interface.trade_offer.no_match": "ليس لديك غرض مطابق",
+	"interface.trade_offer.choose": "اختر الغرض الذي ستعطيه",
+	"interface.trade_offer.trade": "قايض"
 }

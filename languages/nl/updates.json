@@ -732,7 +732,6 @@
 	"update.30_08_20.players_are_now_sorted_based_on_online_status_and": "Spelers worden nu gesorteerd op onlinestatus en ouderdom",
 	"update.30_10_21.new_slenderman_dynamics": "Nieuwe werking voor Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp dringt niet langer door spreukimmuniteit; in plaats daarvan hebben vaardigheden die er wel doorheen dringen de markering .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nieuwe zeldzame monsters en 15 accessoires",
 	"update.24_09_26.rare_drops.rare_monsters": "Elk kan verschijnen na het getoonde aantal kills. INFO bij de ingang van elk gebied heeft een gids.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nieuwe zeldzame monsters",
 	"update.24_09_26.rare_drops.accessories": "Elk valt van maar één monster. Klik op een voorwerp om te zien wat het doet.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nieuwe Paladijnvoorwerpen. Hoe meer stukken je draagt, hoe meer HP, MP en pantser je krijgt.",
 	"update.05_09_26.paladins.oathkeeper.title": "De Oathkeeper-set",
 	"update.05_09_26.paladins.skill_mshield": "Etherschild vervangt het zolang het actief is.",
-	"update.24_09_26.rare_drops": "15 nieuwe accessoires vallen van monsters over de hele wereld. Kobold zwerven nu door Underground Cliffs. Many Eye, Mimic en Pale Dino zijn nieuwe zeldzame monsters.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf verkoopt nu New Make-up en New Accessory. Geef ze aan Haila voor een nieuw hoofd, nieuwe make-up of een nieuw accessoire. Nieuwe hoofden: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass en Storm. Lava Glass en Storm bewegen, ook als je stilstaat.",
 	"update.15_09_26.wheel": "De Tavern heeft Fortune's Wheel, gokkasten met drie rollen en een Texas Hold'em-tafel voor 5 spelers. CODE kan ook meespelen: bet_wheel(), play_slots(), poker_join() en poker_act().",
 	"update.14_09_26.cavalry": "Roep de Cavalry op vanuit Tracktrix voor hulp tegen monsters van niveau 3+ in de buurt. Een Krijger, Priester, Magiër en Paladijn komen helpen. Als veel spelers roepen, krijgen spelers met een lager niveau eerst hulp.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nieuwe Priesterstaf: Worldroot Crook. Maak hem van een Harbringer +8 en zeldzame materialen. Hij geeft Intelligentie, Kracht en weerstandsdoorboring.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Grote CODE-update: functies die een promise teruggeven, worden nu afgerond met het echte resultaat van de server. Alle functies zijn gedocumenteerd, server.status toont live gegevens, en eigen clients kunnen MessagePack gebruiken.",
 	"update.14_09_26.progression": "De Voortgangsgids stelt voor waar je kunt jagen en aan welke uitrusting je hierna kunt werken. Kies een doel boven je HP- en MP-balken, of zet hem uit in Instellingen naast Tutorial. CODE kan hem lezen met get_progression().",
-	"update.14_09_26.cave": "Een nieuwe kerker voor je groep van maximaal 3. Je krijgt 1 run per dag en 24 minuten om door 3 verdiepingen te komen. Monsters geven 10× XP, en doodgaan binnen kost geen XP of goud. Vind bijlen, zeisen en Cave Amber, en gebruik de Amber om zeldzame uitrusting te maken."
+	"update.14_09_26.cave": "Een nieuwe kerker voor je groep van maximaal 3. Je krijgt 1 run per dag en 24 minuten om door 3 verdiepingen te komen. Monsters geven 10× XP, en doodgaan binnen kost geen XP of goud. Vind bijlen, zeisen en Cave Amber, en gebruik de Amber om zeldzame uitrusting te maken.",
+	"update.26_09_26.trade_offers": "Leg een voorwerp in je kraam en kies AANBIEDEN VOOR RUIL om een ander voorwerp te vragen in plaats van goud. Stel een minimumniveau of een titel in, of laat ze op ALLE staan. Handelaars onder niveau 70 krijgen XP voor voltooide ruilacties.",
+	"update.26_09_26.trade_offers.title": "Ruilaanbiedingen",
+	"update.24_09_26.rare_drops": "15 nieuwe accessoires vallen van monsters over de hele wereld. Kobold zwerven nu door Underground Cliffs. Many Eye, Mimic en Pale Dino zijn nieuwe zeldzame monsters. Handelaars kunnen nu een voorwerp ruilen voor een ander voorwerp.",
+	"update.24_09_26.rare_drops.title": "Zeldzame monsters, 15 accessoires en ruilaanbiedingen"
 }

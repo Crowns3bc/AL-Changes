@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry buraya giremez.",
 	"interface.cavalry.guarded": "Bu canavarların 150 piksel yakınında seviye 80+ bir oyuncu var.",
 	"interface.cavalry.not_threatened": "Hesabındaki en yüksek seviye {level}. Cavalry yalnızca sana veya grubuna zaten saldıran canavarlarla savaşır.",
-	"interface.cavalry.call_short": "ÇAĞIR"
+	"interface.cavalry.call_short": "ÇAĞIR",
+	"interface.item.offer_for_trade": "TAKASA ÇIKAR",
+	"interface.trade_offer.trade_for": "İstenen Eşya",
+	"interface.trade_offer.trade_offer": "Takas Teklifi",
+	"interface.trade_offer.min_level": "MİN. SEVİYE:",
+	"interface.trade_offer.title": "UNVAN:",
+	"interface.trade_offer.any": "FARK ETMEZ",
+	"interface.trade_offer.give": "VERECEĞİN:",
+	"interface.trade_offer.wants": "İSTİYOR:",
+	"interface.trade_offer.any_level_title": "Her seviye ve unvan",
+	"interface.trade_offer.any_level": "Her seviye",
+	"interface.trade_offer.any_title": "Her unvan",
+	"interface.trade_offer.or_higher": "Veya üstü",
+	"interface.trade_offer.or_higher_any_title": "Veya üstü, her unvan",
+	"interface.trade_offer.no_match": "Uygun eşyan yok",
+	"interface.trade_offer.choose": "Vereceğin eşyayı seç",
+	"interface.trade_offer.trade": "TAKAS ET"
 }

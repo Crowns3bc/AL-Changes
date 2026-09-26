@@ -14,6 +14,8 @@ CODE storage: the three save errors and two guide/reference paragraphs are trans
 
 Tavern dealer: Venn's 21 table lines (drafted in ChatGPT Chat, Medium) and the guide paragraph that introduces him are translated and proofread in all 32 supported languages. The {name} placeholder, Venn's name and each language's established pot, all in and river terms are kept.
 
+Trade offers: all 46 new or revised stand, message, trade-history, CODE reference, guide, tutorial and release phrases are translated and proofread in all 32 supported languages. The guide reuses each language's own OFFER FOR TRADE, WANTS, TITLE, ANY and TRADE labels; placeholders, markup and locked CODE were checked on 2026-09-26.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.

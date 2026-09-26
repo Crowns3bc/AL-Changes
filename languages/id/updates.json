@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Peningkatan permainan yang ditujukan untuk mengatasi masalah penumpukan dan monster yang tidak menghilang.",
 	"update.30_10_21.new_slenderman_dynamics": "Mekanik Slenderman yang baru",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp kini tidak menembus kekebalan sihir; sebagai gantinya, keahlian yang menembus kekebalan sihir memiliki tanda .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Monster langka baru dan 15 aksesori",
 	"update.24_09_26.rare_drops.rare_monsters": "Masing-masing bisa muncul setelah jumlah kill yang ditampilkan. INFO di pintu masuk setiap area punya panduannya.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Monster langka baru",
 	"update.24_09_26.rare_drops.accessories": "Masing-masing hanya jatuh dari satu monster. Klik item untuk melihat fungsinya.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 item Paladin baru. Makin banyak bagian yang kamu pakai, makin banyak HP, MP, dan zirah yang kamu dapat.",
 	"update.05_09_26.paladins.oathkeeper.title": "Set Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Perisai Eter menggantikannya selama aktif.",
-	"update.24_09_26.rare_drops": "15 aksesori baru jatuh dari monster di seluruh dunia. Kobold kini berkeliaran di Underground Cliffs. Many Eye, Mimic, dan Pale Dino adalah monster langka baru.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf kini menjual New Make-up dan New Accessory. Berikan kepada Haila untuk mendapat kepala, riasan, atau aksesori baru. Kepala baru: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass, dan Storm. Lava Glass dan Storm tetap bergerak meski kamu diam.",
 	"update.15_09_26.wheel": "Tavern punya Fortune's Wheel, mesin slot tiga gulungan, dan meja Texas Hold'em untuk 5 pemain. CODE juga bisa bermain: bet_wheel(), play_slots(), poker_join(), dan poker_act().",
 	"update.14_09_26.cavalry": "Panggil Cavalry dari Tracktrix untuk bantuan melawan monster level 3+ di dekatmu. Seorang Kesatria, Pendeta, Penyihir, dan Paladin datang membantu. Kalau banyak pemain memanggil, pemain level lebih rendah dibantu lebih dulu.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Tongkat Pendeta baru: Worldroot Crook. Buat dari Harbringer +8 dan bahan langka. Tongkat ini memberi Kecerdasan, Kekuatan, dan penembusan resistansi.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Pembaruan CODE besar: fungsi yang mengembalikan promise kini selesai dengan hasil asli dari server. Semua fungsi sudah didokumentasikan, server.status menampilkan data langsung, dan klien buatan sendiri bisa memakai MessagePack.",
 	"update.14_09_26.progression": "Panduan Perkembangan menyarankan tempat farming dan perlengkapan yang perlu dikerjakan berikutnya. Pilih target di atas bar HP dan MP-mu, atau matikan di Pengaturan di sebelah Tutorial. CODE bisa membacanya dengan get_progression().",
-	"update.14_09_26.cave": "Penjara bawah tanah baru untuk party-mu yang berisi hingga 3 orang. Kamu dapat 1 kali masuk per hari dan 24 menit untuk melewati 3 lantai. Monster memberi 10× XP, dan mati di dalam tidak mengurangi XP atau emas. Temukan kapak, sabit, dan Cave Amber, lalu gunakan Amber untuk membuat perlengkapan langka."
+	"update.14_09_26.cave": "Penjara bawah tanah baru untuk party-mu yang berisi hingga 3 orang. Kamu dapat 1 kali masuk per hari dan 24 menit untuk melewati 3 lantai. Monster memberi 10× XP, dan mati di dalam tidak mengurangi XP atau emas. Temukan kapak, sabit, dan Cave Amber, lalu gunakan Amber untuk membuat perlengkapan langka.",
+	"update.26_09_26.trade_offers": "Letakkan item di lapakmu dan pilih PASANG UNTUK DITUKAR untuk meminta item lain sebagai ganti emas. Tentukan level minimum atau gelar, atau biarkan keduanya BEBAS. Pedagang di bawah level 70 mendapat XP dari penukaran yang selesai.",
+	"update.26_09_26.trade_offers.title": "Penawaran tukar",
+	"update.24_09_26.rare_drops": "15 aksesori baru jatuh dari monster di seluruh dunia. Kobold kini berkeliaran di Underground Cliffs. Many Eye, Mimic, dan Pale Dino adalah monster langka baru. Pedagang kini bisa menukar item dengan item lain.",
+	"update.24_09_26.rare_drops.title": "Monster langka, 15 aksesori, dan penawaran tukar"
 }

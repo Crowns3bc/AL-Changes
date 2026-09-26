@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Vylepšení hry, které má vyřešit potíže se shlukováním a nemizejícími příšerami.",
 	"update.30_10_21.new_slenderman_dynamics": "Nová dynamika Slendermana",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp už nepronikne imunitou vůči kouzlům; dovednosti, které jí pronikají, mají místo toho příznak .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nové vzácné nestvůry a 15 doplňků",
 	"update.24_09_26.rare_drops.rare_monsters": "Každá se může objevit po zobrazeném počtu zabití. Průvodce najdeš v INFO u vstupu do každé oblasti.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nové vzácné nestvůry",
 	"update.24_09_26.rare_drops.accessories": "Každý padá jen z jedné nestvůry. Klikni na předmět a uvidíš, co dělá.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nových předmětů pro paladina. Čím víc kusů nosíš, tím víc HP, MP a zbroje dostaneš.",
 	"update.05_09_26.paladins.oathkeeper.title": "Sada Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Dokud je aktivní Éterový štít, nahrazuje ho.",
-	"update.24_09_26.rare_drops": "15 nových doplňků padá z nestvůr po celém světě. Po Underground Cliffs se teď toulají nestvůry Kobold. Many Eye, Mimic a Pale Dino jsou nové vzácné nestvůry.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf teď prodává New Make-up a New Accessory. Dej je postavě Haila a dostaneš novou hlavu, líčení nebo doplněk. Nové hlavy: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass a Storm. Lava Glass a Storm se hýbou, i když stojíš na místě.",
 	"update.15_09_26.wheel": "V Tavern je Fortune's Wheel, automaty se třemi válci a stůl Texas Hold'em pro 5 hráčů. Hrát může i CODE: bet_wheel(), play_slots(), poker_join() a poker_act().",
 	"update.14_09_26.cavalry": "Přivolej Cavalry z Tracktrix a dostaneš pomoc proti nestvůrám úrovně 3+ poblíž. Na pomoc přijde Válečník, Kněz, Mág a Paladin. Když volá hodně hráčů, dostanou pomoc nejdřív hráči s nižší úrovní.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nová hůl pro Kněze: Worldroot Crook. Vyrob ji z Harbringer +8 a vzácných materiálů. Dává Inteligenci, Sílu a průraz odolnosti.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Velká aktualizace CODE: funkce, které vracejí promise, se teď vyřeší skutečným výsledkem serveru. Všechny funkce jsou zdokumentované, server.status ukazuje živá data a vlastní klienty můžou používat MessagePack.",
 	"update.14_09_26.progression": "Průvodce postupem radí, kde lovit a na jakém vybavení pracovat dál. Vyber cíl nad lištami HP a MP, nebo ho vypni v Nastavení vedle Výuky. CODE ho může číst přes get_progression().",
-	"update.14_09_26.cave": "Nové podzemí pro tvou družinu až 3 hráčů. Máš 1 průchod denně a 24 minut na 3 patra. Nestvůry dávají 10× XP a smrt uvnitř nestojí XP ani zlato. Najdi sekery, kosy a Cave Amber a z Amber vyrob vzácné vybavení."
+	"update.14_09_26.cave": "Nové podzemí pro tvou družinu až 3 hráčů. Máš 1 průchod denně a 24 minut na 3 patra. Nestvůry dávají 10× XP a smrt uvnitř nestojí XP ani zlato. Najdi sekery, kosy a Cave Amber a z Amber vyrob vzácné vybavení.",
+	"update.26_09_26.trade_offers": "Polož předmět na svůj stánek, zvol NABÍDNOUT K VÝMĚNĚ a požádej místo zlata o jiný předmět. Nastav minimální úroveň nebo titul, nebo je nech na NEZÁLEŽÍ. Obchodníci pod úrovní 70 získávají XP za dokončené výměny.",
+	"update.26_09_26.trade_offers.title": "Nabídky výměny",
+	"update.24_09_26.rare_drops": "15 nových doplňků padá z nestvůr po celém světě. Po Underground Cliffs se teď toulají nestvůry Kobold. Many Eye, Mimic a Pale Dino jsou nové vzácné nestvůry. Obchodníci teď mohou vyměnit předmět za jiný.",
+	"update.24_09_26.rare_drops.title": "Vzácné nestvůry, 15 doplňků a nabídky výměny"
 }

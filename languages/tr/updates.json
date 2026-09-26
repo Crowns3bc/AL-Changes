@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "Premium para birimi DENİZ KABUĞU ve ilk premium eşyalar eklendi. DENİZ KABUĞU canavarlardan da düşer. Hangilerinden olduğunu söylemiyorum :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "Canavarlara \"saldırganlık\" eklendi. Bee'ler sokar :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "\"Çizgiler\" özelliği eklendi. Saldırı ve iyileştirme sırasında varlıklar arasında çizgi çizer. Özellikle PVP'de yararlı olacaktır.",
-	"update.24_09_26.rare_drops.title": "Yeni Nadir Canavarlar ve 15 Aksesuar",
 	"update.24_09_26.rare_drops.rare_monsters": "Her biri, gösterilen sayıda öldürmeden sonra ortaya çıkabilir. Her bölgenin girişindeki BİLGİ'de bir rehber var.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Yeni Nadir Canavarlar",
 	"update.24_09_26.rare_drops.accessories": "Her biri tek bir canavardan düşer. Ne işe yaradığını görmek için bir eşyaya tıkla.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 yeni paladin eşyası. Ne kadar çok parça giyersen o kadar çok HP, MP ve zırh kazanırsın.",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper Seti",
 	"update.05_09_26.paladins.skill_mshield": "Esir Kalkanı etkinken onun yerini alır.",
-	"update.24_09_26.rare_drops": "Dünyanın dört bir yanındaki canavarlardan 15 yeni aksesuar düşüyor. Kobold'lar artık Underground Cliffs'te dolaşıyor. Many Eye, Mimic ve Pale Dino yeni nadir canavarlar.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf artık New Make-up ve New Accessory satıyor. Yeni bir baş, makyaj veya aksesuar için bunları Haila'ya ver. Yeni başlar: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass ve Storm. Lava Glass ve Storm, sen dururken bile hareket ediyor.",
 	"update.15_09_26.wheel": "Tavern'da Fortune's Wheel, üç makaralı slot makinesi ve 5 kişilik bir Texas Hold'em masası var. CODE da oynayabilir: bet_wheel(), play_slots(), poker_join() ve poker_act().",
 	"update.14_09_26.cavalry": "Yakındaki 3. seviye ve üstü canavarlara karşı yardım için Tracktrix'ten Cavalry'yi çağır. Bir savaşçı, bir rahip, bir büyücü ve bir paladin yardıma gelir. Çok oyuncu çağırırsa önce düşük seviyeli oyunculara yardım edilir.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Yeni rahip asası: Worldroot Crook. +8 bir Harbringer ve nadir malzemelerle üret. Zekâ, Güç ve direnç delme verir.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Büyük CODE güncellemesi: promise döndüren fonksiyonlar artık sunucunun gerçek sonucuyla tamamlanıyor. Tüm fonksiyonlar belgelendi, server.status canlı veri gösteriyor ve özel istemciler MessagePack kullanabilir.",
 	"update.14_09_26.progression": "İlerleme Rehberi sıradaki av yerlerini ve üzerinde çalışılacak ekipmanı önerir. HP ve MP çubuklarının üstünden bir hedef seç veya Ayarlar'da Öğretici'nin yanından kapat. CODE bunu get_progression() ile okuyabilir.",
-	"update.14_09_26.cave": "En fazla 3 kişilik grubun için yeni bir zindan. Günde 1 giriş hakkın ve 3 katı geçmek için 24 dakikan var. Canavarlar 10× XP verir, içeride ölmek XP veya altın kaybettirmez. Balta, tırpan ve Cave Amber bul; Amber ile nadir ekipman üret."
+	"update.14_09_26.cave": "En fazla 3 kişilik grubun için yeni bir zindan. Günde 1 giriş hakkın ve 3 katı geçmek için 24 dakikan var. Canavarlar 10× XP verir, içeride ölmek XP veya altın kaybettirmez. Balta, tırpan ve Cave Amber bul; Amber ile nadir ekipman üret.",
+	"update.26_09_26.trade_offers": "Bir eşyayı tezgâhına koy ve altın yerine başka bir eşya istemek için TAKASA ÇIKAR'ı seç. En düşük seviyeyi veya bir unvanı belirle ya da ikisini de FARK ETMEZ olarak bırak. 70. seviyenin altındaki tüccarlar tamamlanan takaslardan XP kazanır.",
+	"update.26_09_26.trade_offers.title": "Takas Teklifleri",
+	"update.24_09_26.rare_drops": "Dünyanın dört bir yanındaki canavarlardan 15 yeni aksesuar düşüyor. Kobold'lar artık Underground Cliffs'te dolaşıyor. Many Eye, Mimic ve Pale Dino yeni nadir canavarlar. Tüccarlar artık bir eşyayı başka bir eşyayla takas edebilir.",
+	"update.24_09_26.rare_drops.title": "Nadir Canavarlar, 15 Aksesuar ve Takas Teklifleri"
 }

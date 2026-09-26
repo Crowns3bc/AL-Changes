@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "Lancement des COQUILLAGES, la monnaie premium, et des premiers objets premium. Les monstres donnent aussi des COQUILLAGES. Je ne dirai pas lesquels :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "Ajout de l’« agressivité » des monstres. Les Bee piquent :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "Ajout de la fonction « lignes » : elle trace une ligne entre les entités lors d’une attaque ou d’un soin. Elle devrait être particulièrement utile en JcJ.",
-	"update.24_09_26.rare_drops.title": "Nouveaux monstres rares et 15 accessoires",
 	"update.24_09_26.rare_drops.rare_monsters": "Chacun peut apparaître après le nombre de victimes indiqué. INFO, à l'entrée de chaque zone, a un guide.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nouveaux monstres rares",
 	"update.24_09_26.rare_drops.accessories": "Chacun tombe d'un seul monstre. Cliquez sur un objet pour voir ce qu'il fait.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nouveaux objets de paladin. Plus vous portez de pièces, plus vous gagnez de HP, de MP et d'armure.",
 	"update.05_09_26.paladins.oathkeeper.title": "L'ensemble Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Bouclier d'éther le remplace tant qu'il est actif.",
-	"update.24_09_26.rare_drops": "15 nouveaux accessoires tombent de monstres partout dans le monde. Les Kobolds parcourent maintenant Underground Cliffs. Many Eye, Mimic et Pale Dino sont de nouveaux monstres rares.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf vend maintenant New Make-up et New Accessory. Donnez-les à Haila pour obtenir une nouvelle tête, un maquillage ou un accessoire. Nouvelles têtes : Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass et Storm. Lava Glass et Storm bougent même quand vous restez immobile.",
 	"update.15_09_26.wheel": "La Tavern a Fortune's Wheel, des machines à sous à trois rouleaux et une table de Texas Hold'em pour 5 joueurs. CODE peut aussi jouer : bet_wheel(), play_slots(), poker_join() et poker_act().",
 	"update.14_09_26.cavalry": "Appelez la Cavalry depuis Tracktrix pour avoir de l'aide contre les monstres de niveau 3 ou plus à proximité. Un guerrier, un prêtre, un mage et un paladin viennent vous aider. Si beaucoup de joueurs appellent, les joueurs de plus bas niveau sont aidés en premier.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nouveau bâton de prêtre : Worldroot Crook. Fabriquez-le avec un Harbringer +8 et des matériaux rares. Il donne de l'Intelligence, de la Force et de la pénétration de résistance.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Grande mise à jour de CODE : les fonctions qui renvoient une promise se résolvent maintenant avec le vrai résultat du serveur. Toutes les fonctions sont documentées, server.status affiche des données en direct et les clients personnalisés peuvent utiliser MessagePack.",
 	"update.14_09_26.progression": "Le Guide de progression suggère où chasser et quel équipement améliorer ensuite. Choisissez un objectif au-dessus de vos barres de HP et de MP, ou désactivez-le dans les Paramètres à côté du Tutoriel. CODE peut le lire avec get_progression().",
-	"update.14_09_26.cave": "Un nouveau donjon pour votre groupe de 3 au maximum. Vous avez 1 entrée par jour et 24 minutes pour traverser 3 étages. Les monstres donnent 10× XP, et mourir à l'intérieur ne coûte ni XP ni or. Trouvez des haches, des faux et du Cave Amber, et utilisez l'Amber pour fabriquer de l'équipement rare."
+	"update.14_09_26.cave": "Un nouveau donjon pour votre groupe de 3 au maximum. Vous avez 1 entrée par jour et 24 minutes pour traverser 3 étages. Les monstres donnent 10× XP, et mourir à l'intérieur ne coûte ni XP ni or. Trouvez des haches, des faux et du Cave Amber, et utilisez l'Amber pour fabriquer de l'équipement rare.",
+	"update.26_09_26.trade_offers": "Place un objet sur ton étal et choisis PROPOSER UN ÉCHANGE pour demander un autre objet au lieu d’or. Fixe un niveau minimum ou un titre, ou laisse-les sur INDIFFÉRENT. Les marchands de niveau inférieur à 70 gagnent de l’XP grâce aux échanges conclus.",
+	"update.26_09_26.trade_offers.title": "Offres d’échange",
+	"update.24_09_26.rare_drops": "15 nouveaux accessoires tombent de monstres partout dans le monde. Les Kobolds parcourent maintenant Underground Cliffs. Many Eye, Mimic et Pale Dino sont de nouveaux monstres rares. Les marchands peuvent désormais échanger un objet contre un autre.",
+	"update.24_09_26.rare_drops.title": "Monstres rares, 15 accessoires et offres d’échange"
 }

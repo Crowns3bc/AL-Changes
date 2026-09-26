@@ -977,5 +977,21 @@
 	"interface.cavalry.location": "Cavalry не може увійти сюди.",
 	"interface.cavalry.guarded": "У межах 150 пікселів від цих монстрів є гравець рівня 80+.",
 	"interface.cavalry.not_threatened": "Найвищий рівень на вашому обліковому записі — {level}. Cavalry б’ється лише з монстрами, які вже атакують вас або вашу групу.",
-	"interface.cavalry.call_short": "ПОКЛИКАТИ"
+	"interface.cavalry.call_short": "ПОКЛИКАТИ",
+	"interface.item.offer_for_trade": "ЗАПРОПОНУВАТИ ОБМІН",
+	"interface.trade_offer.trade_for": "Обміняти на",
+	"interface.trade_offer.trade_offer": "Пропозиція обміну",
+	"interface.trade_offer.min_level": "МІН. РІВЕНЬ:",
+	"interface.trade_offer.title": "ТИТУЛ:",
+	"interface.trade_offer.any": "БУДЬ-ЯКИЙ",
+	"interface.trade_offer.give": "ТИ ДАЄШ:",
+	"interface.trade_offer.wants": "ШУКАЄ:",
+	"interface.trade_offer.any_level_title": "Будь-який рівень і титул",
+	"interface.trade_offer.any_level": "Будь-який рівень",
+	"interface.trade_offer.any_title": "Будь-який титул",
+	"interface.trade_offer.or_higher": "Або вище",
+	"interface.trade_offer.or_higher_any_title": "Або вище, будь-який титул",
+	"interface.trade_offer.no_match": "У тебе немає відповідного предмета",
+	"interface.trade_offer.choose": "Обери предмет, який віддаси",
+	"interface.trade_offer.trade": "ОБМІНЯТИ"
 }

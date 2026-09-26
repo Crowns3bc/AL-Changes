@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalryはこの場所に入れません。",
 	"interface.cavalry.guarded": "これらのモンスターから150ピクセル以内にレベル80以上のプレイヤーがいます。",
 	"interface.cavalry.not_threatened": "アカウント内の最高レベルは{level}です。Cavalryは、あなたかパーティーをすでに攻撃しているモンスターとだけ戦います。",
-	"interface.cavalry.call_short": "呼ぶ"
+	"interface.cavalry.call_short": "呼ぶ",
+	"interface.item.offer_for_trade": "交換に出す",
+	"interface.trade_offer.trade_for": "交換希望",
+	"interface.trade_offer.trade_offer": "交換募集",
+	"interface.trade_offer.min_level": "最低レベル：",
+	"interface.trade_offer.title": "称号：",
+	"interface.trade_offer.any": "指定なし",
+	"interface.trade_offer.give": "渡す：",
+	"interface.trade_offer.wants": "希望：",
+	"interface.trade_offer.any_level_title": "レベル・称号は指定なし",
+	"interface.trade_offer.any_level": "レベル指定なし",
+	"interface.trade_offer.any_title": "称号指定なし",
+	"interface.trade_offer.or_higher": "以上",
+	"interface.trade_offer.or_higher_any_title": "以上・称号指定なし",
+	"interface.trade_offer.no_match": "条件に合うアイテムがありません",
+	"interface.trade_offer.choose": "渡すアイテムを選んでください",
+	"interface.trade_offer.trade": "交換する"
 }

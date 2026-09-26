@@ -7655,6 +7655,10 @@ function init_socket_io(socket_server, server_index) {
 			}
 			// if(Dev) server_log("Trying to equip "+JSON.stringify(data));
 
+			// A trade offer for a slot that isn't open (the stand closed meanwhile) must not equip or use the item instead
+			if (data.want !== undefined && (data.consume || !get_trade_slots(player).includes(data.slot))) {
+				return fail_response("invalid");
+			}
 			if (data.slot && get_trade_slots(player).includes(data.slot) && !data.consume) {
 				if (item.acl || item.v) {
 					return fail_response("item_locked");
@@ -7662,12 +7666,18 @@ function init_socket_io(socket_server, server_index) {
 				var slot = data.slot;
 				var price = round(min(99999999999, max(parseInt(data.price) || 1, 1)));
 				var minutes = 1;
+				var want = null;
 				data.q = max(1, parseInt(data.q) || 1);
 				if ((item.q || 1) < data.q) {
 					return fail_response("not_enough");
 				}
 				if (data.giveaway) {
 					minutes = max(5, min(600, parseInt(data.minutes) || 5));
+				} else if (data.want !== undefined) {
+					want = trade_want_normalize(data.want);
+					if (!want) {
+						return fail_response("trade_offer_invalid");
+					}
 				}
 				if (!price || data.giveaway) {
 					price = 1;
@@ -7677,7 +7687,11 @@ function init_socket_io(socket_server, server_index) {
 				}
 				if (def.s) {
 					player.slots[slot] = create_new_sitem(item, data.q);
-					player.slots[slot].price = price;
+					if (want) {
+						player.slots[slot].want = want;
+					} else {
+						player.slots[slot].price = price;
+					}
 					player.slots[slot].rid = randomStr(4);
 					if (data.giveaway) {
 						player.slots[slot].giveaway = minutes;
@@ -7694,6 +7708,14 @@ function init_socket_io(socket_server, server_index) {
 								item: String(item_name(player.slots[slot])),
 							}),
 						);
+					} else if (want) {
+						socket.emit(
+							"game_log",
+							localization.message(
+								want.level ? "server.game_log.offered_for_or_higher" : "server.game_log.offered_for",
+								{ item: trade_lot_name(player.slots[slot]), want: trade_lot_name(want) },
+							),
+						);
 					} else {
 						socket.emit(
 							"game_log",
@@ -7705,7 +7727,14 @@ function init_socket_io(socket_server, server_index) {
 						);
 					}
 				} else {
-					player.items[data.num].price = price;
+					// A withdrawn listing keeps its hidden trade fields, so each listing sets exactly one kind
+					if (want) {
+						player.items[data.num].want = want;
+						delete player.items[data.num].price;
+					} else {
+						player.items[data.num].price = price;
+						delete player.items[data.num].want;
+					}
 					player.items[data.num].rid = randomStr(4);
 					player.slots[slot] = player.items[data.num];
 					if (data.giveaway) {
@@ -7722,6 +7751,14 @@ function init_socket_io(socket_server, server_index) {
 							localization.message("server.game_log.listed_to_giveaway_2", {
 								item: String(item_name(player.slots[slot])),
 							}),
+						);
+					} else if (want) {
+						socket.emit(
+							"game_log",
+							localization.message(
+								want.level ? "server.game_log.offered_for_or_higher" : "server.game_log.offered_for",
+								{ item: trade_lot_name(player.slots[slot]), want: trade_lot_name(want) },
+							),
 						);
 					} else {
 						socket.emit(
@@ -8800,7 +8837,7 @@ function init_socket_io(socket_server, server_index) {
 			if (item.name == "placeholder") {
 				return fail_response("item_placeholder");
 			}
-			if (!item.b && !B.rbugs) {
+			if ((!item.b && !B.rbugs) || item.want) {
 				return fail_response("sneaky");
 			}
 			if ((item.q || 1) < data.q) {
@@ -8929,7 +8966,7 @@ function init_socket_io(socket_server, server_index) {
 			if (item.name == "placeholder") {
 				return fail_response("item_placeholder");
 			}
-			if (item.b || item.giveaway) {
+			if (item.b || item.giveaway || item.want) {
 				return fail_response("sneaky");
 			}
 			if (item.price * data.q > player.gold) {
@@ -9005,6 +9042,122 @@ function init_socket_io(socket_server, server_index) {
 			resend(player, "reopen");
 			resend(seller, "reopen+u+cid");
 			success_response({});
+		});
+		socket.on("trade_swap", function (data) {
+			var player = players[socket.id];
+			var seller = players[id_to_id[data.id]];
+			if (!player || player.user) {
+				return fail_response("cant_in_bank");
+			}
+			if (!in_arr(data.slot, trade_slots)) {
+				return fail_response("invalid");
+			}
+			if (!seller || seller.npc || is_invis(seller)) {
+				return fail_response("seller_gone");
+			}
+			if (seller.user) {
+				return fail_response("cant_in_bank");
+			}
+			if (distance(seller, player, true) > B.dist || seller.map != player.map) {
+				return fail_response("distance");
+			}
+			if (seller.id == player.id) {
+				return fail_response("hmm");
+			}
+			var listing = seller.slots[data.slot];
+			// The buyer gives an item away, so the rid is required: a replaced listing never matches,
+			// and a closed stand's listings are out of reach
+			if (!listing || !data.rid || listing.rid != data.rid || !get_trade_slots(seller).includes(data.slot)) {
+				return fail_response("item_gone");
+			}
+			if (listing.name == "placeholder") {
+				return fail_response("item_placeholder");
+			}
+			if (!listing.want || listing.b || listing.giveaway) {
+				return fail_response("sneaky");
+			}
+			var num = parseInt(data.num);
+			var actual = player.items[num];
+			if (!actual) {
+				return fail_response("no_item");
+			}
+			if (actual.name == "placeholder") {
+				return fail_response("item_placeholder");
+			}
+			// Account-bound items can't pay: a same-account swap earns nothing, and a split stack would lose its binding
+			if (actual.l || actual.acl) {
+				return fail_response("item_locked");
+			}
+			if (actual.b || actual.v) {
+				return fail_response("item_blocked");
+			}
+			// Like upgrade's clevel, for the whole item: the request carries the item as the player saw it when choosing,
+			// so a reordered or changed inventory can't give another one
+			if (!seen_item_matches(actual, data.item) || !trade_want_matches(listing.want, actual)) {
+				return fail_response("trade_swap_match");
+			}
+			var q = listing.want.q || 1;
+			var given = G.items[actual.name].s ? create_new_sitem(actual, q) : actual;
+			if (!can_add_item(seller, given)) {
+				return fail_response("trade_swap_space");
+			}
+			// Handing over a whole item or stack frees the slot the offered item arrives in.
+			// Otherwise the rest of the stack stays, measured after the payment leaves it
+			if ((actual.q || 1) > q) {
+				actual.q -= q;
+				var fits = can_add_item(player, listing);
+				actual.q += q;
+				if (!fits) {
+					return fail_response("no_space");
+				}
+			}
+			var value = min(calculate_item_value(listing) * (listing.q || 1), calculate_item_value(given) * (given.q || 1));
+			consume(player, num, q);
+			seller.slots[data.slot] = seller.cslots[data.slot] = null;
+			delete listing.want;
+			delete listing.rid;
+			if (seller.owner != player.owner) {
+				listing.src = given.src = "ts";
+			}
+			var received = add_item(player, listing, { announce: false });
+			var snum = add_item(seller, given, { announce: false });
+			add_to_trade_history(player, "swap", seller.name, cache_item(given, true), 0, cache_item(listing, true));
+			add_to_trade_history(seller, "swap", player.name, cache_item(listing, true), 0, cache_item(given, true));
+			trade_swap_xp(player, seller, value);
+			trade_swap_xp(seller, player, value);
+
+			socket.emit(
+				"game_log",
+				localization.message("server.game_log.traded_for", {
+					item: trade_lot_name(given),
+					player: seller.name,
+					received: trade_lot_name(listing),
+				}),
+			);
+			seller.socket.emit(
+				"game_log",
+				localization.message("server.game_log.traded_for", {
+					item: trade_lot_name(listing),
+					player: player.name,
+					received: trade_lot_name(given),
+				}),
+			);
+
+			xy_emit(seller, "ui", {
+				type: "swap",
+				event: true,
+				seller: seller.name,
+				buyer: player.name,
+				item: cache_item(listing, true),
+				received: cache_item(given, true),
+				slot: data.slot,
+				num: received,
+				snum: snum,
+			});
+
+			resend(player, "reopen");
+			resend(seller, "reopen+u+cid");
+			success_response({ num: received });
 		});
 		socket.on("trade_history", function (data) {
 			var player = players[socket.id];

@@ -966,5 +966,21 @@
 	"interface.cavalry.location": "A Cavalry não pode entrar neste lugar.",
 	"interface.cavalry.guarded": "Há um jogador de nível 80+ a até 150 pixels desses monstros.",
 	"interface.cavalry.not_threatened": "O nível mais alto da sua conta é {level}. A Cavalry só luta contra monstros que já estejam atacando você ou seu grupo.",
-	"interface.cavalry.call_short": "CHAMAR"
+	"interface.cavalry.call_short": "CHAMAR",
+	"interface.item.offer_for_trade": "OFERECER PARA TROCA",
+	"interface.trade_offer.trade_for": "Trocar por",
+	"interface.trade_offer.trade_offer": "Oferta de troca",
+	"interface.trade_offer.min_level": "NÍVEL MÍN.:",
+	"interface.trade_offer.title": "TÍTULO:",
+	"interface.trade_offer.any": "QUALQUER",
+	"interface.trade_offer.give": "VOCÊ DÁ:",
+	"interface.trade_offer.wants": "PROCURA:",
+	"interface.trade_offer.any_level_title": "Qualquer nível e título",
+	"interface.trade_offer.any_level": "Qualquer nível",
+	"interface.trade_offer.any_title": "Qualquer título",
+	"interface.trade_offer.or_higher": "Ou superior",
+	"interface.trade_offer.or_higher_any_title": "Ou superior, qualquer título",
+	"interface.trade_offer.no_match": "Você não tem nenhum item compatível",
+	"interface.trade_offer.choose": "Escolha o item que vai dar",
+	"interface.trade_offer.trade": "TROCAR"
 }

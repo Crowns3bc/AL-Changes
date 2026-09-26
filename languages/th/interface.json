@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry เข้ามาในสถานที่นี้ไม่ได้",
 	"interface.cavalry.guarded": "มีผู้เล่นเลเวล 80 ขึ้นไปอยู่ในระยะ 150 พิกเซลจากมอนสเตอร์เหล่านี้",
 	"interface.cavalry.not_threatened": "เลเวลสูงสุดในบัญชีของคุณคือ {level} Cavalry จะต่อสู้กับมอนสเตอร์ที่กำลังโจมตีคุณหรือปาร์ตี้ของคุณอยู่แล้วเท่านั้น",
-	"interface.cavalry.call_short": "เรียก"
+	"interface.cavalry.call_short": "เรียก",
+	"interface.item.offer_for_trade": "ตั้งแลกเปลี่ยน",
+	"interface.trade_offer.trade_for": "แลกกับ",
+	"interface.trade_offer.trade_offer": "ข้อเสนอแลกเปลี่ยน",
+	"interface.trade_offer.min_level": "เลเวลขั้นต่ำ:",
+	"interface.trade_offer.title": "ชื่อกำกับ:",
+	"interface.trade_offer.any": "ไม่ระบุ",
+	"interface.trade_offer.give": "ให้:",
+	"interface.trade_offer.wants": "ต้องการ:",
+	"interface.trade_offer.any_level_title": "เลเวลและชื่อกำกับใดก็ได้",
+	"interface.trade_offer.any_level": "เลเวลใดก็ได้",
+	"interface.trade_offer.any_title": "ชื่อกำกับใดก็ได้",
+	"interface.trade_offer.or_higher": "หรือสูงกว่า",
+	"interface.trade_offer.or_higher_any_title": "หรือสูงกว่า ชื่อกำกับใดก็ได้",
+	"interface.trade_offer.no_match": "คุณไม่มีไอเทมที่ตรงเงื่อนไข",
+	"interface.trade_offer.choose": "เลือกไอเทมที่จะให้",
+	"interface.trade_offer.trade": "แลกเปลี่ยน"
 }

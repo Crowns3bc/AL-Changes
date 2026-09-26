@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry tidak bisa memasuki tempat ini.",
 	"interface.cavalry.guarded": "Ada pemain level 80+ dalam jarak 150 piksel dari monster-monster ini.",
 	"interface.cavalry.not_threatened": "Level tertinggi di akunmu adalah {level}. Cavalry hanya melawan monster yang sudah menyerangmu atau kelompokmu.",
-	"interface.cavalry.call_short": "PANGGIL"
+	"interface.cavalry.call_short": "PANGGIL",
+	"interface.item.offer_for_trade": "PASANG UNTUK DITUKAR",
+	"interface.trade_offer.trade_for": "Tukar dengan",
+	"interface.trade_offer.trade_offer": "Penawaran tukar",
+	"interface.trade_offer.min_level": "LEVEL MIN.:",
+	"interface.trade_offer.title": "GELAR:",
+	"interface.trade_offer.any": "BEBAS",
+	"interface.trade_offer.give": "KAMU BERI:",
+	"interface.trade_offer.wants": "MENCARI:",
+	"interface.trade_offer.any_level_title": "Level dan gelar apa saja",
+	"interface.trade_offer.any_level": "Level apa saja",
+	"interface.trade_offer.any_title": "Gelar apa saja",
+	"interface.trade_offer.or_higher": "Atau lebih tinggi",
+	"interface.trade_offer.or_higher_any_title": "Atau lebih tinggi, gelar apa saja",
+	"interface.trade_offer.no_match": "Kamu tidak punya item yang cocok",
+	"interface.trade_offer.choose": "Pilih item yang akan diberikan",
+	"interface.trade_offer.trade": "TUKAR"
 }

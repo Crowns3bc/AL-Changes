@@ -1108,7 +1108,7 @@ function mcp_api_public_item(item, trade) {
 	// Keep in sync with cache_item in node/server_functions.js. New saved fields
 	// stay private until reviewed against the normal client payload.
 	var fields = ["name", "level", "q", "stat_type", "p", "ps", "l", "ld", "m", "v", "r", "skin", "charges", "data", "expires", "gift", "acl"];
-	if (trade) fields = fields.concat(["price", "b", "rid", "giveaway", "gf"]);
+	if (trade) fields = fields.concat(["price", "want", "b", "rid", "giveaway", "gf"]);
 	if (trade && item.giveaway) fields.push("list");
 	var result = {};
 	fields.forEach(function (name) {

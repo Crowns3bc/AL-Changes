@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Un miglioramento del gioco che punta a risolvere i problemi di ammassamento e dei mostri che non scompaiono.",
 	"update.30_10_21.new_slenderman_dynamics": "Nuove dinamiche di Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp non penetra più l'immunità agli incantesimi; le abilità che la penetrano hanno invece il contrassegno .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nuovi mostri rari e 15 accessori",
 	"update.24_09_26.rare_drops.rare_monsters": "Ognuno può apparire dopo il numero di uccisioni indicato. INFO all'ingresso di ogni zona ha una guida.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nuovi mostri rari",
 	"update.24_09_26.rare_drops.accessories": "Ognuno cade da un solo mostro. Clicca su un oggetto per vedere cosa fa.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nuovi oggetti per Paladino. Più pezzi indossi, più HP, MP e armatura ottieni.",
 	"update.05_09_26.paladins.oathkeeper.title": "Il set Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Scudo etereo lo sostituisce mentre è attivo.",
-	"update.24_09_26.rare_drops": "15 nuovi accessori cadono dai mostri di tutto il mondo. Ora i Kobold girano per Underground Cliffs. Many Eye, Mimic e Pale Dino sono nuovi mostri rari.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf ora vende New Make-up e New Accessory. Dalli a Haila per ottenere una nuova testa, un trucco o un accessorio. Nuove teste: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass e Storm. Lava Glass e Storm si muovono anche quando stai fermo.",
 	"update.15_09_26.wheel": "La Tavern ha Fortune's Wheel, slot machine a tre rulli e un tavolo di Texas Hold'em per 5 giocatori. Anche CODE può giocare: bet_wheel(), play_slots(), poker_join() e poker_act().",
 	"update.14_09_26.cavalry": "Chiama la Cavalry da Tracktrix per avere aiuto contro i mostri di livello 3 o più vicini. Arrivano ad aiutarti un Guerriero, un Sacerdote, un Mago e un Paladino. Se chiamano molti giocatori, vengono aiutati prima quelli di livello più basso.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nuovo bastone da Sacerdote: Worldroot Crook. Crealo con un Harbringer +8 e materiali rari. Dà Intelligenza, Forza e penetrazione della resistenza.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Grande aggiornamento di CODE: le funzioni che restituiscono una promise ora si risolvono con il vero risultato del server. Tutte le funzioni sono documentate, server.status mostra dati in tempo reale e i client personalizzati possono usare MessagePack.",
 	"update.14_09_26.progression": "La Guida alla progressione suggerisce dove cacciare e quale equipaggiamento migliorare dopo. Scegli un obiettivo sopra le barre di HP e MP, oppure disattivala nelle Impostazioni accanto a Tutorial. CODE può leggerla con get_progression().",
-	"update.14_09_26.cave": "Un nuovo dungeon per il tuo gruppo fino a 3. Hai 1 ingresso al giorno e 24 minuti per superare 3 piani. I mostri danno 10× XP e morire all'interno non costa XP né oro. Trova asce, falci e Cave Amber, e usa l'Amber per creare equipaggiamento raro."
+	"update.14_09_26.cave": "Un nuovo dungeon per il tuo gruppo fino a 3. Hai 1 ingresso al giorno e 24 minuti per superare 3 piani. I mostri danno 10× XP e morire all'interno non costa XP né oro. Trova asce, falci e Cave Amber, e usa l'Amber per creare equipaggiamento raro.",
+	"update.26_09_26.trade_offers": "Metti un oggetto sulla tua bancarella e scegli OFFRI IN SCAMBIO per chiedere un altro oggetto invece dell'oro. Imposta un livello minimo o un titolo, oppure lasciali su QUALSIASI. I mercanti sotto il livello 70 ottengono XP dagli scambi conclusi.",
+	"update.26_09_26.trade_offers.title": "Offerte di scambio",
+	"update.24_09_26.rare_drops": "15 nuovi accessori cadono dai mostri di tutto il mondo. Ora i Kobold girano per Underground Cliffs. Many Eye, Mimic e Pale Dino sono nuovi mostri rari. Ora i mercanti possono scambiare un oggetto con un altro.",
+	"update.24_09_26.rare_drops.title": "Mostri rari, 15 accessori e offerte di scambio"
 }

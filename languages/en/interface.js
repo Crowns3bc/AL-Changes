@@ -1086,6 +1086,8 @@ module.exports = {
 	"interface.item.giveaway": "GIVEAWAY!",
 	// js/html.js render_item; authored interface text.
 	"interface.item.put_up_for_sale": "PUT UP FOR SALE",
+	// js/html.js render_item and render_trade_offer; action that lists the item for another item instead of gold. Compact uppercase action.
+	"interface.item.offer_for_trade": "OFFER FOR TRADE",
 	// js/html.js render_item; authored interface text.
 	"interface.item.empty_anomaly": "Empty / Anomaly",
 	// js/html.js render_item; authored interface text. Parameters: data.
@@ -1167,6 +1169,36 @@ module.exports = {
 	"interface.wishlist_item.level": "LEVEL:",
 	// js/html.js render_wishlist_item; authored interface text.
 	"interface.wishlist_item.wishlist_2": "WISHLIST",
+	// js/html.js render_wishlist; header of the item picker that chooses what a trade offer asks for in return.
+	"interface.trade_offer.trade_for": "Trade For",
+	// js/html.js render_trade_offer; header of the form that finishes a trade offer, like the Wishlist form header.
+	"interface.trade_offer.trade_offer": "Trade Offer",
+	// js/html.js render_trade_offer; label of the lowest upgrade level a trade offer accepts; higher levels also qualify. Keep the colon.
+	"interface.trade_offer.min_level": "MIN LEVEL:",
+	// js/html.js render_trade_offer; label of the item title (Shiny, Glitched...) a trade offer asks for. Keep the colon.
+	"interface.trade_offer.title": "TITLE:",
+	// js/html.js render_trade_offer; value of MIN LEVEL: and TITLE: while the offer accepts any level or any title. Compact uppercase value.
+	"interface.trade_offer.any": "ANY",
+	// js/html.js render_trade_offer and render_item; label before the item you hand over in a trade offer. Keep the colon.
+	"interface.trade_offer.give": "GIVE:",
+	// js/html.js trade_want_html; label above the item another character's trade offer asks for. Keep the colon.
+	"interface.trade_offer.wants": "WANTS:",
+	// js/html.js trade_want_html; the requested item may have any upgrade level and any title.
+	"interface.trade_offer.any_level_title": "Any level and title",
+	// js/html.js trade_want_html; the requested item may have any upgrade level.
+	"interface.trade_offer.any_level": "Any level",
+	// js/html.js trade_want_html; the requested item may have any title.
+	"interface.trade_offer.any_title": "Any title",
+	// js/html.js trade_want_html; shown under the requested item, e.g. Staff +8: that level or any higher one qualifies, and the title shown is required.
+	"interface.trade_offer.or_higher": "Or higher",
+	// js/html.js trade_want_html; shown under the requested item, e.g. Staff +8: that level or any higher one qualifies, with any title.
+	"interface.trade_offer.or_higher_any_title": "Or higher, any title",
+	// js/html.js render_item; a nearby player has nothing that satisfies the trade offer.
+	"interface.trade_offer.no_match": "You have no matching item",
+	// js/html.js render_item; several of your items satisfy the trade offer and none is chosen yet.
+	"interface.trade_offer.choose": "Choose the item to give",
+	// js/html.js render_item; action that completes a trade offer with your chosen item. Compact uppercase action.
+	"interface.trade_offer.trade": "TRADE",
 	// js/html.js render_set; authored interface text. Parameters: rep.
 	"interface.set.equipped": "[{rep} Equipped]",
 	// js/html.js render_skills; authored interface text.

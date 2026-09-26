@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Játékfejlesztés, amely a torlódással és az el nem tűnő szörnyekkel kapcsolatos problémákat hivatott megoldani.",
 	"update.30_10_21.new_slenderman_dynamics": "Új Slenderman-dinamika",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "A Stomp már nem hatol át a varázslat-immunitáson; helyette azok a képességek kapták meg a .pierces_immunity jelzőt, amelyek áthatolnak rajta",
-	"update.24_09_26.rare_drops.title": "Új ritka szörnyek és 15 kiegészítő",
 	"update.24_09_26.rare_drops.rare_monsters": "Mindegyik megjelenhet a feltüntetett számú ölés után. Minden terület bejáratánál az INFÓ-ban találsz útmutatót.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Új ritka szörnyek",
 	"update.24_09_26.rare_drops.accessories": "Mindegyik csak egyetlen szörnytől esik. Kattints egy tárgyra, és megnézheted, mit csinál.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 új lovagtárgy. Minél több darabot viselsz, annál több HP-t, MP-t és páncélt kapsz.",
 	"update.05_09_26.paladins.oathkeeper.title": "Az Oathkeeper szett",
 	"update.05_09_26.paladins.skill_mshield": "Amíg az Éterpajzs aktív, az váltja fel.",
-	"update.24_09_26.rare_drops": "15 új kiegészítő esik szörnyektől szerte a világon. Mostantól Kobold szörnyek kóborolnak az Underground Cliffs területén. A Many Eye, a Mimic és a Pale Dino új ritka szörnyek.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf mostantól New Make-up és New Accessory tárgyat árul. Haila új fejet, sminket vagy kiegészítőt ad értük. Új fejek: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass és Storm. A Lava Glass és a Storm akkor is mozog, amikor egy helyben állsz.",
 	"update.15_09_26.wheel": "A Tavernben van Fortune's Wheel, háromtárcsás nyerőgép és egy Texas Hold'em asztal 5 játékosnak. A CODE is játszhat: bet_wheel(), play_slots(), poker_join() és poker_act().",
 	"update.14_09_26.cavalry": "Hívd a Cavalryt a Tracktrixből, ha segítség kell a közeli, legalább 3. szintű szörnyek ellen. Egy harcos, egy pap, egy mágus és egy lovag jön segíteni. Ha sok játékos hív, először az alacsonyabb szintűek kapnak segítséget.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Új papi bot: Worldroot Crook. Egy +8-as Harbringerből és ritka anyagokból készítheted el. Intelligenciát, erőt és ellenállás-átütést ad.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Nagy CODE-frissítés: a promise-t visszaadó függvények mostantól a szerver valódi eredményével teljesülnek. Minden függvény dokumentált, a server.status élő adatokat mutat, és a saját kliensek MessagePacket is használhatnak.",
 	"update.14_09_26.progression": "A Fejlődési útmutató azt javasolja, hol farmolj, és melyik felszereléseden dolgozz tovább. Válassz célt a HP- és MP-sávod felett, vagy kapcsold ki a Beállításokban az Oktatóanyag mellett. A CODE a get_progression() függvénnyel olvashatja.",
-	"update.14_09_26.cave": "Új kazamata legfeljebb 3 fős csapatodnak. Naponta 1 futásod és 24 perced van 3 szint teljesítésére. A szörnyek 10× XP-t adnak, és ha odabent meghalsz, nem veszítesz XP-t vagy aranyat. Találj baltákat, kaszákat és Cave Ambert, és az Amberből készíts ritka felszerelést."
+	"update.14_09_26.cave": "Új kazamata legfeljebb 3 fős csapatodnak. Naponta 1 futásod és 24 perced van 3 szint teljesítésére. A szörnyek 10× XP-t adnak, és ha odabent meghalsz, nem veszítesz XP-t vagy aranyat. Találj baltákat, kaszákat és Cave Ambert, és az Amberből készíts ritka felszerelést.",
+	"update.26_09_26.trade_offers": "Tegyél egy tárgyat a standodra, és válaszd a FELAJÁNLÁS CSERÉRE lehetőséget, hogy arany helyett egy másik tárgyat kérj érte. Adj meg minimális szintet vagy címet, vagy hagyd őket MINDEGY értéken. A 70-es szint alatti kereskedők XP-t kapnak a teljesült cserékért.",
+	"update.26_09_26.trade_offers.title": "Csereajánlatok",
+	"update.24_09_26.rare_drops": "15 új kiegészítő esik szörnyektől szerte a világon. Mostantól Kobold szörnyek kóborolnak az Underground Cliffs területén. A Many Eye, a Mimic és a Pale Dino új ritka szörnyek. A kereskedők mostantól egy tárgyat egy másikra cserélhetnek.",
+	"update.24_09_26.rare_drops.title": "Ritka szörnyek, 15 kiegészítő és csereajánlatok"
 }

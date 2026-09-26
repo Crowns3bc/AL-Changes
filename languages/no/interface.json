@@ -965,5 +965,21 @@
 	"interface.cavalry.location": "Cavalry kan ikke komme inn her.",
 	"interface.cavalry.guarded": "En spiller på nivå 80+ er innenfor 150 piksler fra disse monstrene.",
 	"interface.cavalry.not_threatened": "Det høyeste nivået på kontoen din er {level}. Cavalry kjemper bare mot monstre som allerede angriper deg eller gruppen din.",
-	"interface.cavalry.call_short": "KALL"
+	"interface.cavalry.call_short": "KALL",
+	"interface.item.offer_for_trade": "TILBY BYTTE",
+	"interface.trade_offer.trade_for": "Bytt mot",
+	"interface.trade_offer.trade_offer": "Byttetilbud",
+	"interface.trade_offer.min_level": "MIN. NIVÅ:",
+	"interface.trade_offer.title": "TITTEL:",
+	"interface.trade_offer.any": "ALLE",
+	"interface.trade_offer.give": "DU GIR:",
+	"interface.trade_offer.wants": "SØKER:",
+	"interface.trade_offer.any_level_title": "Alle nivåer og titler",
+	"interface.trade_offer.any_level": "Alle nivåer",
+	"interface.trade_offer.any_title": "Alle titler",
+	"interface.trade_offer.or_higher": "Eller høyere",
+	"interface.trade_offer.or_higher_any_title": "Eller høyere, alle titler",
+	"interface.trade_offer.no_match": "Du har ingen passende gjenstand",
+	"interface.trade_offer.choose": "Velg gjenstanden du gir",
+	"interface.trade_offer.trade": "BYTT"
 }

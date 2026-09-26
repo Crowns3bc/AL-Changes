@@ -4,8 +4,8 @@ module.exports = [
 		phrase: "update.24_09_26.rare_drops",
 		deployed: null,
 		date: "[24/09/26]",
-		title: "New Rare Monsters and 15 Accessories",
-		note: "15 new accessories drop from monsters around the world. Kobolds now roam Underground Cliffs. Many Eye, Mimic and Pale Dino are new rare monsters.",
+		title: "Rare Monsters, 15 Accessories and Trade Offers",
+		note: "15 new accessories drop from monsters around the world. Kobolds now roam Underground Cliffs. Many Eye, Mimic and Pale Dino are new rare monsters. Merchants can now trade an item for another item.",
 		cover: "monster:mimic",
 		highlights: [
 			{
@@ -19,6 +19,12 @@ module.exports = [
 				title: "15 New Accessories",
 				note: "Each one drops from one monster. Click an item to see what it does.",
 				show: ["item:stonegaze", "item:mummyhex", "item:harpyecho", "item:canopener", "item:blightcap", "item:gnomecap", "item:koboldbelt", "item:frostfang", "item:paleclaw", "item:mimicgrin", "item:scorpionseal", "item:watchersearring", "item:graveglass", "item:heartwoodlocket", "item:groundingstrap"],
+			},
+			{
+				phrase: "update.26_09_26.trade_offers",
+				title: "Trade Offers",
+				note: "Put an item on your stand and choose OFFER FOR TRADE to ask for another item instead of gold. Set a minimum level or a title, or leave them on ANY. Merchants below level 70 gain XP from completed trades.",
+				show: ["item:stand0"],
 			},
 		],
 		changes: [
@@ -54,6 +60,8 @@ module.exports = [
 			{ new: "guide:goldenbat" },
 			{ new: "guide:cutebee" },
 			{ new: "guide:goldenbot" },
+			{ new: "code:trade_offer" },
+			{ new: "code:trade_swap" },
 			{ changed: "code:upload_code", note: "CODE saves now have limits: 1 MiB per script, 118 scripts or 128 MiB per account, and 10 saves in a row, then 1 more every 2 seconds." },
 			{ fixed: "phantom_entities", note: "Monsters and players that leave no longer stay on the screen." },
 			{ fixed: "blink_stretch", note: "Mage Blink no longer stretches the character." },

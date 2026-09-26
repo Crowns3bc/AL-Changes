@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Isang pagpapabuti sa laro na layuning ayusin ang suliranin sa pagkukumpulan at sa halimaw na hindi nawawala.",
 	"update.30_10_21.new_slenderman_dynamics": "Bagong dinamika ng Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Hindi na tumatagos ang Stomp sa kawalang-tablan sa engkanto; sa halip, ang mga kasanayang tumatagos dito ay may tandang .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Mga bagong bihirang halimaw at 15 aksesorya",
 	"update.24_09_26.rare_drops.rare_monsters": "Puwedeng lumitaw ang bawat isa pagkatapos ng ipinakitang bilang ng napatay. May gabay sa IMP. sa pasukan ng bawat lugar.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Mga bagong bihirang halimaw",
 	"update.24_09_26.rare_drops.accessories": "Bawat isa ay nahuhulog lang mula sa isang halimaw. I-click ang isang gamit para makita ang ginagawa nito.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 bagong gamit ng Paladin. Kapag mas maraming piraso ang suot mo, mas maraming HP, MP at baluti ang makukuha mo.",
 	"update.05_09_26.paladins.oathkeeper.title": "Ang set na Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Pinapalitan ito ng Kalasag ng Eter habang aktibo iyon.",
-	"update.24_09_26.rare_drops": "15 bagong aksesorya ang nahuhulog mula sa mga halimaw sa buong mundo. Gumagala na ngayon ang mga Kobold sa Underground Cliffs. Mga bagong bihirang halimaw ang Many Eye, Mimic at Pale Dino.",
 	"update.20_09_26.head_cosmetics": "Nagbebenta na si Mr. Dworf ng New Make-up at New Accessory. Ibigay ang mga ito kay Haila para sa bagong ulo, kolorete o aksesorya. Mga bagong ulo: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass at Storm. Gumagalaw ang Lava Glass at Storm kahit nakatayo ka lang.",
 	"update.15_09_26.wheel": "May Fortune's Wheel ang Tavern, mga slot na may tatlong reel, at isang mesa ng Texas Hold'em para sa 5 manlalaro. Puwede ring maglaro ang CODE: bet_wheel(), play_slots(), poker_join() at poker_act().",
 	"update.14_09_26.cavalry": "Tawagin ang Cavalry mula sa Tracktrix para matulungan laban sa mga kalapit na halimaw na antas 3 pataas. Isang Mandirigma, Pari, Mago at Paladin ang darating para tumulong. Kapag maraming manlalaro ang tumatawag, inuuna ang mga manlalarong mas mababa ang antas.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Bagong tungkod ng Pari: Worldroot Crook. Gawin ito mula sa Harbringer +8 at bihirang materyales. Nagbibigay ito ng Talino, Lakas at pagtagos sa resistensiya.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Malaking update sa CODE: nagtatapos na ang mga function na nagbabalik ng promise sa tunay na resulta ng server. Dokumentado na ang bawat function, nagpapakita ng live na data ang server.status, at puwedeng gumamit ng MessagePack ang sarili mong client.",
 	"update.14_09_26.progression": "Nagmumungkahi ang Gabay sa Pag-unlad kung saan mangangaso at anong kagamitan ang susunod na aayusin. Pumili ng layunin sa itaas ng HP at MP bar mo, o i-off ito sa Mga Setting sa tabi ng Tutorial. Mababasa ito ng CODE gamit ang get_progression().",
-	"update.14_09_26.cave": "Isang bagong piitan para sa party mo na hanggang 3. May 1 pasok ka bawat araw at 24 minuto para malampasan ang 3 palapag. Nagbibigay ng 10× XP ang mga halimaw, at walang nawawalang XP o ginto kapag namatay sa loob. Humanap ng mga palakol, karit at Cave Amber, at gamitin ang Amber para gumawa ng bihirang kagamitan."
+	"update.14_09_26.cave": "Isang bagong piitan para sa party mo na hanggang 3. May 1 pasok ka bawat araw at 24 minuto para malampasan ang 3 palapag. Nagbibigay ng 10× XP ang mga halimaw, at walang nawawalang XP o ginto kapag namatay sa loob. Humanap ng mga palakol, karit at Cave Amber, at gamitin ang Amber para gumawa ng bihirang kagamitan.",
+	"update.26_09_26.trade_offers": "Maglagay ng gamit sa iyong puwesto at piliin ang IALOK SA PALITAN para humingi ng ibang gamit sa halip na ginto. Magtakda ng pinakamababang antas o titulo, o iwan ang mga ito sa KAHIT ANO. Nakakakuha ng XP mula sa mga natapos na palitan ang mga mangangalakal na mas mababa sa antas 70.",
+	"update.26_09_26.trade_offers.title": "Mga alok na palitan",
+	"update.24_09_26.rare_drops": "15 bagong aksesorya ang nahuhulog mula sa mga halimaw sa buong mundo. Gumagala na ngayon ang mga Kobold sa Underground Cliffs. Mga bagong bihirang halimaw ang Many Eye, Mimic at Pale Dino. Maaari na ngayong ipagpalit ng mga mangangalakal ang isang gamit sa iba.",
+	"update.24_09_26.rare_drops.title": "Mga bihirang halimaw, 15 aksesorya at mga alok na palitan"
 }

@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "Premiumwährung MUSCHELN und erste Premiumgegenstände eingeführt. Auch Monster lassen MUSCHELN fallen. Welche, verrate ich nicht :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "\"Aggressivität\" für Monster eingebaut. Bee stechen :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "Die Funktion \"lines\" hinzugefügt. Zeichnet bei Angriff und Heilung eine Linie zwischen Objekten. Sollte besonders im PVP nützlich sein.",
-	"update.24_09_26.rare_drops.title": "Neue seltene Monster und 15 Accessoires",
 	"update.24_09_26.rare_drops.rare_monsters": "Jedes kann nach der angezeigten Anzahl an Kills erscheinen. INFO am Eingang jedes Gebiets hat eine Anleitung.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Neue seltene Monster",
 	"update.24_09_26.rare_drops.accessories": "Jedes fällt nur bei einem Monster. Klick auf einen Gegenstand, um zu sehen, was er macht.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 neue Paladin-Gegenstände. Je mehr Teile du trägst, desto mehr HP, MP und Rüstung bekommst du.",
 	"update.05_09_26.paladins.oathkeeper.title": "Das Oathkeeper-Set",
 	"update.05_09_26.paladins.skill_mshield": "Ätherschild ersetzt ihn, solange er aktiv ist.",
-	"update.24_09_26.rare_drops": "15 neue Accessoires fallen bei Monstern auf der ganzen Welt. Kobolds ziehen jetzt durch die Underground Cliffs. Many Eye, Mimic und Pale Dino sind neue seltene Monster.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf verkauft jetzt New Make-up und New Accessory. Gib sie Haila für einen neuen Kopf, ein Make-up oder ein Accessoire. Neue Köpfe: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass und Storm. Lava Glass und Storm bewegen sich auch, wenn du stillstehst.",
 	"update.15_09_26.wheel": "Die Tavern hat Fortune's Wheel, Spielautomaten mit drei Walzen und einen Tisch für Texas Hold'em mit 5 Plätzen. CODE kann auch mitspielen: bet_wheel(), play_slots(), poker_join() und poker_act().",
 	"update.14_09_26.cavalry": "Ruf die Cavalry über Tracktrix, um Hilfe gegen Monster ab Stufe 3 in deiner Nähe zu bekommen. Ein Krieger, ein Priester, ein Magier und ein Paladin kommen dir zu Hilfe. Wenn viele Spieler rufen, bekommen Spieler mit niedrigerer Stufe zuerst Hilfe.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Neuer Priesterstab: Worldroot Crook. Stell ihn aus einem Harbringer +8 und seltenen Materialien her. Er gibt Intelligenz, Stärke und Resistenzdurchdringung.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Großes CODE-Update: Funktionen, die eine Promise zurückgeben, liefern jetzt das echte Ergebnis des Servers. Alle Funktionen sind dokumentiert, server.status zeigt Live-Daten, und eigene Clients können MessagePack nutzen.",
 	"update.14_09_26.progression": "Der Fortschrittsratgeber schlägt vor, wo du jagen und an welcher Ausrüstung du als Nächstes arbeiten kannst. Wähl ein Ziel über deinen HP- und MP-Leisten oder schalte ihn in den Einstellungen neben der Einführung aus. CODE kann ihn mit get_progression() lesen.",
-	"update.14_09_26.cave": "Ein neuer Dungeon für deine Gruppe mit bis zu 3 Charakteren. Du hast 1 Durchgang pro Tag und 24 Minuten für 3 Ebenen. Monster geben 10× XP, und Sterben kostet dort weder XP noch Gold. Finde Äxte, Sensen und Cave Amber und stelle mit dem Amber seltene Ausrüstung her."
+	"update.14_09_26.cave": "Ein neuer Dungeon für deine Gruppe mit bis zu 3 Charakteren. Du hast 1 Durchgang pro Tag und 24 Minuten für 3 Ebenen. Monster geben 10× XP, und Sterben kostet dort weder XP noch Gold. Finde Äxte, Sensen und Cave Amber und stelle mit dem Amber seltene Ausrüstung her.",
+	"update.26_09_26.trade_offers": "Lege einen Gegenstand auf deinen Stand und wähle ZUM TAUSCH ANBIETEN, um statt Gold einen anderen Gegenstand zu verlangen. Lege eine Mindeststufe oder einen Titel fest oder lass beides auf BELIEBIG. Händler unter Stufe 70 erhalten XP für abgeschlossene Tausche.",
+	"update.26_09_26.trade_offers.title": "Tauschangebote",
+	"update.24_09_26.rare_drops": "15 neue Accessoires fallen bei Monstern auf der ganzen Welt. Kobolds ziehen jetzt durch die Underground Cliffs. Many Eye, Mimic und Pale Dino sind neue seltene Monster. Händler können jetzt einen Gegenstand gegen einen anderen tauschen.",
+	"update.24_09_26.rare_drops.title": "Seltene Monster, 15 Accessoires und Tauschangebote"
 }

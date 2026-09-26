@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "Lanzadas la moneda prémium CONCHAS y los primeros objetos prémium. Los monstruos también sueltan CONCHAS. No voy a decir cuáles :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "Añadida la \"agresividad\" de los monstruos. Los Bee pican :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "Añadida la función de \"líneas\". Dibuja una línea entre entidades al atacar o curar. Debería ser especialmente útil en PVP.",
-	"update.24_09_26.rare_drops.title": "Nuevos monstruos raros y 15 accesorios",
 	"update.24_09_26.rare_drops.rare_monsters": "Cada uno puede aparecer tras el número de muertes indicado. En INFO, a la entrada de cada zona, hay una guía.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nuevos monstruos raros",
 	"update.24_09_26.rare_drops.accessories": "Cada uno cae de un solo monstruo. Haz clic en un objeto para ver qué hace.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 objetos nuevos para paladín. Cuantas más piezas lleves, más HP, MP y armadura consigues.",
 	"update.05_09_26.paladins.oathkeeper.title": "El conjunto Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Escudo de éter lo sustituye mientras está activo.",
-	"update.24_09_26.rare_drops": "15 accesorios nuevos caen de monstruos de todo el mundo. Ahora hay Kobolds recorriendo Underground Cliffs. Many Eye, Mimic y Pale Dino son nuevos monstruos raros.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf ahora vende New Make-up y New Accessory. Dáselos a Haila para conseguir una cabeza, un maquillaje o un accesorio nuevo. Cabezas nuevas: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass y Storm. Lava Glass y Storm se mueven aunque estés quieto.",
 	"update.15_09_26.wheel": "La Tavern tiene Fortune's Wheel, tragaperras de tres rodillos y una mesa de Texas Hold'em para 5 jugadores. CODE también puede jugar: bet_wheel(), play_slots(), poker_join() y poker_act().",
 	"update.14_09_26.cavalry": "Llama a la Cavalry desde Tracktrix para que te ayude contra monstruos cercanos de nivel 3 o más. Vienen a ayudar un guerrero, un sacerdote, un mago y un paladín. Si llaman muchos jugadores, primero ayudan a los de nivel más bajo.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nuevo bastón de sacerdote: Worldroot Crook. Fabrícalo con un Harbringer +8 y materiales raros. Da Inteligencia, Fuerza y penetración de resistencia.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Gran actualización de CODE: las funciones que devuelven una promise ahora se resuelven con el resultado real del servidor. Todas las funciones están documentadas, server.status muestra datos en vivo y los clientes propios pueden usar MessagePack.",
 	"update.14_09_26.progression": "La Guía de progresión te sugiere dónde cazar y qué equipo mejorar después. Elige un objetivo encima de tus barras de HP y MP, o desactívala en Ajustes junto a Tutorial. CODE puede leerla con get_progression().",
-	"update.14_09_26.cave": "Una nueva mazmorra para tu grupo de hasta 3. Tienes 1 entrada al día y 24 minutos para superar 3 plantas. Los monstruos dan 10× XP y morir dentro no cuesta XP ni oro. Encuentra hachas, guadañas y Cave Amber, y usa el Amber para fabricar equipo raro."
+	"update.14_09_26.cave": "Una nueva mazmorra para tu grupo de hasta 3. Tienes 1 entrada al día y 24 minutos para superar 3 plantas. Los monstruos dan 10× XP y morir dentro no cuesta XP ni oro. Encuentra hachas, guadañas y Cave Amber, y usa el Amber para fabricar equipo raro.",
+	"update.26_09_26.trade_offers": "Pon un objeto en tu puesto y elige OFRECER EN INTERCAMBIO para pedir otro objeto en lugar de oro. Fija un nivel mínimo o un título, o déjalos en CUALQUIERA. Los mercaderes de nivel inferior a 70 ganan XP con los intercambios completados.",
+	"update.26_09_26.trade_offers.title": "Ofertas de intercambio",
+	"update.24_09_26.rare_drops": "15 accesorios nuevos caen de monstruos de todo el mundo. Ahora hay Kobolds recorriendo Underground Cliffs. Many Eye, Mimic y Pale Dino son nuevos monstruos raros. Los mercaderes ya pueden intercambiar un objeto por otro.",
+	"update.24_09_26.rare_drops.title": "Monstruos raros, 15 accesorios y ofertas de intercambio"
 }

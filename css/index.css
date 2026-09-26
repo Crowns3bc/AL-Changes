@@ -133,6 +133,9 @@ canvas { display:block; } /*replaces the overflow: hidden solution [07/07/16] */
 .igu{
 	color:#D96EDC;
 }
+.iou{ /*trade offer*/
+	color:#3E9ACD;
+}
 .ixu{
 	color:#5C5D5E;
 	color:#B3AFB4;

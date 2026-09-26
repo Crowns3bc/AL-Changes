@@ -2397,7 +2397,10 @@ function init_socket(args) {
 			} else if (response == "distance") ui_log(phrase.html("response.distance"), "gray");
 			else if (response == "trade_bspace") {
 				ui_log(phrase.html("response.trade_bspace"), "gray");
-			} else if (response == "bank_restrictions") {
+			} else if (response == "trade_offer_invalid") ui_log(phrase.html("response.trade_offer_invalid"), "gray");
+			else if (response == "trade_swap_match") ui_log(phrase.html("response.trade_swap_match"), "gray");
+			else if (response == "trade_swap_space") ui_log(phrase.html("response.trade_swap_space"), "gray");
+			else if (response == "bank_restrictions") {
 				ui_log(phrase.html("response.bank_restrictions"), "gray");
 			} else if (response == "tavern_too_late") ui_log(phrase.html("response.tavern_too_late"), "gray");
 			else if (response == "tavern_not_yet") ui_log(phrase.html("response.tavern_not_yet"), "gray");
@@ -2741,6 +2744,11 @@ function init_socket(args) {
 				if (buyer) d_text("-$$", buyer, { color: colors.white_negative });
 				call_code_function("trigger_event", "trade", { seller: data.seller, buyer: data.buyer, item: data.item, num: data.num, slot: data.slot });
 				if (seller.me) call_code_function("trigger_event", "sale", { buyer: data.buyer, item: data.item, num: data.num, slot: data.slot });
+			} else if (data.type == "swap") {
+				// The "swap" CODE event comes from data.event; the items cross like a sent item
+				var seller = get_player(data.seller),
+					buyer = get_player(data.buyer);
+				if (seller && buyer) d_line(seller, buyer, { color: "item" });
 			} else if (data.type == "gold_sent") {
 				var sender = get_player(data.sender),
 					receiver = get_player(data.receiver);
@@ -3522,6 +3530,8 @@ function init_socket(args) {
 				html += "<div>" + phrase.html("game.trade_history.bought", { quantity: prefix, item: item, player: h[1], gold: to_pretty_num(h[3]) }) + "</div>";
 			} else if (h[0] == "giveaway") {
 				html += "<div>" + phrase.html("game.trade_history.gave_away", { quantity: prefix, item: item, player: h[1] }) + "</div>";
+			} else if (h[0] == "swap") {
+				html += "<div>" + phrase.html("game.trade_history.traded", { item: trade_lot_name(h[2]), player: h[1], received: trade_lot_name(h[4]) }) + "</div>";
 			} else {
 				html += "<div>" + phrase.html("game.trade_history.sold", { quantity: prefix, item: item, player: h[1], gold: to_pretty_num(h[3]) }) + "</div>";
 			}

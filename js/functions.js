@@ -2056,6 +2056,7 @@ function wishlist_item_click(name, num) {
 
 function wishlist_click(slot) {
 	var num = parseInt(slot.substr(5, 123));
+	wishlist_search = "";
 	render_wishlist(num, 0);
 }
 
@@ -3297,6 +3298,116 @@ function trade_sell(slot, id, rid, q) {
 	socket.emit("trade_sell", { slot: slot, id: id, rid: rid, q: q || 1 });
 	$("#topleftcornerdialog").html("");
 	return promise;
+}
+
+function trade_offer(slot, num, want, q) {
+	var promise = push_deferred("equip");
+	// A missing want would vanish from the message and list the item for gold, so the server gets null and refuses it
+	socket.emit("equip", { q: q || 1, slot: slot, num: num, want: is_string(want) || (want && typeof want == "object") ? want : null });
+	$("#topleftcornerdialog").html("");
+	return promise;
+}
+
+function trade_swap(slot, id, rid, num, item) {
+	// item is the chosen item as this client saw it, like upgrade's clevel: after a reorder the server refuses a different one
+	var promise = push_deferred("trade_swap");
+	socket.emit("trade_swap", { slot: slot, id: id, rid: rid, num: num, item: item || character.items[num] || null });
+	$("#topleftcornerdialog").html("");
+	return promise;
+}
+
+var trade_offer_state = null,
+	trade_offer_view = null;
+function trade_offer_pick(slot, num, q) {
+	trade_offer_state = { slot: slot, num: parseInt(num), q: max(1, parseInt(q) || 1), name: null, p: null };
+	wishlist_search = "";
+	render_wishlist(parseInt(slot.substr(5, 123)), 0, true);
+}
+
+function trade_offer_item_click(name) {
+	trade_offer_state.name = name;
+	trade_offer_state.p = null;
+	render_trade_offer();
+}
+
+function trade_offer_level_focus(element) {
+	// typing replaces ANY
+	setTimeout(function () {
+		var range = document.createRange();
+		range.selectNodeContents(element);
+		window.getSelection().removeAllRanges();
+		window.getSelection().addRange(range);
+	}, 0);
+}
+
+function trade_offer_level_blur(element) {
+	if (!$(element).text().trim()) $(element).html(phrase.html("interface.trade_offer.any"));
+}
+
+function trade_offer_number(text) {
+	// A whole number as the player typed it: "" when empty, null when it is anything but a number.
+	// Full-width and Arabic-Indic digits count, and so do thousands groups of exactly three digits.
+	text = text
+		.trim()
+		.replace(/[\uff10-\uff19]/g, function (d) {
+			return d.charCodeAt(0) - 0xff10;
+		})
+		.replace(/[\u0660-\u0669]/g, function (d) {
+			return d.charCodeAt(0) - 0x0660;
+		})
+		.replace(/[\u06f0-\u06f9]/g, function (d) {
+			return d.charCodeAt(0) - 0x06f0;
+		});
+	if (!text) return "";
+	if (/^\+?\d+$/.test(text) || /^\d{1,3}([,.\s\u00a0\u202f]\d{3})+$/.test(text)) return text.replace(/\D/g, "");
+	return null;
+}
+
+function trade_offer_title() {
+	// TITLE cycles through ANY and the titles this item can carry
+	var def = G.items[trade_offer_state.name],
+		titles = [null];
+	for (var id in G.titles) {
+		var type = G.titles[id].type;
+		if (type == "all_items" || type == def.type || (type == "mainhand" && def.type == "weapon")) titles.push(id);
+	}
+	trade_offer_state.p = titles[(titles.indexOf(trade_offer_state.p) + 1) % titles.length];
+	$(".totitle").html(trade_offer_state.p ? html_escape(G.titles[trade_offer_state.p].title) : phrase.html("interface.trade_offer.any"));
+}
+
+function trade_offer_form() {
+	// The visible text counts: empty or ANY means any level, otherwise a whole number, or nothing is sent
+	var state = trade_offer_state,
+		want = { name: state.name },
+		shown = $(".tolevel").text().trim(),
+		level = shown == phrase("interface.trade_offer.any") ? "" : trade_offer_number(shown),
+		q = $(".toq").length ? trade_offer_number($(".toq").text()) : "1";
+	if (level === null || level > 12 || !q || q == 0) return d_text(phrase("client.floating.invalid"), character);
+	if (level) want.level = parseInt(level);
+	if (state.p) want.p = state.p;
+	if ($(".toq").length) want.q = parseInt(q);
+	trade_offer(state.slot, state.num, want, state.q);
+}
+
+function trade_offer_select(num) {
+	if (!trade_offer_view || !trade_offer_view.args) return;
+	// Choosing the chosen item again shows it in full
+	if (trade_offer_view.num === num && JSON.stringify(trade_offer_view.item) == JSON.stringify(character.items[num])) return trade_offer_inspect();
+	trade_offer_view.num = num;
+	trade_offer_view.item = clone(character.items[num]);
+	render_item("#topleftcornerdialog", trade_offer_view.args);
+}
+
+function trade_offer_inspect() {
+	// the chosen item as the inventory shows it: scrolls, jar contents and title included
+	var item = trade_offer_view && trade_offer_view.item;
+	if (item && G.items[item.name]) show_modal(render_item("html", { item: G.items[item.name], actual: item, name: item.name, readonly: true }), { wrap: false, hideinbackground: true });
+}
+
+function trade_offer_give() {
+	// gives the item as it was when chosen
+	var view = trade_offer_view;
+	if (view && view.num !== null) trade_swap(view.slot, view.args.from_player, view.rid, view.num, view.item);
 }
 
 function secondhand_buy(rid) {

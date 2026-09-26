@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "Wprowadzono walutę premium MUSZLE i pierwsze przedmioty premium. MUSZLE wypadają też z potworów. Nie powiem, z których :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "Wprowadzono „agresywność” potworów. Bee żądli :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "Dodano funkcję „linii”. Rysuje linię między obiektami podczas ataku i leczenia. Powinna przydać się zwłaszcza w PVP.",
-	"update.24_09_26.rare_drops.title": "Nowe rzadkie potwory i 15 dodatków",
 	"update.24_09_26.rare_drops.rare_monsters": "Każdy z nich może się pojawić po podanej liczbie zabójstw. INFO przy wejściu do każdego obszaru ma poradnik.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nowe rzadkie potwory",
 	"update.24_09_26.rare_drops.accessories": "Każdy wypada tylko z jednego potwora. Kliknij przedmiot, aby zobaczyć, co robi.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nowych przedmiotów dla paladyna. Im więcej części nosisz, tym więcej HP, MP i pancerza dostajesz.",
 	"update.05_09_26.paladins.oathkeeper.title": "Zestaw Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Tarcza eteru zastępuje ją, dopóki jest aktywna.",
-	"update.24_09_26.rare_drops": "15 nowych dodatków wypada z potworów na całym świecie. Kobolds krążą teraz po Underground Cliffs. Many Eye, Mimic i Pale Dino to nowe rzadkie potwory.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf sprzedaje teraz New Make-up i New Accessory. Daj je Haila, aby dostać nową głowę, makijaż albo dodatek. Nowe głowy: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass i Storm. Lava Glass i Storm ruszają się nawet wtedy, gdy stoisz w miejscu.",
 	"update.15_09_26.wheel": "W Tavern jest Fortune's Wheel, automaty z trzema bębnami i stół do Texas Hold'em dla 5 graczy. CODE też może grać: bet_wheel(), play_slots(), poker_join() i poker_act().",
 	"update.14_09_26.cavalry": "Wezwij Cavalry przez Tracktrix, aby dostać pomoc przeciw pobliskim potworom od poziomu 3 w górę. Na pomoc przychodzą wojownik, kapłan, mag i paladyn. Gdy wzywa wielu graczy, najpierw pomagają graczom o niższym poziomie.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Nowy kostur kapłana: Worldroot Crook. Wytwórz go z Harbringer +8 i rzadkich materiałów. Daje inteligencję, siłę i przebicie odporności.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Duża aktualizacja CODE: funkcje zwracające promise kończą się teraz prawdziwym wynikiem serwera. Wszystkie funkcje są opisane, server.status pokazuje dane na żywo, a własne klienty mogą używać MessagePack.",
 	"update.14_09_26.progression": "Przewodnik rozwoju podpowiada, gdzie polować i nad jakim ekwipunkiem pracować dalej. Wybierz cel nad paskami HP i MP albo wyłącz go w Ustawieniach obok samouczka. CODE może go odczytać przez get_progression().",
-	"update.14_09_26.cave": "Nowy loch dla drużyny do 3 osób. Masz 1 wejście dziennie i 24 minuty na przejście 3 pięter. Potwory dają 10× XP, a śmierć w środku nie kosztuje XP ani złota. Znajdź topory, kosy i Cave Amber, a z Amber wytwórz rzadki ekwipunek."
+	"update.14_09_26.cave": "Nowy loch dla drużyny do 3 osób. Masz 1 wejście dziennie i 24 minuty na przejście 3 pięter. Potwory dają 10× XP, a śmierć w środku nie kosztuje XP ani złota. Znajdź topory, kosy i Cave Amber, a z Amber wytwórz rzadki ekwipunek.",
+	"update.26_09_26.trade_offers": "Połóż przedmiot na stoisku i wybierz WYSTAW NA WYMIANĘ, aby zamiast złota poprosić o inny przedmiot. Ustaw minimalny poziom lub tytuł albo zostaw je na DOWOLNY. Kupcy poniżej poziomu 70 zdobywają XP za zrealizowane wymiany.",
+	"update.26_09_26.trade_offers.title": "Oferty wymiany",
+	"update.24_09_26.rare_drops": "15 nowych dodatków wypada z potworów na całym świecie. Kobolds krążą teraz po Underground Cliffs. Many Eye, Mimic i Pale Dino to nowe rzadkie potwory. Kupcy mogą teraz wymienić przedmiot na inny.",
+	"update.24_09_26.rare_drops.title": "Rzadkie potwory, 15 dodatków i oferty wymiany"
 }

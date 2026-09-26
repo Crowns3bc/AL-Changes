@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Một cải tiến nhằm khắc phục các vấn đề về dồn đống và quái vật không biến mất.",
 	"update.30_10_21.new_slenderman_dynamics": "Cơ chế Slenderman mới",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp giờ đây không xuyên miễn nhiễm phép thuật nữa; thay vào đó, các kỹ năng xuyên miễn nhiễm phép thuật sẽ có cờ .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Quái vật hiếm mới và 15 phụ kiện",
 	"update.24_09_26.rare_drops.rare_monsters": "Mỗi con có thể xuất hiện sau số lần hạ gục được hiển thị. Nút THÔNG TIN ở lối vào mỗi khu vực có hướng dẫn.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Quái vật hiếm mới",
 	"update.24_09_26.rare_drops.accessories": "Mỗi món chỉ rơi từ một loại quái. Nhấp vào vật phẩm để xem công dụng.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 vật phẩm mới cho Thánh kỵ sĩ. Mặc càng nhiều món, bạn càng nhận thêm HP, MP và giáp.",
 	"update.05_09_26.paladins.oathkeeper.title": "Bộ Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Khiên linh khí thay thế kỹ năng này khi đang kích hoạt.",
-	"update.24_09_26.rare_drops": "15 phụ kiện mới rơi từ quái vật khắp thế giới. Kobold giờ lang thang ở Underground Cliffs. Many Eye, Mimic và Pale Dino là các quái vật hiếm mới.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf giờ bán New Make-up và New Accessory. Đưa chúng cho Haila để nhận kiểu đầu, trang điểm hoặc phụ kiện mới. Kiểu đầu mới: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass và Storm. Lava Glass và Storm vẫn chuyển động kể cả khi bạn đứng yên.",
 	"update.15_09_26.wheel": "Tavern có Fortune's Wheel, máy đánh bạc ba cuộn và một bàn Texas Hold'em cho 5 người chơi. CODE cũng chơi được: bet_wheel(), play_slots(), poker_join() và poker_act().",
 	"update.14_09_26.cavalry": "Gọi Cavalry từ Tracktrix để được giúp đánh quái cấp 3 trở lên ở gần. Một Chiến binh, một Giáo sĩ, một Pháp sư và một Thánh kỵ sĩ sẽ đến giúp. Khi nhiều người chơi cùng gọi, người chơi cấp thấp hơn được giúp trước.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Gậy Giáo sĩ mới: Worldroot Crook. Chế tạo từ một Harbringer +8 và nguyên liệu hiếm. Nó cho Trí tuệ, Sức mạnh và xuyên kháng phép.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Bản cập nhật CODE lớn: các hàm trả về promise giờ hoàn tất với kết quả thật từ máy chủ. Mọi hàm đều có tài liệu, server.status hiển thị dữ liệu trực tiếp, và client tự viết có thể dùng MessagePack.",
 	"update.14_09_26.progression": "Hướng dẫn phát triển gợi ý nơi farm và trang bị nên làm tiếp theo. Chọn mục tiêu phía trên thanh HP và MP, hoặc tắt nó trong Cài đặt cạnh Hướng dẫn. CODE có thể đọc nó bằng get_progression().",
-	"update.14_09_26.cave": "Một hầm ngục mới cho tổ đội tối đa 3 người. Mỗi ngày bạn có 1 lượt và 24 phút để vượt qua 3 tầng. Quái vật cho 10× XP, và chết bên trong không mất XP hay vàng. Tìm rìu, lưỡi hái và Cave Amber, rồi dùng Amber để chế tạo trang bị hiếm."
+	"update.14_09_26.cave": "Một hầm ngục mới cho tổ đội tối đa 3 người. Mỗi ngày bạn có 1 lượt và 24 phút để vượt qua 3 tầng. Quái vật cho 10× XP, và chết bên trong không mất XP hay vàng. Tìm rìu, lưỡi hái và Cave Amber, rồi dùng Amber để chế tạo trang bị hiếm.",
+	"update.26_09_26.trade_offers": "Đặt vật phẩm lên quầy và chọn RAO ĐỔI để yêu cầu vật phẩm khác thay vì vàng. Đặt cấp tối thiểu hoặc danh hiệu, hoặc để BẤT KỲ. Thương nhân dưới cấp 70 nhận XP từ các lần trao đổi đã hoàn tất.",
+	"update.26_09_26.trade_offers.title": "Đề nghị trao đổi",
+	"update.24_09_26.rare_drops": "15 phụ kiện mới rơi từ quái vật khắp thế giới. Kobold giờ lang thang ở Underground Cliffs. Many Eye, Mimic và Pale Dino là các quái vật hiếm mới. Thương nhân giờ có thể đổi một vật phẩm lấy vật phẩm khác.",
+	"update.24_09_26.rare_drops.title": "Quái vật hiếm, 15 phụ kiện và đề nghị trao đổi"
 }

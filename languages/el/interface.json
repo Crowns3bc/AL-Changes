@@ -965,5 +965,21 @@
 	"interface.cavalry.location": "Η Cavalry δεν μπορεί να μπει εδώ.",
 	"interface.cavalry.guarded": "Υπάρχει παίκτης επιπέδου 80+ σε απόσταση έως 150 pixel από αυτά τα τέρατα.",
 	"interface.cavalry.not_threatened": "Το υψηλότερο επίπεδο στον λογαριασμό σου είναι {level}. Η Cavalry πολεμά μόνο τέρατα που ήδη επιτίθενται σε εσένα ή στην ομάδα σου.",
-	"interface.cavalry.call_short": "ΚΑΛΕΣΕ"
+	"interface.cavalry.call_short": "ΚΑΛΕΣΕ",
+	"interface.item.offer_for_trade": "ΔΙΑΘΕΣΗ ΠΡΟΣ ΑΝΤΑΛΛΑΓΗ",
+	"interface.trade_offer.trade_for": "Αντάλλαξε με",
+	"interface.trade_offer.trade_offer": "Προσφορά ανταλλαγής",
+	"interface.trade_offer.min_level": "ΕΛΑΧ. ΕΠΙΠΕΔΟ:",
+	"interface.trade_offer.title": "ΤΙΤΛΟΣ:",
+	"interface.trade_offer.any": "ΑΔΙΑΦΟΡΟ",
+	"interface.trade_offer.give": "ΔΙΝΕΙΣ:",
+	"interface.trade_offer.wants": "ΖΗΤΑ:",
+	"interface.trade_offer.any_level_title": "Οποιοδήποτε επίπεδο και τίτλος",
+	"interface.trade_offer.any_level": "Οποιοδήποτε επίπεδο",
+	"interface.trade_offer.any_title": "Οποιοσδήποτε τίτλος",
+	"interface.trade_offer.or_higher": "Ή υψηλότερο",
+	"interface.trade_offer.or_higher_any_title": "Ή υψηλότερο, οποιοσδήποτε τίτλος",
+	"interface.trade_offer.no_match": "Δεν έχεις κατάλληλο αντικείμενο",
+	"interface.trade_offer.choose": "Επίλεξε το αντικείμενο που δίνεις",
+	"interface.trade_offer.trade": "ΑΝΤΑΛΛΑΓΗ"
 }

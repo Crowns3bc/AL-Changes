@@ -216,6 +216,12 @@ module.exports = {
 	"server.game_log.listed_to_giveaway": "Listed {q} {item} to giveaway!",
 	// node/server.js:7477; game_log authored display. Keep character, item, monster, map, and product names unchanged. Parameters: {item} = item_name(player.slots[slot]).
 	"server.game_log.listed_to_giveaway_2": "Listed {item} to giveaway!",
+	// node/server.js equip; game_log after listing a trade offer. Keep item names unchanged. Parameters: {item} = trade_lot_name(offered item, with any quantity); {want} = trade_lot_name(requested item) without a level, naming a title only when the offer requires one.
+	"server.game_log.offered_for": "Offered {item} for {want}",
+	// node/server.js equip; game_log after listing a trade offer that asks for a minimum level. Keep item names unchanged. Parameters: {item} = trade_lot_name(offered item, with any quantity); {want} = trade_lot_name(requested item), ending in its minimum level such as +8.
+	"server.game_log.offered_for_or_higher": "Offered {item} for {want} or higher",
+	// node/server.js trade_swap; game_log for both characters after a trade offer completes. Keep item and character names unchanged. Parameters: {item} = what this character gave; {player} = the other character; {received} = what this character got.
+	"server.game_log.traded_for": "Traded {item} to {player} for {received}",
 	// node/server.js:2912; game_log authored display. Keep character, item, monster, map, and product names unchanged. Parameters: {amount} = to_pretty_num(gain_gold). node/server.js:2938; game_log authored display. Keep character, item, monster, map, and product names unchanged. Parameters: {amount} = to_pretty_num(gain_gold).
 	"server.game_log.looted_gold": "Looted {amount} gold",
 	// node/server.js:13125; game_log authored display. Keep character, item, monster, map, and product names unchanged.

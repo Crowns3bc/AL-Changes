@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Peliparannus, jonka tarkoitus on korjata ryhmittymiseen ja katoamattomiin hirviöihin liittyvät ongelmat.",
 	"update.30_10_21.new_slenderman_dynamics": "Uusi Slendermanin mekaniikka",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp ei enää läpäise loitsuimmuniteettia; sen sijaan taidoilla, jotka läpäisevät sen, on merkintä .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Uusia harvinaisia hirviöitä ja 15 asustetta",
 	"update.24_09_26.rare_drops.rare_monsters": "Jokainen voi ilmestyä näytetyn tappomäärän jälkeen. Jokaisen alueen sisäänkäynnin INFO-painikkeesta löytyy opas.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Uusia harvinaisia hirviöitä",
 	"update.24_09_26.rare_drops.accessories": "Jokainen putoaa vain yhdeltä hirviöltä. Napsauta esinettä nähdäksesi, mitä se tekee.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 uutta paladiinin esinettä. Mitä useampaa osaa pidät, sitä enemmän HP:tä, MP:tä ja panssaria saat.",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper-setti",
 	"update.05_09_26.paladins.skill_mshield": "Eetterikilpi korvaa sen, kun se on käytössä.",
-	"update.24_09_26.rare_drops": "15 uutta asustetta putoaa hirviöiltä ympäri maailmaa. Koboldit vaeltavat nyt Underground Cliffsissä. Many Eye, Mimic ja Pale Dino ovat uusia harvinaisia hirviöitä.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf myy nyt New Make-up- ja New Accessory -esineitä. Anna ne Hailalle, niin saat uuden pään, meikin tai asusteen. Uudet päät: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass ja Storm. Lava Glass ja Storm liikkuvat, vaikka seisoisit paikallasi.",
 	"update.15_09_26.wheel": "Tavernissa on Fortune's Wheel, kolmirullaiset kolikkopelit ja Texas Hold'em -pöytä 5 pelaajalle. Myös CODE voi pelata: bet_wheel(), play_slots(), poker_join() ja poker_act().",
 	"update.14_09_26.cavalry": "Kutsu Cavalry Tracktrixista avuksi lähellä olevia tason 3+ hirviöitä vastaan. Apuun tulevat soturi, pappi, maagi ja paladiini. Kun moni pelaaja kutsuu, matalamman tason pelaajat saavat apua ensin.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Uusi papin sauva: Worldroot Crook. Valmista se Harbringer +8:sta ja harvinaisista materiaaleista. Se antaa älykkyyttä, voimaa ja vastuksen läpäisyä.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Iso CODE-päivitys: promisen palauttavat funktiot päättyvät nyt palvelimen todelliseen tulokseen. Kaikki funktiot on dokumentoitu, server.status näyttää reaaliaikaista dataa, ja omat asiakasohjelmat voivat käyttää MessagePackia.",
 	"update.14_09_26.progression": "Kehitysopas ehdottaa, missä kannattaa metsästää ja mitä varusteita parantaa seuraavaksi. Valitse tavoite HP- ja MP-palkkiesi yläpuolelta tai poista opas käytöstä Asetuksissa Opastuksen vierestä. CODE voi lukea sen get_progression()-funktiolla.",
-	"update.14_09_26.cave": "Uusi luolasto enintään 3 hengen ryhmällesi. Saat 1 kierroksen päivässä ja 24 minuuttia 3 kerroksen läpäisyyn. Hirviöt antavat 10× XP:tä, eikä sisällä kuoleminen maksa XP:tä tai kultaa. Löydä kirveitä, viikatteita ja Cave Amberia, ja valmista Amberista harvinaisia varusteita."
+	"update.14_09_26.cave": "Uusi luolasto enintään 3 hengen ryhmällesi. Saat 1 kierroksen päivässä ja 24 minuuttia 3 kerroksen läpäisyyn. Hirviöt antavat 10× XP:tä, eikä sisällä kuoleminen maksa XP:tä tai kultaa. Löydä kirveitä, viikatteita ja Cave Amberia, ja valmista Amberista harvinaisia varusteita.",
+	"update.26_09_26.trade_offers": "Laita esine kojuusi ja valitse TARJOA VAIHTOON, niin voit pyytää kullan sijaan toista esinettä. Aseta vähimmäistaso tai titteli tai jätä ne arvoon KAIKKI. Alle tason 70 kauppiaat saavat XP:tä toteutuneista vaihdoista.",
+	"update.26_09_26.trade_offers.title": "Vaihtotarjoukset",
+	"update.24_09_26.rare_drops": "15 uutta asustetta putoaa hirviöiltä ympäri maailmaa. Koboldit vaeltavat nyt Underground Cliffsissä. Many Eye, Mimic ja Pale Dino ovat uusia harvinaisia hirviöitä. Kauppiaat voivat nyt vaihtaa esineen toiseen esineeseen.",
+	"update.24_09_26.rare_drops.title": "Harvinaisia hirviöitä, 15 asustetta ja vaihtotarjoukset"
 }

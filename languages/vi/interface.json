@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry không thể vào nơi này.",
 	"interface.cavalry.guarded": "Có người chơi cấp 80+ trong phạm vi 150 pixel tính từ những quái vật này.",
 	"interface.cavalry.not_threatened": "Cấp cao nhất trong tài khoản của bạn là {level}. Cavalry chỉ chiến đấu với quái vật đang tấn công bạn hoặc tổ đội của bạn.",
-	"interface.cavalry.call_short": "GỌI"
+	"interface.cavalry.call_short": "GỌI",
+	"interface.item.offer_for_trade": "RAO ĐỔI",
+	"interface.trade_offer.trade_for": "Đổi lấy",
+	"interface.trade_offer.trade_offer": "Đề nghị trao đổi",
+	"interface.trade_offer.min_level": "CẤP TỐI THIỂU:",
+	"interface.trade_offer.title": "DANH HIỆU:",
+	"interface.trade_offer.any": "BẤT KỲ",
+	"interface.trade_offer.give": "BẠN ĐƯA:",
+	"interface.trade_offer.wants": "MUỐN:",
+	"interface.trade_offer.any_level_title": "Mọi cấp và danh hiệu",
+	"interface.trade_offer.any_level": "Mọi cấp",
+	"interface.trade_offer.any_title": "Mọi danh hiệu",
+	"interface.trade_offer.or_higher": "Hoặc cao hơn",
+	"interface.trade_offer.or_higher_any_title": "Hoặc cao hơn, mọi danh hiệu",
+	"interface.trade_offer.no_match": "Bạn không có vật phẩm phù hợp",
+	"interface.trade_offer.choose": "Chọn vật phẩm để đưa",
+	"interface.trade_offer.trade": "ĐỔI"
 }

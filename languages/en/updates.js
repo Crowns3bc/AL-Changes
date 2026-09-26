@@ -1,7 +1,11 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
-	// Title of the [24/09/26] update post "New Rare Monsters and 15 Accessories". Keep names from the game and CODE identifiers unchanged.
-	"update.24_09_26.rare_drops.title": "New Rare Monsters and 15 Accessories",
+	// Section text in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers", under sprites of: item:stand0. Keep names from the game and CODE identifiers unchanged.
+	"update.26_09_26.trade_offers": "Put an item on your stand and choose OFFER FOR TRADE to ask for another item instead of gold. Set a minimum level or a title, or leave them on ANY. Merchants below level 70 gain XP from completed trades.",
+	// Section heading in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.
+	"update.26_09_26.trade_offers.title": "Trade Offers",
+	// Title of the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.
+	"update.24_09_26.rare_drops.title": "Rare Monsters, 15 Accessories and Trade Offers",
 	// Section text in the [24/09/26] update post "New Rare Monsters and 15 Accessories", under sprites of: monster:manyeye, monster:mimic, monster:paledino. Keep names from the game and CODE identifiers unchanged.
 	"update.24_09_26.rare_drops.rare_monsters": "Each one can appear after the number of kills shown. INFO at the entrance of each area has a guide.",
 	// Section heading in the [24/09/26] update post "New Rare Monsters and 15 Accessories". Keep names from the game and CODE identifiers unchanged.
@@ -94,8 +98,8 @@ module.exports = {
 	"update.05_09_26.paladins.oathkeeper.title": "The Oathkeeper Set",
 	// Note under skill:mshield (changed) in the change list of the [05/09/26] update post "A Big Update for Paladins". Keep names from the game and CODE identifiers unchanged.
 	"update.05_09_26.paladins.skill_mshield": "Aether Shield replaces it while active.",
-	// Summary of the [24/09/26] update post "New Rare Monsters and 15 Accessories", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
-	"update.24_09_26.rare_drops": "15 new accessories drop from monsters around the world. Kobolds now roam Underground Cliffs. Many Eye, Mimic and Pale Dino are new rare monsters.",
+	// Summary of the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers", shown under its title and in the game log. Keep names from the game and CODE identifiers unchanged.
+	"update.24_09_26.rare_drops": "15 new accessories drop from monsters around the world. Kobolds now roam Underground Cliffs. Many Eye, Mimic and Pale Dino are new rare monsters. Merchants can now trade an item for another item.",
 	// Section text in the [22/09/26] update post "Cavalry, New Heads and Steam Sign-in", under sprites of: cx:cyclops0, cx:eyehead0, cx:mimichead0, cx:slimehead0, cx:lanternhead0, cx:lavaglasshead0, cx:stormhead0. Keep names from the game and CODE identifiers unchanged.
 	"update.20_09_26.head_cosmetics": "Mr. Dworf now sells New Make-up and New Accessory. Give them to Haila for a new head, make-up or accessory. New heads: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass and Storm. Lava Glass and Storm move even when you stand still.",
 	// Section text in the [16/09/26] update post "Cave of Many Dreams, Tavern Games and Rime Djinn". Keep names from the game and CODE identifiers unchanged.

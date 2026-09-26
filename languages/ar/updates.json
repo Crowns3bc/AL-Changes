@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "تحسين في اللعبة يهدف إلى حل مشكلات التجمهر والوحوش التي لا تختفي.",
 	"update.30_10_21.new_slenderman_dynamics": "ديناميكية جديدة لـ Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "لم يعد Stomp يخترق المناعة ضد التعاويذ؛ وبدلًا من ذلك تحمل المهارات التي تخترقها السمة .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "وحوش نادرة جديدة و15 ملحقًا",
 	"update.24_09_26.rare_drops.rare_monsters": "يمكن أن يظهر كل واحد منها بعد عدد القتلات المعروض. في زر معلومات عند مدخل كل منطقة دليل.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "وحوش نادرة جديدة",
 	"update.24_09_26.rare_drops.accessories": "كل واحد منها يسقط من وحش واحد فقط. انقر على أي غرض لترى ما يفعله.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 أغراض جديدة للفارس المقدس. كلما ارتديت قطعًا أكثر، حصلت على HP وMP ودرع أكثر.",
 	"update.05_09_26.paladins.oathkeeper.title": "طقم Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "يحل درع الأثير محلها ما دام نشطًا.",
-	"update.24_09_26.rare_drops": "15 ملحقًا جديدًا تسقط من وحوش في أنحاء العالم. صارت Kobold تتجول في Underground Cliffs. وMany Eye وMimic وPale Dino وحوش نادرة جديدة.",
 	"update.20_09_26.head_cosmetics": "صار Mr. Dworf يبيع New Make-up وNew Accessory. أعطهما إلى Haila لتحصل على رأس أو زينة وجه أو ملحق جديد. الرؤوس الجديدة: Cyclops وEyeball وMimic وSlime وLantern وLava Glass وStorm. يتحرك Lava Glass وStorm حتى وأنت واقف في مكانك.",
 	"update.15_09_26.wheel": "في Tavern عجلة Fortune's Wheel وآلات قمار بثلاث بكرات وطاولة Texas Hold'em لـ 5 لاعبين. ويمكن لـ CODE أن يلعب أيضًا: bet_wheel() وplay_slots() وpoker_join() وpoker_act().",
 	"update.14_09_26.cavalry": "استدعِ Cavalry من Tracktrix لتحصل على مساعدة ضد الوحوش القريبة من المستوى 3 فما فوق. يأتي للمساعدة محارب وكاهن وساحر وفارس مقدس. وعندما يستدعي لاعبون كثيرون، يُساعَد أصحاب المستويات الأدنى أولًا.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "عصا كاهن جديدة: Worldroot Crook. اصنعها من Harbringer +8 ومواد نادرة. تمنح الذكاء والقوة واختراق المقاومة.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "تحديث كبير لـ CODE: الدوال التي تعيد promise تنتهي الآن بالنتيجة الحقيقية من الخادم. كل الدوال موثقة، وserver.status يعرض بيانات مباشرة، ويمكن للعملاء المخصصين استخدام MessagePack.",
 	"update.14_09_26.progression": "يقترح دليل التقدم أين تصطاد وأي معدات تعمل عليها بعد ذلك. اختر هدفًا فوق شريطي HP وMP، أو أوقفه من الإعدادات بجانب الدرس التعليمي. ويمكن لـ CODE قراءته عبر get_progression().",
-	"update.14_09_26.cave": "سرداب جديد لفرقتك حتى 3 لاعبين. لديك دخول واحد في اليوم و24 دقيقة لتجتاز 3 طوابق. الوحوش تمنح 10× XP، والموت في الداخل لا يكلفك XP ولا ذهبًا. اعثر على فؤوس ومناجل وCave Amber، واستخدم Amber لصنع معدات نادرة."
+	"update.14_09_26.cave": "سرداب جديد لفرقتك حتى 3 لاعبين. لديك دخول واحد في اليوم و24 دقيقة لتجتاز 3 طوابق. الوحوش تمنح 10× XP، والموت في الداخل لا يكلفك XP ولا ذهبًا. اعثر على فؤوس ومناجل وCave Amber، واستخدم Amber لصنع معدات نادرة.",
+	"update.26_09_26.trade_offers": "ضع غرضًا في بسطتك واختر عرض للمقايضة لتطلب غرضًا آخر بدل الذهب. حدد أدنى مستوى أو لقبًا، أو اتركهما على غير محدد. يكسب التجار دون المستوى 70 XP من المقايضات المكتملة.",
+	"update.26_09_26.trade_offers.title": "عروض المقايضة",
+	"update.24_09_26.rare_drops": "15 ملحقًا جديدًا تسقط من وحوش في أنحاء العالم. صارت Kobold تتجول في Underground Cliffs. وMany Eye وMimic وPale Dino وحوش نادرة جديدة. يمكن للتجار الآن مقايضة غرض بغرض آخر.",
+	"update.24_09_26.rare_drops.title": "وحوش نادرة و15 ملحقًا وعروض مقايضة"
 }

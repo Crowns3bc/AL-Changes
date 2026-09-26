@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "En forbedring som skal løse problemene med ansamlinger og monstre som ikke forsvinner.",
 	"update.30_10_21.new_slenderman_dynamics": "Ny virkemåte for Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp trenger ikke lenger gjennom trolldomsimmunitet; i stedet har ferdighetene som gjør det, flagget .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nye sjeldne monstre og 15 tilbehør",
 	"update.24_09_26.rare_drops.rare_monsters": "Hvert av dem kan dukke opp etter antallet drap som vises. INFO ved inngangen til hvert område har en guide.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nye sjeldne monstre",
 	"update.24_09_26.rare_drops.accessories": "Hvert av dem faller bare fra ett monster. Klikk på en gjenstand for å se hva den gjør.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nye paladingjenstander. Jo flere deler du har på deg, jo mer HP, MP og rustning får du.",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper-settet",
 	"update.05_09_26.paladins.skill_mshield": "Eterskjold erstatter den mens det er aktivt.",
-	"update.24_09_26.rare_drops": "15 nye tilbehør faller fra monstre over hele verden. Kobold streifer nå rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjeldne monstre.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf selger nå New Make-up og New Accessory. Gi dem til Haila for et nytt hode, ny sminke eller nytt tilbehør. Nye hoder: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass og Storm. Lava Glass og Storm beveger seg selv når du står stille.",
 	"update.15_09_26.wheel": "Tavern har Fortune's Wheel, spilleautomater med tre hjul og et Texas Hold'em-bord for 5 spillere. CODE kan også spille: bet_wheel(), play_slots(), poker_join() og poker_act().",
 	"update.14_09_26.cavalry": "Tilkall Cavalry fra Tracktrix for å få hjelp mot monstre på nivå 3+ i nærheten. En kriger, en prest, en magiker og en paladin kommer og hjelper. Når mange spillere tilkaller, får spillere på lavere nivå hjelp først.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Ny prestestav: Worldroot Crook. Lag den av en Harbringer +8 og sjeldne materialer. Den gir Intelligens, Styrke og motstandsgjennomtrengning.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Stor CODE-oppdatering: funksjoner som returnerer et promise, fullføres nå med serverens faktiske resultat. Alle funksjoner er dokumentert, server.status viser sanntidsdata, og egne klienter kan bruke MessagePack.",
 	"update.14_09_26.progression": "Utviklingsguiden foreslår hvor du kan jakte og hvilket utstyr du kan jobbe med videre. Velg et mål over HP- og MP-linjene dine, eller slå den av i Innstillinger ved siden av Opplæring. CODE kan lese den med get_progression().",
-	"update.14_09_26.cave": "En ny grotte for gruppen din på opptil 3. Du får 1 runde per dag og 24 minutter på å komme gjennom 3 etasjer. Monstre gir 10× XP, og å dø der inne koster verken XP eller gull. Finn økser, ljåer og Cave Amber, og bruk Amber til å lage sjeldent utstyr."
+	"update.14_09_26.cave": "En ny grotte for gruppen din på opptil 3. Du får 1 runde per dag og 24 minutter på å komme gjennom 3 etasjer. Monstre gir 10× XP, og å dø der inne koster verken XP eller gull. Finn økser, ljåer og Cave Amber, og bruk Amber til å lage sjeldent utstyr.",
+	"update.26_09_26.trade_offers": "Legg en gjenstand i boden din og velg TILBY BYTTE for å be om en annen gjenstand i stedet for gull. Angi et minstenivå eller en tittel, eller la dem stå på ALLE. Kjøpmenn under nivå 70 får XP for fullførte byttehandler.",
+	"update.26_09_26.trade_offers.title": "Byttetilbud",
+	"update.24_09_26.rare_drops": "15 nye tilbehør faller fra monstre over hele verden. Kobold streifer nå rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjeldne monstre. Kjøpmenn kan nå bytte en gjenstand mot en annen.",
+	"update.24_09_26.rare_drops.title": "Sjeldne monstre, 15 tilbehør og byttetilbud"
 }

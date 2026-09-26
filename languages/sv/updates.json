@@ -732,7 +732,6 @@
 	"update.30_08_20.players_are_now_sorted_based_on_online_status_and": "Spelare sorteras nu efter onlinestatus och ålder",
 	"update.30_10_21.new_slenderman_dynamics": "Ny mekanik för Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp tränger inte längre igenom besvärjelseimmunitet; i stället har de färdigheter som gör det flaggan .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Nya sällsynta monster och 15 accessoarer",
 	"update.24_09_26.rare_drops.rare_monsters": "Vart och ett kan dyka upp efter det antal dödade som visas. INFO vid ingången till varje område har en guide.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Nya sällsynta monster",
 	"update.24_09_26.rare_drops.accessories": "Varje föremål faller bara från ett monster. Klicka på ett föremål för att se vad det gör.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 nya föremål för paladiner. Ju fler delar du bär, desto mer HP, MP och pansar får du.",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper-setet",
 	"update.05_09_26.paladins.skill_mshield": "Etersköld ersätter den medan den är aktiv.",
-	"update.24_09_26.rare_drops": "15 nya accessoarer faller från monster över hela världen. Kobold strövar nu omkring i Underground Cliffs. Many Eye, Mimic och Pale Dino är nya sällsynta monster.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf säljer nu New Make-up och New Accessory. Ge dem till Haila för ett nytt huvud, smink eller en ny accessoar. Nya huvuden: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass och Storm. Lava Glass och Storm rör sig även när du står still.",
 	"update.15_09_26.wheel": "I Tavern finns Fortune's Wheel, spelautomater med tre hjul och ett Texas Hold'em-bord för 5 spelare. CODE kan också spela: bet_wheel(), play_slots(), poker_join() och poker_act().",
 	"update.14_09_26.cavalry": "Kalla på Cavalry från Tracktrix för att få hjälp mot monster på nivå 3+ i närheten. En krigare, en präst, en magiker och en paladin kommer och hjälper till. När många spelare kallar får spelare på lägre nivå hjälp först.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Ny stav för präster: Worldroot Crook. Tillverka den av en Harbringer +8 och sällsynta material. Den ger Intelligens, Styrka och resistensgenomträngning.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Stor CODE-uppdatering: funktioner som returnerar en promise slutförs nu med serverns riktiga resultat. Alla funktioner är dokumenterade, server.status visar livedata, och egna klienter kan använda MessagePack.",
 	"update.14_09_26.progression": "Utvecklingsguiden föreslår var du kan jaga och vilken utrustning du kan jobba på härnäst. Välj ett mål ovanför dina HP- och MP-mätare, eller stäng av den i Inställningar bredvid Introduktion. CODE kan läsa den med get_progression().",
-	"update.14_09_26.cave": "En ny grotta för din grupp på upp till 3. Du får 1 runda per dag och 24 minuter att ta dig genom 3 våningar. Monster ger 10× XP, och att dö därinne kostar varken XP eller guld. Hitta yxor, liar och Cave Amber, och använd Amber för att tillverka sällsynt utrustning."
+	"update.14_09_26.cave": "En ny grotta för din grupp på upp till 3. Du får 1 runda per dag och 24 minuter att ta dig genom 3 våningar. Monster ger 10× XP, och att dö därinne kostar varken XP eller guld. Hitta yxor, liar och Cave Amber, och använd Amber för att tillverka sällsynt utrustning.",
+	"update.26_09_26.trade_offers": "Lägg ett föremål i ditt stånd och välj ERBJUD BYTE för att be om ett annat föremål i stället för guld. Ange en lägsta nivå eller en titel, eller lämna dem på VALFRI. Handlare under nivå 70 får XP för slutförda byten.",
+	"update.26_09_26.trade_offers.title": "Bytesanbud",
+	"update.24_09_26.rare_drops": "15 nya accessoarer faller från monster över hela världen. Kobold strövar nu omkring i Underground Cliffs. Many Eye, Mimic och Pale Dino är nya sällsynta monster. Handlare kan nu byta ett föremål mot ett annat.",
+	"update.24_09_26.rare_drops.title": "Sällsynta monster, 15 accessoarer och bytesanbud"
 }

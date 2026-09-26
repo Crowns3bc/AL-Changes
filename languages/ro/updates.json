@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "O îmbunătățire menită să rezolve problemele legate de aglomerare și de monștrii care nu dispar.",
 	"update.30_10_21.new_slenderman_dynamics": "Dinamici noi pentru Slenderman",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp nu mai străpunge imunitatea la vrăji; în schimb, abilitățile care o străpung au indicatorul .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Monștri rari noi și 15 accesorii",
 	"update.24_09_26.rare_drops.rare_monsters": "Fiecare poate apărea după numărul de ucideri afișat. INFO de la intrarea fiecărei zone are un ghid.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Monștri rari noi",
 	"update.24_09_26.rare_drops.accessories": "Fiecare cade dintr-un singur monstru. Dă clic pe un obiect ca să vezi ce face.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 obiecte noi pentru paladini. Cu cât porți mai multe piese, cu atât primești mai mult HP, MP și armură.",
 	"update.05_09_26.paladins.oathkeeper.title": "Setul Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Scutul eteric îl înlocuiește cât timp e activ.",
-	"update.24_09_26.rare_drops": "15 accesorii noi cad din monștri din toată lumea. Kobold cutreieră acum Underground Cliffs. Many Eye, Mimic și Pale Dino sunt monștri rari noi.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf vinde acum New Make-up și New Accessory. Dă-le personajului Haila ca să primești un cap, un machiaj sau un accesoriu nou. Capete noi: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass și Storm. Lava Glass și Storm se mișcă și când stai pe loc.",
 	"update.15_09_26.wheel": "Tavern are Fortune's Wheel, păcănele cu trei role și o masă de Texas Hold'em pentru 5 jucători. Și CODE poate juca: bet_wheel(), play_slots(), poker_join() și poker_act().",
 	"update.14_09_26.cavalry": "Cheamă Cavalry din Tracktrix ca să primești ajutor împotriva monștrilor de nivel 3+ din apropiere. Vin să ajute un Războinic, un Preot, un Mag și un Paladin. Când cheamă mulți jucători, cei de nivel mai mic primesc ajutor primii.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Toiag nou de Preot: Worldroot Crook. Fabrică-l dintr-un Harbringer +8 și materiale rare. Dă Inteligență, Forță și penetrarea rezistenței.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Actualizare mare pentru CODE: funcțiile care returnează un promise se încheie acum cu rezultatul real al serverului. Toate funcțiile sunt documentate, server.status arată date în timp real, iar clienții proprii pot folosi MessagePack.",
 	"update.14_09_26.progression": "Ghidul de progres îți sugerează unde să vânezi și la ce echipament să lucrezi în continuare. Alege un obiectiv deasupra barelor de HP și MP sau dezactivează-l din Setări, lângă Tutorial. CODE îl poate citi cu get_progression().",
-	"update.14_09_26.cave": "O temniță nouă pentru grupul tău de până la 3. Ai 1 intrare pe zi și 24 de minute ca să treci de 3 etaje. Monștrii dau 10× XP, iar moartea înăuntru nu costă XP sau aur. Găsește topoare, coase și Cave Amber și folosește Amber ca să fabrici echipament rar."
+	"update.14_09_26.cave": "O temniță nouă pentru grupul tău de până la 3. Ai 1 intrare pe zi și 24 de minute ca să treci de 3 etaje. Monștrii dau 10× XP, iar moartea înăuntru nu costă XP sau aur. Găsește topoare, coase și Cave Amber și folosește Amber ca să fabrici echipament rar.",
+	"update.26_09_26.trade_offers": "Pune un obiect pe taraba ta și alege OFERĂ LA SCHIMB ca să ceri alt obiect în loc de aur. Setează un nivel minim sau un titlu ori lasă-le pe ORICARE. Negustorii sub nivelul 70 câștigă XP din schimburile finalizate.",
+	"update.26_09_26.trade_offers.title": "Oferte de schimb",
+	"update.24_09_26.rare_drops": "15 accesorii noi cad din monștri din toată lumea. Kobold cutreieră acum Underground Cliffs. Many Eye, Mimic și Pale Dino sunt monștri rari noi. Negustorii pot acum schimba un obiect pe altul.",
+	"update.24_09_26.rare_drops.title": "Monștri rari, 15 accesorii și oferte de schimb"
 }

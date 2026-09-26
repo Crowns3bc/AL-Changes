@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "推出高级货币贝壳及首批高级物品。怪物也会掉落贝壳，至于是哪几种，就不告诉你了 :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "怪物新增“主动攻击”行为。Bee会蜇人了 :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "新增“连线”功能，攻击和治疗时在实体之间画线，对PVP应该尤其有用。",
-	"update.24_09_26.rare_drops.title": "新的稀有怪物和 15 件饰品",
 	"update.24_09_26.rare_drops.rare_monsters": "击杀显示的数量后，它们都可能出现。每个区域入口的详情里有指南。",
 	"update.24_09_26.rare_drops.rare_monsters.title": "新的稀有怪物",
 	"update.24_09_26.rare_drops.accessories": "每件只从一种怪物身上掉落。点击物品查看它的效果。",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 件新的圣骑士物品。穿的件数越多，获得的 HP、MP 和护甲越多。",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeper 套装",
 	"update.05_09_26.paladins.skill_mshield": "以太护盾开启期间会代替这个技能。",
-	"update.24_09_26.rare_drops": "世界各地的怪物会掉落 15 件新饰品。Kobold 现在在 Underground Cliffs 四处游荡。Many Eye、Mimic 和 Pale Dino 是新的稀有怪物。",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf 现在出售 New Make-up 和 New Accessory。交给 Haila 可以换到新的头部、妆容或饰品。新头部：Cyclops、Eyeball、Mimic、Slime、Lantern、Lava Glass 和 Storm。Lava Glass 和 Storm 即使站着不动也会动。",
 	"update.15_09_26.wheel": "Tavern 里有 Fortune's Wheel、三轴老虎机和一张 5 人的 Texas Hold'em 牌桌。CODE 也能玩：bet_wheel()、play_slots()、poker_join() 和 poker_act()。",
 	"update.14_09_26.cavalry": "在 Tracktrix 中召唤 Cavalry，帮你对付附近 3 级及以上的怪物。战士、牧师、法师和圣骑士会来帮忙。很多玩家同时召唤时，会先帮助等级较低的玩家。",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "新的牧师法杖：Worldroot Crook。用一把 +8 的 Harbringer 和稀有材料制作。它提供智力、力量和抗性穿透。",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "CODE 大更新：返回 promise 的函数现在会以服务器的真实结果完成。所有函数都有说明，server.status 显示实时数据，自定义客户端可以使用 MessagePack。",
 	"update.14_09_26.progression": "成长指南会建议你接下来去哪里狩猎、提升哪件装备。在 HP 和 MP 条上方选择目标，或在设置中教程旁边关闭它。CODE 可以用 get_progression() 读取。",
-	"update.14_09_26.cave": "适合最多 3 人队伍的新地下城。每天 1 次，你有 24 分钟通过 3 层。怪物提供 10× XP，在里面死亡不会损失 XP 或金币。找到斧头、镰刀和 Cave Amber，用 Amber 制作稀有装备。"
+	"update.14_09_26.cave": "适合最多 3 人队伍的新地下城。每天 1 次，你有 24 分钟通过 3 层。怪物提供 10× XP，在里面死亡不会损失 XP 或金币。找到斧头、镰刀和 Cave Amber，用 Amber 制作稀有装备。",
+	"update.26_09_26.trade_offers": "把物品放上摊位并选择“上架交换”，即可要求用另一件物品代替金币。可设定最低等级或称号，也可保持“不限”。低于70级的商人可从完成的交换获得XP。",
+	"update.26_09_26.trade_offers.title": "交换报价",
+	"update.24_09_26.rare_drops": "世界各地的怪物会掉落 15 件新饰品。Kobold 现在在 Underground Cliffs 四处游荡。Many Eye、Mimic 和 Pale Dino 是新的稀有怪物。商人现在可以用一件物品交换另一件物品。",
+	"update.24_09_26.rare_drops.title": "稀有怪物、15 件饰品和交换报价"
 }

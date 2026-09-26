@@ -965,5 +965,21 @@
 	"interface.cavalry.location": "Cavalry kan hier niet naar binnen.",
 	"interface.cavalry.guarded": "Er is een speler van niveau 80+ binnen 150 pixels van deze monsters.",
 	"interface.cavalry.not_threatened": "Het hoogste niveau op je account is {level}. Cavalry vecht alleen tegen monsters die jou of je groep al aanvallen.",
-	"interface.cavalry.call_short": "ROEP"
+	"interface.cavalry.call_short": "ROEP",
+	"interface.item.offer_for_trade": "AANBIEDEN VOOR RUIL",
+	"interface.trade_offer.trade_for": "Ruilen voor",
+	"interface.trade_offer.trade_offer": "Ruilaanbod",
+	"interface.trade_offer.min_level": "MIN. NIVEAU:",
+	"interface.trade_offer.title": "TITEL:",
+	"interface.trade_offer.any": "ALLE",
+	"interface.trade_offer.give": "JIJ GEEFT:",
+	"interface.trade_offer.wants": "ZOEKT:",
+	"interface.trade_offer.any_level_title": "Elk niveau en elke titel",
+	"interface.trade_offer.any_level": "Elk niveau",
+	"interface.trade_offer.any_title": "Elke titel",
+	"interface.trade_offer.or_higher": "Of hoger",
+	"interface.trade_offer.or_higher_any_title": "Of hoger, elke titel",
+	"interface.trade_offer.no_match": "Je hebt geen passend voorwerp",
+	"interface.trade_offer.choose": "Kies het voorwerp dat je geeft",
+	"interface.trade_offer.trade": "RUILEN"
 }

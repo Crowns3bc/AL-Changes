@@ -977,5 +977,21 @@
 	"interface.cavalry.location": "Cavalry не может войти сюда.",
 	"interface.cavalry.guarded": "В пределах 150 пикселей от этих монстров есть игрок уровня 80+.",
 	"interface.cavalry.not_threatened": "Самый высокий уровень на вашем аккаунте — {level}. Cavalry сражается только с монстрами, которые уже атакуют вас или вашу группу.",
-	"interface.cavalry.call_short": "ПОЗВАТЬ"
+	"interface.cavalry.call_short": "ПОЗВАТЬ",
+	"interface.item.offer_for_trade": "ПРЕДЛОЖИТЬ ОБМЕН",
+	"interface.trade_offer.trade_for": "Обменять на",
+	"interface.trade_offer.trade_offer": "Предложение обмена",
+	"interface.trade_offer.min_level": "МИН. УРОВЕНЬ:",
+	"interface.trade_offer.title": "ТИТУЛ:",
+	"interface.trade_offer.any": "ЛЮБОЙ",
+	"interface.trade_offer.give": "ВЫ ОТДАЁТЕ:",
+	"interface.trade_offer.wants": "ИЩЕТ:",
+	"interface.trade_offer.any_level_title": "Любой уровень и титул",
+	"interface.trade_offer.any_level": "Любой уровень",
+	"interface.trade_offer.any_title": "Любой титул",
+	"interface.trade_offer.or_higher": "Или выше",
+	"interface.trade_offer.or_higher_any_title": "Или выше, любой титул",
+	"interface.trade_offer.no_match": "У вас нет подходящего предмета",
+	"interface.trade_offer.choose": "Выберите предмет для обмена",
+	"interface.trade_offer.trade": "ОБМЕНЯТЬ"
 }

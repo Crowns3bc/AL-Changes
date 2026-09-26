@@ -4678,13 +4678,26 @@ function render_others() {
 	show_modal(html, { wrap: false, hideinbackground: true, url: "/docs/ref" });
 }
 
-function render_wishlist(num, page) {
-	var html = "<div style='background-color: black; border: 5px solid gray; padding: 12px 20px 20px 20px; font-size: 24px; display: inline-block'>";
+var wishlist_search = "";
+function render_wishlist(num, page, offer, typing) {
+	// offer: the same item picker chooses what a trade offer asks for; SEARCH narrows it by item name
+	var query = wishlist_search.toLowerCase(),
+		html = "<div style='background-color: black; border: 5px solid gray; padding: 12px 20px 20px 20px; font-size: 24px; display: inline-block'>";
 	html +=
-		"<div style='color: #f1c054; border-bottom: 2px dashed #C7CACA; margin-bottom: 3px; margin-left: 3px; margin-right: 3px' class='cbold'>" + phrase.html("interface.wishlist.wishlist") + "</div>";
+		"<div style='color: #f1c054; border-bottom: 2px dashed #C7CACA; margin-bottom: 3px; margin-left: 3px; margin-right: 3px' class='cbold'>" +
+		phrase.html(offer ? "interface.trade_offer.trade_for" : "interface.wishlist.wishlist") +
+		"</div>";
+	html +=
+		"<div style='margin: 0 3px 3px 3px'><span style='color:#37DBC1'>" +
+		phrase.html("interface.code_docs.search") +
+		"</span> <input type='text' class='wsearchi' style='font-family:var(--pixel-font, pixel); font-size:24px; margin-bottom: -8px; width: 150px; margin-left: 5px' oninput='wishlist_search=this.value; render_wishlist(" +
+		num +
+		",0," +
+		!!offer +
+		",true)'></div>";
 	var items = [],
 		last = 0;
-	for (var name in G.items) if (!G.items[name].ignore) items.push([name, G.items[name], G.items[name].g || 0]);
+	for (var name in G.items) if (!G.items[name].ignore && (!query || G.items[name].name.toLowerCase().indexOf(query) != -1)) items.push([name, G.items[name], G.items[name].g || 0]);
 	items.sort(function (a, b) {
 		return b[2] - a[2];
 	});
@@ -4692,13 +4705,15 @@ function render_wishlist(num, page) {
 	for (var i = 0; i < 4; i++) {
 		html += "<div>";
 		for (var j = 0; j < 5; j++) {
-			if (i == 3 && j == 0 && page != 0) html += item_container({ skin: "left", onclick: "render_wishlist(" + num + "," + (page - 1) + ");" }, { q: page, left: true });
-			else if (i == 3 && j == 4 && last < items.length - 1) html += item_container({ skin: "right", onclick: "render_wishlist(" + num + "," + (page + 1) + ");" }, { q: page + 2, left: true });
+			if (i == 3 && j == 0 && page != 0) html += item_container({ skin: "left", onclick: "render_wishlist(" + num + "," + (page - 1) + "," + !!offer + ");" }, { q: page, left: true });
+			else if (i == 3 && j == 4 && last < items.length - 1)
+				html += item_container({ skin: "right", onclick: "render_wishlist(" + num + "," + (page + 1) + "," + !!offer + ");" }, { q: page + 2, left: true });
 			else if (last < items.length && items[last++]) {
 				var id = "wishlist" + (last - 1),
 					item = items[last - 1][1],
 					name = items[last - 1][0];
-				html += item_container({ skin: item.skin, onclick: "wishlist_item_click('" + name + "'," + num + ")", def: item, id: id, draggable: false, droppable: false }, null);
+				var onclick = offer ? "trade_offer_item_click('" + name + "')" : "wishlist_item_click('" + name + "'," + num + ")";
+				html += item_container({ skin: item.skin, onclick: onclick, def: item, id: id, draggable: false, droppable: false }, null);
 			} else {
 				html += item_container({ size: 40, draggable: false, droppable: false });
 			}
@@ -4708,6 +4723,9 @@ function render_wishlist(num, page) {
 	html += "</div>";
 	render_ui_panel("#topleftcornerdialog", html);
 	dialogs_target = character;
+	// typing rebuilds the picker, so the new SEARCH field keeps the focus, even once it is empty
+	var input = $(".wsearchi").val(wishlist_search)[0];
+	if (typing && input) (input.focus(), input.setSelectionRange(input.value.length, input.value.length));
 }
 
 var last_selector = "";
@@ -5175,6 +5193,14 @@ function render_item(selector, args) {
 				'",$(".sellprice").shtml(),$(".tradenum").shtml())\'>' +
 				phrase.html("interface.item.put_up_for_sale") +
 				"</span></div>"; // style='color:#A99A5B'
+			html +=
+				"<div><span class='clickable iou' onclick='trade_offer_pick(\"" +
+				args.slot +
+				'","' +
+				args.num +
+				'",$(".tradenum").shtml())\'>' +
+				phrase.html("interface.item.offer_for_trade") +
+				"</span></div>";
 			html += "</div>";
 		}
 		if (actual && actual.name == "cxjar") {
@@ -5187,7 +5213,7 @@ function render_item(selector, args) {
 				html += "<div class='clickable' onclick='render_cx_info(\"" + actual.data + "\")'>" + cx_sprite(actual.data) + "</div>";
 			}
 		}
-		if (in_arr(args.slot, trade_slots) && actual && actual.price && args.from_player && !actual.b && !actual.giveaway) {
+		if (in_arr(args.slot, trade_slots) && actual && actual.price && args.from_player && !actual.b && !actual.giveaway && !actual.want) {
 			trade_item = true;
 			if ((actual.q || 1) > 1) {
 				html +=
@@ -5223,6 +5249,42 @@ function render_item(selector, args) {
 				"\")'>" +
 				phrase.html("interface.item.join") +
 				"</span></div>";
+		}
+		if (in_arr(args.slot, trade_slots) && actual && args.from_player && actual.want && !actual.b && !actual.giveaway) {
+			trade_item = true;
+			html += trade_want_html(actual.want);
+			// Only a nearby stand can trade; your own offer and the online merchants list show the request
+			if (selector == "#topleftcornerdialog" && character && args.from_player != character.id) {
+				var matches = [];
+				character.items.forEach(function (current, inum) {
+					if (current && !current.l && !current.b && !current.v && !current.acl && trade_want_matches(actual.want, current)) matches.push(inum);
+				});
+				// A choice survives a re-render only while that bag slot still holds the same item
+				var view = trade_offer_view;
+				if (!view || view.slot != args.slot || view.rid != actual.rid || !in_arr(view.num, matches) || JSON.stringify(view.item) != JSON.stringify(character.items[view.num]))
+					trade_offer_view = { slot: args.slot, rid: actual.rid, num: matches.length == 1 ? matches[0] : null };
+				if (trade_offer_view.num !== null) trade_offer_view.item = trade_offer_view.item || clone(character.items[trade_offer_view.num]);
+				trade_offer_view.args = args;
+				if (!matches.length) html += "<div class='gray'>" + phrase.html("interface.trade_offer.no_match") + "</div>";
+				else {
+					html += "<div><span class='gray'>" + phrase.html("interface.trade_offer.give") + "</span></div><div style='margin-left:-2px'>";
+					matches.forEach(function (inum) {
+						html += item_container(
+							{ skin: G.items[character.items[inum].name].skin, draggable: false, sbcolor: trade_offer_view.num === inum ? "#3E9ACD" : undefined, onclick: "trade_offer_select(" + inum + ")" },
+							character.items[inum],
+						);
+					});
+					html += "</div>";
+					if (trade_offer_view.num === null) html += "<div class='gray'>" + phrase.html("interface.trade_offer.choose") + "</div>";
+					else
+						html +=
+							"<div class='clickable' onclick='trade_offer_inspect()'>" +
+							html_escape(trade_lot_name(Object.assign({}, trade_offer_view.item, G.items[actual.want.name].s ? { q: actual.want.q || 1 } : {}))) +
+							"</div><div><span class='clickable iou' onclick='trade_offer_give()'>" +
+							phrase.html("interface.trade_offer.trade") +
+							"</span></div>";
+				}
+			}
 		}
 		if (in_arr(args.slot, trade_slots) && actual && actual.price && args.from_player && actual.b) {
 			var q = false;
@@ -5544,6 +5606,69 @@ function render_wishlist_item(name, num) {
 	html += "</div>";
 	render_ui_panel("#topleftcornerdialog", html);
 	dialogs_target = character;
+}
+
+function render_trade_offer() {
+	// The Wishlist form for a trade offer: LEVEL and TITLE stay ANY unless set
+	var state = trade_offer_state,
+		def = G.items[state.name],
+		offered = character.items[state.num],
+		html = "";
+	html += "<div style='background-color: black; border: 5px solid gray; font-size: 24px; display: inline-block; padding: 20px; line-height: 24px; max-width: 240px; min-width:200px;' class='buyitem'>";
+	html += "<div style='margin-left:-2px; display:inline-block; vertical-align:middle'>" + item_container({ skin: def.skin, def: def }) + "</div>";
+	html += "<div style='display:inline-block; vertical-align:top; margin-left: 4px'>";
+	html +=
+		"<div style='color: #f1c054; border-bottom: 2px dashed #C7CACA; margin-bottom: 3px; margin-left: 3px; margin-right: 3px; display: inline-block' class='cbold'>" +
+		phrase.html("interface.trade_offer.trade_offer") +
+		"</div>";
+	html += "<div></div>";
+	html += "<div style='color: #E4E4E4; border-bottom: 2px dashed gray; margin-bottom: 3px; display: inline-block' class='cbold'>" + def.name + "</div>";
+	html += "</div>";
+	if (def.compound || def.upgrade)
+		html +=
+			"<div><span style='color:#9E7BCA' class='clickable' onclick='$(\".tolevel\").focus()'>" +
+			phrase.html("interface.trade_offer.min_level") +
+			"</span> <div class='inline-block tolevel editable' contenteditable=true onfocus='trade_offer_level_focus(this)' onblur='trade_offer_level_blur(this)'>" +
+			phrase.html("interface.trade_offer.any") +
+			"</div></div>";
+	html +=
+		"<div><span class='gray clickable' onclick='trade_offer_title()'>" +
+		phrase.html("interface.trade_offer.title") +
+		"</span> <span class='clickable totitle' onclick='trade_offer_title()'>" +
+		phrase.html("interface.trade_offer.any") +
+		"</span></div>";
+	if (def.s)
+		html +=
+			"<div><span class='gray clickable' onclick='$(\".toq\").cfocus()'>" + phrase.html("interface.item.quantity_short") + "</span> <div class='inline-block toq' contenteditable=true>1</div></div>";
+	if (offered) html += "<div><span class='gray'>" + phrase.html("interface.trade_offer.give") + "</span> " + html_escape(trade_lot_name(Object.assign({}, offered, { q: state.q }))) + "</div>";
+	html += "<div><span class='clickable iou' onclick='trade_offer_form()'>" + phrase.html("interface.item.offer_for_trade") + "</span></div>";
+	html += "</div>";
+	render_ui_panel("#topleftcornerdialog", html);
+	dialogs_target = character;
+}
+
+function trade_want_html(want) {
+	// What a trade offer asks for, on the stand and in the online merchants list: a set level is the lowest accepted
+	var def = G.items[want.name],
+		any = "",
+		html = "<div style='margin-top: 5px'><span class='cbold iou'>" + phrase.html("interface.trade_offer.wants") + "</span></div>";
+	if (!def) return "";
+	if (want.level) any = want.p ? "interface.trade_offer.or_higher" : "interface.trade_offer.or_higher_any_title";
+	else if (def.upgrade || def.compound) any = want.p ? "interface.trade_offer.any_level" : "interface.trade_offer.any_level_title";
+	else if (!want.p) any = "interface.trade_offer.any_title";
+	// a long "or higher" line wraps beside the item instead of dropping below it
+	html +=
+		"<div style='display:flex; align-items:center'><div style='flex:none; margin-left:-2px'>" +
+		item_container(
+			{ skin: def.skin, def: def, draggable: false, onclick: "render_item_popup('" + want.name + "'," + (want.level || 0) + ")" },
+			{ name: want.name, level: want.level, q: (want.q || 1) > 1 ? want.q : undefined },
+		) +
+		"</div>";
+	html += "<div style='margin-left: 4px'>";
+	html += "<div>" + html_escape(trade_lot_name(want)) + "</div>";
+	if (any) html += "<div class='gray'>" + phrase.html(any) + "</div>";
+	html += "</div></div>";
+	return html;
 }
 
 function render_set(name) {
@@ -5955,6 +6080,7 @@ function item_container(item, actual) {
 		}
 	}
 	if (def && actual && def.type == "booster" && actual.level) bcolor = xbcolor;
+	if (item.sbcolor) bcolor = item.sbcolor; // a selection shows over the rarity border
 
 	if (item.draggable || !("draggable" in item)) {
 		item_prop += " draggable='true' ondragstart='on_drag_start(event)'";
@@ -6140,6 +6266,7 @@ function item_container(item, actual) {
 		if ((item.slot && in_arr(item.slot, trade_slots)) || item.trade_for_ui) {
 			if (actual && actual.giveaway) html += "<div class='truui igu' style='border-color: " + bcolor + ";'>@</div>";
 			else if (actual && actual.b) html += "<div class='truui ibu' style='border-color: " + bcolor + ";'>?</div>";
+			else if (actual && actual.want) html += "<div class='truui iou' style='border-color: " + bcolor + ";'>&amp;</div>";
 			else html += "<div class='truui itu' style='border-color: " + bcolor + ";'>$</div>"; //€
 		} else if (actual && actual.l && !item.slot) {
 			if (actual.l == "s") html += "<div class='truui ilsu' style='border-color: " + bcolor + ";'>S</div>";

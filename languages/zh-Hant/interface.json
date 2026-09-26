@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry無法進入這裡。",
 	"interface.cavalry.guarded": "這些怪物的150像素範圍內有80級以上玩家。",
 	"interface.cavalry.not_threatened": "你帳號的最高等級為{level}級。Cavalry只會攻擊已經在攻擊你或你隊伍的怪物。",
-	"interface.cavalry.call_short": "呼叫"
+	"interface.cavalry.call_short": "呼叫",
+	"interface.item.offer_for_trade": "上架交換",
+	"interface.trade_offer.trade_for": "換取物品",
+	"interface.trade_offer.trade_offer": "交換報價",
+	"interface.trade_offer.min_level": "最低等級：",
+	"interface.trade_offer.title": "稱號：",
+	"interface.trade_offer.any": "不限",
+	"interface.trade_offer.give": "給予：",
+	"interface.trade_offer.wants": "想要：",
+	"interface.trade_offer.any_level_title": "等級與稱號不限",
+	"interface.trade_offer.any_level": "等級不限",
+	"interface.trade_offer.any_title": "稱號不限",
+	"interface.trade_offer.or_higher": "或更高",
+	"interface.trade_offer.or_higher_any_title": "或更高，稱號不限",
+	"interface.trade_offer.no_match": "你沒有符合條件的物品",
+	"interface.trade_offer.choose": "選擇要給予的物品",
+	"interface.trade_offer.trade": "交換"
 }

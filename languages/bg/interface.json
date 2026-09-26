@@ -965,5 +965,21 @@
 	"interface.cavalry.location": "Cavalry не може да влезе тук.",
 	"interface.cavalry.guarded": "Има играч от ниво 80+ на не повече от 150 пиксела от тези чудовища.",
 	"interface.cavalry.not_threatened": "Най-високото ниво в акаунта ти е {level}. Cavalry се бие само с чудовища, които вече нападат теб или групата ти.",
-	"interface.cavalry.call_short": "ПОВИКАЙ"
+	"interface.cavalry.call_short": "ПОВИКАЙ",
+	"interface.item.offer_for_trade": "ПРЕДЛОЖИ ЗА РАЗМЯНА",
+	"interface.trade_offer.trade_for": "Размени срещу",
+	"interface.trade_offer.trade_offer": "Оферта за размяна",
+	"interface.trade_offer.min_level": "МИН. НИВО:",
+	"interface.trade_offer.title": "ТИТЛА:",
+	"interface.trade_offer.any": "ВСИЧКИ",
+	"interface.trade_offer.give": "ДАВАШ:",
+	"interface.trade_offer.wants": "ТЪРСИ:",
+	"interface.trade_offer.any_level_title": "Всяко ниво и титла",
+	"interface.trade_offer.any_level": "Всяко ниво",
+	"interface.trade_offer.any_title": "Всяка титла",
+	"interface.trade_offer.or_higher": "Или по-високо",
+	"interface.trade_offer.or_higher_any_title": "Или по-високо, всяка титла",
+	"interface.trade_offer.no_match": "Нямаш подходящ предмет",
+	"interface.trade_offer.choose": "Избери предмета, който даваш",
+	"interface.trade_offer.trade": "РАЗМЕНИ"
 }

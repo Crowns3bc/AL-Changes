@@ -977,5 +977,21 @@
 	"interface.cavalry.location": "Cavalry nie może tu wejść.",
 	"interface.cavalry.guarded": "W odległości do 150 pikseli od tych potworów jest gracz na poziomie 80+.",
 	"interface.cavalry.not_threatened": "Najwyższy poziom na twoim koncie to {level}. Cavalry walczy tylko z potworami, które już atakują ciebie lub twoją drużynę.",
-	"interface.cavalry.call_short": "WEZWIJ"
+	"interface.cavalry.call_short": "WEZWIJ",
+	"interface.item.offer_for_trade": "WYSTAW NA WYMIANĘ",
+	"interface.trade_offer.trade_for": "Wymień na",
+	"interface.trade_offer.trade_offer": "Oferta wymiany",
+	"interface.trade_offer.min_level": "MIN. POZIOM:",
+	"interface.trade_offer.title": "TYTUŁ:",
+	"interface.trade_offer.any": "DOWOLNY",
+	"interface.trade_offer.give": "DAJESZ:",
+	"interface.trade_offer.wants": "SZUKA:",
+	"interface.trade_offer.any_level_title": "Dowolny poziom i tytuł",
+	"interface.trade_offer.any_level": "Dowolny poziom",
+	"interface.trade_offer.any_title": "Dowolny tytuł",
+	"interface.trade_offer.or_higher": "Lub wyższy",
+	"interface.trade_offer.or_higher_any_title": "Lub wyższy, dowolny tytuł",
+	"interface.trade_offer.no_match": "Nie masz pasującego przedmiotu",
+	"interface.trade_offer.choose": "Wybierz przedmiot do oddania",
+	"interface.trade_offer.trade": "WYMIEŃ"
 }

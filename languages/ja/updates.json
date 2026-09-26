@@ -732,7 +732,6 @@
 	"update.16_09_16.launched_the_premium_currency_shells_and_first_premium_items": "プレミアム通貨シェルと、最初のプレミアムアイテムを公開。シェルはモンスターからも落ちます。どのモンスターかは秘密 :]",
 	"update.12_09_16.implemented_aggressiveness_for_monsters_bee_s_sting": "モンスターに「攻撃性」を実装しました。Beeは刺します :)",
 	"update.12_09_16.added_the_lines_feature_draws_a_line_between_entities": "「lines」機能を追加。攻撃や回復の際、対象との間に線を描きます。特にPVPで役立つはずです。",
-	"update.24_09_26.rare_drops.title": "新しいレアモンスターと15個のアクセサリー",
 	"update.24_09_26.rare_drops.rare_monsters": "表示された数だけ倒すと、それぞれ出現することがあります。各エリアの入口にある情報にガイドがあります。",
 	"update.24_09_26.rare_drops.rare_monsters.title": "新しいレアモンスター",
 	"update.24_09_26.rare_drops.accessories": "それぞれ1種類のモンスターだけが落とします。アイテムをクリックすると効果を確認できます。",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "聖騎士用の新アイテム5個。身に着ける数が多いほど、HP、MP、物理防御が増えます。",
 	"update.05_09_26.paladins.oathkeeper.title": "Oathkeeperセット",
 	"update.05_09_26.paladins.skill_mshield": "エーテルの盾が有効な間は、エーテルの盾がマナの盾の代わりになります。",
-	"update.24_09_26.rare_drops": "世界中のモンスターから15個の新しいアクセサリーがドロップします。KoboldがUnderground Cliffsを歩き回るようになりました。Many Eye、Mimic、Pale Dinoは新しいレアモンスターです。",
 	"update.20_09_26.head_cosmetics": "Mr. DworfがNew Make-upとNew Accessoryを売るようになりました。Hailaに渡すと、新しい頭、メイク、アクセサリーがもらえます。新しい頭：Cyclops、Eyeball、Mimic、Slime、Lantern、Lava Glass、Storm。Lava GlassとStormは立ち止まっていても動きます。",
 	"update.15_09_26.wheel": "TavernにFortune's Wheel、3リールのスロット、5人用のTexas Hold'emテーブルがあります。CODEでも遊べます：bet_wheel()、play_slots()、poker_join()、poker_act()。",
 	"update.14_09_26.cavalry": "Tracktrixから、近くのレベル3以上のモンスターと戦う助けとしてCavalryを呼べます。戦士、僧侶、魔法使い、聖騎士が助けに来ます。多くのプレイヤーが呼んだ場合は、レベルの低いプレイヤーから先に助けます。",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "僧侶の新しい杖：Worldroot Crook。Harbringer +8とレアな素材で作れます。知力、筋力、魔法耐性貫通がつきます。",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "CODEの大型アップデート：promiseを返す関数が、サーバーの実際の結果で完了するようになりました。すべての関数に説明があり、server.statusはライブデータを表示し、独自クライアントはMessagePackを使えます。",
 	"update.14_09_26.progression": "成長ガイドは、次に狩る場所と強化する装備を提案します。HPとMPのバーの上で目標を選ぶか、設定のチュートリアルの隣でオフにできます。CODEではget_progression()で読めます。",
-	"update.14_09_26.cave": "最大3人のパーティー向けの新しいダンジョンです。1日1回、24分で3つの階層を進みます。モンスターから10倍のXPが得られ、中で倒れてもXPやゴールドは失いません。斧、大鎌、Cave Amberを見つけ、Amberでレアな装備を作りましょう。"
+	"update.14_09_26.cave": "最大3人のパーティー向けの新しいダンジョンです。1日1回、24分で3つの階層を進みます。モンスターから10倍のXPが得られ、中で倒れてもXPやゴールドは失いません。斧、大鎌、Cave Amberを見つけ、Amberでレアな装備を作りましょう。",
+	"update.26_09_26.trade_offers": "アイテムを露店に置いて「交換に出す」を選ぶと、ゴールドの代わりに別のアイテムを求められます。最低レベルや称号を指定するか、「指定なし」のままにします。レベル70未満の商人は、成立した交換からXPを得ます。",
+	"update.26_09_26.trade_offers.title": "交換募集",
+	"update.24_09_26.rare_drops": "世界中のモンスターから15個の新しいアクセサリーがドロップします。KoboldがUnderground Cliffsを歩き回るようになりました。Many Eye、Mimic、Pale Dinoは新しいレアモンスターです。商人がアイテム同士を交換できるようになりました。",
+	"update.24_09_26.rare_drops.title": "レアモンスター、15個のアクセサリー、交換募集"
 }

@@ -964,5 +964,21 @@
 	"interface.cavalry.location": "Cavalry ei pääse tähän paikkaan.",
 	"interface.cavalry.guarded": "Vähintään tason 80 pelaaja on enintään 150 pikselin päässä näistä hirviöistä.",
 	"interface.cavalry.not_threatened": "Tilisi korkein taso on {level}. Cavalry taistelee vain hirviöitä vastaan, jotka jo hyökkäävät sinun tai ryhmäsi kimppuun.",
-	"interface.cavalry.call_short": "KUTSU"
+	"interface.cavalry.call_short": "KUTSU",
+	"interface.item.offer_for_trade": "TARJOA VAIHTOON",
+	"interface.trade_offer.trade_for": "Pyydettävä esine",
+	"interface.trade_offer.trade_offer": "Vaihtotarjous",
+	"interface.trade_offer.min_level": "VÄH. TASO:",
+	"interface.trade_offer.title": "TITTELI:",
+	"interface.trade_offer.any": "KAIKKI",
+	"interface.trade_offer.give": "ANNAT:",
+	"interface.trade_offer.wants": "HALUAA:",
+	"interface.trade_offer.any_level_title": "Mikä tahansa taso ja titteli",
+	"interface.trade_offer.any_level": "Mikä tahansa taso",
+	"interface.trade_offer.any_title": "Mikä tahansa titteli",
+	"interface.trade_offer.or_higher": "Tai korkeampi",
+	"interface.trade_offer.or_higher_any_title": "Tai korkeampi, mikä tahansa titteli",
+	"interface.trade_offer.no_match": "Sinulla ei ole sopivaa esinettä",
+	"interface.trade_offer.choose": "Valitse annettava esine",
+	"interface.trade_offer.trade": "VAIHDA"
 }

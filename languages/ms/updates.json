@@ -732,7 +732,6 @@
 	"update.30_10_16.a_game_improvement_that_aims_to_fix_issues_related": "Penambahbaikan permainan yang bertujuan menyelesaikan masalah kerumunan dan raksasa yang tidak hilang.",
 	"update.30_10_21.new_slenderman_dynamics": "Dinamik Slenderman yang baharu",
 	"update.30_10_21.stomp_doesn_t_pierce_spell_immunity_now_instead_skills": "Stomp tidak lagi menembusi kekebalan sihir; sebaliknya, kemahiran yang menembusinya mempunyai penanda .pierces_immunity",
-	"update.24_09_26.rare_drops.title": "Raksasa jarang baharu dan 15 aksesori",
 	"update.24_09_26.rare_drops.rare_monsters": "Setiap satu boleh muncul selepas bilangan bunuhan yang ditunjukkan. INFO di pintu masuk setiap kawasan ada panduannya.",
 	"update.24_09_26.rare_drops.rare_monsters.title": "Raksasa jarang baharu",
 	"update.24_09_26.rare_drops.accessories": "Setiap satu hanya jatuh daripada satu raksasa. Klik item untuk melihat fungsinya.",
@@ -779,7 +778,6 @@
 	"update.05_09_26.paladins.oathkeeper": "5 item baharu untuk Kesateria Suci. Lebih banyak kepingan yang anda pakai, lebih banyak HP, MP dan perisai yang anda dapat.",
 	"update.05_09_26.paladins.oathkeeper.title": "Set Oathkeeper",
 	"update.05_09_26.paladins.skill_mshield": "Perisai Eter menggantikannya semasa aktif.",
-	"update.24_09_26.rare_drops": "15 aksesori baharu jatuh daripada raksasa di seluruh dunia. Kobold kini merayau di Underground Cliffs. Many Eye, Mimic dan Pale Dino ialah raksasa jarang baharu.",
 	"update.20_09_26.head_cosmetics": "Mr. Dworf kini menjual New Make-up dan New Accessory. Berikannya kepada Haila untuk kepala, solekan atau aksesori baharu. Kepala baharu: Cyclops, Eyeball, Mimic, Slime, Lantern, Lava Glass dan Storm. Lava Glass dan Storm bergerak walaupun anda berdiri diam.",
 	"update.15_09_26.wheel": "Tavern ada Fortune's Wheel, mesin slot tiga gelendong dan meja Texas Hold'em untuk 5 pemain. CODE juga boleh bermain: bet_wheel(), play_slots(), poker_join() dan poker_act().",
 	"update.14_09_26.cavalry": "Panggil Cavalry dari Tracktrix untuk bantuan menentang raksasa tahap 3+ yang berdekatan. Seorang Pahlawan, Pendeta, Ahli Sihir dan Kesateria Suci datang membantu. Apabila ramai pemain memanggil, pemain tahap lebih rendah dibantu dahulu.",
@@ -806,5 +804,9 @@
 	"update.24_08_26.added_the_worldroot_crook_a_priest_only_t4_staff": "Tongkat Pendeta baharu: Worldroot Crook. Hasilkannya daripada Harbringer +8 dan bahan jarang. Ia memberi Kecerdasan, Kekuatan dan penembusan rintangan.",
 	"update.24_08_26.major_code_update_all_public_asynchronous_functions_now_settle": "Kemas kini besar CODE: fungsi yang memulangkan promise kini selesai dengan hasil sebenar pelayan. Semua fungsi didokumenkan, server.status menunjukkan data langsung, dan klien sendiri boleh menggunakan MessagePack.",
 	"update.14_09_26.progression": "Panduan Kemajuan mencadangkan tempat memburu dan peralatan untuk diusahakan seterusnya. Pilih sasaran di atas bar HP dan MP anda, atau matikannya dalam Tetapan di sebelah Tutorial. CODE boleh membacanya dengan get_progression().",
-	"update.14_09_26.cave": "Kurungan bawah tanah baharu untuk parti anda sehingga 3 orang. Anda dapat 1 kali masuk sehari dan 24 minit untuk melepasi 3 tingkat. Raksasa memberi 10× XP, dan mati di dalam tidak menjejaskan XP atau emas. Cari kapak, sabit dan Cave Amber, dan gunakan Amber untuk menghasilkan peralatan jarang."
+	"update.14_09_26.cave": "Kurungan bawah tanah baharu untuk parti anda sehingga 3 orang. Anda dapat 1 kali masuk sehari dan 24 minit untuk melepasi 3 tingkat. Raksasa memberi 10× XP, dan mati di dalam tidak menjejaskan XP atau emas. Cari kapak, sabit dan Cave Amber, dan gunakan Amber untuk menghasilkan peralatan jarang.",
+	"update.26_09_26.trade_offers": "Letakkan item di gerai anda dan pilih TAWARKAN UNTUK DITUKAR untuk meminta item lain dan bukannya emas. Tetapkan tahap minimum atau gelaran, atau biarkan kedua-duanya SEBARANG. Pedagang di bawah tahap 70 memperoleh XP daripada pertukaran yang selesai.",
+	"update.26_09_26.trade_offers.title": "Tawaran tukar",
+	"update.24_09_26.rare_drops": "15 aksesori baharu jatuh daripada raksasa di seluruh dunia. Kobold kini merayau di Underground Cliffs. Many Eye, Mimic dan Pale Dino ialah raksasa jarang baharu. Pedagang kini boleh menukar item dengan item lain.",
+	"update.24_09_26.rare_drops.title": "Raksasa jarang, 15 aksesori dan tawaran tukar"
 }

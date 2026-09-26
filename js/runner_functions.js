@@ -1270,6 +1270,20 @@ function wishlist(trade_slot, name, price, level, quantity) {
 	return parent.wishlist(trade_slot, name, price, quantity || 1, level);
 }
 
+function trade_offer(num, trade_slot, want, quantity) {
+	// Offers inventory[num] for an item instead of gold, want: "staff" or {name:"staff",level:8,p:"shiny",q:1}
+	// A missing level or p accepts any, q is for stackable items, quantity is how many of inventory[num] you offer
+	// example: trade_offer(0,"trade3",{name:"staff",level:8}) offers the first item for a +8 Staff
+	if (!is_string(trade_slot) || !trade_slot.startsWith("trade")) trade_slot = "trade" + trade_slot;
+	return parent.trade_offer(trade_slot, num, want, quantity || 1);
+}
+
+function trade_swap(target, trade_slot, num) {
+	// Gives inventory[num] for the item in a target's trade offer, the item has to match target.slots[trade_slot].want
+	if (!target || !target.slots || !target.slots[trade_slot]) return rejecting_promise({ reason: "invalid_target" });
+	return parent.trade_swap(trade_slot, target.id, target.slots[trade_slot].rid, num);
+}
+
 function giveaway(slot, num, q, minutes) {
 	// example: giveaway("trade1",0,12,20) - Gives away 12X of Inventory[0] at "trade1" with a 20 minutes cooldown
 	return parent.giveaway(slot, num, q, minutes);
