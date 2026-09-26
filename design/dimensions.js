@@ -40,6 +40,7 @@ var dimensions={ //by trial+error using game.js/border_mode=true
 	"wolf":[60,48,-3],
 	"iceroamer":[22,36,-2],
 	"fireroamer":[24,40,-3],
+	"chestx":[36,30,4],
 	"bbpompom":[32,35,1],
 	"boar":[42,36,-4],
 	"croc":[45,32,-3],

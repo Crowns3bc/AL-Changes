@@ -487,4 +487,6 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 	}
 	assert.ok(!fs.existsSync(path.join(root, "docs/guide/rare-drops.html")));
 	assert.ok(!world.includes("rare-drops"));
+	// The chest sits 3.5 px right of its frame's center; this crops and centers it in the world and on INFO
+	assert.deepEqual(Array.from(G.dimensions[G.monsters.mimic.skin]), [36, 30, 4]);
 });
