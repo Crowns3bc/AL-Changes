@@ -770,10 +770,47 @@ app.get("/macos", async (req, res, next) => {
 		domain = await get_domain(req, user);
 	res.status(200).send(nunjucks.render("htmls/macos.html", { domain: domain, user: user }));
 });
+// The web archive lists a release's changes as text: one line per group with names, for players without the game open.
+function release_archive_groups(release) {
+	var order = ["map", "monster", "npc", "event", "item", "set", "craft", "dismantle", "drop", "skill", "condition", "cx", "title", "token", "class", "achievement", "game", "table", "guide", "doc", "code", "fixed", "improved"],
+		sections = { item: items, craft: items, dismantle: items, token: items, monster: monsters, map: maps, npc: npcs, event: events, skill: skills, condition: conditions, set: sets, class: classes, achievement: achievements },
+		groups = {};
+	function name(ref) {
+		var at = ref.indexOf(":"),
+			type = ref.slice(0, at),
+			id = ref.slice(at + 1),
+			def = sections[type] && sections[type][id],
+			key = { npc: "name", event: "name", skill: "name", condition: "name", set: "name", class: "name", achievement: "name", guide: "title", article: "title" }[type],
+			phrase_id = type == "guide" ? "interaction." + id + ".title" : type == "article" ? "directory.guide." + id + ".title" : type + "." + id + "." + key;
+		if (key && phrase(phrase_id) !== phrase_id) return phrase(phrase_id);
+		if (type == "guide" && docs.interactions[id]) return docs.interactions[id].title;
+		if (type == "code") return id + "()";
+		return (def && def.name) || id;
+	}
+	(release.changes || []).forEach(function (entry) {
+		var ref = entry.new || entry.changed || entry.removed,
+			type = entry.fixed ? "fixed" : entry.improved ? "improved" : ref.slice(0, ref.indexOf(":")),
+			group = type == "article" ? "guide" : type,
+			line = ref ? name(ref) + (entry.new ? "" : " (" + phrase("client.update_notes.tag." + (entry.changed ? "changed" : "removed")) + ")") : entry.text;
+		(groups[group] = groups[group] || []).push(line);
+	});
+	return order
+		.filter(function (group) {
+			return groups[group];
+		})
+		.map(function (group) {
+			return { label: phrase("client.update_notes.group." + group), lines: groups[group] };
+		});
+}
+
 app.get("/allnotes", async (req, res, next) => {
 	var user = await get_user(req),
-		domain = await get_domain(req, user);
-	res.status(200).send(nunjucks.render("htmls/allnotes.html", { domain: domain, user: user, update_notes: update_notes }));
+		domain = await get_domain(req, user),
+		notes = localization.translate_notes(update_notes, domain.language).map(function (note) {
+			if (note.title !== undefined) note.groups = release_archive_groups(note);
+			return note;
+		});
+	res.status(200).send(nunjucks.render("htmls/allnotes.html", { domain: domain, user: user, update_notes: notes }));
 });
 app.get("/update-notes", function (req, res) {
 	var page_size = 20,

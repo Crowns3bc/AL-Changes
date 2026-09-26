@@ -643,14 +643,15 @@ function open_event_announcement(key) {
 
 function event_announcement_html(args) {
 	if (no_html) return "";
-	var interactive = !!args.key,
+	var interactive = !!(args.key || args.open),
 		item = G.items[args.sprite],
+		classes = "event-announcement" + (args.classes ? " " + args.classes : ""),
 		html =
-			(interactive ? "<button type='button' class='gamebutton event-announcement'" : "<article class='event-announcement'") +
+			(interactive ? "<button type='button' class='gamebutton " + classes + "'" : "<article class='" + classes + "'") +
 			" data-effect='" + html_escape(args.effect) +
 			"' style='--event-color:" + args.color + ";--event-accent:" + args.accent + "'";
 	if (interactive)
-		html += " onclick='pcs(event);open_event_announcement(\"" + args.key + "\")' aria-haspopup='dialog'";
+		html += " onclick='pcs(event);" + (args.open || "open_event_announcement(\"" + args.key + "\")") + "' aria-haspopup='dialog'";
 	html += ">";
 	if (interactive) html += "<span class='event-announcement-arrow' aria-hidden='true'>&lt;</span>";
 	if (!no_graphics) {
@@ -697,16 +698,18 @@ function render_event_announcements() {
 				return (G.events[b].type == "seasonal") - (G.events[a].type == "seasonal");
 			})
 			.slice(0, 2),
+		release = release_card_html(),
 		signature = JSON.stringify(
 			keys
 				.map(function (key) {
 					return [key, G.events[key]];
 				})
-				.concat([!!no_graphics]),
+				.concat([!!no_graphics, release]),
 		);
 	if (banner.data("events") === signature) return;
 	banner.data("events", signature);
-	var html = "";
+	// An unread update post comes first, then live events.
+	var html = release;
 	keys.forEach(function (key) {
 		var event = G.events[key],
 			theme = event.announcement;
@@ -722,7 +725,7 @@ function render_event_announcements() {
 		});
 	});
 	banner.html(html);
-	if (keys.length) banner.show();
+	if (html) banner.show();
 	else banner.hide();
 }
 
@@ -731,7 +734,10 @@ function render_server() {
 	var html = "",
 		content = false,
 		featured = anniversary_live_event(),
-		contexts = proximity_guides ? (interaction_contexts.length ? interaction_contexts : interaction_context ? [interaction_context] : []) : [];
+		contexts = proximity_guides ? (interaction_contexts.length ? interaction_contexts : interaction_context ? [interaction_context] : []) : [],
+		update_button = release_update_button_html();
+	// An unread update post: first in the strip, so removing it moves no other button.
+	if (update_button) ((html += update_button), (content = true));
 	if (!no_html && featured && featured.skin) {
 		html += " <div class='gamebutton' title='" + html_escape(featured.target) + "' style='padding:6px 8px;font-size:24px;line-height:18px' onclick='pcs(event);render_anniversary_event()'>";
 		html += sprite(featured.skin, { cx: clone(featured.cx || {}), overflow: true });

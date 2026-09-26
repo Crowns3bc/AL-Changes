@@ -13,6 +13,8 @@ f.execs = f.execs_required;
 console.log("Deploy started | mode: " + (mode || "default") + " | folder: " + folder);
 
 if (mode != "staging") {
+	// Every changed definition needs its entry in the pending release before the notes are dated (UPDATE_NOTES.md).
+	f.execs("node " + JSON.stringify(path.resolve(__dirname, "update_notes.js")) + " check");
 	var locked = lock_update_notes(path.resolve(__dirname, ".."));
 	console.log("Update notes locked | date: " + locked.date + " | notes: " + locked.notes);
 }

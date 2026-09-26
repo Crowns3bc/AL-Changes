@@ -29,7 +29,7 @@ The server reads and caches the requested language with English fallback. The br
 | Docs, guides and tutorials | `docs` | Translated HTML when the article is requested |
 | Website and account page text | `pages` | Translated HTML from the page template |
 | HTTP response text and email | Other phrases in `server` | Translated on the server |
-| Update notes | `updates` | Translated `text` with the initial 20 notes and each requested batch; original `note` and metadata remain intact |
+| Update notes | `updates` | Translated `text`, `title_text` and `caption_text` beside each English field of the initial 20 notes and each requested batch; the English fields and metadata remain intact. `UPDATE_NOTES.md` explains the phrase IDs and the `translations`/`apply` worksheets |
 | Offline desktop loading text | `desktop` | The small generated Tauri catalogs |
 
 Two shared docs labels, `docs.guide.basics.move` and `docs.reference.source_code`, also serve client renderers and are explicitly included. Article prose stays out of the browser catalog. New shared UI labels belong in a browser domain.
@@ -74,7 +74,7 @@ Keep canonical definition descriptions and their English phrase values aligned. 
 
 ## Fonts
 
-Arabic uses the registered Arabic pixel-font subset, loaded when Arabic text is rendered. Do not replace it with a system-font override. Direction changes stay scoped to guide/tutorial articles; CODE blocks and native drop ratios remain left to right. Compact Arabic HUD counters isolate their numeric runs. The shared UI layout stays simple.
+Arabic uses the registered Arabic pixel-font subset, loaded when Arabic text is rendered. Do not replace it with a system-font override. Direction changes stay scoped to guide/tutorial articles and the text of update posts; CODE blocks, native drop ratios, sprite rows and changed values remain left to right. Compact Arabic HUD counters isolate their numeric runs. The shared UI layout stays simple.
 
 Existing lettering drawn into cosmetic emote artwork (JOY!, TA-DA!, BLOOM! and DISCO!) remains shared artwork. The emote controls and descriptions translate. Localized bitmap lettering is deferred; it needs suitable native glyphs and visual review rather than substitution into the current limited glyph table.
 
