@@ -741,6 +741,9 @@ var maps = {
 			[-150, 154, 20, 16, "sign", "Town Square"],
 			[-365, 144, 20, 16, "sign", "Tavern"],
 			[0, 0, 0, 0, "cutebee_info"],
+			// Comic signs: the art is a tile in the map geometry; the last field is the guide article it opens.
+			[-96, 664, 20, 16, "comic", "lore"],
+			[728, 1176, 20, 16, "comic", "cave-story"],
 		],
 		animatables: {
 			the_door: { x: 888, y: -672, position: "door0" },

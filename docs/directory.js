@@ -714,6 +714,7 @@ docs = {
 			witch: "crafting",
 		},
 		quirks: {
+			comic: "decorative",
 			compound: "compounding",
 			cutebee_info: "cutebee",
 			goldenbat_info: "goldenbat",

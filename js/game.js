@@ -6711,6 +6711,7 @@ function add_quirk(quirk) {
 		var quirk_text = phrase.definition("map", current_map, "quirks." + quirk_index + ".5", quirk[5]);
 		if (quirk[4] == "sign") add_log(phrase.html("game.sign_reads", { value: quirk_text }), "gray");
 		else if (quirk[4] == "note") add_log(phrase.html("game.note_reads", { value: quirk_text }), "gray");
+		else if (quirk[4] == "comic") open_guide(quirk[5], get_guide_url(quirk[5]));
 		else if (quirk[4] == "tavern_info") socket.emit("tavern", { event: "info" });
 		else if (quirk[4] == "mainframe") render_mainframe();
 		else if (quirk[4] == "the_lever") the_lever();
