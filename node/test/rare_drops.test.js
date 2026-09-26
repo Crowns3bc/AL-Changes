@@ -492,3 +492,37 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 	// The chest sits 3.5 px right of its frame's center; this crops and centers it in the world and on INFO
 	assert.deepEqual(Array.from(G.dimensions[G.monsters.mimic.skin]), [36, 30, 4]);
 });
+
+test("each monster guide shows the monster from four sides, its spawn rule and its habitat", () => {
+	const events = {};
+	const block = source.slice(source.indexOf("var events = {"), source.indexOf("};", source.indexOf("var events = {")));
+	for (const m of block.matchAll(/(\w+): (\d+),/g)) events[m[1]] = +m[2];
+	const english = require("../../languages/en/definitions.js");
+	assert.match(fs.readFileSync(path.join(root, "js/html.js"), "utf8"), /\nfunction guide_monster_tile\(name, j\) \{/);
+	const PARENTS = {
+		mimic: ["mimic", ["kobold"]],
+		manyeye: ["many-eye", ["oneeye"]],
+		paledino: ["pale-dino", ["odino"]],
+		goldenbat: ["golden-bat", ["bat"]],
+		cutebee: ["cute-bee", ["bee"]],
+		goldenbot: ["golden-bot", ["sparkbot", "targetron"]],
+	};
+	for (const [monster, [slug, parents]] of Object.entries(PARENTS)) {
+		const html = fs.readFileSync(path.join(root, "docs/guide", slug + ".html"), "utf8");
+		assert.ok(html.includes(`[0, 1, 2, 3].map(function(j) { return guide_monster_tile("${monster}", j); })`), slug);
+		const spawn = html.match(
+			/\$\("\.[\w-]+-spawn"\)\.html\((\[[^\]]*\])\.map[^\n]*to_pretty_num\((\d+)\)[^\n]*guide_monster_tile\("(\w+)", 0\)\);/,
+		);
+		assert.ok(spawn, slug + " has a spawn rule");
+		assert.deepEqual(JSON.parse(spawn[1]), parents, slug);
+		assert.equal(spawn[3], monster, slug);
+		// the number is the spawner's mean interval, and the translated caption states the same number
+		assert.equal(+spawn[2], events[monster] / 2, slug);
+		assert.ok(english[`monster.${monster}.explanation`].includes((+spawn[2]).toLocaleString("en-US")), slug);
+		const img = html.match(/<img src="(\/images\/guide\/[\w-]+\.png)\?v=\d+" width="(\d+)" height="(\d+)"/);
+		assert.ok(img, slug + " has a habitat map");
+		const png = fs.readFileSync(path.join(root, img[1]));
+		assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [+img[2], +img[3]], slug + " habitat size");
+		assert.ok(html.includes('stroke="#73FFAC"'), slug + " outlines where it appears");
+	}
+});

@@ -4027,6 +4027,17 @@ function render_all_items() {
 	show_modal(html, { wrap: false, hideinbackground: true, url: "/docs/guide/all/items" });
 }
 
+// A monster in the monster list's tile, facing j (0 front, 1 left, 2 right, 3 back); opens its info window
+function guide_monster_tile(name, j) {
+	return (
+		"<div class='clickable' style='display:inline-block;vertical-align:bottom;background-color:#575983;border:2px solid #9F9FB0;line-height:0' onclick='pcs(event); render_monster_info(\"" +
+		name +
+		"\")'>" +
+		sprite(name, { full: true, scale: 3, j: j || 0 }) +
+		"</div>"
+	);
+}
+
 function render_all_monsters() {
 	var html = "";
 	html += "<div style='width: 480px'>";
