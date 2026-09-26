@@ -84,6 +84,8 @@ var ch_disp_x = 0,
 var head_x = 0,
 	head_y = 0; // For head gestures [25/09/18]
 var tints = [];
+var entities_map = null,
+	entities_in = null; // map+instance the entity table was filled from [26/09/26]
 var entities = {},
 	future_entities = { players: {}, monsters: {} },
 	pull_all_next = false,
@@ -557,10 +559,11 @@ function handle_entities(data, args) {
 function draw_entities() {
 	for (entity in entities) {
 		var current = entities[entity];
-		if ((character && !within_xy_range(character, current)) || (!character && !within_xy_range({ map: current_map, in: current_in, vision: [700, 500], x: map.real_x, y: map.real_y }, current))) {
+		// !current.dead: one on_disappear per exit, it used to fire every frame while the entity faded out [26/09/26]
+		if (!current.dead && ((character && !within_xy_range(character, current)) || (!character && !within_xy_range({ map: current_map, in: current_in, vision: [700, 500], x: map.real_x, y: map.real_y }, current)))) {
 			// console.log("character x,y: "+round(character.real_x)+","+round(character.real_y)+" entity moving outside range: ["+current.id+"] x,y: "+round(current.x)+","+round(current.y));
-			call_code_function("on_disappear", current, { outside: true });
 			//console.log("mark dead within_xy: "+current.id+" "+(character['in']==current['in'])+" "+character.vision+" "+get_xy(current));
+			call_code_function("on_disappear", current, { outside: true });
 			current.dead = "vision";
 		}
 		if (current.dead || clean_house) {
@@ -1621,6 +1624,20 @@ function init_socket(args) {
 			data.redraw = true;
 		}
 		// Player packets can update current_map before new_map arrives.
+		// then create is false and the entity table was never cleared - the previous map's entities stayed as phantoms
+		// the table is keyed to the map+instance it was filled from instead [26/09/26]
+		if (entities_map !== data.name || entities_in !== data["in"]) {
+			for (var stale_id in entities) {
+				if (!entities[stale_id].dead) {
+					call_code_function("on_disappear", entities[stale_id], { outside: true });
+					entities[stale_id].dead = "vision";
+				}
+			}
+			// clean_house before the snapshot, so an entity on both maps (a party member) is recreated instead of staying dead
+			clean_house = true;
+			entities_map = data.name;
+			entities_in = data["in"];
+		}
 		if (tutorial_map && tutorial_map !== data.name && character) tut("travel");
 		tutorial_map = data.name;
 		current_map = data.name;
@@ -1771,6 +1788,8 @@ function init_socket(args) {
 		reposition_ui();
 		update_overlays();
 		current_in = character["in"];
+		entities_map = character.map;
+		entities_in = character["in"];
 		if (character.map != current_map) {
 			current_map = character.map;
 			reflect_music();

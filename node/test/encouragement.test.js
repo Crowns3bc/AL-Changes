@@ -567,6 +567,7 @@ test("99% damage survives the real disconnect and retarget handlers before a lat
 		const h = harness(),
 			old = h.player("Veteran"),
 			m = h.monster(old);
+		old.vision = [700, 500];
 		Object.assign(h.c, {
 			sockets: { [old.id]: old.socket },
 			observers: {},
@@ -580,6 +581,8 @@ test("99% damage survives the real disconnect and retarget handlers before a lat
 			// Queue the normal logout without starting persistence or external services.
 			sync_loop() {},
 		});
+		load(h.c, "node/server_functions.js", ["remove_entity_emit"]);
+		load(h.c, "js/old_common_functions.js", ["get_x", "get_y", "within_xy_range"]);
 		load(h.c, "node/server.js", ["defeat_player", "restore_state", "stop_pursuit", "target_player"]);
 		load(h.c, "node/server_functions.js", ["pmap_remove", "server_tax"]);
 		load(h.c, "node/logic/tavern_wheel.js", ["tavern_wheel_disconnect"]);

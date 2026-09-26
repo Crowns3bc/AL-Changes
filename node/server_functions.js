@@ -539,6 +539,7 @@ function reset_player(player, soft) {
 	if (!player.p.hardcore) {
 		player.p = { hardcore: true, dt: {} };
 		player.max_stats = { monsters: {} };
+		player.monster_stats_dirty = true; // the kill tallies just changed wholesale
 	}
 	player.xp = 0;
 	if (soft) {
@@ -1726,7 +1727,7 @@ function transport_npc_to(npc, destination, point, effect) {
 	if (!npc.is_npc || !instance || !point || !Number.isFinite(point.x) || !Number.isFinite(point.y)) return false;
 	if (destination !== npc.in) {
 		if (previous) {
-			xy_emit(npc, "disappear", { id: npc.id, reason: "transport", effect: effect ? 1 : 0 });
+			remove_entity_emit(npc, "disappear", { id: npc.id, reason: "transport", effect: effect ? 1 : 0 });
 			delete previous.players[npc.id];
 			previous.npcs--;
 		}
@@ -2296,6 +2297,9 @@ function anniversary_tick() {
 			npc.cid++;
 		} else if (!active && npc) {
 			instance_emit(instance, "disappear", { id: npc.id, reason: "left" });
+			// everyone in the instance was just told, forget it in seen too [26/09/26]
+			for (var pid in instance.players) if (instance.players[pid].seen) delete instance.players[pid].seen[npc.id];
+			for (var oid in instance.observers) if (instance.observers[oid].seen) delete instance.observers[oid].seen[npc.id];
 			if (instance.pmap[npc.last_hash]) delete instance.pmap[npc.last_hash][npc.id];
 			delete instance.players[key];
 			delete npcs.anniversary_baker;
@@ -2387,7 +2391,7 @@ function event_loop() {
 						}
 					}
 				if (should_warp) {
-					xy_emit(s, "disappear", { id: s.id });
+					remove_entity_emit(s, "disappear", { id: s.id });
 					delete instances[s.in].monsters[s.id];
 					s.oin = s.in = s.map = random_one(["spookytown", "halloween", "cave"]);
 					instances[s.in].monsters[s.id] = s;
@@ -2432,7 +2436,7 @@ function event_loop() {
 					!player.s.hopsickness &&
 					player.p.home == region + server_name
 				) {
-					xy_emit(m, "disappear", { id: m.id });
+					remove_entity_emit(m, "disappear", { id: m.id });
 					delete instances[m.in].monsters[m.id];
 					m.oin = m.in = m.map = player.map;
 					instances[m.in].monsters[m.id] = m;
@@ -3640,35 +3644,78 @@ function delete_observer(socket) {
 function send_all_xy(observer, args) {
 	var data = { players: [], monsters: [], type: "all", in: observer.in, map: observer.map };
 	var instance = instances[observer.in];
-	if (!instance) {
-		if (args && args.raw) return data;
-		return;
-	}
-	for (var id in instance.players) {
-		if (!instance.players[id].s.invis && within_xy_range(observer, instance.players[id])) {
-			data.players.push(player_to_client(instance.players[id], 1));
+	var previous = observer.seen;
+	var seen = (observer.seen = Object.create(null));
+	if (instance) {
+		for (var id in instance.players) {
+			var player = instance.players[id];
+			if (!player.dead && !is_invis(player) && within_xy_range(observer, player)) {
+				data.players.push(player_to_client(player, 1));
+				seen[player.id] = 1;
+			}
+		}
+		for (var id in instance.monsters) {
+			var monster = instance.monsters[id];
+			if (!monster.dead && !is_invis(monster) && within_xy_range(observer, monster)) {
+				data.monsters.push(monster_to_client(monster));
+				seen[monster.id] = 1;
+			}
 		}
 	}
-	for (var id in instance.monsters) {
-		if (within_xy_range(observer, instance.monsters[id])) {
-			data.monsters.push(monster_to_client(instance.monsters[id]));
-		}
+	// #performance spree [26/09/26]: a full refresh re-baselines seen - whatever the client held that isn't in the new set gets a disappear
+	// the same event browsers and Mainframe already handle, sent before the snapshot (inside new_map too)
+	for (var id in previous) {
+		if (!seen[id] && id !== observer.id) observer.socket.emit("disappear", { id: id, outside: true });
 	}
+	observer.xy_resync = false;
+	observer.last_upush = [observer.x, observer.y];
 	observer.last_ux = observer.x;
 	observer.last_uy = observer.y;
-	if (observer.moving && mode.xyinf) {
-		data.xy = { x: observer.x, y: observer.y };
+	if (observer.moving && mode.xyinf) data.xy = { x: observer.x, y: observer.y };
+	if (args && args.raw) return data;
+	if (instance) observer.socket.emit("entities", data);
+}
+
+// #performance spree [26/09/26]: xy_emit sends one identical payload to many sockets - a room broadcast is encoded once per endpoint instead of once per socket
+// every socket sits in a room named by its id, so the exact recipient list still applies
+function collect_fanout(fanout, player) {
+	var socket = player.socket;
+	if (!socket || !socket.id || !socket.connected) {
+		// false_socket and anything already gone keep the old direct-emit behaviour
+		if (socket && socket.emit) fanout = fanout || { direct: [], byServer: null };
+		if (socket && socket.emit) fanout.direct.push(socket);
+		return fanout;
 	}
-	if (args && args.raw) {
-		return data;
+	fanout = fanout || { direct: [], byServer: null };
+	fanout.byServer = fanout.byServer || [];
+	var index = socket.al_server_index || 0;
+	(fanout.byServer[index] = fanout.byServer[index] || []).push(socket.id);
+	return fanout;
+}
+
+function emit_fanout(fanout, event, data) {
+	if (!fanout) {
+		return;
 	}
-	observer.socket.emit("entities", data);
+	for (var i = 0; i < fanout.direct.length; i++) fanout.direct[i].emit(event, data);
+	if (!fanout.byServer) {
+		return;
+	}
+	for (var index = 0; index < fanout.byServer.length; index++) {
+		var ids = fanout.byServer[index];
+		if (!ids || !ids.length) {
+			continue;
+		}
+		game_ios[index].to(ids).emit(event, data);
+	}
 }
 
 function xy_emit(entity, event, data, must) {
 	var x = entity.x;
 	var y = entity.y;
 	var owners = {};
+	// same recipients as before, one encode instead of one per socket (collect_fanout) [26/09/26]
+	var fanout = null;
 	for (var id in instances[entity.in].players) {
 		var player = instances[entity.in].players[id];
 		if (player.npc) {
@@ -3687,10 +3734,10 @@ function xy_emit(entity, event, data, must) {
 				player.socket.emit("light", { name: data.name, affected: 1 });
 				resend(player, "u");
 			} else if ((event == "upgrade" || event == "ui") && entity.name != player.name) {
-				player.socket.emit(event, data);
+				fanout = collect_fanout(fanout, player);
 			} //volatile. [02/02/18]
 			else {
-				player.socket.emit(event, data);
+				fanout = collect_fanout(fanout, player);
 				if (event == "chat_log" && data.p) {
 					owners[player.owner] = owners[player.owner] || [];
 					owners[player.owner].push(player.name);
@@ -3707,17 +3754,10 @@ function xy_emit(entity, event, data, must) {
 			player.y - player.vision[1] < y &&
 			y < player.y + player.vision[1]
 		) {
-			if (event == "upgrade") {
-				player.socket.emit(event, data);
-			} //volatile. [02/02/18]
-			else if (!data.nv && in_arr(event, ["disappearing_text", "upgrade"])) {
-				player.socket.emit(event, data);
-			} //volatile.
-			else {
-				player.socket.emit(event, data);
-			}
+			fanout = collect_fanout(fanout, player);
 		}
 	}
+	emit_fanout(fanout, event, data);
 	if (event == "chat_log" && data.p) {
 		(async function () {
 			try {
@@ -3742,6 +3782,55 @@ function xy_emit(entity, event, data, must) {
 				console.error("log_chat ambient error", e);
 			}
 		})();
+	}
+}
+
+// bytes waiting on a socket - engine.io's writeBuffer too, packets queue there while the transport isn't writable (and for polling) [26/09/26]
+function socket_backlog(socket, limit) {
+	var conn = socket && socket.conn;
+	if (!conn) return 0;
+	var bytes = conn.transport?.socket?.bufferedAmount || 0;
+	for (var packet of conn.writeBuffer || []) {
+		var data = packet.data;
+		bytes += 1 + (typeof data === "string" ? Buffer.byteLength(data) : data?.byteLength || 0);
+		if (limit !== undefined && bytes > limit) break;
+	}
+	return bytes;
+}
+
+// #performance spree [26/09/26]: the phantom entities fix - xy_emit only told whoever could see the entity right now, a client whose copy had drifted never heard it was gone
+// now: everyone who was sent it (player.seen, any instance - a player who walked into a cave still holds what it saw outside) + everyone who can see it, once each
+function remove_entity_emit(entity, event, data, args) {
+	var id = entity.id;
+	var instance = instances[entity.in];
+	var quiet = args && args.quiet; // only tell clients that were told; no vision-scoped broadcast
+	var tables = [players, observers];
+	for (var t = 0; t < tables.length; t++) {
+		var table = tables[t];
+		for (var key in table) {
+			var observer = table[key];
+			if (!observer || observer.is_npc || observer.npc || !observer.socket) {
+				continue;
+			}
+			var knew = observer.seen && observer.seen[id];
+			if (knew) {
+				delete observer.seen[id];
+			}
+			if (!knew && (quiet || observer.in != entity.in || !within_xy_range(observer, entity))) {
+				continue;
+			}
+			observer.socket.emit(event, data);
+		}
+	}
+	// NPCs are entities too, and they live in instance.players rather than the global table
+	if (instance && !quiet) {
+		for (var nkey in instance.players) {
+			var npc = instance.players[nkey];
+			if (!npc.is_npc || !npc.seen || !npc.seen[id]) {
+				continue;
+			}
+			delete npc.seen[id];
+		}
 	}
 }
 
@@ -3773,6 +3862,9 @@ function xy_upush_logic(element) {
 	} else if (abs(element.last_upush[0] - element.x) > B.u_vision) {
 		u = true;
 	} else if (abs(element.last_upush[1] - element.y) > B.u_vision) {
+		u = true;
+	} else if (!element.moving) {
+		// arrival - even a short trip back can make the client drop entities locally, sweep so they're resent [26/09/26]
 		u = true;
 	}
 

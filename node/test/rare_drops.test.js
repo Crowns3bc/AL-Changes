@@ -7,6 +7,7 @@ const test = require("node:test");
 const vm = require("node:vm");
 const root = path.resolve(__dirname, "../..");
 const G = require("./helpers/design");
+const { DueQueue } = require("../logic/due_queue.js");
 const source = fs.readFileSync(path.join(root, "node/server.js"), "utf8");
 const functions = fs.readFileSync(path.join(root, "node/server_functions.js"), "utf8");
 
@@ -160,6 +161,7 @@ function harness(attackerA, targetOverrides = {}) {
 		mode: {},
 		B: { max_vision: 1000, heal_multiplier: 1 },
 		projectiles: {},
+		projectiles_due: new DueQueue(),
 		now: 10000,
 		is_silenced: () => false,
 		is_invis: () => false,

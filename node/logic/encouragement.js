@@ -223,7 +223,9 @@ function encouragement_update(player, force) {
 	var lonewolf = player.type !== "merchant",
 		visit = encouragement_visits.get(identity.key);
 	if (visit && visit.until > now && visit.id !== player.real_id) lonewolf = false;
-	for (var other of Object.values(players)) {
+	// per player per tick - Object.values(players) built an array of every player on each call, the keys are enough [26/09/26]
+	for (var other_id in players) {
+		var other = players[other_id];
 		if (
 			other !== player &&
 			!other.dc &&

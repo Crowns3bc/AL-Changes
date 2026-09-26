@@ -34,6 +34,9 @@ app.get("/", (req, res) => {
 //var io=require('socket.io')(app,{pingInterval:2400,pingTimeout:6000});
 const SocketIOServer = require("socket.io").Server;
 const msgpack_parser = require("./msgpack_parser");
+const json_parser = require("./json_parser");
+const { RawFrame } = json_parser;
+const { DueQueue } = require("./logic/due_queue");
 const discord_relay = require("./logic/discord")({
 	token: keys.discord_token,
 	chatChannel: options.discord_chat_channel === undefined ? "1546291317196324965" : options.discord_chat_channel,
@@ -49,11 +52,23 @@ var socket_cors = {
 	methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	// credentials: true,
 };
+var json_socket_parser = json_parser.createParser();
+// #performance spree [26/09/26]: compress frames over 1KB - entity payloads repeat the same keys, egress at 150 players ~15 -> ~5 Mbit/s with the rest of the spree
+// level 1 and no context takeover: zlib runs on libuv threads, one window per message instead of a live stream per socket
+var socket_deflate = {
+	threshold: 1024, // action/hit/player packets stay raw, framing would cost more than it saves
+	serverNoContextTakeover: true,
+	clientNoContextTakeover: true,
+	zlibDeflateOptions: { level: 1 },
+	concurrencyLimit: 20, // zlib jobs in flight on the thread pool
+};
 var io = new SocketIOServer(http_server, {
 	path: server_def.path,
 	pingInterval: 4000,
 	pingTimeout: 12000,
 	cors: socket_cors,
+	parser: json_socket_parser, // node/json_parser.js - pre-built entity frames skip socket.io's per-recipient JSON.stringify
+	perMessageDeflate: socket_deflate,
 }); // default is 25000 to 60000
 var msgpack_path = server_def.msgpack_path;
 if (!msgpack_path) throw new Error("Missing msgpack_path for server " + server_key);
@@ -65,6 +80,7 @@ var msgpack_io = new SocketIOServer(http_server, {
 	pingTimeout: 12000,
 	cors: socket_cors,
 	parser: msgpack_parser.createParser({ maxPacketBytes: 64 * 1024 }),
+	perMessageDeflate: socket_deflate,
 });
 var game_ios = [io, msgpack_io];
 var url = require("url");
@@ -114,6 +130,16 @@ var total_monsters = 0;
 var max_players = 200;
 var chests = {};
 var projectiles = {};
+// #performance spree [26/09/26]: projectiles in due order (node/logic/due_queue.js) - projectiles_loop used to walk every projectile in flight 143x/s
+// every push also wakes an idling projectiles_tick, so no creation path can forget to
+var projectiles_due = new DueQueue(function () {
+	arm_projectiles_tick(PROJECTILE_TICK_MS);
+});
+// loop cadences - not balance, just how often the server wakes up, so they live here rather than in B [26/09/26]
+var PROJECTILE_TICK_MS = 7; // projectiles + respawns while anything is in flight (the original cadence)
+var PROJECTILE_IDLE_MS = 50; // the same tick with nothing in flight - respawns are seconds long, 50ms is invisible
+var IDLE_LOOP_MS = 250; // game_loop while server.s is empty
+var NPC_SEEK_MS = 200; // how often a seeking NPC re-picks who to follow
 var name_to_id = {};
 var id_to_id = {};
 var invitations = {};
@@ -136,7 +162,7 @@ var total_merchants = 0;
 var csold = [];
 var cfound = []; // cache of S.sold + S.found
 var monster_c = {}; // monster counts
-var monster_respawns = []; // [target,ms] array so they can be hastened [20/12/25]
+var monster_respawns = []; // [target,remaining_ms,last_tick] so they can be hastened [20/12/25]
 var pwns = [];
 var pend = 0;
 var tavern = {};
@@ -193,6 +219,7 @@ var B = {
 	start_map: "main",
 	free_last_hits: false,
 	pause_instances: true,
+	xy_backlog_limit: 262144, // 256KB queued on a socket: skip its entity updates until it drains, then resync - the queue used to grow unbounded [26/09/26]
 	global_drops: true,
 	drop_table_multiplier: 1, // 2 means drop tables extended by their original selves, not %'s multiplied
 };
@@ -239,6 +266,7 @@ var mode = {
 	nopush: 0,
 	freeze_latest: 0, // to test latest_calls numbers
 	log_all: 0, // logs all incoming websocket calls
+	log_skills: 0, // logs every skill/attack call - one line per swing, 231k lines/10MB per 25s benchmark in Dev [26/09/26]
 	friendly_fire: 1,
 	fast_mlevels: 0,
 	map_respawns: 0, // respawn at maps or where they define [05/12/18]
@@ -307,6 +335,7 @@ var perfc = {
 	instance_loops: 0,
 	roams: 0,
 	roam_ops: 0,
+	xy_skipped: 0, // ticks where a backed-up socket skipped its entity updates [26/09/26]
 };
 var instances = {};
 // at first there were no instances, monsters were global
@@ -784,6 +813,10 @@ function player_to_server(player, place) {
 				"push",
 				"last",
 				"last_u",
+				"seen", // this and the next three are per-session state, not character data [26/09/26]
+				"xy_resync",
+				"monster_stats_cache",
+				"monster_stats_dirty",
 				"width",
 				"height",
 				"u",
@@ -1430,8 +1463,12 @@ function calculate_player_stats(player) {
 			}
 		}
 	}
-	player.monster_stats = {};
-	if (player.tracker) {
+	// #performance spree [26/09/26]: this walked every monster's achievements on every stat calculation (~every hit)
+	// cached now - monster_stats_dirty is raised by the kill-credit paths, the account max refresh on connect and hardcore resets
+	if (!player.tracker) {
+		player.monster_stats = {};
+	} else if (player.monster_stats_dirty || !player.monster_stats_cache) {
+		var monster_stats = {};
 		for (var name in G.monsters) {
 			var mx = max(
 				(player.p.stats.monsters[name] || 0) + (player.p.stats.monsters_diff[name] || 0),
@@ -1445,10 +1482,15 @@ function calculate_player_stats(player) {
 					return;
 				}
 				if (def[1] == "stat") {
-					player.monster_stats[def[2]] = (player.monster_stats[def[2]] || 0) + def[3];
+					monster_stats[def[2]] = (monster_stats[def[2]] || 0) + def[3];
 				}
 			});
 		}
+		player.monster_stats_cache = monster_stats;
+		player.monster_stats_dirty = false;
+		player.monster_stats = monster_stats;
+	} else {
+		player.monster_stats = player.monster_stats_cache;
 	}
 	character_slots.forEach(function (slot) {
 		var current = player.slots[slot];
@@ -2700,6 +2742,7 @@ function issue_monster_awards(monster) {
 			var score = calculate_monster_score(current, monster, share);
 			current.p.stats.monsters[monster.type] = (current.p.stats.monsters[monster.type] || 0) + 1;
 			current.p.stats.monsters_diff[monster.type] = (current.p.stats.monsters_diff[monster.type] || 0) + (score - 1);
+			current.monster_stats_dirty = true;
 			monster_hunt_logic(current, monster, share);
 			if (current.type == "merchant") {
 				continue;
@@ -2746,6 +2789,7 @@ function issue_monster_award(monster, award) {
 		var score = calculate_monster_score(player, monster);
 		player.p.stats.monsters[monster.type] = (player.p.stats.monsters[monster.type] || 0) + 1;
 		player.p.stats.monsters_diff[monster.type] = (player.p.stats.monsters_diff[monster.type] || 0) + (score - 1);
+		player.monster_stats_dirty = true;
 		monster_hunt_logic(player, monster);
 		if (player.type == "merchant") {
 			return;
@@ -2779,6 +2823,7 @@ function issue_monster_award(monster, award) {
 			var score = calculate_monster_score(current, monster);
 			current.p.stats.monsters[monster.type] = (current.p.stats.monsters[monster.type] || 0) + 1;
 			current.p.stats.monsters_diff[monster.type] = (current.p.stats.monsters_diff[monster.type] || 0) + (score - 1);
+			current.monster_stats_dirty = true;
 			monster_hunt_logic(current, monster);
 			if (current.type == "merchant") {
 				return;
@@ -3525,6 +3570,7 @@ function commence_attack(attacker, target, atype) {
 	}
 
 	info.eta = future_ms(action.eta);
+	projectiles_due.push(+info.eta, pid);
 
 	if (info.heal) {
 		action.heal = attack;
@@ -3718,6 +3764,7 @@ function complete_attack(attacker, target, info) {
 		info.target = attacker;
 		info.attacker = target;
 		info.eta = future_ms(eta);
+		projectiles_due.push(+info.eta, pid);
 		projectiles[pid] = info;
 		info.action.pid = pid;
 		info.action.target = attacker.id;
@@ -4531,7 +4578,13 @@ function resend(player, events) {
 }
 
 function transport_monster_to(monster, to_in, to_map, x, y) {
-	xy_emit(monster, "disappear", { id: monster.id, effect: "magiport", to: to_map, s: 0, reason: "magiport" });
+	remove_entity_emit(monster, "disappear", {
+		id: monster.id,
+		effect: "magiport",
+		to: to_map,
+		s: 0,
+		reason: "magiport",
+	});
 	delete instances[monster.in].monsters[monster.id];
 	instances[to_in].monsters[monster.id] = monster;
 	monster.x = x;
@@ -4588,7 +4641,7 @@ function transport_player_to(player, name, point, effect) {
 	if (effect) {
 		data.effect = effect;
 	}
-	xy_emit(player, "disappear", data);
+	remove_entity_emit(player, "disappear", data);
 
 	player.map = instance.map;
 	if (player.in != name) {
@@ -4783,11 +4836,12 @@ function disconnect_old_sockets(socket) {
 }
 
 function init_io() {
-	for (var i = 0; i < game_ios.length; i++) init_socket_io(game_ios[i]);
+	for (var i = 0; i < game_ios.length; i++) init_socket_io(game_ios[i], i);
 }
 
-function init_socket_io(socket_server) {
+function init_socket_io(socket_server, server_index) {
 	socket_server.on("connection", function (socket) {
+		socket.al_server_index = server_index; // which of game_ios owns this socket's encoder, for collect_fanout [26/09/26]
 		if (socket.handshake.query.server_method) {
 			if (0 && socket.handshake.query.server_master == keys.SERVER_MASTER) {
 				// this was to make servers communicate with each other and disconnect overflows immediately [28/10/23]
@@ -9543,7 +9597,10 @@ function init_socket_io(socket_server) {
 			if (!player) {
 				return;
 			}
-			server_log("skill " + JSON.stringify(data));
+			// #performance spree [26/09/26]: behind a flag like mode.log_all - a synchronous write per swing in Dev, and outside Dev the string was still built every time
+			if (mode.log_skills) {
+				server_log("skill " + JSON.stringify(data));
+			}
 
 			var cool = true;
 			var resolve = { response: "data", place: data.name, success: true };
@@ -9893,7 +9950,7 @@ function init_socket_io(socket_server) {
 					return fail_response("skill_cant_use", data.name);
 				}
 				player.s.invis = { ms: 999999999999999 };
-				xy_emit(player, "disappear", { id: player.id, invis: true, reason: "invis" });
+				remove_entity_emit(player, "disappear", { id: player.id, invis: true, reason: "invis" });
 				player.to_resend = " ";
 			} else if (data.name == "pickpocket") {
 				consume_mp(player, gSkill.mp, target);
@@ -11529,6 +11586,7 @@ function init_socket_io(socket_server) {
 				player.last_sync = new Date();
 				player.socket = socket;
 				player.max_stats = stats;
+				player.monster_stats_dirty = true; // account maxima feed the tracker bonuses
 
 				if (data.bot == keys.BOT_MASTER) {
 					player.bot = true;
@@ -12671,7 +12729,7 @@ function init_socket_io(socket_server) {
 			if (!player.monster) {
 				return;
 			}
-			xy_emit(player.monster, "disappear", { id: player.monster.id });
+			remove_entity_emit(player.monster, "disappear", { id: player.monster.id });
 			player.monster.x = player.x;
 			player.monster.y = player.y;
 			player.monster.map = player.map;
@@ -12857,7 +12915,7 @@ function init_socket_io(socket_server) {
 				}
 
 				try {
-					xy_emit(player, "disappear", { id: player.id, reason: "disconnect" });
+					remove_entity_emit(player, "disappear", { id: player.id, reason: "disconnect" });
 				} catch (e) {
 					log_trace("#X DCERROR2", e);
 				}
@@ -13142,13 +13200,13 @@ function remove_monster(target, args) {
 		if (target.map_def.grow && (target.map_def.live || 0) <= (target.map_def.count * 2) / 3) {
 			setTimeout(new_monster_f(target.oin, target.map_def, { before_respawn: target }), 25);
 		} else if (G.monsters[target.type].respawn > 200) {
-			monster_respawns.push([target, round(G.monsters[target.type].respawn * (720 + Math.random() * 480))]);
+			monster_respawns.push([target, round(G.monsters[target.type].respawn * (720 + Math.random() * 480)), Date.now()]);
 			//setTimeout(
 			//	new_monster_f(target.oin, target.map_def, { before_respawn: target }),
 			//	round(G.monsters[target.type].respawn * (720 + Math.random() * 480)),
 			//);
 		} else {
-			monster_respawns.push([target, round(G.monsters[target.type].respawn * 1000 + Math.random() * 900)]);
+			monster_respawns.push([target, round(G.monsters[target.type].respawn * 1000 + Math.random() * 900), Date.now()]);
 			//setTimeout(
 			//	new_monster_f(target.oin, target.map_def, { before_respawn: target }),
 			//	round(G.monsters[target.type].respawn * 1000 + Math.random() * 900),
@@ -13165,13 +13223,13 @@ function remove_monster(target, args) {
 			}
 		}
 	}
-	if (!args.silent) {
-		xy_emit(target, args.method, {
-			id: target.id,
-			luckm: luckm || 1,
-			points: (target.cooperative && target.points) || undefined,
-		});
-	}
+	var removal = {
+		id: target.id,
+		luckm: luckm || 1,
+		points: (target.cooperative && target.points) || undefined,
+	};
+	// silent removals skip the broadcast but still tell clients that hold it, otherwise it stays on their screen forever [26/09/26]
+	remove_entity_emit(target, args.silent ? "disappear" : args.method, removal, { quiet: !!args.silent });
 	delete instances[target.in].monsters[target.id];
 	if (!args.nospawn) {
 		target.map_def.live--;
@@ -13455,76 +13513,81 @@ function start_moving_element(monster) {
 function send_xy_updates(player, list) {
 	// third version, very refined - deleted older versions after the "instances" commit
 	// #NOTE: this routine is the bottlenck, unclear whether anything can be done about it, test with mode.nopush [31/07/18]
-	if (mode.noxy) {
-		return;
+	// #performance spree [26/09/26]: fourth version - each entity is JSON.stringify'd once per tick (entry.json) and every recipient gets a pre-built frame (RawFrame)
+	// socket.io used to re-serialise each entity per recipient and scan it for binary: ~1/3 of all server CPU at 150 players, worst tick 178ms -> 11ms
+	// player.seen records what each client was sent, removals follow it (remove_entity_emit) - the phantom entities fix
+	if (mode.noxy || player.is_npc) return;
+	var seen = player.seen || (player.seen = Object.create(null));
+	var shed = socket_backlog(player.socket, B.xy_backlog_limit) > B.xy_backlog_limit;
+	// a skipped tick can lose an entity's last update for good - resync the whole view once the socket drains
+	if (!shed && player.xy_resync) {
+		send_all_xy(player);
+		player.push = false;
 	}
-	// list includes to_push - everything in that instance that are updated
-	var data = { players: [], monsters: [], type: "xy", in: player.in, map: player.map };
-	var m_mark = {};
-	var p_count = 0;
-	list.forEach(function (def) {
-		if (!is_invis(def.entity) && within_xy_range(player, def.entity) && player.id != def.entity.id) {
-			if (def.entity.is_monster) {
-				if (player.push) {
-					m_mark[def.entity.id] = 1;
-				}
-				data.monsters.push(def.data);
-			} else {
-				if (player.push) {
-					m_mark[def.entity.id] = 1;
-				}
-				data.players.push(def.data);
+	var players_json = "";
+	var monsters_json = "";
+	var marked = Object.create(null);
+	for (var i = 0; i < list.length; i++) {
+		var entry = list[i];
+		var entity = entry.entity;
+		if (entity.id === player.id) continue;
+		marked[entity.id] = true;
+		if (entity.dead || is_invis(entity) || !within_xy_range(player, entity)) {
+			if (seen[entity.id]) {
+				player.socket.emit("disappear", { id: entity.id, outside: true });
+				delete seen[entity.id];
 			}
+			continue;
 		}
-	});
+		if (shed) continue;
+		// complete payloads only - the client replaces pending packets between draws and reads x/y/going_x/going_y straight off each one, deltas broke both
+		if (entry.json === undefined) entry.json = JSON.stringify(entry.data);
+		seen[entity.id] = 1;
+		if (entity.is_monster) monsters_json += (monsters_json && ",") + entry.json;
+		else players_json += (players_json && ",") + entry.json;
+	}
 	perfc.sxyu += list.length;
-	if (!mode.nopush && player.push) {
-		// player is moving and receiving/seeing new entities
-		//#GTODO: Maybe also calculate and factor in the monster/player dx/dy [27/08/16]
-		var log_push = mode.upush_test;
-		var dx = player.x - player.push[0];
-		var dy = player.y - player.push[1];
-		var avoid = { x: player.push[0] - dx * 0.4, y: player.push[1] - dy * 0.4, vision: player.vision, in: player.in };
-		// on main1, when you put a merchant on the town's bottom limit, and move upwards from the first island to the town, the merchant is lost with the avoid logic
-		var grab = { x: player.push[0] + dx * 1.4, y: player.push[1] + dy * 1.4, vision: player.vision, in: player.in };
-		if (log_push) {
-			server_log(JSON.stringify(grab) + " dx/dy " + dx + " " + dy);
-		}
-		for (var id in instances[player.in].monsters) {
-			if (m_mark[instances[player.in].monsters[id].id]) {
-				continue;
+	if (shed) {
+		perfc.xy_skipped++;
+		player.xy_resync = true;
+	}
+	if (!mode.nopush && player.push && !shed) {
+		var instance = instances[player.in];
+		// view changed (moved 65px or arrived): tell the client what left, resend what's in view - replaces the old grab/avoid geometry
+		for (var table of [instance.monsters, instance.players]) {
+			for (var key in table) {
+				var entity = table[key];
+				perfc.sxyu++;
+				if (entity.id === player.id || marked[entity.id]) continue;
+				if (entity.dead || is_invis(entity) || !within_xy_range(player, entity)) {
+					if (seen[entity.id]) {
+						player.socket.emit("disappear", { id: entity.id, outside: true });
+						delete seen[entity.id];
+					}
+					continue;
+				}
+				// the client's own vision sweep may have dropped it (walk away, walk back), so resend even if it was sent before
+				seen[entity.id] = 1;
+				if (entity.is_monster) monsters_json += (monsters_json && ",") + JSON.stringify(monster_to_client(entity));
+				else players_json += (players_json && ",") + JSON.stringify(player_to_client(entity, 1));
 			}
-			var monster = instances[player.in].monsters[id];
-			if ((mode.novi || !within_xy_range(avoid, monster)) && within_xy_range(grab, monster)) {
-				data.monsters.push(monster_to_client(monster));
-				p_count++;
-			}
-		}
-		for (var id in instances[player.in].players) {
-			if (
-				m_mark[instances[player.in].players[id].id] ||
-				instances[player.in].players[id].id == player.id ||
-				is_invis(instances[player.in].players[id])
-			) {
-				continue;
-			}
-			var monster = instances[player.in].players[id];
-			if ((mode.novi || !within_xy_range(avoid, monster)) && within_xy_range(grab, monster)) {
-				data.players.push(player_to_client(monster, 1));
-				p_count++;
-			}
-		}
-		perfc.sxyu += Object.keys(instances[player.in].players).length + Object.keys(instances[player.in].monsters).length;
-		if (log_push) {
-			server_log("push done: " + p_count);
 		}
 		player.push = false;
 	}
-	if (data.players.length || data.monsters.length || (mode.xyinf && player.moving)) {
-		if (mode.xyinf && player.moving) {
-			data.xy = { x: player.x, y: player.y };
-		} // to synchronise the client speed to match the server displacement [07/01/16]
-		player.socket.emit("entities", data);
+	if (players_json || monsters_json || (!shed && mode.xyinf && player.moving)) {
+		// "xy" is to synchronise the client speed to match the server displacement [07/01/16]
+		var body =
+			'{"players":[' +
+			players_json +
+			'],"monsters":[' +
+			monsters_json +
+			'],"type":"xy","in":' +
+			JSON.stringify(player.in) +
+			',"map":' +
+			JSON.stringify(player.map) +
+			(mode.xyinf && player.moving ? ',"xy":' + JSON.stringify({ x: player.x, y: player.y }) : "") +
+			"}";
+		player.socket.emit("entities", new RawFrame(undefined, body));
 	}
 }
 
@@ -15290,6 +15353,10 @@ function npc_loop() {
 				continue;
 			}
 			var def = G.npcs[npc.ntype] || {};
+			// #performance spree [26/09/26]: most NPCs are standing shopkeepers with nothing for this loop to do (89 of 123 when measured) - skip them
+			if (!npc.movable && !def.aura && !def.attack && !def.seek && !def.heal && !def.citizen_behavior) {
+				continue;
+			}
 			if (
 				def &&
 				instances[npc.in] &&
@@ -15322,7 +15389,9 @@ function npc_loop() {
 				}
 			}
 
-			if (def.seek) {
+			// picking who to follow walks every player in the instance - ~35x/s before, 5x/s now, same in play [26/09/26]
+			if (def.seek && (!npc.last_seek || mssince(npc.last_seek) >= NPC_SEEK_MS)) {
+				npc.last_seek = new Date();
 				var target = npc.focus && get_player(npc.focus);
 				if (target && def.transport && target.map != npc.map && target.in == target.map) {
 					var spot = safe_xy_nearby(target.map, target.x - 8, target.y - 6);
@@ -15485,12 +15554,15 @@ function bless_loop() {
 
 setInterval(bless_loop, 60 * 1000);
 
+var server_conditions = false;
 function game_loop() {
 	// back in the day pretty much everything was in here [11/08/22]
+	// only the server.s decay is left and it's empty almost always - ~35 wakeups/s on an empty object, 4/s now, decay untouched [26/09/26]
 	if (!server.live) {
 		return setTimeout(game_loop, 10);
 	}
 	var ms_since = 32;
+	server_conditions = false;
 	try {
 		var now_date = new Date();
 		// for(name in instances)
@@ -15499,6 +15571,7 @@ function game_loop() {
 		// 	if(mssince(instance.last_update)>75) update_instance(instance);
 		// }
 		for (var id in server.s) {
+			server_conditions = true;
 			server.s[id].ms -= 10;
 			if (server.s[id].ms < 0) {
 				delete server.s[id];
@@ -15514,7 +15587,7 @@ function game_loop() {
 	} catch (e) {
 		log_trace("#X Main loop error", e);
 	}
-	setTimeout(game_loop, max(28, min(1000, ms_since * 2 + 2))); // originally 24
+	setTimeout(game_loop, server_conditions ? max(28, min(1000, ms_since * 2 + 2)) : IDLE_LOOP_MS); // originally 24
 }
 
 var PALADIN_AURA_CONDITIONS = [
@@ -16069,22 +16142,82 @@ setInterval(function () {
 }, 4000);
 
 function projectiles_loop() {
-	var now = new Date();
-	for (var id in projectiles) {
+	// #performance spree [26/09/26]: walks projectiles_due instead of every projectile in flight - O(1) when nothing is due
+	// a frozen instance's projectile goes back in for the next tick, like the old scan skipped it
+	var now = Date.now();
+	while (projectiles_due.peek() <= now) {
+		var id = projectiles_due.shift();
+		var projectile = projectiles[id];
+		if (!projectile) {
+			continue;
+		} // already resolved or cancelled elsewhere
 		try {
-			if (instance_is_frozen(projectiles[id].attacker) || instance_is_frozen(projectiles[id].target)) continue;
-			if (projectiles[id].eta <= now) {
-				var projectile = projectiles[id];
-				delete projectiles[id];
-				complete_attack(projectile.attacker, projectile.target, projectile);
+			if (instance_is_frozen(projectile.attacker) || instance_is_frozen(projectile.target)) {
+				projectiles_due.push(now + 1, id); // strictly after this pass, so it is retried next tick
+				continue;
 			}
+			// pauses shift eta after it was queued - wait for the new one
+			if (+projectile.eta > now) {
+				projectiles_due.push(+projectile.eta, id);
+				continue;
+			}
+			delete projectiles[id];
+			complete_attack(projectile.attacker, projectile.target, projectile);
 		} catch (e) {
 			log_trace("#X projectile loop error", e);
 		}
 	}
 }
 
-setInterval(projectiles_loop, 7);
+// #performance spree [26/09/26]: respawns had their own 10ms interval subtracting a fixed 10 - late under load, 100 wakeups/s
+// they ride the projectile tick now, counting each entry's real elapsed time
+function respawns_loop() {
+	var now = Date.now();
+	if (!monster_respawns.length) {
+		return;
+	}
+	try {
+		for (var i = monster_respawns.length - 1; i >= 0; i--) {
+			var entry = monster_respawns[i];
+			entry[1] -= Math.max(0, now - entry[2]);
+			entry[2] = now;
+			if (monster_respawns[i][1] < 0) {
+				var target = monster_respawns[i][0];
+				new_monster(target.oin, target.map_def, { before_respawn: target });
+				monster_respawns.splice(i, 1);
+			}
+		}
+	} catch (e) {
+		log_trace("#X monster respawn loop error", e);
+	}
+}
+
+// #performance spree [26/09/26]: one self-arming timer for projectiles + respawns - was setInterval 7ms + 10ms, 200+ wakeups/s even on an empty server
+// 7ms while anything is in flight, 50ms otherwise - idle 128 -> 20 wakeups/s, timer work at 150 players 1.35s -> 0.71s per 30s
+// a push into projectiles_due pulls an idle timer back to 7ms, so the first attack after a quiet spell isn't late
+var projectile_timer = null,
+	projectile_timer_at = 0;
+function projectiles_tick() {
+	projectile_timer = null;
+	try {
+		projectiles_loop();
+		respawns_loop();
+	} finally {
+		arm_projectiles_tick(projectiles_due.size ? PROJECTILE_TICK_MS : PROJECTILE_IDLE_MS); // even if a loop threw - a dead timer stops every projectile
+	}
+}
+function arm_projectiles_tick(ms) {
+	var at = Date.now() + ms;
+	if (projectile_timer && projectile_timer_at <= at) {
+		return;
+	} // already due at least that soon
+	if (projectile_timer) {
+		clearTimeout(projectile_timer);
+	}
+	projectile_timer_at = at;
+	projectile_timer = setTimeout(projectiles_tick, ms);
+}
+arm_projectiles_tick(PROJECTILE_TICK_MS);
 
 var accel = 1;
 if (mode.fast_mlevels) {
@@ -16125,21 +16258,6 @@ setInterval(function () {
 		log_trace("#X mlevel loop error", e);
 	}
 }, 16000 / accel);
-
-setInterval(function () {
-	try {
-		for (var i = monster_respawns.length - 1; i >= 0; i--) {
-			monster_respawns[i][1] -= 10;
-			if (monster_respawns[i][1] < 0) {
-				var target = monster_respawns[i][0];
-				new_monster(target.oin, target.map_def, { before_respawn: target });
-				monster_respawns.splice(i, 1);
-			}
-		}
-	} catch (e) {
-		log_trace("#X monster respawn loop error", e);
-	}
-}, 10);
 
 setInterval(function () {
 	try {

@@ -79,6 +79,12 @@ function localize(context) {
 	if (!context.in_arr) vm.runInContext(extract(read("js/old_common_functions.js"), "in_arr"), context);
 	for (const name of ["startswith_an", "item_message", "kill_message"])
 		if (!context[name]) vm.runInContext(extract(read("node/server_functions.js"), name), context);
+	// Client fixtures can load a single socket callback without game.js's globals.
+	if ("current_map" in context) {
+		context.entities ||= {};
+		context.entities_map ??= null;
+		context.entities_in ??= null;
+	}
 	return context;
 }
 
