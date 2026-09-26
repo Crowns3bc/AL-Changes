@@ -657,7 +657,7 @@ var drops = {
 			[1.0 / 150, "ukey"],
 			[1.0 / 1000000, "goldenpowerglove"],
 		],
-		cliffkobold: [
+		kobold: [
 			[1.0 / 84000, "koboldbelt"],
 			[0.05, "gemfragment"],
 			[1.0 / 350, "bronzenugget"],

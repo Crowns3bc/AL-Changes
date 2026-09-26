@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Dört Cliff Kobold bu uçurumlarda ikişer ikişer dolaşıyor. Her biri için bir grup getir.",
+	"interaction.kobold.summary": "Dört Kobold bu uçurumlarda ikişer ikişer dolaşıyor. Her biri için bir grup getir.",
 	"interaction.mimic.summary": "Buradaki her sandık gerçekten sandık değil. Bu, saldırınca geri ısırıyor.",
 	"interaction.manyeye.summary": "Bazen One Eye'ların arasında bir Many Eye gözlerini açar. Bakışı seni taşa çevirir.",
 	"interaction.paledino.summary": "Bazen Dino'ların arasında bir Pale Dino koşar; daha hızlı ve daha sert vurur.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Sana ne çarparsa çarpsın, ayakların yerde.",
 	"set.watchers.explanation": "İzleyen iki göz pek az şeyi kaçırır.",
 	"monster.manyeye.explanation": "Underground West'teki One Eye'lar arasında yaklaşık her 15.000 One Eye doğuşunda bir ortaya çıkar",
-	"monster.mimic.explanation": "Underground Cliffs'teki Cliff Kobold'lar arasında yaklaşık her 12.000 Cliff Kobold doğuşunda bir ortaya çıkar",
+	"monster.mimic.explanation": "Underground Cliffs'teki Kobold'lar arasında yaklaşık her 12.000 Kobold doğuşunda bir ortaya çıkar",
 	"monster.paledino.explanation": "Mystical Forest'taki Dino'lar arasında yaklaşık her 30.000 Dino doğuşunda bir ortaya çıkar",
 	"condition.exposed.name": "Savunmasız",
 	"condition.exposed.explanation": "Direnç 5 saniyeliğine 240 azalır.",

@@ -1,26 +1,26 @@
-<div class="title">Cliff Kobold</div>
-<p>{{ phrase("docs.guide.cliff-kobold.intro") }}</p>
+<div class="title">Kobold</div>
+<p>{{ phrase("docs.guide.kobold.intro") }}</p>
 <div class="divider"></div>
 <div class="title">{{ phrase("interface.monster_info.drops") }}</div>
-<div class="cliff-kobold-drops"></div>
+<div class="kobold-drops"></div>
 <div class="divider"></div>
 <div class="title">CODE</div>
-<p>{{ phrase("docs.guide.cliff-kobold.code") }}</p>
+<p>{{ phrase("docs.guide.kobold.code") }}</p>
 <!-- prettier-ignore -->
-<div class="code" id="cliff-kobold-code">async function hunt_cliff_kobold() {
+<div class="code" id="kobold-code">async function hunt_kobold() {
     if (character.rip || character.map !== "ucliffs") return;
-    var target = get_nearest_monster({ type: "cliffkobold" });
+    var target = get_nearest_monster({ type: "kobold" });
     if (!target) return;
     if (!is_in_range(target)) return await move(character.x + (target.x - character.x) / 2, character.y + (target.y - character.y) / 2);
     if (can_attack(target)) return await attack(target);
 }
 
-hunt_cliff_kobold().catch(show_json);</div>
+hunt_kobold().catch(show_json);</div>
 <p><a href="/docs/code/functions/get_nearest_monster" target="_blank">get_nearest_monster</a> · <a href="/docs/code/functions/is_in_range" target="_blank">is_in_range</a> · <a href="/docs/code/functions/move" target="_blank">move</a> · <a href="/docs/code/functions/can_attack" target="_blank">can_attack</a> · <a href="/docs/code/functions/attack" target="_blank">attack</a></p>
 <style>
 	.title { color: #467956; font-size: 36px; margin-top: 15px; }
 	.divider { margin: 15px -26px 0; height: 5px; background-color: #a2a2a2; }
 </style>
 <script>
-	$(".cliff-kobold-drops").html(G.drops.monsters.cliffkobold.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
+	$(".kobold-drops").html(G.drops.monsters.kobold.map(function(drop) { return render_drop(drop, 1, "#858B8E"); }).join(""));
 </script>

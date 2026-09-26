@@ -17,7 +17,7 @@ const ITEMS = {
 	canopener: ["ring", "bscorpion", 70000, "sunder"],
 	blightcap: ["earring", "pppompom", 420000, "poison"],
 	gnomecap: ["amulet", "mechagnome", 42000, "restore_mp"],
-	koboldbelt: ["belt", "cliffkobold", 84000],
+	koboldbelt: ["belt", "kobold", 84000],
 	frostfang: ["earring", "wolf", 560000],
 	paleclaw: ["amulet", "paledino", 30, "frenzy"],
 	mimicgrin: ["orb", "mimic", 19],
@@ -27,7 +27,7 @@ const ITEMS = {
 	heartwoodlocket: ["amulet", "dryad", 390000],
 	groundingstrap: ["belt", "sparkbot", 420000],
 };
-const VARIANTS = { manyeye: "oneeye", mimic: "cliffkobold", paledino: "odino" };
+const VARIANTS = { manyeye: "oneeye", mimic: "kobold", paledino: "odino" };
 
 function definition(text, name) {
 	const start = text.indexOf(`function ${name}(`);
@@ -116,7 +116,7 @@ test("every passive's condition exists with a visible 20x20 icon", () => {
 
 test("the new monsters are tougher than their farms and carry regular achievements", () => {
 	const stats = new Set(Object.values(G.monsters).flatMap((m) => (m.achievements || []).map((a) => a[2])));
-	for (const id of ["cliffkobold", ...Object.keys(VARIANTS)]) {
+	for (const id of ["kobold", ...Object.keys(VARIANTS)]) {
 		const m = G.monsters[id];
 		assert.ok(m && m.hp > 0, id);
 		assert.ok(m.achievements.length >= 6, id);
@@ -128,9 +128,9 @@ test("the new monsters are tougher than their farms and carry regular achievemen
 		assert.ok(G.drops.monsters[id].length >= 3, id);
 	}
 	const growHp = Object.values(G.maps).flatMap((map) =>
-		(map.monsters || []).filter((p) => p.grow && p.type !== "cliffkobold").map((p) => G.monsters[p.type].hp),
+		(map.monsters || []).filter((p) => p.grow && p.type !== "kobold").map((p) => G.monsters[p.type].hp),
 	);
-	assert.ok(G.monsters.cliffkobold.hp > Math.max(...growHp), "the Cliff Kobold is the toughest grow-pack farm");
+	assert.ok(G.monsters.kobold.hp > Math.max(...growHp), "the Kobold is the toughest grow-pack farm");
 	for (const [variant, parent] of Object.entries(VARIANTS)) {
 		assert.ok(G.monsters[variant].hp >= 3.5 * G.monsters[parent].hp, variant);
 		assert.equal(G.monsters[variant].respawn, -1, variant);
@@ -140,9 +140,7 @@ test("the new monsters are tougher than their farms and carry regular achievemen
 	assert.equal(G.sprites.creatures2.matrix[0][1], "manyeye");
 	assert.deepEqual(
 		JSON.parse(
-			JSON.stringify(
-				G.maps.ucliffs.monsters.filter((p) => p.type === "cliffkobold").map((p) => [p.count, p.grow, p.roam]),
-			),
+			JSON.stringify(G.maps.ucliffs.monsters.filter((p) => p.type === "kobold").map((p) => [p.count, p.grow, p.roam])),
 		),
 		[
 			[2, true, true],
@@ -422,7 +420,7 @@ test("rare variants spawn inside their parent's packs, one at a time", () => {
 	const block = functions.slice(start, functions.indexOf("\t\t});\n", start) + 6);
 	const loop = {
 		events: { manyeye: 30000, mimic: 24000, paledino: 60000 },
-		stats: { kills: { oneeye: 15001, cliffkobold: 0, odino: 0 } },
+		stats: { kills: { oneeye: 15001, kobold: 0, odino: 0 } },
 		edges: { next_manyeye: 15000, next_mimic: 12000, next_paledino: 30000 },
 		monster_c: {},
 		calls: [],
@@ -454,7 +452,7 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 	);
 	const world = docs.guide.find((entry) => entry[0] === "world")[4].map((entry) => entry[0]);
 	const GUIDES = {
-		cliffkobold: ["cliff-kobold", "ucliffs", 1],
+		kobold: ["kobold", "ucliffs", 1],
 		mimic: ["mimic", "ucliffs", 1],
 		manyeye: ["many-eye", "level2w", 0],
 		paledino: ["pale-dino", "mforest", 0],

@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Τέσσερις Cliff Kobold περιφέρονται ανά δύο σε αυτούς τους γκρεμούς. Φέρε ομάδα για τον καθένα.",
+	"interaction.kobold.summary": "Τέσσερις Kobold περιφέρονται ανά δύο σε αυτούς τους γκρεμούς. Φέρε ομάδα για τον καθένα.",
 	"interaction.mimic.summary": "Δεν είναι κάθε σεντούκι εδώ κάτω σεντούκι. Αυτό δαγκώνει πίσω.",
 	"interaction.manyeye.summary": "Κάποιες φορές ανοίγει ένα Many Eye ανάμεσα στους One Eye. Το βλέμμα του σε κάνει πέτρα.",
 	"interaction.paledino.summary": "Κάποιες φορές ένας Pale Dino τρέχει με τους Dino, πιο γρήγορος και πιο βαρύς στα χτυπήματα.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Πόδια στο έδαφος, ό,τι κι αν σε χτυπήσει.",
 	"set.watchers.explanation": "Δύο άγρυπνα μάτια δεν χάνουν σχεδόν τίποτα.",
 	"monster.manyeye.explanation": "Εμφανίζεται ανάμεσα στους One Eye στο Underground West περίπου κάθε 15.000 εμφανίσεις One Eye",
-	"monster.mimic.explanation": "Εμφανίζεται ανάμεσα στους Cliff Kobold στο Underground Cliffs περίπου κάθε 12.000 εμφανίσεις Cliff Kobold",
+	"monster.mimic.explanation": "Εμφανίζεται ανάμεσα στους Kobold στο Underground Cliffs περίπου κάθε 12.000 εμφανίσεις Kobold",
 	"monster.paledino.explanation": "Εμφανίζεται ανάμεσα στους Dino στο Mystical Forest περίπου κάθε 30.000 εμφανίσεις Dino",
 	"condition.exposed.name": "Εκτεθειμένος",
 	"condition.exposed.explanation": "Η αντίσταση μειώνεται κατά 240 για 5 δευτερόλεπτα.",

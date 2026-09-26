@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Чотири Cliff Kobold блукають цими скелями парами. На кожного бери групу.",
+	"interaction.kobold.summary": "Чотири Kobold блукають цими скелями парами. На кожного бери групу.",
 	"interaction.mimic.summary": "Не кожна скриня тут — скриня. Ця кусається у відповідь.",
 	"interaction.manyeye.summary": "Іноді серед One Eye розплющується Many Eye. Його погляд обертає тебе на камінь.",
 	"interaction.paledino.summary": "Іноді з Dino бігає Pale Dino — швидший і з важчими ударами.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Ноги на землі, хай що в тебе влучить.",
 	"set.watchers.explanation": "Два пильні ока майже нічого не пропускають.",
 	"monster.manyeye.explanation": "З'являється серед One Eye в Underground West приблизно раз на 15 000 появ One Eye",
-	"monster.mimic.explanation": "З'являється серед Cliff Kobold в Underground Cliffs приблизно раз на 12 000 появ Cliff Kobold",
+	"monster.mimic.explanation": "З'являється серед Kobold в Underground Cliffs приблизно раз на 12 000 появ Kobold",
 	"monster.paledino.explanation": "З'являється серед Dino в Mystical Forest приблизно раз на 30 000 появ Dino",
 	"condition.exposed.name": "Вразливість",
 	"condition.exposed.explanation": "Опір знижено на 240 на 5 секунд.",

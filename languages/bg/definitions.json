@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Четири Cliff Kobold бродят по двойки из тези скали. За всеки вземи група.",
+	"interaction.kobold.summary": "Четири Kobold бродят по двойки из тези скали. За всеки вземи група.",
 	"interaction.mimic.summary": "Не всеки сандък тук долу е сандък. Този хапе в отговор.",
 	"interaction.manyeye.summary": "Понякога сред One Eye се отваря Many Eye. Погледът му те превръща в камък.",
 	"interaction.paledino.summary": "Понякога с Dino тича Pale Dino – по-бърз и с по-тежки удари.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Краката на земята, каквото и да те удари.",
 	"set.watchers.explanation": "Две бдителни очи не пропускат почти нищо.",
 	"monster.manyeye.explanation": "Появява се сред One Eye в Underground West приблизително на всеки 15 000 появи на One Eye",
-	"monster.mimic.explanation": "Появява се сред Cliff Kobold в Underground Cliffs приблизително на всеки 12 000 появи на Cliff Kobold",
+	"monster.mimic.explanation": "Появява се сред Kobold в Underground Cliffs приблизително на всеки 12 000 появи на Kobold",
 	"monster.paledino.explanation": "Появява се сред Dino в Mystical Forest приблизително на всеки 30 000 появи на Dino",
 	"condition.exposed.name": "Уязвимост",
 	"condition.exposed.explanation": "Устойчивостта намалява с 240 за 5 секунди.",

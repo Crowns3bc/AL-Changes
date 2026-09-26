@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Čtyři Cliff Kobold se po dvojicích toulají po těchto útesech. Na každého si vezmi družinu.",
+	"interaction.kobold.summary": "Čtyři Kobold se po dvojicích toulají po těchto útesech. Na každého si vezmi družinu.",
 	"interaction.mimic.summary": "Ne každá truhla tady dole je truhla. Tahle kouše zpátky.",
 	"interaction.manyeye.summary": "Občas se mezi One Eye otevře Many Eye. Jeho pohled tě promění v kámen.",
 	"interaction.paledino.summary": "Občas s Dino běhá i Pale Dino – rychlejší a udeří tvrději.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Nohy pevně na zemi, ať tě zasáhne cokoli.",
 	"set.watchers.explanation": "Dvěma bdělým očím jen málo co unikne.",
 	"monster.manyeye.explanation": "Objevuje se mezi One Eye v Underground West přibližně po každých 15 000 výskytech One Eye",
-	"monster.mimic.explanation": "Objevuje se mezi Cliff Kobold v Underground Cliffs přibližně po každých 12 000 výskytech Cliff Kobold",
+	"monster.mimic.explanation": "Objevuje se mezi Kobold v Underground Cliffs přibližně po každých 12 000 výskytech Kobold",
 	"monster.paledino.explanation": "Objevuje se mezi Dino v Mystical Forest přibližně po každých 30 000 výskytech Dino",
 	"condition.exposed.name": "Odhalení",
 	"condition.exposed.explanation": "Odolnost se na 5 sekund sníží o 240.",

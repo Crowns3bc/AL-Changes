@@ -1787,8 +1787,8 @@ var maps = {
 		name: "Underground [Cliffs]",
 		npcs: [],
 		monsters: [
-			{ type: "cliffkobold", boundary: [586, -844, 915, -589], count: 2, grow: true, roam: true },
-			{ type: "cliffkobold", boundary: [-455, -1126, -189, -898], count: 2, grow: true, roam: true },
+			{ type: "kobold", boundary: [586, -844, 915, -589], count: 2, grow: true, roam: true },
+			{ type: "kobold", boundary: [-455, -1126, -189, -898], count: 2, grow: true, roam: true },
 			// {"type":"TBD","boundary":[-135,-640,73,-545],"count":6,"grow":true},
 			// {"type":"TBD","boundary":[492,-238,647,-81],"count":6,"grow":true},
 		],
@@ -1803,7 +1803,7 @@ var maps = {
 			// [-513,-626,49,62,"gateway",1,1], //door to (To Be Determined)
 		],
 		quirks: [
-			[256, -905, 0, 0, "cliffkobold_info"],
+			[256, -905, 0, 0, "kobold_info"],
 			[256, -905, 0, 0, "mimic_info"],
 		],
 		drop_norm: 5000,

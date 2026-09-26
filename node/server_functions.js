@@ -2146,7 +2146,7 @@ function spawn_special_monster(type) {
 	}
 	if (type == "manyeye" || type == "mimic" || type == "paledino") {
 		// Rare variants appear inside a random pack boundary of the monster they replace.
-		var parent = { manyeye: "oneeye", mimic: "cliffkobold", paledino: "odino" }[type];
+		var parent = { manyeye: "oneeye", mimic: "kobold", paledino: "odino" }[type];
 		var packs = [];
 		for (var m in G.maps) {
 			(G.maps[m].monsters || []).forEach(function (p) {
@@ -2583,7 +2583,7 @@ function event_loop() {
 		// One of each rare variant at a time: an unkilled 2M+ HP variant should not pile up on its farm.
 		[
 			["manyeye", "oneeye"],
-			["mimic", "cliffkobold"],
+			["mimic", "kobold"],
 			["paledino", "odino"],
 		].forEach(function (v) {
 			if (events[v[0]] && stats.kills[v[1]] > edges["next_" + v[0]]) {

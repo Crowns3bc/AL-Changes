@@ -1,15 +1,15 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
-	// Cliff Kobold guide paragraph; the drop list with exact rates follows. Item, monster and map names are fixed. Quantities exact.
-	"docs.guide.cliff-kobold.intro": "Four Cliff Kobolds roam Underground Cliffs in two pairs. Each has 640,000 HP, 320 Armor and 220 Resistance, and hits for 1,400 physical damage. Bring a party. They often attack anyone who comes close and usually hit back when attacked. Kobold's Backbone is the rare prize; they also drop Gem Fragments and Bronze, Gold and Platinum Nuggets. A Mimic sometimes waits where they spawn.",
+	// Kobold guide paragraph; the drop list with exact rates follows. Item, monster and map names are fixed. Quantities exact.
+	"docs.guide.kobold.intro": "Four Kobolds roam Underground Cliffs in two pairs. Each has 640,000 HP, 320 Armor and 220 Resistance, and hits for 1,400 physical damage. Bring a party. They often attack anyone who comes close and usually hit back when attacked. Kobold's Backbone is the rare prize; they also drop Gem Fragments and Bronze, Gold and Platinum Nuggets. A Mimic sometimes waits where they spawn.",
 	// Golden Bat guide paragraph after its spawn line; the drop list with exact rates follows. Item names fixed; 24,000 exact.
 	"docs.guide.golden-bat.intro": "It flies around the cave until someone catches it. With 24,000 HP, it only sometimes attacks and never hits back. A Ghastly Battle Axe is guaranteed, a Hand of Midas usually follows, and a Bat Fang is rare.",
 	// Cute Bee guide paragraph after its spawn line; the drop list follows. Fun Token is a fixed name; 300 and 16 exact.
 	"docs.guide.cute-bee.intro": "It wanders Mainland with only 300 HP, stinging anyone nearby for a mighty 16 damage. It always drops a Fun Token and one random item.",
 	// Golden Bot guide paragraph after its spawn line; the drop list with exact rates follows. Item names fixed; 500,000 exact.
 	"docs.guide.golden-bot.intro": "It wanders Underground Hills until someone stops it. It has 500,000 HP, but rarely attacks and never hits back. A Hand of Midas is guaranteed, a Golden Egg drops half the time, and a Ring of Gold, Gold Booster or The Bank Key may follow. The Golden Power Glove is the one-in-a-million find.",
-	// CODE caption above the Cliff Kobold example: walks halfway toward the nearest Cliff Kobold, or attacks once in range.
-	"docs.guide.cliff-kobold.code": "Run this in Underground Cliffs. Each call finds the nearest Cliff Kobold, walks halfway toward it if it is out of range, or attacks once when it is in range and ready.",
+	// CODE caption above the Kobold example: walks halfway toward the nearest Kobold, or attacks once in range.
+	"docs.guide.kobold.code": "Run this in Underground Cliffs. Each call finds the nearest Kobold, walks halfway toward it if it is out of range, or attacks once when it is in range and ready.",
 	// CODE caption above the Mimic example: attacks the nearest Mimic in range once per call, only at full HP.
 	"docs.guide.mimic.code": "The Mimic only bites back. This attacks the nearest Mimic in range once per call, but only while your HP is full.",
 	// CODE caption above the Many Eye example: does nothing while stoned; otherwise attacks once per call.
@@ -24,8 +24,8 @@ module.exports = {
 	"docs.guide.golden-bot.code": "This attacks the nearest Golden Bot in range once per call. Bring friends: it has 500,000 HP.",
 	// Many Eye guide paragraph. One Eye, Many Eye and Watcher's Earring are fixed names; Status Resistance is the stat label. Quantities exact.
 	"docs.guide.many-eye.about": "Its gaze is One Eye's: every 6.4 seconds it turns its current target to stone for 4 seconds. Status Resistance shortens the stone; a pair of Watcher's Earrings grants 15. Bring a party: Many Eye has 2,520,000 HP and hits hard and fast. Watcher's Earring drops 1 in 17; it also drops Gem Fragments and sometimes a Platinum Nugget.",
-	// Mimic guide paragraph. Cliff Kobolds, Gold Nugget, Gem Fragments, Platinum Nugget and Mimic's Grin are fixed names. Gear boxes 50% each, Platinum Nugget 25%. Quantities exact.
-	"docs.guide.mimic.about": "It waits among the Cliff Kobolds like a treasure chest and never starts a fight. Attack it, though, and it bites back for 2,600 physical damage per hit. It has 2,240,000 HP, 450 Armor and 450 Resistance. It always drops a Gold Nugget and 5 Gem Fragments, often gear boxes, sometimes a Platinum Nugget, and Mimic's Grin 1 in 19.",
+	// Mimic guide paragraph. Kobolds, Gold Nugget, Gem Fragments, Platinum Nugget and Mimic's Grin are fixed names. Gear boxes 50% each, Platinum Nugget 25%. Quantities exact.
+	"docs.guide.mimic.about": "It waits among the Kobolds like a treasure chest and never starts a fight. Attack it, though, and it bites back for 2,600 physical damage per hit. It has 2,240,000 HP, 450 Armor and 450 Resistance. It always drops a Gold Nugget and 5 Gem Fragments, often gear boxes, sometimes a Platinum Nugget, and Mimic's Grin 1 in 19.",
 	// Pale Dino guide paragraph. Dino, Bones, Essence of Nature and Paleclaw Totem are fixed names. Quantities exact.
 	"docs.guide.pale-dino.about": "A pale Dino with 1,320,000 HP, faster and harder-hitting than the rest. It drops Bones and Essence of Nature, with Paleclaw Totem at 1 in 30.",
 	// Accepted calls start account cooldown immediately, including while queued. An unanswered call releases its own cooldown only when it ends. Refusals add none; once any sentry answers cooldown stays even without a kill.

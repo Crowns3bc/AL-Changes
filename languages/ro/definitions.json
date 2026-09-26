@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Patru Cliff Kobold bântuie în perechi prin aceste stânci. Adu un grup pentru fiecare.",
+	"interaction.kobold.summary": "Patru Kobold bântuie în perechi prin aceste stânci. Adu un grup pentru fiecare.",
 	"interaction.mimic.summary": "Nu orice cufăr de aici de jos e un cufăr. Acesta mușcă înapoi.",
 	"interaction.manyeye.summary": "Uneori, printre One Eye se deschide un Many Eye. Privirea lui te preface în piatră.",
 	"interaction.paledino.summary": "Uneori, un Pale Dino aleargă cu Dino, mai rapid și cu lovituri mai grele.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Cu picioarele pe pământ, orice te-ar lovi.",
 	"set.watchers.explanation": "Doi ochi vigilenți nu scapă aproape nimic.",
 	"monster.manyeye.explanation": "Apare printre One Eye în Underground West cam la fiecare 15.000 de apariții de One Eye",
-	"monster.mimic.explanation": "Apare printre Cliff Kobold în Underground Cliffs cam la fiecare 12.000 de apariții de Cliff Kobold",
+	"monster.mimic.explanation": "Apare printre Kobold în Underground Cliffs cam la fiecare 12.000 de apariții de Kobold",
 	"monster.paledino.explanation": "Apare printre Dino în Mystical Forest cam la fiecare 30.000 de apariții de Dino",
 	"condition.exposed.name": "Expus",
 	"condition.exposed.explanation": "Rezistența scade cu 240 timp de 5 secunde.",

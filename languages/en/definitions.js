@@ -1,7 +1,7 @@
 // English display text from loaded game definitions. Canonical G is not localized.
 module.exports = {
-	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Cliff Kobold guide. Cliff Kobolds and Underground Cliffs are fixed names.
-	"interaction.cliffkobold.summary": "Four Cliff Kobolds roam these cliffs in pairs. Bring a party for each one.",
+	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Kobold guide. Kobolds and Underground Cliffs are fixed names.
+	"interaction.kobold.summary": "Four Kobolds roam these cliffs in pairs. Bring a party for each one.",
 	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Mimic guide. The Mimic looks like a chest and never starts a fight.
 	"interaction.mimic.summary": "Not every chest down here is a chest. This one bites back.",
 	// Tooltip of the INFO button near the Underground West entrance; opens the Many Eye guide. Many Eye and One Eye are fixed names; its stare petrifies.
@@ -48,8 +48,8 @@ module.exports = {
 	"set.watchers.explanation": "Two watching eyes miss very little.",
 	// Monster tooltip; same pattern as Golden Bat. Many Eye, One Eye and Underground West are fixed names; keep 15,000 exact.
 	"monster.manyeye.explanation": "Spawns among the One Eyes in Underground West around every 15,000 One Eye spawns",
-	// Monster tooltip; same pattern as Golden Bat. Mimic, Cliff Kobold and Underground Cliffs are fixed names; keep 12,000 exact.
-	"monster.mimic.explanation": "Spawns among the Cliff Kobolds in Underground Cliffs around every 12,000 Cliff Kobold spawns",
+	// Monster tooltip; same pattern as Golden Bat. Mimic, Kobold and Underground Cliffs are fixed names; keep 12,000 exact.
+	"monster.mimic.explanation": "Spawns among the Kobolds in Underground Cliffs around every 12,000 Kobold spawns",
 	// Monster tooltip; same pattern as Golden Bat. Pale Dino, Dino and Mystical Forest are fixed names; keep 30,000 exact.
 	"monster.paledino.explanation": "Spawns among the Dinos in Mystical Forest around every 30,000 Dino spawns",
 	// Condition name: a target's Resistance is reduced by 240 for 5 seconds (Harpy's Echo). Use the same term as the Shatter tooltip and guide.

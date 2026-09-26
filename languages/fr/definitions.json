@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Quatre Cliff Kobold arpentent ces falaises par deux. Viens en groupe pour chacun.",
+	"interaction.kobold.summary": "Quatre Kobold arpentent ces falaises par deux. Viens en groupe pour chacun.",
 	"interaction.mimic.summary": "Tous les coffres d’ici ne sont pas des coffres. Celui-ci mord en retour.",
 	"interaction.manyeye.summary": "Parfois, un Many Eye s’ouvre parmi les One Eye. Son regard te change en pierre.",
 	"interaction.paledino.summary": "Parfois, un Pale Dino court avec les Dino, plus rapide et plus brutal.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Les pieds sur terre, quoi qui te frappe.",
 	"set.watchers.explanation": "Deux yeux vigilants ne laissent presque rien passer.",
 	"monster.manyeye.explanation": "Apparaît parmi les One Eye dans Underground West environ toutes les 15 000 apparitions de One Eye",
-	"monster.mimic.explanation": "Apparaît parmi les Cliff Kobold dans Underground Cliffs environ toutes les 12 000 apparitions de Cliff Kobold",
+	"monster.mimic.explanation": "Apparaît parmi les Kobold dans Underground Cliffs environ toutes les 12 000 apparitions de Kobold",
 	"monster.paledino.explanation": "Apparaît parmi les Dino dans Mystical Forest environ toutes les 30 000 apparitions de Dino",
 	"condition.exposed.name": "Exposé",
 	"condition.exposed.explanation": "La résistance est réduite de 240 pendant 5 secondes.",

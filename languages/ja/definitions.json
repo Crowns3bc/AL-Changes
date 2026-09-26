@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "四体のCliff Koboldが二体ずつこの崖をうろついている。一体ごとにパーティーで挑もう。",
+	"interaction.kobold.summary": "四体のKoboldが二体ずつこの崖をうろついている。一体ごとにパーティーで挑もう。",
 	"interaction.mimic.summary": "ここの宝箱がすべて宝箱とは限らない。こいつは噛み返してくる。",
 	"interaction.manyeye.summary": "One Eyeの中に、ときどきMany Eyeが目を開く。その視線はあなたを石に変える。",
 	"interaction.paledino.summary": "ときどきDinoの群れにPale Dinoが混じる。より速く、より重い一撃を放つ。",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "何が当たろうと、足は地に着けたまま。",
 	"set.watchers.explanation": "見張る二つの目は、ほとんど何も見逃さない。",
 	"monster.manyeye.explanation": "Underground WestでOne Eyeが約15,000体出現するごとに、その中に出現します。",
-	"monster.mimic.explanation": "Underground CliffsでCliff Koboldが約12,000体出現するごとに、その中に出現します。",
+	"monster.mimic.explanation": "Underground CliffsでKoboldが約12,000体出現するごとに、その中に出現します。",
 	"monster.paledino.explanation": "Mystical ForestでDinoが約30,000体出現するごとに、その中に出現します。",
 	"condition.exposed.name": "無防備",
 	"condition.exposed.explanation": "5秒間、魔法耐性が240低下します。",

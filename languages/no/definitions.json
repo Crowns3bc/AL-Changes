@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Fire Cliff Kobold streifer parvis rundt på disse klippene. Ta med en gruppe til hver av dem.",
+	"interaction.kobold.summary": "Fire Kobold streifer parvis rundt på disse klippene. Ta med en gruppe til hver av dem.",
 	"interaction.mimic.summary": "Ikke alle kister her nede er kister. Denne biter tilbake.",
 	"interaction.manyeye.summary": "Noen ganger åpner et Many Eye seg blant One Eye. Blikket gjør deg til stein.",
 	"interaction.paledino.summary": "Noen ganger løper en Pale Dino med Dino, raskere og med hardere slag.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Føttene på jorda, uansett hva som treffer deg.",
 	"set.watchers.explanation": "To våkne øyne går glipp av svært lite.",
 	"monster.manyeye.explanation": "Dukker opp blant One Eye i Underground West omtrent hver gang 15 000 One Eye har dukket opp",
-	"monster.mimic.explanation": "Dukker opp blant Cliff Kobold i Underground Cliffs omtrent hver gang 12 000 Cliff Kobold har dukket opp",
+	"monster.mimic.explanation": "Dukker opp blant Kobold i Underground Cliffs omtrent hver gang 12 000 Kobold har dukket opp",
 	"monster.paledino.explanation": "Dukker opp blant Dino i Mystical Forest omtrent hver gang 30 000 Dino har dukket opp",
 	"condition.exposed.name": "Blottlagt",
 	"condition.exposed.explanation": "Motstand reduseres med 240 i 5 sekunder.",

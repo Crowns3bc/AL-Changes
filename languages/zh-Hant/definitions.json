@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "四隻Cliff Kobold兩兩結伴在這片懸崖遊蕩。每一隻都要帶隊伍來打。",
+	"interaction.kobold.summary": "四隻Kobold兩兩結伴在這片懸崖遊蕩。每一隻都要帶隊伍來打。",
 	"interaction.mimic.summary": "這下面的箱子不一定都是箱子。這一個會反咬。",
 	"interaction.manyeye.summary": "One Eye之間偶爾會睜開一隻Many Eye。牠的凝視會把你變成石頭。",
 	"interaction.paledino.summary": "偶爾會有一隻Pale Dino混在Dino裡奔跑，更快，也打得更狠。",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "無論被什麼擊中，雙腳都穩穩著地。",
 	"set.watchers.explanation": "兩隻注視的眼睛，幾乎什麼都不會錯過。",
 	"monster.manyeye.explanation": "在Underground West的One Eye中出現，One Eye每生成約15,000隻，就會出現一次",
-	"monster.mimic.explanation": "在Underground Cliffs的Cliff Kobold中出現，Cliff Kobold每生成約12,000隻，就會出現一次",
+	"monster.mimic.explanation": "在Underground Cliffs的Kobold中出現，Kobold每生成約12,000隻，就會出現一次",
 	"monster.paledino.explanation": "在Mystical Forest的Dino中出現，Dino每生成約30,000隻，就會出現一次",
 	"condition.exposed.name": "暴露",
 	"condition.exposed.explanation": "抗性降低240，持續5秒。",

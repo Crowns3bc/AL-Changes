@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Empat Cliff Kobold merayau berpasangan di tebing-tebing ini. Bawa kumpulan untuk setiap satu.",
+	"interaction.kobold.summary": "Empat Kobold merayau berpasangan di tebing-tebing ini. Bawa kumpulan untuk setiap satu.",
 	"interaction.mimic.summary": "Bukan semua peti di bawah sini ialah peti. Yang ini menggigit balas.",
 	"interaction.manyeye.summary": "Kadangkala sebuah Many Eye terbuka dalam kalangan One Eye. Renungannya menukar anda menjadi batu.",
 	"interaction.paledino.summary": "Kadangkala seekor Pale Dino berlari bersama Dino, lebih pantas dan memukul lebih kuat.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Kaki tetap berpijak di bumi, apa pun yang mengena anda.",
 	"set.watchers.explanation": "Dua mata yang memerhati hampir tidak terlepas apa-apa.",
 	"monster.manyeye.explanation": "Muncul dalam kalangan One Eye di Underground West kira-kira sekali bagi setiap 15,000 kemunculan One Eye",
-	"monster.mimic.explanation": "Muncul dalam kalangan Cliff Kobold di Underground Cliffs kira-kira sekali bagi setiap 12,000 kemunculan Cliff Kobold",
+	"monster.mimic.explanation": "Muncul dalam kalangan Kobold di Underground Cliffs kira-kira sekali bagi setiap 12,000 kemunculan Kobold",
 	"monster.paledino.explanation": "Muncul dalam kalangan Dino di Mystical Forest kira-kira sekali bagi setiap 30,000 kemunculan Dino",
 	"condition.exposed.name": "Terdedah",
 	"condition.exposed.explanation": "Rintangan berkurang sebanyak 240 selama 5 saat.",

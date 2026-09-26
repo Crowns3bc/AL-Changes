@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "네 마리의 Cliff Kobold가 둘씩 짝지어 이 절벽을 돌아다녀요. 한 마리마다 파티를 꾸려 오세요.",
+	"interaction.kobold.summary": "네 마리의 Kobold가 둘씩 짝지어 이 절벽을 돌아다녀요. 한 마리마다 파티를 꾸려 오세요.",
 	"interaction.mimic.summary": "여기 있는 상자가 다 상자는 아니에요. 이건 맞으면 물어요.",
 	"interaction.manyeye.summary": "가끔 One Eye 사이에서 Many Eye가 눈을 떠요. 그 시선은 당신을 돌로 만들어요.",
 	"interaction.paledino.summary": "가끔 Dino 무리에 Pale Dino가 섞여 달려요. 더 빠르고 더 세게 때려요.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "무엇에 맞든 발은 땅에 딛고 있어요.",
 	"set.watchers.explanation": "지켜보는 두 눈은 거의 아무것도 놓치지 않아요.",
 	"monster.manyeye.explanation": "Underground West에서 One Eye가 약 15,000마리 나타날 때마다 그 사이에 등장해요.",
-	"monster.mimic.explanation": "Underground Cliffs에서 Cliff Kobold가 약 12,000마리 나타날 때마다 그 사이에 등장해요.",
+	"monster.mimic.explanation": "Underground Cliffs에서 Kobold가 약 12,000마리 나타날 때마다 그 사이에 등장해요.",
 	"monster.paledino.explanation": "Mystical Forest에서 Dino가 약 30,000마리 나타날 때마다 그 사이에 등장해요.",
 	"condition.exposed.name": "무방비",
 	"condition.exposed.explanation": "5초 동안 저항력이 240 감소합니다.",

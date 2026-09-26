@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "أربعة Cliff Kobold تجوب هذه المنحدرات أزواجًا. أحضر فريقًا لكل واحد منها.",
+	"interaction.kobold.summary": "أربعة Kobold تجوب هذه المنحدرات أزواجًا. أحضر فريقًا لكل واحد منها.",
 	"interaction.mimic.summary": "ليس كل صندوق هنا في الأسفل صندوقًا. هذا يعضّ ردًا.",
 	"interaction.manyeye.summary": "أحيانًا ينفتح Many Eye بين One Eye. نظرته تحوّلك إلى حجر.",
 	"interaction.paledino.summary": "أحيانًا يركض Pale Dino مع Dino، أسرع وضرباته أشد.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "قدماك على الأرض، مهما أصابك.",
 	"set.watchers.explanation": "عينان يقظتان لا يفوتهما إلا القليل.",
 	"monster.manyeye.explanation": "يظهر بين One Eye في Underground West تقريبا كل 15,000 ظهور لـOne Eye",
-	"monster.mimic.explanation": "يظهر بين Cliff Kobold في Underground Cliffs تقريبا كل 12,000 ظهور لـCliff Kobold",
+	"monster.mimic.explanation": "يظهر بين Kobold في Underground Cliffs تقريبا كل 12,000 ظهور لـKobold",
 	"monster.paledino.explanation": "يظهر بين Dino في Mystical Forest تقريبا كل 30,000 ظهور لـDino",
 	"condition.exposed.name": "مكشوف",
 	"condition.exposed.explanation": "تنخفض المقاومة بمقدار 240 لمدة 5 ثوانٍ.",

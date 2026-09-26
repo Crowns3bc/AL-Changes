@@ -1463,10 +1463,10 @@ var monsters={
 		},
 	}
 ,
-	// Cliff Kobolds fill Underground Cliffs; the Mimic, Pale Dino and Many Eye appear through the
+	// Kobolds roam Underground Cliffs; the Mimic, Pale Dino and Many Eye appear through the
 	// kill-counter spawner (events/edges) like the Golden Bat and Golden Bot.
-	"cliffkobold":{
-		"skin":"cobold","name":"Cliff Kobold","speed":22,"hp":640000,"xp":680000,"armor":320,"resistance":220,"attack":1400,"damage_type":"physical","respawn":8,"range":30,"frequency":1.2,"aggro":0.6,"rage":0.5,
+	"kobold":{
+		"skin":"cobold","name":"Kobold","speed":40,"hp":640000,"xp":680000,"armor":320,"resistance":220,"attack":1400,"damage_type":"physical","respawn":8,"range":30,"frequency":1.2,"aggro":0.6,"rage":0.5,
 		"achievements":[
 			[1,"stat","hp",25],
 			[100,"stat","armor",5],
@@ -1480,7 +1480,7 @@ var monsters={
 	"mimic":{
 		"skin":"chestx","name":"Mimic","speed":30,"hp":2240000,"xp":1900000,"armor":450,"resistance":450,"attack":2600,"damage_type":"physical","respawn":-1,"range":24,"frequency":1,"aggro":0,"rage":1,"gold":120000,
 		"phresistance":70,
-		"explanation":"Spawns among the Cliff Kobolds in Underground Cliffs around every 12,000 Cliff Kobold spawns",
+		"explanation":"Spawns among the Kobolds in Underground Cliffs around every 12,000 Kobold spawns",
 		"achievements":[
 			[1,"stat","gold",1],
 			[10,"stat","luck",1],

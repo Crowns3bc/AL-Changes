@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Fyra Cliff Kobold strövar parvis över de här klipporna. Ta med en grupp för var och en.",
+	"interaction.kobold.summary": "Fyra Kobold strövar parvis över de här klipporna. Ta med en grupp för var och en.",
 	"interaction.mimic.summary": "Alla kistor här nere är inte kistor. Den här biter tillbaka.",
 	"interaction.manyeye.summary": "Ibland öppnas ett Many Eye bland One Eye. Dess blick förvandlar dig till sten.",
 	"interaction.paledino.summary": "Ibland springer en Pale Dino med Dino, snabbare och med hårdare slag.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Fötterna på jorden, vad som än träffar dig.",
 	"set.watchers.explanation": "Två vakande ögon missar väldigt lite.",
 	"monster.manyeye.explanation": "Dyker upp bland One Eye i Underground West ungefär var 15 000:e gång en One Eye dyker upp",
-	"monster.mimic.explanation": "Dyker upp bland Cliff Kobold i Underground Cliffs ungefär var 12 000:e gång en Cliff Kobold dyker upp",
+	"monster.mimic.explanation": "Dyker upp bland Kobold i Underground Cliffs ungefär var 12 000:e gång en Kobold dyker upp",
 	"monster.paledino.explanation": "Dyker upp bland Dino i Mystical Forest ungefär var 30 000:e gång en Dino dyker upp",
 	"condition.exposed.name": "Blottad",
 	"condition.exposed.explanation": "Resistens minskar med 240 i 5 sekunder.",

@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Cztery Cliff Kobold krążą parami po tych klifach. Na każdego weź drużynę.",
+	"interaction.kobold.summary": "Cztery Kobold krążą parami po tych klifach. Na każdego weź drużynę.",
 	"interaction.mimic.summary": "Nie każda skrzynia tutaj jest skrzynią. Ta odgryza się.",
 	"interaction.manyeye.summary": "Czasem wśród One Eye otwiera się Many Eye. Jego spojrzenie zamienia cię w kamień.",
 	"interaction.paledino.summary": "Czasem z Dino biega Pale Dino, szybszy i mocniej bijący.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Stopy na ziemi, cokolwiek w ciebie trafi.",
 	"set.watchers.explanation": "Dwa czujne oczy niewiele przeoczą.",
 	"monster.manyeye.explanation": "Pojawia się wśród One Eye w Underground West mniej więcej co 15 000 pojawień One Eye",
-	"monster.mimic.explanation": "Pojawia się wśród Cliff Kobold w Underground Cliffs mniej więcej co 12 000 pojawień Cliff Kobold",
+	"monster.mimic.explanation": "Pojawia się wśród Kobold w Underground Cliffs mniej więcej co 12 000 pojawień Kobold",
 	"monster.paledino.explanation": "Pojawia się wśród Dino w Mystical Forest mniej więcej co 30 000 pojawień Dino",
 	"condition.exposed.name": "Odsłonięcie",
 	"condition.exposed.explanation": "Odporność spada o 240 na 5 sekund.",

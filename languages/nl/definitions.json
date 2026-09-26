@@ -1,5 +1,5 @@
 {
-	"interaction.cliffkobold.summary": "Vier Cliff Kobold zwerven in paren over deze kliffen. Neem voor elk een groep mee.",
+	"interaction.kobold.summary": "Vier Kobold zwerven in paren over deze kliffen. Neem voor elk een groep mee.",
 	"interaction.mimic.summary": "Niet elke kist hier beneden is een kist. Deze bijt terug.",
 	"interaction.manyeye.summary": "Soms gaat er tussen de One Eye een Many Eye open. Zijn blik verandert je in steen.",
 	"interaction.paledino.summary": "Soms rent er een Pale Dino met de Dino mee, sneller en harder slaand.",
@@ -23,7 +23,7 @@
 	"item.groundingstrap.explanation": "Voeten op de grond, wat je ook raakt.",
 	"set.watchers.explanation": "Twee wakende ogen missen bijna niets.",
 	"monster.manyeye.explanation": "Verschijnt tussen de One Eye in Underground West ongeveer elke 15.000 keer dat One Eye verschijnt",
-	"monster.mimic.explanation": "Verschijnt tussen de Cliff Kobold in Underground Cliffs ongeveer elke 12.000 keer dat Cliff Kobold verschijnt",
+	"monster.mimic.explanation": "Verschijnt tussen de Kobold in Underground Cliffs ongeveer elke 12.000 keer dat Kobold verschijnt",
 	"monster.paledino.explanation": "Verschijnt tussen de Dino in Mystical Forest ongeveer elke 30.000 keer dat Dino verschijnt",
 	"condition.exposed.name": "Blootgesteld",
 	"condition.exposed.explanation": "Weerstand daalt met 240 gedurende 5 seconden.",
