@@ -452,7 +452,6 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 	);
 	const world = docs.guide.find((entry) => entry[0] === "world")[4].map((entry) => entry[0]);
 	const GUIDES = {
-		kobold: ["kobold", "ucliffs", 1],
 		mimic: ["mimic", "ucliffs", 1],
 		manyeye: ["many-eye", "level2w", 0],
 		paledino: ["pale-dino", "mforest", 0],
@@ -486,6 +485,9 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 		assert.ok(mcp.includes(`uri: "adventureland://guide/${slug}"`), slug);
 	}
 	assert.ok(!fs.existsSync(path.join(root, "docs/guide/rare-drops.html")));
+	// The Kobold is an ordinary monster: its info window is enough
+	assert.equal(docs.interactions.kobold, undefined);
+	assert.ok(!fs.existsSync(path.join(root, "docs/guide/kobold.html")));
 	assert.ok(!world.includes("rare-drops"));
 	// The chest sits 3.5 px right of its frame's center; this crops and centers it in the world and on INFO
 	assert.deepEqual(Array.from(G.dimensions[G.monsters.mimic.skin]), [36, 30, 4]);

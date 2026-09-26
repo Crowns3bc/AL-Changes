@@ -81,8 +81,6 @@ const DOCS_PATHS = [
 	"/docs/guide/world/event-anniversary",
 	"/docs/guide/rime-djinn",
 	"/docs/guide/world/rime-djinn",
-	"/docs/guide/kobold",
-	"/docs/guide/world/kobold",
 	"/docs/guide/mimic",
 	"/docs/guide/world/mimic",
 	"/docs/guide/many-eye",

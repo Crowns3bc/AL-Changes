@@ -1803,7 +1803,6 @@ var maps = {
 			// [-513,-626,49,62,"gateway",1,1], //door to (To Be Determined)
 		],
 		quirks: [
-			[256, -905, 0, 0, "kobold_info"],
 			[256, -905, 0, 0, "mimic_info"],
 		],
 		drop_norm: 5000,

@@ -1,7 +1,5 @@
 // English display text from loaded game definitions. Canonical G is not localized.
 module.exports = {
-	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Kobold guide. Kobolds and Underground Cliffs are fixed names.
-	"interaction.kobold.summary": "Four Kobolds roam these cliffs in pairs. Bring a party for each one.",
 	// Tooltip of the INFO button near the Underground Cliffs entrance; opens the Mimic guide. The Mimic looks like a chest and never starts a fight.
 	"interaction.mimic.summary": "Not every chest down here is a chest. This one bites back.",
 	// Tooltip of the INFO button near the Underground West entrance; opens the Many Eye guide. Many Eye and One Eye are fixed names; its stare petrifies.

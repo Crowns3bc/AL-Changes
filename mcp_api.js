@@ -2347,14 +2347,6 @@ var MCP_RESOURCE_GUIDES = [
 		priority: 0.7,
 	},
 	{
-		uri: "adventureland://guide/kobold",
-		name: "kobold",
-		title: "Kobold",
-		description: "Kobolds roaming Underground Cliffs in two pairs: toughness, drops and a CODE example.",
-		article: "kobold",
-		priority: 0.5,
-	},
-	{
 		uri: "adventureland://guide/mimic",
 		name: "mimic",
 		title: "Mimic",

@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "Fyra Kobold strövar genom Underground Cliffs i två par. Var och en har 640 000 HP, 320 Pansar och 220 Resistens och slår för 1 400 fysisk skada. Ta med en grupp. De anfaller ofta den som kommer nära och slår oftast tillbaka när de blir anfallna. Kobold's Backbone är det sällsynta priset; de släpper också Gem Fragment, Bronze Nugget, Gold Nugget och Platinum Nugget. Ibland väntar en Mimic där de dyker upp.",
 	"docs.guide.golden-bat.intro": "Den fladdrar runt i grottan tills någon fångar den. Med 24 000 HP anfaller den bara ibland och slår aldrig tillbaka. En Ghastly Battle Axe är garanterad, en Hand of Midas följer oftast med och en Bat Fang är sällsynt.",
 	"docs.guide.cute-bee.intro": "Den vandrar runt i Mainland med bara 300 HP och sticker alla i närheten för mäktiga 16 skada. Den släpper alltid en Fun Token och ett slumpmässigt föremål.",
 	"docs.guide.golden-bot.intro": "Den vandrar runt i Underground Hills tills någon stoppar den. Den har 500 000 HP men anfaller sällan och slår aldrig tillbaka. En Hand of Midas är garanterad, ett Golden Egg faller hälften av gångerna, och en Ring of Gold, en Gold Booster eller The Bank Key kan följa. Golden Power Glove är fyndet som dyker upp en gång på miljonen.",
-	"docs.guide.kobold.code": "Kör det här i Underground Cliffs. Varje anrop letar upp närmaste Kobold, går halva vägen dit om den är utom räckhåll, eller anfaller en gång när den är inom räckhåll och din attack är redo.",
 	"docs.guide.mimic.code": "Mimic slår bara tillbaka. Det här anfaller närmaste Mimic inom räckhåll en gång per anrop, men bara medan dina HP är fulla.",
 	"docs.guide.many-eye.code": "Sten kan inte svinga. Det här gör ingenting medan du är förstenad; annars anfaller det närmaste Many Eye inom räckhåll en gång per anrop.",
 	"docs.guide.pale-dino.code": "Pale Dino slår hårt. Det här anfaller närmaste Pale Dino inom räckhåll en gång per anrop, men bara medan du har mer än hälften av dina HP.",

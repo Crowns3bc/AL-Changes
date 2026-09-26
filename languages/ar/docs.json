@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "أربعة Kobold تجوب Underground Cliffs في زوجين. لكل واحد منها 640,000 HP و320 درع و220 مقاومة، ويضرب بضرر جسدي قدره 1,400. أحضر فريقًا. كثيرًا ما تهاجم كل من يقترب، وعادةً ما ترد الضربة عند مهاجمتها. Kobold's Backbone هو الجائزة النادرة؛ كما تُسقط Gem Fragment وBronze Nugget وGold Nugget وPlatinum Nugget. وأحيانًا ينتظر Mimic حيث تظهر.",
 	"docs.guide.golden-bat.intro": "يرفرف في الكهف حتى يمسكه أحد. لديه 24,000 HP، لا يهاجم إلا أحيانًا ولا يرد الضربة أبدًا. Ghastly Battle Axe مضمون، وعادةً ما يتبعه Hand of Midas، أما Bat Fang فنادر.",
 	"docs.guide.cute-bee.intro": "يتجول في Mainland بـ300 HP فقط، ويلسع كل من بالقرب منه بضرر هائل قدره 16. يُسقط دائمًا Fun Token وغرضًا عشوائيًا واحدًا.",
 	"docs.guide.golden-bot.intro": "يتجول في Underground Hills حتى يوقفه أحد. لديه 500,000 HP، لكنه نادرًا ما يهاجم ولا يرد الضربة أبدًا. Hand of Midas مضمون، وGolden Egg يسقط في نصف المرات، وقد يتبعه Ring of Gold أو Gold Booster أو The Bank Key. أما Golden Power Glove فهو اللقية التي تأتي مرة في المليون.",
-	"docs.guide.kobold.code": "شغّل هذا في Underground Cliffs. كل استدعاء يجد أقرب Kobold، ويمشي نصف المسافة نحوه إن كان خارج المدى، أو يهاجمه مرة واحدة عندما يكون ضمن المدى وهجومك جاهز.",
 	"docs.guide.mimic.code": "Mimic يرد الضربة فقط. هذا يهاجم أقرب Mimic ضمن المدى مرة واحدة في كل استدعاء، لكن فقط ما دامت HP لديك ممتلئة.",
 	"docs.guide.many-eye.code": "الحجر لا يلوّح بسلاح. هذا لا يفعل شيئًا ما دمت متحجرًا؛ وإلا فإنه يهاجم أقرب Many Eye ضمن المدى مرة واحدة في كل استدعاء.",
 	"docs.guide.pale-dino.code": "Pale Dino يضرب بقوة. هذا يهاجم أقرب Pale Dino ضمن المدى مرة واحدة في كل استدعاء، لكن فقط ما دام لديك أكثر من نصف HP.",

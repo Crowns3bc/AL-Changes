@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "네 마리의 Kobold가 두 쌍으로 Underground Cliffs를 돌아다녀요. 각각 HP 640,000, 방어력 320, 저항력 220이며 1,400의 물리 피해로 때려요. 파티를 꾸려 오세요. 가까이 오는 이를 자주 공격하고, 공격받으면 대개 반격해요. Kobold's Backbone이 희귀한 보상이고, Gem Fragment, Bronze Nugget, Gold Nugget, Platinum Nugget도 떨어뜨려요. 이들이 나타나는 곳에서 가끔 Mimic이 기다려요.",
 	"docs.guide.golden-bat.intro": "누군가 잡을 때까지 동굴을 날아다녀요. HP는 24,000이고, 가끔만 공격하며 절대 반격하지 않아요. Ghastly Battle Axe는 반드시, Hand of Midas는 대개 떨어지고, Bat Fang은 드물어요.",
 	"docs.guide.cute-bee.intro": "HP 겨우 300으로 Mainland를 돌아다니며 근처의 누구든 무려 16의 피해로 쏘아요. 항상 Fun Token과 무작위 아이템 하나를 떨어뜨려요.",
 	"docs.guide.golden-bot.intro": "누군가 멈출 때까지 Underground Hills를 돌아다녀요. HP는 500,000이지만 거의 공격하지 않고 절대 반격하지 않아요. Hand of Midas는 반드시, Golden Egg는 절반의 확률로 떨어지고, Ring of Gold, Gold Booster, The Bank Key가 뒤따를 수도 있어요. Golden Power Glove는 백만 분의 일의 행운이에요.",
-	"docs.guide.kobold.code": "Underground Cliffs에서 실행하세요. 호출할 때마다 가장 가까운 Kobold를 찾아, 사거리 밖이면 절반만큼 다가가고, 사거리 안이며 공격이 준비되면 한 번 공격해요.",
 	"docs.guide.mimic.code": "Mimic은 반격만 해요. 이 코드는 HP가 가득할 때만 사거리 안의 가장 가까운 Mimic을 호출마다 한 번 공격해요.",
 	"docs.guide.many-eye.code": "돌은 휘두를 수 없어요. 석화된 동안에는 아무것도 하지 않고, 그렇지 않으면 사거리 안의 가장 가까운 Many Eye를 호출마다 한 번 공격해요.",
 	"docs.guide.pale-dino.code": "Pale Dino는 세게 때려요. 이 코드는 HP가 절반보다 많을 때만 사거리 안의 가장 가까운 Pale Dino를 호출마다 한 번 공격해요.",

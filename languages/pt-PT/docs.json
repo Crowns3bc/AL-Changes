@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "Quatro Kobold vagueiam por Underground Cliffs em dois pares. Cada um tem 640 000 HP, 320 de Armadura e 220 de Resistência, e acerta 1400 de dano físico. Traz um grupo. Atacam muitas vezes quem se aproxima e costumam ripostar quando atacados. Kobold's Backbone é o prémio raro; também deixam cair Gem Fragment, Bronze Nugget, Gold Nugget e Platinum Nugget. Às vezes um Mimic espera onde eles aparecem.",
 	"docs.guide.golden-bat.intro": "Esvoaça pela gruta até alguém o apanhar. Com 24 000 HP, só ataca de vez em quando e nunca riposta. Um Ghastly Battle Axe é garantido, um Hand of Midas costuma vir a seguir e um Bat Fang é raro.",
 	"docs.guide.cute-bee.intro": "Vagueia por Mainland com apenas 300 HP e pica quem estiver perto com uns temíveis 16 de dano. Deixa sempre cair um Fun Token e um objeto aleatório.",
 	"docs.guide.golden-bot.intro": "Vagueia por Underground Hills até alguém o travar. Tem 500 000 HP, mas raramente ataca e nunca riposta. Um Hand of Midas é garantido, um Golden Egg cai metade das vezes, e pode seguir-se um Ring of Gold, um Gold Booster ou The Bank Key. O Golden Power Glove é o achado de um em um milhão.",
-	"docs.guide.kobold.code": "Executa isto em Underground Cliffs. Cada chamada procura o Kobold mais próximo, anda metade do caminho até ele se estiver fora de alcance, ou ataca-o uma vez quando estiver ao alcance e o teu ataque estiver pronto.",
 	"docs.guide.mimic.code": "O Mimic só riposta. Isto ataca uma vez por chamada o Mimic mais próximo ao alcance, mas só enquanto tiveres os HP cheios.",
 	"docs.guide.many-eye.code": "A pedra não golpeia. Isto não faz nada enquanto estiveres petrificado; caso contrário, ataca uma vez por chamada o Many Eye mais próximo ao alcance.",
 	"docs.guide.pale-dino.code": "O Pale Dino bate com força. Isto ataca uma vez por chamada o Pale Dino mais próximo ao alcance, mas só enquanto tiveres mais de metade dos teus HP.",

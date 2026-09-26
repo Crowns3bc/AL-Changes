@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "四体のKoboldがUnderground Cliffsを二組に分かれてうろついています。それぞれHP 640,000、物理防御320、魔法耐性220で、1,400の物理ダメージを与えます。パーティーで挑みましょう。近づく者によく襲いかかり、攻撃されるとたいてい反撃します。Kobold's Backboneがレアな報酬で、ほかにGem Fragment、Bronze Nugget、Gold Nugget、Platinum Nuggetも落とします。彼らが出現する場所では、ときどきMimicが待っています。",
 	"docs.guide.golden-bat.intro": "誰かに捕まるまで洞窟を飛び回ります。HPは24,000で、たまにしか攻撃せず、決して反撃しません。Ghastly Battle Axeは必ず、Hand of Midasはたいてい落とし、Bat Fangはまれです。",
 	"docs.guide.cute-bee.intro": "HPわずか300でMainlandをうろつき、近くの者を16という強烈なダメージで刺します。必ずFun Tokenとランダムなアイテムを一つ落とします。",
 	"docs.guide.golden-bot.intro": "誰かに止められるまでUnderground Hillsをうろつきます。HPは500,000ですが、めったに攻撃せず、決して反撃しません。Hand of Midasは必ず、Golden Eggは半分の確率で落とし、Ring of Gold、Gold Booster、The Bank Keyが続くこともあります。Golden Power Gloveは百万に一つの掘り出し物です。",
-	"docs.guide.kobold.code": "Underground Cliffsで実行してください。呼び出すたびに最も近いKoboldを探し、射程外なら半分の距離まで近づき、射程内で攻撃の準備ができていれば一度攻撃します。",
 	"docs.guide.mimic.code": "Mimicは反撃しかしません。これはHPが満タンのときだけ、射程内で最も近いMimicを呼び出しごとに一度攻撃します。",
 	"docs.guide.many-eye.code": "石は剣を振れません。石化している間は何もせず、それ以外は射程内で最も近いMany Eyeを呼び出しごとに一度攻撃します。",
 	"docs.guide.pale-dino.code": "Pale Dinoの一撃は重いです。これはHPが半分より多いときだけ、射程内で最も近いPale Dinoを呼び出しごとに一度攻撃します。",

@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "Patru Kobold bântuie prin Underground Cliffs în două perechi. Fiecare are 640.000 HP, 320 Armură și 220 Rezistență și lovește cu 1.400 de daune fizice. Vino cu un grup. Atacă des pe oricine se apropie și de obicei ripostează când sunt atacați. Kobold's Backbone este premiul rar; lasă și Gem Fragment, Bronze Nugget, Gold Nugget și Platinum Nugget. Uneori, un Mimic așteaptă acolo unde apar.",
 	"docs.guide.golden-bat.intro": "Fâlfâie prin peșteră până îl prinde cineva. Cu 24.000 HP, atacă doar uneori și nu ripostează niciodată. Un Ghastly Battle Axe e garantat, de obicei urmează un Hand of Midas, iar un Bat Fang e rar.",
 	"docs.guide.cute-bee.intro": "Rătăcește prin Mainland cu doar 300 HP și înțeapă pe oricine e aproape cu formidabilele 16 daune. Lasă mereu un Fun Token și un obiect aleatoriu.",
 	"docs.guide.golden-bot.intro": "Rătăcește prin Underground Hills până îl oprește cineva. Are 500.000 HP, dar atacă rar și nu ripostează niciodată. Un Hand of Midas e garantat, un Golden Egg cade în jumătate din cazuri, iar un Ring of Gold, un Gold Booster sau The Bank Key pot urma. Golden Power Glove e descoperirea de unu la un milion.",
-	"docs.guide.kobold.code": "Rulează asta în Underground Cliffs. Fiecare apel caută cel mai apropiat Kobold, merge jumătate din drum spre el dacă e în afara razei sau atacă o dată când e în rază și atacul tău e pregătit.",
 	"docs.guide.mimic.code": "Mimic doar ripostează. Asta atacă o dată pe apel cel mai apropiat Mimic aflat în rază, dar numai cât timp ai HP-ul plin.",
 	"docs.guide.many-eye.code": "Piatra nu poate lovi. Asta nu face nimic cât timp ești pietrificat; altfel atacă o dată pe apel cel mai apropiat Many Eye aflat în rază.",
 	"docs.guide.pale-dino.code": "Pale Dino lovește tare. Asta atacă o dată pe apel cel mai apropiat Pale Dino aflat în rază, dar numai cât timp ai mai mult de jumătate din HP.",

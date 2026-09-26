@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "四只Kobold分成两对在Underground Cliffs游荡。每只拥有640,000 HP、320护甲和220抗性，一击造成1,400点物理伤害。带上队伍。它们常常攻击靠近的人，被攻击时通常会反击。Kobold's Backbone是稀有奖励；它们还会掉落Gem Fragment、Bronze Nugget、Gold Nugget和Platinum Nugget。它们出现的地方偶尔会有一只Mimic在等着。",
 	"docs.guide.golden-bat.intro": "它会在洞穴里飞来飞去，直到有人抓住它。它有24,000 HP，只是偶尔攻击，从不反击。必定掉落Ghastly Battle Axe，通常还会掉落Hand of Midas，Bat Fang则很少见。",
 	"docs.guide.cute-bee.intro": "它只有300 HP，在Mainland四处游荡，用足足16点伤害蜇附近的人。它必定掉落一个Fun Token和一件随机物品。",
 	"docs.guide.golden-bot.intro": "它会在Underground Hills游荡，直到有人拦住它。它有500,000 HP，但很少攻击，从不反击。必定掉落Hand of Midas，一半几率掉落Golden Egg，还可能掉落Ring of Gold、Gold Booster或The Bank Key。Golden Power Glove则是百万分之一的收获。",
-	"docs.guide.kobold.code": "在Underground Cliffs运行此代码。每次调用会寻找最近的Kobold，若它超出射程就朝它走一半的距离，若它在射程内且攻击就绪则攻击一次。",
 	"docs.guide.mimic.code": "Mimic只会反击。此代码每次调用攻击一次射程内最近的Mimic，但只在你的HP全满时。",
 	"docs.guide.many-eye.code": "石头挥不动武器。你被石化时此代码什么也不做；否则每次调用攻击一次射程内最近的Many Eye。",
 	"docs.guide.pale-dino.code": "Pale Dino打得很重。此代码每次调用攻击一次射程内最近的Pale Dino，但只在你的HP多于一半时。",

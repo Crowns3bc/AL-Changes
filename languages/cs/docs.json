@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "Čtyři Kobold se toulají po Underground Cliffs ve dvou dvojicích. Každý má 640 000 HP, 320 Zbroje a 220 Odolnosti a zasahuje za 1 400 fyzického poškození. Vezmi si družinu. Často napadají každého, kdo se přiblíží, a když je napadneš, obvykle se brání. Kobold's Backbone je vzácná odměna; padají z nich také Gem Fragment, Bronze Nugget, Gold Nugget a Platinum Nugget. Tam, kde se objevují, občas čeká Mimic.",
 	"docs.guide.golden-bat.intro": "Létá po jeskyni, dokud ho někdo nechytí. Má 24 000 HP, útočí jen občas a nikdy se nebrání. Ghastly Battle Axe padá vždy, Hand of Midas obvykle a Bat Fang vzácně.",
 	"docs.guide.cute-bee.intro": "Toulá se po Mainland s pouhými 300 HP a každého poblíž bodne za úctyhodných 16 poškození. Vždy z něj padne Fun Token a jeden náhodný předmět.",
 	"docs.guide.golden-bot.intro": "Toulá se po Underground Hills, dokud ho někdo nezastaví. Má 500 000 HP, ale útočí zřídka a nikdy se nebrání. Hand of Midas padá vždy, Golden Egg v polovině případů a může přibýt Ring of Gold, Gold Booster nebo The Bank Key. Golden Power Glove je nález jeden z milionu.",
-	"docs.guide.kobold.code": "Spusť to v Underground Cliffs. Každé volání najde nejbližšího Kobold, ujde k němu polovinu cesty, pokud je mimo dosah, nebo na něj jednou zaútočí, když je v dosahu a útok je připravený.",
 	"docs.guide.mimic.code": "Mimic se jen brání. Tohle jednou za volání zaútočí na nejbližšího Mimic v dosahu, ale jen když máš plné HP.",
 	"docs.guide.many-eye.code": "Kámen se nerozmáchne. Tohle nedělá nic, dokud jsi zkamenělý; jinak jednou za volání zaútočí na nejbližšího Many Eye v dosahu.",
 	"docs.guide.pale-dino.code": "Pale Dino tvrdě udeří. Tohle jednou za volání zaútočí na nejbližšího Pale Dino v dosahu, ale jen když máš víc než polovinu HP.",

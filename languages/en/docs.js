@@ -1,15 +1,11 @@
 // English documentation catalog. IDs identify source meaning and usage.
 module.exports = {
-	// Kobold guide paragraph; the drop list with exact rates follows. Item, monster and map names are fixed. Quantities exact.
-	"docs.guide.kobold.intro": "Four Kobolds roam Underground Cliffs in two pairs. Each has 640,000 HP, 320 Armor and 220 Resistance, and hits for 1,400 physical damage. Bring a party. They often attack anyone who comes close and usually hit back when attacked. Kobold's Backbone is the rare prize; they also drop Gem Fragments and Bronze, Gold and Platinum Nuggets. A Mimic sometimes waits where they spawn.",
 	// Golden Bat guide paragraph after its spawn line; the drop list with exact rates follows. Item names fixed; 24,000 exact.
 	"docs.guide.golden-bat.intro": "It flies around the cave until someone catches it. With 24,000 HP, it only sometimes attacks and never hits back. A Ghastly Battle Axe is guaranteed, a Hand of Midas usually follows, and a Bat Fang is rare.",
 	// Cute Bee guide paragraph after its spawn line; the drop list follows. Fun Token is a fixed name; 300 and 16 exact.
 	"docs.guide.cute-bee.intro": "It wanders Mainland with only 300 HP, stinging anyone nearby for a mighty 16 damage. It always drops a Fun Token and one random item.",
 	// Golden Bot guide paragraph after its spawn line; the drop list with exact rates follows. Item names fixed; 500,000 exact.
 	"docs.guide.golden-bot.intro": "It wanders Underground Hills until someone stops it. It has 500,000 HP, but rarely attacks and never hits back. A Hand of Midas is guaranteed, a Golden Egg drops half the time, and a Ring of Gold, Gold Booster or The Bank Key may follow. The Golden Power Glove is the one-in-a-million find.",
-	// CODE caption above the Kobold example: walks halfway toward the nearest Kobold, or attacks once in range.
-	"docs.guide.kobold.code": "Run this in Underground Cliffs. Each call finds the nearest Kobold, walks halfway toward it if it is out of range, or attacks once when it is in range and ready.",
 	// CODE caption above the Mimic example: attacks the nearest Mimic in range once per call, only at full HP.
 	"docs.guide.mimic.code": "The Mimic only bites back. This attacks the nearest Mimic in range once per call, but only while your HP is full.",
 	// CODE caption above the Many Eye example: does nothing while stoned; otherwise attacks once per call.

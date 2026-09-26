@@ -1,9 +1,7 @@
 {
-	"docs.guide.kobold.intro": "Dört Kobold, Underground Cliffs'te iki çift hâlinde dolaşır. Her birinin 640.000 HP'si, 320 Zırhı ve 220 Direnci vardır ve 1.400 fiziksel hasar vurur. Bir grup getir. Yaklaşan herkese sık sık saldırırlar ve saldırıya uğradıklarında genellikle karşılık verirler. Kobold's Backbone nadir ödüldür; ayrıca Gem Fragment, Bronze Nugget, Gold Nugget ve Platinum Nugget düşürürler. Doğdukları yerde bazen bir Mimic bekler.",
 	"docs.guide.golden-bat.intro": "Biri onu yakalayana kadar mağarada uçup durur. 24.000 HP'si vardır; yalnızca ara sıra saldırır ve asla karşılık vermez. Ghastly Battle Axe garantidir, ardından genellikle bir Hand of Midas gelir; Bat Fang ise nadirdir.",
 	"docs.guide.cute-bee.intro": "Yalnızca 300 HP ile Mainland'de dolaşır ve yakınındaki herkesi tam tamına 16 hasarla sokar. Her zaman bir Fun Token ve rastgele bir eşya düşürür.",
 	"docs.guide.golden-bot.intro": "Biri onu durdurana kadar Underground Hills'te dolaşır. 500.000 HP'si vardır ama nadiren saldırır ve asla karşılık vermez. Hand of Midas garantidir, yarı yarıya bir Golden Egg düşer; ardından bir Ring of Gold, Gold Booster ya da The Bank Key gelebilir. Golden Power Glove ise milyonda bir çıkan ganimettir.",
-	"docs.guide.kobold.code": "Bunu Underground Cliffs'te çalıştır. Her çağrı en yakın Kobold'u bulur; menzil dışındaysa ona doğru yolun yarısını yürür, menzildeyse ve saldırın hazırsa bir kez saldırır.",
 	"docs.guide.mimic.code": "Mimic yalnızca karşılık verir. Bu, her çağrıda menzildeki en yakın Mimic'e bir kez saldırır, ama yalnızca HP'n doluyken.",
 	"docs.guide.many-eye.code": "Taş kılıç sallayamaz. Bu, sen taşlaşmışken hiçbir şey yapmaz; aksi hâlde her çağrıda menzildeki en yakın Many Eye'a bir kez saldırır.",
 	"docs.guide.pale-dino.code": "Pale Dino sert vurur. Bu, her çağrıda menzildeki en yakın Pale Dino'ya bir kez saldırır, ama yalnızca HP'nin yarısından fazlası varken.",
