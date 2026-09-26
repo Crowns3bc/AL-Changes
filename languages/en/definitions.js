@@ -2209,6 +2209,48 @@ module.exports = {
 	"npc.ornaments.says": "Hmm. Hmm. Hmm.",
 	// design/npcs.js; pete says, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"npc.pete.says": "Purr",
+	// design/npcs.js; pokerdealer says: greeting floated above Venn, the Tavern poker dealer, when a player right-clicks him; the table view opens next. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.says.0": "Take a seat, partner.",
+	// design/npcs.js; pokerdealer says: greeting floated above Venn, the Tavern poker dealer, when a player right-clicks him; the table view opens next. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.says.1": "Cards are waiting.",
+	// design/npcs.js; pokerdealer says: greeting floated above Venn, the Tavern poker dealer, when a player right-clicks him; the table view opens next. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.says.2": "Fancy a hand?",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.0": "Five seats, no heroes.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.1": "These cards look lonely.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.2": "Pick a card. Kidding.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.3": "Still got all fifty-two.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.4": "Watch this one closely.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.5": "Empty chairs tell no tales.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.6": "I can shuffle all day.",
+	// design/npcs.js; pokerdealer idle: idle line floated above Venn, the Tavern poker dealer, while the table is empty and someone is nearby. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.idle.7": "The river misses you.",
+	// design/npcs.js; pokerdealer invite: line floated above Venn, the Tavern poker dealer, while one player sits alone waiting for a second. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.invite.0": "One more makes a game.",
+	// design/npcs.js; pokerdealer invite: line floated above Venn, the Tavern poker dealer, while one player sits alone waiting for a second. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.invite.1": "Got room for company.",
+	// design/npcs.js; pokerdealer invite: line floated above Venn, the Tavern poker dealer, while one player sits alone waiting for a second. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.invite.2": "One chair taken. Who's next?",
+	// design/npcs.js; pokerdealer deal: line floated above Venn, the Tavern poker dealer, as a new hand is dealt. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.deal.0": "Cards are in the air.",
+	// design/npcs.js; pokerdealer deal: line floated above Venn, the Tavern poker dealer, as a new hand is dealt. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.deal.1": "Here we go.",
+	// design/npcs.js; pokerdealer allin: line floated above Venn, the Tavern poker dealer, when a player goes all in. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.allin.0": "All in. No turning back.",
+	// design/npcs.js; pokerdealer allin: line floated above Venn, the Tavern poker dealer, when a player goes all in. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.allin.1": "Everything's on the felt.",
+	// design/npcs.js; pokerdealer win: line floated above Venn, the Tavern poker dealer, when a pot is awarded; {name} is the winning character's name. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.win.0": "Pot goes to {name}.",
+	// design/npcs.js; pokerdealer win: line floated above Venn, the Tavern poker dealer, when a pot is awarded; {name} is the winning character's name. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.win.1": "{name} takes the pot.",
+	// design/npcs.js; pokerdealer split: line floated above Venn, the Tavern poker dealer, when a pot is split between players. Floating text, keep it as short as the English (2 to 6 words). Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
+	"npc.pokerdealer.split.0": "Split pot. Share nicely.",
 	// design/npcs.js; pots says, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.
 	"npc.pots.says": "Oh, Hello",
 	// design/npcs.js; premium says, displayed by its existing tooltip, dialogue or announcement renderer. Keep item/NPC/map/monster names, Adventure Land and CODE symbols unchanged.

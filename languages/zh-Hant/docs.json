@@ -2678,5 +2678,6 @@
 	"docs.cave.disconnect_purse": "斷線不會分配共享錢袋。Amber 會留在洞窟中，直到有人主動退出或本次探索結束。每次分配都會說明接收者，以及獎勵是放入了該角色的背包還是寄到了 MAIL。",
 	"docs.cavalry.hint": "你的等級低於60時，如果附近升過級的怪物看起來很危險，Cavalry熟悉的身影旁可能會出現{button}按鈕。點擊即可開啟本指南。達到60級及以上時，按鈕會隱藏。",
 	"docs.code.storage_limits": "請儲存至編號1到100的欄位，或你目前擁有的角色的預設欄位。每次儲存的腳本最多可包含1 MiB（1,048,576位元組）的UTF-8文字。每個帳號最多可儲存118份腳本，總容量上限為128 MiB。舊腳本仍可載入、匯出或刪除。",
-	"docs.code.save_rate": "你可以連續送出最多10次CODE儲存或刪除請求。每2秒恢復1次可用請求次數，帳號的所有用戶端共用此額度。如果請求傳回code_rate_limited，請等待retry_after_ms毫秒後再試。"
+	"docs.code.save_rate": "你可以連續送出最多10次CODE儲存或刪除請求。每2秒恢復1次可用請求次數，帳號的所有用戶端共用此額度。如果請求傳回code_rate_limited，請等待retry_after_ms毫秒後再試。",
+	"docs.guide.tavern-games.venn-deals": "Venn 站在牌桌後為每一局發牌，並在對局空檔為大家助興。站到空凳子旁，然後右鍵點擊牌桌或 Venn 即可入座。"
 }

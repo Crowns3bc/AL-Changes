@@ -978,6 +978,7 @@ var maps = {
 			{ id: "tbartender", position: [150, -202] },
 			{ id: "bouncer", position: [208, -156] },
 			{ id: "citizen21", position: [80, -120], boundary: [40, -144, 120, -80] },
+			{ id: "pokerdealer", position: [-168, -103] },
 		],
 		monsters: [],
 		doors: [

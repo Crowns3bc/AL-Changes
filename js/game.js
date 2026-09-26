@@ -2689,6 +2689,7 @@ function init_socket(args) {
 			if (data.type == "route_marks") citizen_draw_route_marks(data);
 			else if (data.type == "repair") citizen_draw_repair(data);
 			else if (data.type == "lamp") citizen_draw_lamp(data);
+			else if (data.type == "dealer") poker_dealer_act(data);
 		});
 	});
 	function paladin_support_animation(name, targets) {
@@ -3570,6 +3571,7 @@ function npc_right_click(event) {
 	if (this.role == "secondhands") {
 		socket.emit("secondhands");
 	}
+	if (this.role == "pokerdealer") render_poker();
 	if (this.role == "lostandfound") {
 		socket.emit("lostandfound", "info");
 	}

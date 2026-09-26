@@ -668,6 +668,7 @@ docs = {
 			announcer: "prototype",
 			blocker: "pvp",
 			bouncer: "tavern",
+			pokerdealer: "tavern",
 			citizen: "decorative",
 			companion: "decorative",
 			compound: "compounding",

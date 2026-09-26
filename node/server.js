@@ -115,6 +115,7 @@ eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_wheel.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_slots.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_poker.js")));
+eval("" + fs.readFileSync(path.resolve(__dirname, "logic/tavern_dealer.js")));
 eval("" + fs.readFileSync(path.resolve(__dirname, "../version.js")));
 var precomputed_bfs_path = path.resolve(__dirname, "precomputed_map_data.js");
 if (fs.existsSync(precomputed_bfs_path)) eval("" + fs.readFileSync(precomputed_bfs_path));
@@ -15321,6 +15322,7 @@ function citizen_behavior_loop(npc, def, now_date) {
 	if (def.citizen_behavior == "wayfinder") return citizen_wayfinder_loop(npc, now_date);
 	if (def.citizen_behavior == "repairer") return citizen_repairer_loop(npc, now_date);
 	if (def.citizen_behavior == "lamplighter") return citizen_lamplighter_loop(npc, def, now_date);
+	if (def.citizen_behavior == "poker_dealer") return tavern_dealer_loop(npc, now_date);
 	return false;
 }
 

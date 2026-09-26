@@ -5407,6 +5407,8 @@ module.exports = {
 	"docs.guide.tavern-games.four-betting-streets": "<span class=\"guide-flow-icon tavern-choice\">CALL</span><span class=\"guide-flow-label\">Four Betting Streets</span>",
 	// docs/guide/tavern-games.html; Flow node. Fixed HTML: preserve every tag and attribute; translate the label only.
 	"docs.guide.tavern-games.showdown-rake-from-each-pot": "<span class=\"guide-flow-icon tavern-even\">2%</span><span class=\"guide-flow-label\">Showdown · Rake From Each Pot</span>",
+	// docs/guide/tavern-games.html; Hold'em paragraph introducing Venn, the NPC dealer behind the table. Keep Venn unchanged.
+	"docs.guide.tavern-games.venn-deals": "Venn deals every hand from behind the table and keeps the room entertained between games. Stand beside a free stool, then right-click the table or Venn to sit down.",
 	// docs/guide/tavern-games.html; Guide paragraph. Hold'em is the poker variant; keep the numbers.
 	"docs.guide.tavern-games.the-tavern-has-one-five-seat-no-limit": "The Tavern has one five-seat no-limit Hold'em table. Buy in for 40 to 200 big blinds. Each decision allows 20 seconds, with one extra 30-second time bank per hand. The house takes 2% from each awarded pot, capped at 10 big blinds.",
 	// docs/guide/tavern-games.html; Blinds table column heading.

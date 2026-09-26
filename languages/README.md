@@ -12,6 +12,8 @@ Cavalry guide: all 12 revised or added rule phrases are translated and proofread
 
 CODE storage: the three save errors and two guide/reference paragraphs are translated and proofread in all 32 supported languages. Storage limits, request timing and CODE identifiers were checked on 2026-09-25.
 
+Tavern dealer: Venn's 21 table lines (drafted in ChatGPT Chat, Medium) and the guide paragraph that introduces him are translated and proofread in all 32 supported languages. The {name} placeholder, Venn's name and each language's established pot, all in and river terms are kept.
+
 ## Runtime
 
 The server reads and caches the requested language with English fallback. The browser receives only phrases needed by client JavaScript through `/phrases/<language>.js?v=<version>`.
