@@ -6443,7 +6443,7 @@ function add_character(data, me) {
 	else if (npc && npc.type != "fullstatic") stype = "emote";
 	if (log_flags.entities) console.log("add character " + data.id);
 	// "me" is added directly to stage (not the scaled "map" container, see manual_centering), so it needs to match "scale" manually
-	var cscale = (me && manual_centering && scale) || 1;
+	var cscale = (me && manual_centering && Number(scale)) || 1;
 	if (!XYWH[data.skin]) data.skin = "naked";
 	var sprite = new_sprite(data.skin, stype);
 	if (cscale != 1) sprite.scale = new PIXI.Point(cscale, cscale);
