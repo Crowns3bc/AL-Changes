@@ -61,7 +61,7 @@ Object.defineProperty(character, "y", {
 	},
 	enumerable: true,
 });
-for (var p in parent.character) proxy(p); // Not all properties are sadly available right away, new properties are captured imperfectly
+proxy_all(); // Not all properties are sadly available right away, new properties are captured imperfectly
 // var character=parent.character; // Old [25/06/2018]
 
 var G = parent.G; // Game Data - Use show_json(Object.keys(G)); and inspect individual data with show_json(G.skills) and alike
@@ -2841,12 +2841,20 @@ function proxy(name) {
 	});
 }
 
+// Mirrors the character's own properties. Its sprite also inherits PIXI methods such as listeners, on and once; mirroring
+// those replaced character.listeners and character.on and stopped every character event. The proxy's own members stay.
+function proxy_all() {
+	var real = parent.character;
+	if (!real) return;
+	for (var p in real) if (Object.prototype.hasOwnProperty.call(real, p) && !Object.prototype.hasOwnProperty.call(character, p)) proxy(p);
+}
+
 character.read_only.push(...["on", "once"]);
 ["bank", "user", "code", "angle", "direction", "target", "from_x", "from_y", "going_x", "going_y", "moving", "vx", "vy", "move_num"].forEach(function (p) {
 	proxy(p);
 });
 setInterval(function () {
-	for (var p in parent.character) proxy(p);
+	proxy_all();
 }, 50); // bottom of the barrel
 
 function eval_s(code) {
