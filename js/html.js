@@ -4059,6 +4059,15 @@ function guide_monster_tile(name, j) {
 	);
 }
 
+// The monster seen from the front, left, right and back, each tile labelled
+function guide_monster_views(name) {
+	return ["front", "left", "right", "back"]
+		.map(function (side, j) {
+			return "<div class='guide-view'>" + guide_monster_tile(name, j) + "<div class='guide-view-label'>" + phrase.html("interface.monster_views." + side) + "</div></div>";
+		})
+		.join("");
+}
+
 function render_all_monsters() {
 	var html = "";
 	html += "<div style='width: 480px'>";

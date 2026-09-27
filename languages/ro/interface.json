@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FAȚĂ",
+	"interface.monster_views.left": "STÂNGA",
+	"interface.monster_views.right": "DREAPTA",
+	"interface.monster_views.back": "SPATE",
 	"interface.item.petrify": "Privire de piatră",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Transformă adversarul în piatră timp de 4 secunde cu o șansă de {value}%. Nu poate fi pietrificat din nou timp de 10 secunde după ce piatra se sparge.",
 	"interface.item.hex": "Deochi",

@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "정면",
+	"interface.monster_views.left": "왼쪽",
+	"interface.monster_views.right": "오른쪽",
+	"interface.monster_views.back": "뒷면",
 	"interface.item.petrify": "석화의 눈길",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "{value}% 확률로 상대를 4초 동안 돌로 만들어요. 돌이 부서진 뒤 10초 동안은 다시 석화되지 않아요.",
 	"interface.item.hex": "저주술",

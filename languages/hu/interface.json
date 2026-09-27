@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ELÖLRŐL",
+	"interface.monster_views.left": "BALRA",
+	"interface.monster_views.right": "JOBBRA",
+	"interface.monster_views.back": "HÁTULRÓL",
 	"interface.item.petrify": "Kővé dermesztés",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "{value}% eséllyel 4 másodpercre kővé dermeszti az ellenfelet. Miután a kő szétporlad, 10 másodpercig nem lehet újra kővé dermeszteni.",
 	"interface.item.hex": "Rontás",

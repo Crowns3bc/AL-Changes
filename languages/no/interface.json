@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FORFRA",
+	"interface.monster_views.left": "VENSTRE",
+	"interface.monster_views.right": "HØYRE",
+	"interface.monster_views.back": "BAKFRA",
 	"interface.item.petrify": "Forsteining",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Gjør motstanderen til stein i 4 sekunder med {value}% sjanse. Den kan ikke forsteines igjen på 10 sekunder etter at steinen har brutt sammen.",
 	"interface.item.hex": "Forheksing",

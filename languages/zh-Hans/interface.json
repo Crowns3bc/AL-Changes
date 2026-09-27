@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "正面",
+	"interface.monster_views.left": "左",
+	"interface.monster_views.right": "右",
+	"interface.monster_views.back": "背面",
 	"interface.item.petrify": "石化",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "有{value}%概率将对手石化4秒。石头碎裂后的10秒内，无法再次被石化。",
 	"interface.item.hex": "邪咒",

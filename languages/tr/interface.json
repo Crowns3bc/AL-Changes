@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ÖN",
+	"interface.monster_views.left": "SOL",
+	"interface.monster_views.right": "SAĞ",
+	"interface.monster_views.back": "ARKA",
 	"interface.item.petrify": "Taşlaştırma",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "%{value} ihtimalle rakibi 4 saniyeliğine taşa çevirir. Taş kırıldıktan sonra 10 saniye boyunca tekrar taşlaştırılamaz.",
 	"interface.item.hex": "Kara Büyü",

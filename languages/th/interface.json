@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ด้านหน้า",
+	"interface.monster_views.left": "ซ้าย",
+	"interface.monster_views.right": "ขวา",
+	"interface.monster_views.back": "ด้านหลัง",
 	"interface.item.petrify": "จ้องให้เป็นหิน",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "มีโอกาส {value}% ทำให้คู่ต่อสู้กลายเป็นหิน 4 วินาที หลังจากหินแตก จะกลายเป็นหินอีกไม่ได้เป็นเวลา 10 วินาที",
 	"interface.item.hex": "มนตร์ร้าย",

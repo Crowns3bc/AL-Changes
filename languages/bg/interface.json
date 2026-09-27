@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ОТПРЕД",
+	"interface.monster_views.left": "НАЛЯВО",
+	"interface.monster_views.right": "НАДЯСНО",
+	"interface.monster_views.back": "ОТЗАД",
 	"interface.item.petrify": "Каменен поглед",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Превръща противника в камък за 4 секунди с {value}% шанс. След като камъкът се разпадне, той не може да бъде вкаменен отново в продължение на 10 секунди.",
 	"interface.item.hex": "Урочасване",

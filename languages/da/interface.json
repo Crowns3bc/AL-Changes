@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FORFRA",
+	"interface.monster_views.left": "VENSTRE",
+	"interface.monster_views.right": "HØJRE",
+	"interface.monster_views.back": "BAGFRA",
 	"interface.item.petrify": "Forstening",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Forvandler modstanderen til sten i 4 sekunder med {value}% chance. Den kan ikke forstenes igen i 10 sekunder, efter at stenen er brudt.",
 	"interface.item.hex": "Forhekselse",

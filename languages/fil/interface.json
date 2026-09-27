@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "HARAP",
+	"interface.monster_views.left": "KALIWA",
+	"interface.monster_views.right": "KANAN",
+	"interface.monster_views.back": "LIKOD",
 	"interface.item.petrify": "Titig na Bato",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "May {value}% tsansang gawing bato ang kalaban sa loob ng 4 na segundo. Hindi na ito maaaring gawing bato ulit sa loob ng 10 segundo matapos mabasag ang bato.",
 	"interface.item.hex": "Kulam",

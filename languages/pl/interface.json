@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "PRZÓD",
+	"interface.monster_views.left": "LEWO",
+	"interface.monster_views.right": "PRAWO",
+	"interface.monster_views.back": "TYŁ",
 	"interface.item.petrify": "Skamieniające spojrzenie",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Z szansą {value}% zamienia przeciwnika w kamień na 4 sekundy. Po rozpadzie kamienia przez 10 sekund nie można go ponownie skamienić.",
 	"interface.item.hex": "Urok",

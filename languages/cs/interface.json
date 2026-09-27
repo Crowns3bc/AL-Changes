@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ZEPŘEDU",
+	"interface.monster_views.left": "DOLEVA",
+	"interface.monster_views.right": "DOPRAVA",
+	"interface.monster_views.back": "ZEZADU",
 	"interface.item.petrify": "Kamenný pohled",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Se šancí {value} % promění protivníka na 4 sekundy v kámen. Po rozpadu kamene ho nelze 10 sekund znovu proměnit v kámen.",
 	"interface.item.hex": "Uřknutí",

@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "VOORKANT",
+	"interface.monster_views.left": "LINKS",
+	"interface.monster_views.right": "RECHTS",
+	"interface.monster_views.back": "ACHTERKANT",
 	"interface.item.petrify": "Verstenen",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Verandert de tegenstander met {value}% kans 4 seconden in steen. Nadat de steen breekt, kan hij 10 seconden niet opnieuw versteend worden.",
 	"interface.item.hex": "Beheksen",

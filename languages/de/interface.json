@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "VORNE",
+	"interface.monster_views.left": "LINKS",
+	"interface.monster_views.right": "RECHTS",
+	"interface.monster_views.back": "HINTEN",
 	"interface.item.petrify": "Versteinern",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Verwandelt den Gegner mit {value}% Chance für 4 Sekunden in Stein. Nachdem der Stein zerbricht, kann er 10 Sekunden lang nicht erneut versteinert werden.",
 	"interface.item.hex": "Verhexen",

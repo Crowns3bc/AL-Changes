@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "أمام",
+	"interface.monster_views.left": "يسار",
+	"interface.monster_views.right": "يمين",
+	"interface.monster_views.back": "خلف",
 	"interface.item.petrify": "نظرة حجرية",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "يحوّل الخصم إلى حجر لمدة 4 ثوانٍ باحتمال {value}%. لا يمكن تحجيره مجددًا لمدة 10 ثوانٍ بعد أن ينكسر الحجر.",
 	"interface.item.hex": "شعوذة",

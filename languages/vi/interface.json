@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "TRƯỚC",
+	"interface.monster_views.left": "TRÁI",
+	"interface.monster_views.right": "PHẢI",
+	"interface.monster_views.back": "SAU",
 	"interface.item.petrify": "Hóa đá",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Biến đối thủ thành đá trong 4 giây với tỉ lệ {value}%. Sau khi lớp đá vỡ, đối thủ không thể bị hóa đá lại trong 10 giây.",
 	"interface.item.hex": "Yểm bùa",

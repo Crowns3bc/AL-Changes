@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "ΜΠΡΟΣΤΑ",
+	"interface.monster_views.left": "ΑΡΙΣΤΕΡΑ",
+	"interface.monster_views.right": "ΔΕΞΙΑ",
+	"interface.monster_views.back": "ΠΙΣΩ",
 	"interface.item.petrify": "Πέτρινο βλέμμα",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Μετατρέπει τον αντίπαλο σε πέτρα για 4 δευτερόλεπτα με πιθανότητα {value}%. Δεν μπορεί να απολιθωθεί ξανά για 10 δευτερόλεπτα αφού σπάσει η πέτρα.",
 	"interface.item.hex": "Μάγια",

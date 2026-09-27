@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FRONTE",
+	"interface.monster_views.left": "SINISTRA",
+	"interface.monster_views.right": "DESTRA",
+	"interface.monster_views.back": "RETRO",
 	"interface.item.petrify": "Pietrificare",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Trasforma l'avversario in pietra per 4 secondi con una probabilità del {value}%. Non può essere pietrificato di nuovo per 10 secondi dopo che la pietra si spezza.",
 	"interface.item.hex": "Malocchio",

@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "EDESTÄ",
+	"interface.monster_views.left": "VASEMMALLE",
+	"interface.monster_views.right": "OIKEALLE",
+	"interface.monster_views.back": "TAKAA",
 	"interface.item.petrify": "Kivetys",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Muuttaa vastustajan kiveksi 4 sekunniksi {value}%:n todennäköisyydellä. Kun kivi murtuu, vastustajaa ei voi kivettää uudelleen 10 sekuntiin.",
 	"interface.item.hex": "Noituus",

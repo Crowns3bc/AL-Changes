@@ -740,7 +740,8 @@ var maps = {
 			[65, 544, 20, 16, "sign", "Welcome to The New Town!"],
 			[-150, 154, 20, 16, "sign", "Town Square"],
 			[-365, 144, 20, 16, "sign", "Tavern"],
-			[0, 0, 0, 0, "cutebee_info"],
+			// The Cute Bee can appear in any Mainland pack; its INFO sits in the Goo field, not the town square
+			[-32, 787, 0, 0, "cutebee_info"],
 			// Comic signs: the art is a tile in the map geometry; the last field is the guide article it opens.
 			[-104, 640, 20, 16, "comic", "lore"],
 			[920, 1180, 20, 16, "comic", "cave-story"],

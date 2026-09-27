@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "DEPAN",
+	"interface.monster_views.left": "KIRI",
+	"interface.monster_views.right": "KANAN",
+	"interface.monster_views.back": "BELAKANG",
 	"interface.item.petrify": "Renungan Batu",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Menukar lawan menjadi batu selama 4 saat dengan peluang {value}%. Lawan tidak boleh membatu lagi selama 10 saat selepas batunya pecah.",
 	"interface.item.hex": "Tenung",

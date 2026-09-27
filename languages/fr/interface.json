@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FACE",
+	"interface.monster_views.left": "GAUCHE",
+	"interface.monster_views.right": "DROITE",
+	"interface.monster_views.back": "DOS",
 	"interface.item.petrify": "Regard pétrifiant",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Change l’adversaire en pierre pendant 4 secondes avec {value} % de chances. Il ne peut pas être pétrifié de nouveau pendant 10 secondes après que la pierre s’est brisée.",
 	"interface.item.hex": "Maléfice",

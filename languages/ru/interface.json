@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "СПЕРЕДИ",
+	"interface.monster_views.left": "ВЛЕВО",
+	"interface.monster_views.right": "ВПРАВО",
+	"interface.monster_views.back": "СЗАДИ",
 	"interface.item.petrify": "Каменный взгляд",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "С вероятностью {value}% обращает противника в камень на 4 секунды. После того как камень рассыплется, его нельзя окаменить ещё 10 секунд.",
 	"interface.item.hex": "Порча",

@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FRENTE",
+	"interface.monster_views.left": "ESQUERDA",
+	"interface.monster_views.right": "DIREITA",
+	"interface.monster_views.back": "COSTAS",
 	"interface.item.petrify": "Petrificar",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Transforma o adversário em pedra durante 4 segundos com {value}% de probabilidade. Não pode voltar a ser petrificado durante 10 segundos depois de a pedra se partir.",
 	"interface.item.hex": "Malefício",

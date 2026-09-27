@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FRENTE",
+	"interface.monster_views.left": "IZQUIERDA",
+	"interface.monster_views.right": "DERECHA",
+	"interface.monster_views.back": "ESPALDA",
 	"interface.item.petrify": "Petrificar",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Convierte al rival en piedra durante 4 segundos con un {value}% de probabilidad. No puede volver a petrificarse durante 10 segundos después de que la piedra se rompa.",
 	"interface.item.hex": "Maleficio",

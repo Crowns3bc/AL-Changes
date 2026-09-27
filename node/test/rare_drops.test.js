@@ -458,7 +458,8 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 		manyeye: ["many-eye", "level2w", 0],
 		paledino: ["pale-dino", "mforest", 0],
 		goldenbat: ["golden-bat", "cave", 0],
-		cutebee: ["cute-bee", "main", 0],
+		// Mainland is a town: the Cute Bee's INFO sits in the Goo field, where new players hunt
+		cutebee: ["cute-bee", "main", "goo"],
 		goldenbot: ["golden-bot", "uhills", 0],
 	};
 	for (const [monster, [slug, map, spawn]] of Object.entries(GUIDES)) {
@@ -469,11 +470,12 @@ test("each monster guide opens from INFO at its map's entrance", () => {
 		assert.equal(docs.interaction_map.quirks[monster + "_info"], monster);
 		const quirks = G.maps[map].quirks.filter((quirk) => quirk[4] === monster + "_info");
 		assert.equal(quirks.length, 1, monster + " has one INFO spot on " + map);
-		const [x, y] = G.maps[map].spawns[spawn];
+		const pack = typeof spawn === "string" && G.maps[map].monsters.find((p) => p.type === spawn).boundary;
+		const [x, y] = pack ? [(pack[0] + pack[2]) / 2, (pack[1] + pack[3]) / 2] : G.maps[map].spawns[spawn];
 		assert.deepEqual(
 			[quirks[0][0], quirks[0][1], quirks[0][2], quirks[0][3]],
 			[x, y, 0, 0],
-			"at the entry spawn, with no click area",
+			"at the entry spawn or the named pack's center, with no click area",
 		);
 		assert.ok(fs.existsSync(path.join(root, "docs/guide", slug + ".html")), slug);
 		const html = fs.readFileSync(path.join(root, "docs/guide", slug + ".html"), "utf8");
@@ -500,7 +502,17 @@ test("each monster guide shows the monster from four sides, its spawn rule and i
 	const block = source.slice(source.indexOf("var events = {"), source.indexOf("};", source.indexOf("var events = {")));
 	for (const m of block.matchAll(/(\w+): (\d+),/g)) events[m[1]] = +m[2];
 	const english = require("../../languages/en/definitions.js");
-	assert.match(fs.readFileSync(path.join(root, "js/html.js"), "utf8"), /\nfunction guide_monster_tile\(name, j\) \{/);
+	const client = fs.readFileSync(path.join(root, "js/html.js"), "utf8");
+	assert.match(client, /\nfunction guide_monster_tile\(name, j\) \{/);
+	assert.match(client, /\nfunction guide_monster_views\(name\) \{/);
+	// the four labels exist in every language
+	for (const dir of fs
+		.readdirSync(path.join(root, "languages"))
+		.filter((d) => fs.existsSync(path.join(root, "languages", d, "interface.json")))) {
+		const catalog = JSON.parse(fs.readFileSync(path.join(root, "languages", dir, "interface.json"), "utf8"));
+		for (const side of ["front", "left", "right", "back"])
+			assert.ok(catalog[`interface.monster_views.${side}`], `${dir} ${side}`);
+	}
 	const PARENTS = {
 		mimic: ["mimic", ["kobold"]],
 		manyeye: ["many-eye", ["oneeye"]],
@@ -511,7 +523,12 @@ test("each monster guide shows the monster from four sides, its spawn rule and i
 	};
 	for (const [monster, [slug, parents]] of Object.entries(PARENTS)) {
 		const html = fs.readFileSync(path.join(root, "docs/guide", slug + ".html"), "utf8");
-		assert.ok(html.includes(`[0, 1, 2, 3].map(function(j) { return guide_monster_tile("${monster}", j); })`), slug);
+		assert.ok(html.includes(`.html(guide_monster_views("${monster}"));`), slug);
+		assert.ok(
+			html.includes(`<div class="guide-views ${slug}-views"></div>\n<div class="divider"></div>`),
+			slug + " views then a divider",
+		);
+		assert.ok(html.includes(`<div class="guide-drops ${slug}-drops"></div>`), slug + " compact drops");
 		const spawn = html.match(
 			/\$\("\.[\w-]+-spawn"\)\.html\((\[[^\]]*\])\.map[^\n]*to_pretty_num\((\d+)\)[^\n]*guide_monster_tile\("(\w+)", 0\)\);/,
 		);

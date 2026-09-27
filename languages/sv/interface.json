@@ -1,4 +1,8 @@
 {
+	"interface.monster_views.front": "FRAMIFRÅN",
+	"interface.monster_views.left": "VÄNSTER",
+	"interface.monster_views.right": "HÖGER",
+	"interface.monster_views.back": "BAKIFRÅN",
 	"interface.item.petrify": "Förstena",
 	"interface.item.turns_the_opponent_to_stone_with_a_chance": "Förvandlar motståndaren till sten i 4 sekunder med {value}% chans. Den kan inte förstenas igen på 10 sekunder efter att stenen har brustit.",
 	"interface.item.hex": "Förhäxa",
