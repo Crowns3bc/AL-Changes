@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Place un objet sur ton étal et choisis PROPOSER UN ÉCHANGE pour demander un autre objet au lieu d’or. Fixe un niveau minimum ou un titre, ou laisse-les sur INDIFFÉRENT. Les marchands de niveau inférieur à 70 gagnent de l’XP grâce aux échanges conclus.",
 	"update.26_09_26.trade_offers.title": "Offres d’échange",
 	"update.24_09_26.rare_drops": "15 nouveaux accessoires tombent de monstres partout dans le monde. Les Kobolds parcourent maintenant Underground Cliffs. Many Eye, Mimic et Pale Dino sont de nouveaux monstres rares. Les marchands peuvent désormais échanger un objet contre un autre.",
-	"update.24_09_26.rare_drops.title": "Monstres rares, 15 accessoires et offres d’échange"
+	"update.24_09_26.rare_drops.title": "Monstres rares, 15 accessoires et offres d’échange",
+	"update.24_09_26.rare_drops.false_jail": "Marcher près de la table de poker de la Tavern et à quelques autres endroits ne vous envoie plus en prison."
 }

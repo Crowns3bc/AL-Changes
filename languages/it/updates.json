@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Metti un oggetto sulla tua bancarella e scegli OFFRI IN SCAMBIO per chiedere un altro oggetto invece dell'oro. Imposta un livello minimo o un titolo, oppure lasciali su QUALSIASI. I mercanti sotto il livello 70 ottengono XP dagli scambi conclusi.",
 	"update.26_09_26.trade_offers.title": "Offerte di scambio",
 	"update.24_09_26.rare_drops": "15 nuovi accessori cadono dai mostri di tutto il mondo. Ora i Kobold girano per Underground Cliffs. Many Eye, Mimic e Pale Dino sono nuovi mostri rari. Ora i mercanti possono scambiare un oggetto con un altro.",
-	"update.24_09_26.rare_drops.title": "Mostri rari, 15 accessori e offerte di scambio"
+	"update.24_09_26.rare_drops.title": "Mostri rari, 15 accessori e offerte di scambio",
+	"update.24_09_26.rare_drops.false_jail": "Camminare vicino al tavolo da poker della Tavern e in pochi altri punti non ti manda più in prigione."
 }

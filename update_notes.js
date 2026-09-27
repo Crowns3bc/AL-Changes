@@ -66,8 +66,12 @@ module.exports = [
 			{ fixed: "phantom_entities", note: "Monsters and players that leave no longer stay on the screen." },
 			{ fixed: "blink_stretch", note: "Mage Blink no longer stretches the character." },
 			{ fixed: "steam_welcome_back", note: "Linking your account to Steam no longer removes your Welcome Back bonus." },
+			{ fixed: "false_jail", note: "Walking by the Tavern poker table and a few other spots no longer sends you to jail." },
 			{ improved: "server_frames", note: "Servers stay fast with many players. At 150 players, the slowest server tick went from 178 ms to 11 ms." },
 			{ improved: "release_posts", note: "Update notes now show each update as a post, with every new item, monster and guide in it." },
+			{ new: "npc:pokerdealer" },
+			{ changed: "guide:markets", fields: { functions: [["get_secondhands", "buy_secondhand", "get_lost_and_found", "buy_lost_and_found", "donate_gold", "open_stand", "close_stand", "trade", "trade_buy", "trade_sell", "wishlist", "giveaway", "join_giveaway"], ["get_secondhands", "buy_secondhand", "get_lost_and_found", "buy_lost_and_found", "donate_gold", "open_stand", "close_stand", "trade", "trade_buy", "trade_sell", "wishlist", "trade_offer", "trade_swap", "giveaway", "join_giveaway"]] } },
+			{ changed: "map:main", fields: { quirks: [[[-236, -189, 24, 24, "upgrade"], [-179, -189, 24, 24, "compound"], [350, 424, 30, 24, "list_pvp"], [-200, 15, 24, 42, "log", "A relic from an old era"], [200, 15, 24, 42, "log", "A relic from an old era"], [1689, -494, 20, 16, "note", "The Dark Forest. A curious place."], [681, 624, 20, 16, "sign", "The Mansion"], [65, 544, 20, 16, "sign", "Welcome to The New Town!"], [-150, 154, 20, 16, "sign", "Town Square"], [-365, 144, 20, 16, "sign", "Tavern"]], [[-236, -189, 24, 24, "upgrade"], [-179, -189, 24, 24, "compound"], [350, 424, 30, 24, "list_pvp"], [-200, 15, 24, 42, "log", "A relic from an old era"], [200, 15, 24, 42, "log", "A relic from an old era"], [1689, -494, 20, 16, "note", "The Dark Forest. A curious place."], [681, 624, 20, 16, "sign", "The Mansion"], [65, 544, 20, 16, "sign", "Welcome to The New Town!"], [-150, 154, 20, 16, "sign", "Town Square"], [-365, 144, 20, 16, "sign", "Tavern"], [-32, 787, 0, 0, "cutebee_info"], [-104, 640, 20, 16, "comic", "lore"], [920, 1180, 20, 16, "comic", "cave-story"]]] } },
 		],
 	},
 	{

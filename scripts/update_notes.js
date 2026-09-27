@@ -800,9 +800,10 @@ async function command_check(args) {
 		result.stale.forEach((key) => problems.push((release ? release.phrase : "pending release") + ": outdated values for " + key + " (run sync)"));
 		console.log("Compared " + from.name + " with the worktree." + (result.authored.length ? " Written by hand, not visible in the data: " + result.authored.join(", ") + "." : ""));
 	}
+	// Problems go to stderr: the deploy runs this check with its output captured, and stderr still reaches the terminal.
 	if (problems.length) {
-		console.log(problems.length + " problem" + (problems.length === 1 ? "" : "s") + ":");
-		problems.forEach((line) => console.log("  " + line));
+		console.error(problems.length + " problem" + (problems.length === 1 ? "" : "s") + " in the update notes:");
+		problems.forEach((line) => console.error("  " + line));
 		process.exitCode = 1;
 	} else console.log("Update notes are complete" + (release ? ": " + release.phrase + " is pending." : "."));
 }

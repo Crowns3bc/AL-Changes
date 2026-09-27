@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Læg en genstand i din bod, og vælg TILBYD BYTTE for at bede om en anden genstand i stedet for guld. Angiv et minimumsniveau eller en titel, eller lad dem stå på ALLE. Købmænd under niveau 70 får XP for gennemførte byttehandler.",
 	"update.26_09_26.trade_offers.title": "Byttetilbud",
 	"update.24_09_26.rare_drops": "15 stykker nyt tilbehør falder fra monstre over hele verden. Kobold strejfer nu rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjældne monstre. Købmænd kan nu bytte en genstand for en anden.",
-	"update.24_09_26.rare_drops.title": "Sjældne monstre, 15 stykker tilbehør og byttetilbud"
+	"update.24_09_26.rare_drops.title": "Sjældne monstre, 15 stykker tilbehør og byttetilbud",
+	"update.24_09_26.rare_drops.false_jail": "At gå forbi pokerbordet i Tavern og et par andre steder sender dig ikke længere i fængsel."
 }

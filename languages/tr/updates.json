@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Bir eşyayı tezgâhına koy ve altın yerine başka bir eşya istemek için TAKASA ÇIKAR'ı seç. En düşük seviyeyi veya bir unvanı belirle ya da ikisini de FARK ETMEZ olarak bırak. 70. seviyenin altındaki tüccarlar tamamlanan takaslardan XP kazanır.",
 	"update.26_09_26.trade_offers.title": "Takas Teklifleri",
 	"update.24_09_26.rare_drops": "Dünyanın dört bir yanındaki canavarlardan 15 yeni aksesuar düşüyor. Kobold'lar artık Underground Cliffs'te dolaşıyor. Many Eye, Mimic ve Pale Dino yeni nadir canavarlar. Tüccarlar artık bir eşyayı başka bir eşyayla takas edebilir.",
-	"update.24_09_26.rare_drops.title": "Nadir Canavarlar, 15 Aksesuar ve Takas Teklifleri"
+	"update.24_09_26.rare_drops.title": "Nadir Canavarlar, 15 Aksesuar ve Takas Teklifleri",
+	"update.24_09_26.rare_drops.false_jail": "Tavern'deki poker masasının yanında ve birkaç yerde daha yürümek artık seni hapse göndermiyor."
 }

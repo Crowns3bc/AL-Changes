@@ -178,7 +178,7 @@ Nothing is drawn without HTML (CODE characters, `no_html`). In Arabic, post text
 - a reference does not resolve, a key is unknown or a date has the wrong format
 - an English phrase is missing or different from the release, a phrase belongs to no note, or a language is missing a translation
 
-Then `scripts/lock_update_notes.js` writes the deploy date into every `deployed: null` and stops the deploy if any is left. `check --offline` skips the production comparison.
+When the check fails, the deploy prints its problems and stops before anything is packaged or uploaded, and the deploy aliases restart nothing. After the check and the image and map precomputes, `scripts/lock_update_notes.js` writes the deploy date into every `deployed: null` and stops the deploy if any is left. `check --offline` skips the production comparison.
 
 ## Files
 

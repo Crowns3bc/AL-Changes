@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Đặt vật phẩm lên quầy và chọn RAO ĐỔI để yêu cầu vật phẩm khác thay vì vàng. Đặt cấp tối thiểu hoặc danh hiệu, hoặc để BẤT KỲ. Thương nhân dưới cấp 70 nhận XP từ các lần trao đổi đã hoàn tất.",
 	"update.26_09_26.trade_offers.title": "Đề nghị trao đổi",
 	"update.24_09_26.rare_drops": "15 phụ kiện mới rơi từ quái vật khắp thế giới. Kobold giờ lang thang ở Underground Cliffs. Many Eye, Mimic và Pale Dino là các quái vật hiếm mới. Thương nhân giờ có thể đổi một vật phẩm lấy vật phẩm khác.",
-	"update.24_09_26.rare_drops.title": "Quái vật hiếm, 15 phụ kiện và đề nghị trao đổi"
+	"update.24_09_26.rare_drops.title": "Quái vật hiếm, 15 phụ kiện và đề nghị trao đổi",
+	"update.24_09_26.rare_drops.false_jail": "Đi ngang bàn poker ở Tavern và vài chỗ khác sẽ không còn khiến bạn bị tống vào tù nữa."
 }

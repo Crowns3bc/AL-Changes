@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "把物品放上攤位並選擇「上架交換」，即可要求用另一件物品代替金幣。可設定最低等級或稱號，也可保持「不限」。低於70級的商人可從完成的交換獲得XP。",
 	"update.26_09_26.trade_offers.title": "交換報價",
 	"update.24_09_26.rare_drops": "世界各地的怪物會掉落 15 件新飾品。Kobold 現在在 Underground Cliffs 四處遊蕩。Many Eye、Mimic 和 Pale Dino 是新的稀有怪物。商人現在可以用一件物品交換另一件物品。",
-	"update.24_09_26.rare_drops.title": "稀有怪物、15 件飾品和交換報價"
+	"update.24_09_26.rare_drops.title": "稀有怪物、15 件飾品和交換報價",
+	"update.24_09_26.rare_drops.false_jail": "在 Tavern 的撲克桌旁和其他幾處走動，不會再被送進監獄。"
 }

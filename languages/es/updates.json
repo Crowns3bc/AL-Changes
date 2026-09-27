@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Pon un objeto en tu puesto y elige OFRECER EN INTERCAMBIO para pedir otro objeto en lugar de oro. Fija un nivel mínimo o un título, o déjalos en CUALQUIERA. Los mercaderes de nivel inferior a 70 ganan XP con los intercambios completados.",
 	"update.26_09_26.trade_offers.title": "Ofertas de intercambio",
 	"update.24_09_26.rare_drops": "15 accesorios nuevos caen de monstruos de todo el mundo. Ahora hay Kobolds recorriendo Underground Cliffs. Many Eye, Mimic y Pale Dino son nuevos monstruos raros. Los mercaderes ya pueden intercambiar un objeto por otro.",
-	"update.24_09_26.rare_drops.title": "Monstruos raros, 15 accesorios y ofertas de intercambio"
+	"update.24_09_26.rare_drops.title": "Monstruos raros, 15 accesorios y ofertas de intercambio",
+	"update.24_09_26.rare_drops.false_jail": "Caminar junto a la mesa de póker de la Tavern y por algunos otros sitios ya no te manda a la cárcel."
 }

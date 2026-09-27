@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Leg een voorwerp in je kraam en kies AANBIEDEN VOOR RUIL om een ander voorwerp te vragen in plaats van goud. Stel een minimumniveau of een titel in, of laat ze op ALLE staan. Handelaars onder niveau 70 krijgen XP voor voltooide ruilacties.",
 	"update.26_09_26.trade_offers.title": "Ruilaanbiedingen",
 	"update.24_09_26.rare_drops": "15 nieuwe accessoires vallen van monsters over de hele wereld. Kobold zwerven nu door Underground Cliffs. Many Eye, Mimic en Pale Dino zijn nieuwe zeldzame monsters. Handelaars kunnen nu een voorwerp ruilen voor een ander voorwerp.",
-	"update.24_09_26.rare_drops.title": "Zeldzame monsters, 15 accessoires en ruilaanbiedingen"
+	"update.24_09_26.rare_drops.title": "Zeldzame monsters, 15 accessoires en ruilaanbiedingen",
+	"update.24_09_26.rare_drops.false_jail": "Lopen langs de pokertafel in de Tavern en op een paar andere plekken stuurt je niet meer naar de gevangenis."
 }

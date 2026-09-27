@@ -1,5 +1,7 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
+	// Fixed bug listed in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.
+	"update.24_09_26.rare_drops.false_jail": "Walking by the Tavern poker table and a few other spots no longer sends you to jail.",
 	// Section text in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers", under sprites of: item:stand0. Keep names from the game and CODE identifiers unchanged.
 	"update.26_09_26.trade_offers": "Put an item on your stand and choose OFFER FOR TRADE to ask for another item instead of gold. Set a minimum level or a title, or leave them on ANY. Merchants below level 70 gain XP from completed trades.",
 	// Section heading in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.

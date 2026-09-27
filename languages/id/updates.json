@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "Letakkan item di lapakmu dan pilih PASANG UNTUK DITUKAR untuk meminta item lain sebagai ganti emas. Tentukan level minimum atau gelar, atau biarkan keduanya BEBAS. Pedagang di bawah level 70 mendapat XP dari penukaran yang selesai.",
 	"update.26_09_26.trade_offers.title": "Penawaran tukar",
 	"update.24_09_26.rare_drops": "15 aksesori baru jatuh dari monster di seluruh dunia. Kobold kini berkeliaran di Underground Cliffs. Many Eye, Mimic, dan Pale Dino adalah monster langka baru. Pedagang kini bisa menukar item dengan item lain.",
-	"update.24_09_26.rare_drops.title": "Monster langka, 15 aksesori, dan penawaran tukar"
+	"update.24_09_26.rare_drops.title": "Monster langka, 15 aksesori, dan penawaran tukar",
+	"update.24_09_26.rare_drops.false_jail": "Berjalan di dekat meja poker di Tavern dan beberapa tempat lain tidak lagi mengirimmu ke penjara."
 }

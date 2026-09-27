@@ -808,5 +808,6 @@
 	"update.26_09_26.trade_offers": "노점에 아이템을 올리고 '교환 등록'을 고르면 골드 대신 다른 아이템을 요청할 수 있어요. 최소 레벨이나 칭호를 정하거나 '상관없음'으로 두세요. 레벨 70 미만 상인은 성사된 교환으로 XP를 얻어요.",
 	"update.26_09_26.trade_offers.title": "교환 제안",
 	"update.24_09_26.rare_drops": "세계 곳곳의 몬스터에게서 새 액세서리 15종이 떨어져요. 이제 Kobold가 Underground Cliffs를 돌아다녀요. Many Eye, Mimic, Pale Dino는 새 희귀 몬스터예요. 상인이 아이템을 다른 아이템과 교환할 수 있어요.",
-	"update.24_09_26.rare_drops.title": "희귀 몬스터, 액세서리 15종, 교환 제안"
+	"update.24_09_26.rare_drops.title": "희귀 몬스터, 액세서리 15종, 교환 제안",
+	"update.24_09_26.rare_drops.false_jail": "Tavern의 포커 테이블 옆과 몇몇 다른 곳을 걸어도 이제 감옥에 가지 않아요."
 }
