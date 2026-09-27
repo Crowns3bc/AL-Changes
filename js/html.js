@@ -5265,13 +5265,16 @@ function render_item(selector, args) {
 					trade_offer_view = { slot: args.slot, rid: actual.rid, num: matches.length == 1 ? matches[0] : null };
 				if (trade_offer_view.num !== null) trade_offer_view.item = trade_offer_view.item || clone(character.items[trade_offer_view.num]);
 				trade_offer_view.args = args;
+				// A stack shows what the trade takes from it, not all of it
+				var given = G.items[actual.want.name].s ? { q: actual.want.q || 1 } : {};
+				trade_offer_view.given = given;
 				if (!matches.length) html += "<div class='gray'>" + phrase.html("interface.trade_offer.no_match") + "</div>";
 				else {
 					html += "<div><span class='gray'>" + phrase.html("interface.trade_offer.give") + "</span></div><div style='margin-left:-2px'>";
 					matches.forEach(function (inum) {
 						html += item_container(
 							{ skin: G.items[character.items[inum].name].skin, draggable: false, sbcolor: trade_offer_view.num === inum ? "#3E9ACD" : undefined, onclick: "trade_offer_select(" + inum + ")" },
-							character.items[inum],
+							Object.assign({}, character.items[inum], given),
 						);
 					});
 					html += "</div>";
@@ -5279,7 +5282,7 @@ function render_item(selector, args) {
 					else
 						html +=
 							"<div class='clickable' onclick='trade_offer_inspect()'>" +
-							html_escape(trade_lot_name(Object.assign({}, trade_offer_view.item, G.items[actual.want.name].s ? { q: actual.want.q || 1 } : {}))) +
+							html_escape(trade_lot_name(Object.assign({}, trade_offer_view.item, given))) +
 							"</div><div><span class='clickable iou' onclick='trade_offer_give()'>" +
 							phrase.html("interface.trade_offer.trade") +
 							"</span></div>";

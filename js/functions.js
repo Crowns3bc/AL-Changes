@@ -3399,9 +3399,11 @@ function trade_offer_select(num) {
 }
 
 function trade_offer_inspect() {
-	// the chosen item as the inventory shows it: scrolls, jar contents and title included
+	// the chosen item as the inventory shows it: scrolls, jar contents and title included, and for a stack the part that goes
 	var item = trade_offer_view && trade_offer_view.item;
-	if (item && G.items[item.name]) show_modal(render_item("html", { item: G.items[item.name], actual: item, name: item.name, readonly: true }), { wrap: false, hideinbackground: true });
+	if (!item || !G.items[item.name]) return;
+	item = Object.assign({}, item, trade_offer_view.given);
+	show_modal(render_item("html", { item: G.items[item.name], actual: item, name: item.name, readonly: true }), { wrap: false, hideinbackground: true });
 }
 
 function trade_offer_give() {

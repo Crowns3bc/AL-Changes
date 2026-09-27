@@ -582,3 +582,39 @@ test("a trade offer refuses a jar whose cosmetic differs from the one the buyer 
 	assert.deepEqual(h.failures, ["trade_swap_match"]);
 	assert.equal(h.seller.items.find((item) => item && item.name == "cxjar").data, "hat001");
 });
+
+test("a withdrawn sale relisted as a trade offer can't be bought, and a withdrawn offer relisted for gold can't be swapped", () => {
+	const h = fixture();
+	h.put(h.seller, { name: "wand", level: 7 });
+	h.run("equip", "Seller", { num: 0, slot: "trade1", q: 1, price: 5000 });
+	h.run("unequip", "Seller", { slot: "trade1" });
+	assert.equal(h.seller.items.find(Boolean).price, 5000, "a withdrawn listing keeps its hidden price");
+	h.run("equip", "Seller", { num: h.seller.items.findIndex(Boolean), slot: "trade1", q: 1, want: "staff" });
+	assert.equal(h.seller.slots.trade1.price, undefined);
+	carry(h.buyer, [staff(3)]);
+	const before = h.snapshot();
+	h.run("trade_buy", "Buyer", { id: "Seller", slot: "trade1", rid: "listing", q: 1 });
+	h.run("trade_sell", "Buyer", { id: "Seller", slot: "trade1", rid: "listing", q: 1 });
+	assert.deepEqual(h.failures, ["sneaky", "sneaky"]);
+	assert.deepEqual(h.snapshot(), before, "no gold moves for the old price");
+	swap(h, 0);
+	assert.deepEqual(h.failures, ["sneaky", "sneaky"]);
+	assert.equal(h.buyer.items.find(Boolean).name, "wand");
+
+	const g = fixture();
+	g.put(g.seller, { name: "wand", level: 7 });
+	g.run("equip", "Seller", { num: 0, slot: "trade1", q: 1, want: "staff" });
+	g.run("unequip", "Seller", { slot: "trade1" });
+	g.run("equip", "Seller", { num: g.seller.items.findIndex(Boolean), slot: "trade1", q: 1, price: 5000 });
+	assert.equal(g.seller.slots.trade1.want, undefined, "the old request does not come back");
+	carry(g.buyer, [staff(3)]);
+	const kept = g.snapshot();
+	swap(g, 0);
+	assert.deepEqual(g.failures, ["sneaky"]);
+	assert.deepEqual(g.snapshot(), kept);
+	g.run("trade_buy", "Buyer", { id: "Seller", slot: "trade1", rid: "listing", q: 1 });
+	assert.deepEqual(g.failures, ["sneaky"]);
+	const bought = g.buyer.items.find((item) => item && item.name == "wand");
+	assert.ok(bought && bought.want === undefined);
+	assert.equal(g.buyer.gold, 1000000 - 5000);
+});
