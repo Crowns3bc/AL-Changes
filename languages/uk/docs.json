@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Помилки Promise:</b> Якщо в примітці до функції не вказано інше, у разі помилки Promise відхиляється з об'єктом, що містить <span class='dlabel'>failed: true</span> і <span class='dlabel'>reason</span>. Після <span class='dlabel'>mode_resolve_all()</span> за тих самих помилок Promise натомість успішно завершується.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Повертає:</b> Promise, що успішно завершується з відповіддю щодо виставлення товару або відхиляється зі структурованим об'єктом помилки.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Повертає:</b> Promise, що успішно завершується з відповіддю щодо торгівлі або відхиляється зі структурованим об'єктом помилки.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Повторювані повідомлення та флуд у загальному чаті не передаються до Discord і не зберігаються в історії загального чату. Якщо спам триває, повідомлення вашого облікового запису на цьому сервері тимчасово перестають потрапляти в обидва місця. Обмеження знімається, коли ви не надсилаєте повідомлення в загальний чат протягом 10 хвилин. У поточному ігровому чаті ваші повідомлення й далі видно."
 }

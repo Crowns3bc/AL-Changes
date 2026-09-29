@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-fel:</b> Om inget annat anges för funktionen avvisas Promise vid fel med ett objekt som innehåller <span class='dlabel'>failed: true</span> och en <span class='dlabel'>reason</span>. Efter <span class='dlabel'>mode_resolve_all()</span> uppfylls Promise i stället vid samma fel.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Returnerar:</b> Promise som uppfylls med svaret på annonseringen eller avvisas med ett strukturerat felobjekt.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Returnerar:</b> Promise som uppfylls med svaret på handeln eller avvisas med ett strukturerat felobjekt.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Upprepade meddelanden och meddelandeflöden som översvämmar den offentliga chatten skickas inte till Discord och sparas inte i den offentliga chatthistoriken. Fortsatt spam stoppar tillfälligt både vidarebefordran och sparandet för ditt konto på den servern, tills du har gått 10 minuter utan att skicka ett offentligt meddelande. Dina meddelanden visas fortfarande i spelets livechatt."
 }

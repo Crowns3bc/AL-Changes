@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise失败：</b>除非函数另有说明，失败时会以包含<span class='dlabel'>failed: true</span>和<span class='dlabel'>reason</span>的对象拒绝。调用<span class='dlabel'>mode_resolve_all()</span>后，同样的失败结果会改为兑现。",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>返回：</b>Promise，成功时以上架响应兑现，失败时以结构化失败对象拒绝。",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>返回：</b>Promise，成功时以交易响应兑现，失败时以结构化失败对象拒绝。",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "公开聊天中的重复消息和刷屏消息不会转发到 Discord，也不会保存到公开聊天记录中。如果持续刷屏，你的账号在该服务器上的这两项功能会暂时停用，直到你连续 10 分钟不发送公开消息。你的消息仍会显示在游戏内的实时聊天中。"
 }

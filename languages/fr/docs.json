@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Échecs des Promises :</b> Sauf indication contraire propre à une fonction, les échecs rejettent la Promise avec un objet contenant <span class='dlabel'>failed: true</span> et une <span class='dlabel'>reason</span>. Après <span class='dlabel'>mode_resolve_all()</span>, la Promise est accomplie avec ces mêmes objets d’échec au lieu d’être rejetée.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Renvoie :</b> Une Promise résolue avec la réponse de mise en vente, ou rejetée avec un objet d’échec structuré.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Renvoie :</b> Une Promise résolue avec la réponse de transaction, ou rejetée avec un objet d’échec structuré.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Les messages répétés et les envois massifs du chat public ne sont pas transmis à Discord ni enregistrés dans l’historique du chat public. Si le spam continue, les messages de votre compte sur ce serveur sont temporairement exclus des deux, jusqu’à ce que vous passiez 10 minutes sans envoyer de message public. Vos messages restent visibles dans le chat du jeu en direct."
 }

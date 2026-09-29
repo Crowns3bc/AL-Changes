@@ -23,6 +23,7 @@ const DOCS_PATHS = [
 	"/docs/code/functions/open_stand",
 	"/docs/code/functions/require_code",
 	"/docs/code/functions/send_cm",
+	"/docs/code/functions/say",
 	"/docs/code/functions/smart_move",
 	"/docs/code/functions/upload_code",
 	"/docs/code/functions/use_skill",

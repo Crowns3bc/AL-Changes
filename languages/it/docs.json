@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Errori delle Promise:</b> Salvo diversa indicazione nelle note della funzione, gli errori rifiutano la Promise con un oggetto contenente <span class='dlabel'>failed: true</span> e una proprietà <span class='dlabel'>reason</span>. Dopo <span class='dlabel'>mode_resolve_all()</span>, gli stessi errori risolvono invece la Promise.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Restituisce:</b> Una Promise che si risolve con la risposta alla messa in vendita, oppure viene rifiutata con un oggetto di errore strutturato.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Restituisce:</b> Una Promise che si risolve con la risposta alla compravendita, oppure viene rifiutata con un oggetto di errore strutturato.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "I messaggi ripetuti e le raffiche di messaggi nella chat pubblica non vengono inoltrati a Discord né salvati nella cronologia della chat pubblica. Se lo spam continua, i messaggi del tuo account su quel server vengono temporaneamente esclusi da entrambi, finché non trascorri 10 minuti senza inviare messaggi pubblici. I tuoi messaggi continuano ad apparire nella chat di gioco in tempo reale."
 }

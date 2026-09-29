@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Csereajánlatok",
 	"update.24_09_26.rare_drops": "15 új kiegészítő esik szörnyektől szerte a világon. Mostantól Kobold szörnyek kóborolnak az Underground Cliffs területén. A Many Eye, a Mimic és a Pale Dino új ritka szörnyek. A kereskedők mostantól egy tárgyat egy másikra cserélhetnek.",
 	"update.24_09_26.rare_drops.title": "Ritka szörnyek, 15 kiegészítő és csereajánlatok",
-	"update.24_09_26.rare_drops.false_jail": "Ha a Tavern pókerasztala mellett vagy néhány más helyen sétálsz, már nem kerülsz börtönbe."
+	"update.24_09_26.rare_drops.false_jail": "Ha a Tavern pókerasztala mellett vagy néhány más helyen sétálsz, már nem kerülsz börtönbe.",
+	"update.29_09_26.chat_spam": "A nyilvános csevegés ismétlődő üzenetei mostantól nem kerülnek át a Discord felületére, és nem mentődnek a csevegési előzményekbe."
 }

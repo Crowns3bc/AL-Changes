@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Tauschangebote",
 	"update.24_09_26.rare_drops": "15 neue Accessoires fallen bei Monstern auf der ganzen Welt. Kobolds ziehen jetzt durch die Underground Cliffs. Many Eye, Mimic und Pale Dino sind neue seltene Monster. Händler können jetzt einen Gegenstand gegen einen anderen tauschen.",
 	"update.24_09_26.rare_drops.title": "Seltene Monster, 15 Accessoires und Tauschangebote",
-	"update.24_09_26.rare_drops.false_jail": "Wenn du neben dem Pokertisch in der Tavern oder an ein paar anderen Stellen läufst, landest du nicht mehr im Gefängnis."
+	"update.24_09_26.rare_drops.false_jail": "Wenn du neben dem Pokertisch in der Tavern oder an ein paar anderen Stellen läufst, landest du nicht mehr im Gefängnis.",
+	"update.29_09_26.chat_spam": "Wiederholte Nachrichten aus dem öffentlichen Chat werden jetzt weder an Discord weitergeleitet noch im Chatverlauf gespeichert."
 }

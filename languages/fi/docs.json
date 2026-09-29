@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-virheet:</b> Ellei funktiokohtaisessa huomautuksessa sanota muuta, epäonnistuminen hylkää Promisen oliolla, joka sisältää kentät <span class='dlabel'>failed: true</span> ja <span class='dlabel'>reason</span>. Kutsun <span class='dlabel'>mode_resolve_all()</span> jälkeen samat epäonnistumiset sen sijaan täyttävät Promisen.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Palauttaa:</b> Promisen, joka täyttyy myyntiin asettamisen vastauksella tai hylätään rakenteisella virheoliolla.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Palauttaa:</b> Promisen, joka täyttyy kauppavastauksella tai hylätään rakenteisella virheoliolla.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Julkisen chatin toistuvia viestejä ja viestitulvaa ei välitetä Discordiin eikä tallenneta julkisen chatin historiaan. Jos roskapostitus jatkuu, tilisi viestien välitys ja tallennus keskeytetään kyseisellä palvelimella, kunnes olet ollut 10 minuuttia lähettämättä julkista viestiä. Viestisi näkyvät edelleen pelin reaaliaikaisessa chatissa."
 }

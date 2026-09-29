@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Ошибки Promise:</b> Если примечание к функции не говорит иначе, ошибка отклоняет Promise с объектом, содержащим <span class='dlabel'>failed: true</span> и <span class='dlabel'>reason</span>. После <span class='dlabel'>mode_resolve_all()</span> те же ошибки вместо этого успешно выполняют Promise.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Возвращает:</b> Promise с ответом выставления товара или отклонение со структурированным объектом ошибки.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Возвращает:</b> Promise с ответом сделки или отклонение со структурированным объектом ошибки.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Повторяющиеся сообщения и флуд в общем чате не передаются в Discord и не сохраняются в истории общего чата. Если спам продолжается, сообщения вашего аккаунта на этом сервере временно перестают попадать в оба места. Ограничение снимается, когда вы не отправляете сообщения в общий чат в течение 10 минут. В текущем игровом чате ваши сообщения по-прежнему видны."
 }

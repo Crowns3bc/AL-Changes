@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-fejl:</b> Medmindre en bemærkning til den enkelte funktion siger andet, afvises den returnerede Promise ved fejl med et objekt, der indeholder <span class='dlabel'>failed: true</span> og en <span class='dlabel'>reason</span>. Efter <span class='dlabel'>mode_resolve_all()</span> opfyldes den i stedet ved de samme fejl.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Returnerer:</b> En Promise, som opfyldes med svaret på salgsopslaget eller afvises med et struktureret fejlobjekt.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Returnerer:</b> En Promise, som opfyldes med handelssvaret eller afvises med et struktureret fejlobjekt.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Gentagne beskeder og oversvømmelser af beskeder i den offentlige chat bliver hverken sendt til Discord eller gemt i den offentlige chathistorik. Hvis spam fortsætter, bliver begge dele midlertidigt blokeret for din konto på den server, indtil du har undladt at sende offentlige beskeder i 10 minutter. Dine beskeder vises stadig i spillets livechat."
 }

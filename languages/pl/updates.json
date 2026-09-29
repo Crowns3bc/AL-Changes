@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Oferty wymiany",
 	"update.24_09_26.rare_drops": "15 nowych dodatków wypada z potworów na całym świecie. Kobolds krążą teraz po Underground Cliffs. Many Eye, Mimic i Pale Dino to nowe rzadkie potwory. Kupcy mogą teraz wymienić przedmiot na inny.",
 	"update.24_09_26.rare_drops.title": "Rzadkie potwory, 15 dodatków i oferty wymiany",
-	"update.24_09_26.rare_drops.false_jail": "Chodzenie obok stołu do pokera w Tavern i w kilku innych miejscach nie kończy się już więzieniem."
+	"update.24_09_26.rare_drops.false_jail": "Chodzenie obok stołu do pokera w Tavern i w kilku innych miejscach nie kończy się już więzieniem.",
+	"update.29_09_26.chat_spam": "Powtarzające się wiadomości z czatu publicznego nie są już przekazywane do Discord ani zapisywane w historii czatu."
 }

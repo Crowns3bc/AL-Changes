@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-feil:</b> Med mindre en funksjonsspesifikk merknad sier noe annet, avvises Promise ved feil med et objekt som inneholder <span class='dlabel'>failed: true</span> og en <span class='dlabel'>reason</span>. Etter <span class='dlabel'>mode_resolve_all()</span> oppfylles Promise i stedet ved de samme feilene.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Returnerer:</b> Et Promise som oppfylles med svaret på salgsoppføringen eller avvises med et strukturert feilobjekt.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Returnerer:</b> Et Promise som oppfylles med handelssvaret eller avvises med et strukturert feilobjekt.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Gjentatte meldinger og meldingsflom i den offentlige chatten blir verken sendt til Discord eller lagret i den offentlige chattehistorikken. Hvis spammen fortsetter, blir begge deler midlertidig blokkert for kontoen din på den serveren, til du har gått 10 minutter uten å sende en offentlig melding. Meldingene dine vises fortsatt i spillets direktechatt."
 }

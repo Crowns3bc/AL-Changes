@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Ofertas de troca",
 	"update.24_09_26.rare_drops": "15 acessórios novos caem de monstros por todo o mundo. Os Kobold percorrem agora Underground Cliffs. Many Eye, Mimic e Pale Dino são novos monstros raros. Os mercadores já podem trocar um item por outro.",
 	"update.24_09_26.rare_drops.title": "Monstros raros, 15 acessórios e ofertas de troca",
-	"update.24_09_26.rare_drops.false_jail": "Andar junto à mesa de póquer da Tavern e em alguns outros sítios já não te manda para a prisão."
+	"update.24_09_26.rare_drops.false_jail": "Andar junto à mesa de póquer da Tavern e em alguns outros sítios já não te manda para a prisão.",
+	"update.29_09_26.chat_spam": "As mensagens repetidas do chat público passam a ser filtradas e não são enviadas para o Discord nem guardadas no histórico do chat."
 }

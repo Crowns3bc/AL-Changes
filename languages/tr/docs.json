@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise hataları:</b> Fonksiyona özel not aksini söylemedikçe hatalar <span class='dlabel'>failed: true</span> ve <span class='dlabel'>reason</span> içeren nesneyle reddedilir. <span class='dlabel'>mode_resolve_all()</span> sonrasında aynı hatalar başarı yolundan döner.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Döndürür:</b> İlan yanıtıyla sonuçlanan veya yapılandırılmış hata nesnesiyle reddedilen Promise.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Döndürür:</b> Ticaret yanıtıyla sonuçlanan veya yapılandırılmış hata nesnesiyle reddedilen Promise.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Tekrarlanan genel sohbet mesajları ve art arda gönderilen çok sayıda mesaj Discord'a iletilmez ve genel sohbet geçmişine kaydedilmez. Spam devam ederse hesabınızın o sunucudaki mesajları her iki yerde de geçici olarak engellenir. Bu durum, 10 dakika boyunca genel sohbete mesaj göndermediğinizde sona erer. Mesajlarınız canlı oyun sohbetinde görünmeye devam eder."
 }

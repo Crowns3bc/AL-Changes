@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Tawaran tukar",
 	"update.24_09_26.rare_drops": "15 aksesori baharu jatuh daripada raksasa di seluruh dunia. Kobold kini merayau di Underground Cliffs. Many Eye, Mimic dan Pale Dino ialah raksasa jarang baharu. Pedagang kini boleh menukar item dengan item lain.",
 	"update.24_09_26.rare_drops.title": "Raksasa jarang, 15 aksesori dan tawaran tukar",
-	"update.24_09_26.rare_drops.false_jail": "Berjalan berhampiran meja poker di Tavern dan beberapa tempat lain tidak lagi menghantar anda ke penjara."
+	"update.24_09_26.rare_drops.false_jail": "Berjalan berhampiran meja poker di Tavern dan beberapa tempat lain tidak lagi menghantar anda ke penjara.",
+	"update.29_09_26.chat_spam": "Mesej berulang dalam sembang awam kini tidak diteruskan ke Discord atau disimpan dalam sejarah sembang."
 }

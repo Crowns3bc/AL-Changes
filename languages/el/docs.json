@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Αποτυχίες Promise:</b> Εκτός αν μια σημείωση της συγκεκριμένης συνάρτησης ορίζει διαφορετικά, οι αποτυχίες απορρίπτουν το Promise με ένα αντικείμενο που περιέχει <span class='dlabel'>failed: true</span> και ένα <span class='dlabel'>reason</span>. Μετά το <span class='dlabel'>mode_resolve_all()</span>, οι ίδιες αποτυχίες εκπληρώνουν το Promise.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Επιστρέφει:</b> Promise που εκπληρώνεται με την απάντηση καταχώρισης ή απορρίπτεται με ένα δομημένο αντικείμενο αποτυχίας.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Επιστρέφει:</b> Promise που εκπληρώνεται με την απάντηση συναλλαγής ή απορρίπτεται με ένα δομημένο αντικείμενο αποτυχίας.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Τα επαναλαμβανόμενα μηνύματα και ο καταιγισμός μηνυμάτων στη δημόσια συνομιλία δεν προωθούνται στο Discord ούτε αποθηκεύονται στο ιστορικό της δημόσιας συνομιλίας. Αν το spam συνεχιστεί, η προώθηση και η αποθήκευση μηνυμάτων του λογαριασμού σου σε εκείνον τον διακομιστή διακόπτονται προσωρινά, μέχρι να περάσουν 10 λεπτά χωρίς να στείλεις δημόσιο μήνυμα. Τα μηνύματά σου συνεχίζουν να εμφανίζονται στη ζωντανή συνομιλία του παιχνιδιού."
 }

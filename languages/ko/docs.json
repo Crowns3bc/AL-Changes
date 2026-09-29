@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise 실패:</b> 함수별 설명에 따로 명시하지 않았다면, 실패 시 <span class='dlabel'>failed: true</span>와 <span class='dlabel'>reason</span>이 담긴 객체로 거부돼요. <span class='dlabel'>mode_resolve_all()</span>을 호출한 뒤에는 같은 실패도 이행으로 처리돼요.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>반환값:</b> 등록 응답으로 이행되거나 구조화된 실패 객체로 거부되는 Promise.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>반환값:</b> 거래 응답으로 이행되거나 구조화된 실패 객체로 거부되는 Promise.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "공개 채팅의 반복 메시지와 도배 메시지는 Discord로 전달되거나 공개 채팅 기록에 저장되지 않습니다. 스팸이 계속되면 해당 서버에서 계정의 메시지 전달과 저장이 일시적으로 중단됩니다. 공개 메시지를 보내지 않고 10분이 지나면 해제됩니다. 게임 내 실시간 채팅에는 메시지가 계속 표시됩니다."
 }

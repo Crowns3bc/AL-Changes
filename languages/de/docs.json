@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-Fehler:</b> Sofern kein funktionsspezifischer Hinweis etwas anderes sagt, lehnen Fehlschläge das Promise mit einem Objekt ab, das <span class='dlabel'>failed: true</span> und einen <span class='dlabel'>reason</span> enthält. Nach <span class='dlabel'>mode_resolve_all()</span> erfüllen dieselben Fehlschläge stattdessen das Promise.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Rückgabe:</b> Ein Promise, das mit der Antwort auf das Angebot erfüllt oder mit einem strukturierten Fehlerobjekt abgelehnt wird.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Rückgabe:</b> Ein Promise, das mit der Handelsantwort erfüllt oder mit einem strukturierten Fehlerobjekt abgelehnt wird.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Wiederholte Nachrichten und Nachrichtenfluten aus dem öffentlichen Chat werden weder an Discord weitergeleitet noch im öffentlichen Chatverlauf gespeichert. Bei weiterem Spam werden die Nachrichten deines Kontos auf diesem Server vorübergehend von beiden ausgeschlossen, bis du 10 Minuten lang keine öffentliche Nachricht mehr gesendet hast. Im laufenden Spielchat erscheinen deine Nachrichten weiterhin."
 }

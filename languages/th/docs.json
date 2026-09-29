@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>เมื่อ Promise ล้มเหลว:</b> เว้นแต่หมายเหตุของฟังก์ชันจะระบุไว้ต่างออกไป เมื่อเกิดความล้มเหลว Promise จะ reject พร้อมออบเจ็กต์ที่มี <span class='dlabel'>failed: true</span> และ <span class='dlabel'>reason</span> หลังเรียก <span class='dlabel'>mode_resolve_all()</span> ความล้มเหลวแบบเดียวกันจะทำให้ Promise fulfill แทน",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>ค่าที่คืน:</b> Promise ที่ resolve พร้อมผลตอบกลับการลงประกาศ หรือ reject พร้อมออบเจ็กต์ความล้มเหลวที่มีโครงสร้าง",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>ค่าที่คืน:</b> Promise ที่ resolve พร้อมผลตอบกลับการค้าขาย หรือ reject พร้อมออบเจ็กต์ความล้มเหลวที่มีโครงสร้าง",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "ข้อความซ้ำและการส่งข้อความถี่จำนวนมากในแชตสาธารณะจะไม่ถูกส่งต่อไปยัง Discord หรือบันทึกไว้ในประวัติแชตสาธารณะ หากยังส่งสแปมต่อไป ระบบจะระงับการส่งต่อและการบันทึกข้อความของบัญชีคุณบนเซิร์ฟเวอร์นั้นชั่วคราว จนกว่าคุณจะหยุดส่งข้อความสาธารณะติดต่อกัน 10 นาที ข้อความของคุณยังคงปรากฏในแชตสดภายในเกม"
 }

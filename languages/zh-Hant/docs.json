@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise失敗：</b>除非函式另有說明，失敗時會以包含<span class='dlabel'>failed: true</span>和<span class='dlabel'>reason</span>的物件拒絕。呼叫<span class='dlabel'>mode_resolve_all()</span>後，同樣的失敗結果會改為兌現。",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>回傳：</b>Promise，成功時以上架回應兌現，失敗時以結構化失敗物件拒絕。",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>回傳：</b>Promise，成功時以交易回應兌現，失敗時以結構化失敗物件拒絕。",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "公開聊天中的重複訊息和洗版訊息不會轉發到 Discord，也不會儲存至公開聊天紀錄。如果持續洗版，你的帳號在該伺服器上的這兩項功能會暫時停用，直到你連續 10 分鐘不傳送公開訊息。你的訊息仍會顯示在遊戲內的即時聊天中。"
 }

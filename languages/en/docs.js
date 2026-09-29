@@ -3484,6 +3484,8 @@ module.exports = {
 		"<b>Returns:</b> Promise resolving with the chat response, or rejecting with a structured failure object. An empty message resolves with success:false and reason empty.",
 	// docs/functions/say.html:2; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.
 	"docs.functions.say.sends-a-message-to-public-chat": "Sends a message to public chat.",
+	// say() documentation. Only Discord forwarding and saved public histories are muted on this server; live chat still works. Recovery requires ten minutes without public messages. Keep Discord unchanged.
+	"docs.functions.say.spam_filter": "Repeated public messages and chat floods are not sent to Discord or saved in public chat history. Continued spam temporarily mutes your account from both on that server until you go 10 minutes without sending a public message. Your messages still appear in live game chat.",
 	// docs/functions/seal_item.html:5; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only.
 	"docs.functions.seal_item.example": "<b>Example:</b>",
 	// docs/functions/seal_item.html:4; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only. Locked inline code: ["failed: true","reason","mode_resolve_all()"].

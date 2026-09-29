@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>حالات فشل Promise:</b> ما لم تنص ملاحظة خاصة بالدالة على خلاف ذلك، تؤدي حالات الفشل إلى رفض Promise بكائن يحتوي على <span class='dlabel'>failed: true</span> و<span class='dlabel'>reason</span>. بعد <span class='dlabel'>mode_resolve_all()</span>، تؤدي حالات الفشل نفسها إلى الوفاء بـ Promise بدلا من رفضه.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>القيمة المعادة:</b> Promise يتم الوفاء به باستجابة عرض الغرض، أو يرفض بكائن فشل منظم.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>القيمة المعادة:</b> Promise يتم الوفاء به باستجابة التجارة، أو يرفض بكائن فشل منظم.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "لا تُنقل الرسائل المتكررة ولا سيل الرسائل في الدردشة العامة إلى Discord، ولا تُحفظ في سجل الدردشة العامة. إذا استمر الإزعاج، يتوقف نقل رسائل حسابك وحفظها مؤقتًا على ذلك الخادم، حتى تمر 10 دقائق دون أن ترسل أي رسالة عامة. تظل رسائلك ظاهرة في دردشة اللعبة المباشرة."
 }

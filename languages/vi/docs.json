@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise khi thất bại:</b> Trừ khi ghi chú riêng của hàm nói khác, thất bại khiến Promise bị từ chối với một đối tượng chứa <span class='dlabel'>failed: true</span> và <span class='dlabel'>reason</span>. Sau <span class='dlabel'>mode_resolve_all()</span>, chính các thất bại đó sẽ khiến Promise hoàn tất thay vì bị từ chối.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Trả về:</b> Promise hoàn tất với phản hồi đăng bán, hoặc bị từ chối với một đối tượng lỗi có cấu trúc.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Trả về:</b> Promise hoàn tất với phản hồi giao dịch, hoặc bị từ chối với một đối tượng lỗi có cấu trúc.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Tin nhắn lặp lại và tin nhắn gửi dồn dập trong trò chuyện công khai sẽ không được chuyển đến Discord hoặc lưu vào lịch sử trò chuyện công khai. Nếu tiếp tục gửi spam, tài khoản của bạn trên máy chủ đó sẽ tạm thời bị ngừng cả việc chuyển tiếp lẫn lưu tin nhắn, cho đến khi bạn không gửi tin nhắn công khai nào trong 10 phút liên tục. Tin nhắn của bạn vẫn xuất hiện trong trò chuyện trực tiếp trong game."
 }

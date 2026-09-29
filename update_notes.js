@@ -28,6 +28,7 @@ module.exports = [
 			},
 		],
 		changes: [
+			{ fixed: "chat_spam", phrase: "update.29_09_26.chat_spam", note: "Repeated public messages are now filtered out of Discord and saved chat history." },
 			{ new: "monster:kobold", note: "Two pairs roam Underground Cliffs." },
 			{ new: "monster:manyeye", among: "monster:oneeye", count: 15000 },
 			{ new: "monster:mimic", among: "monster:kobold", count: 12000 },

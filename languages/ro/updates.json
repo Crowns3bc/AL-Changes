@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Oferte de schimb",
 	"update.24_09_26.rare_drops": "15 accesorii noi cad din monștri din toată lumea. Kobold cutreieră acum Underground Cliffs. Many Eye, Mimic și Pale Dino sunt monștri rari noi. Negustorii pot acum schimba un obiect pe altul.",
 	"update.24_09_26.rare_drops.title": "Monștri rari, 15 accesorii și oferte de schimb",
-	"update.24_09_26.rare_drops.false_jail": "Mersul pe lângă masa de poker din Tavern și prin alte câteva locuri nu te mai trimite la închisoare."
+	"update.24_09_26.rare_drops.false_jail": "Mersul pe lângă masa de poker din Tavern și prin alte câteva locuri nu te mai trimite la închisoare.",
+	"update.29_09_26.chat_spam": "Mesajele repetate din chatul public nu mai sunt trimise pe Discord și nici salvate în istoricul chatului."
 }

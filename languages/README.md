@@ -98,6 +98,8 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+Public chat filtering: the release note and `say()` documentation are translated and proofread in all 32 languages. Discord forwarding, saved history, the server scope and recovery after 10 minutes without public messages were checked on 2026-09-29.
+
 | Language | Code | Status |
 | --- | --- | --- |
 | English | en | Complete |

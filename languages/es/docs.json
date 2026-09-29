@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Fallos de Promise:</b> Salvo que una nota específica de la función indique lo contrario, los fallos rechazan la Promise con un objeto que contiene <span class='dlabel'>failed: true</span> y un <span class='dlabel'>reason</span>. Tras <span class='dlabel'>mode_resolve_all()</span>, esos mismos fallos la cumplen en su lugar.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Devuelve:</b> Una Promise que se resuelve con la respuesta del anuncio o se rechaza con un objeto de error estructurado.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Devuelve:</b> Una Promise que se resuelve con la respuesta de la transacción o se rechaza con un objeto de error estructurado.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Los mensajes repetidos y las ráfagas de mensajes del chat público no se envían a Discord ni se guardan en el historial del chat público. Si el spam continúa, los mensajes de tu cuenta en ese servidor dejan de enviarse a ambos sitios temporalmente, hasta que pases 10 minutos sin enviar un mensaje público. Tus mensajes siguen apareciendo en el chat del juego en directo."
 }

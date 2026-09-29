@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-fouten:</b> Tenzij een opmerking bij de functie anders aangeeft, wordt de Promise bij fouten afgewezen met een object met <span class='dlabel'>failed: true</span> en een <span class='dlabel'>reason</span>. Na <span class='dlabel'>mode_resolve_all()</span> wordt de Promise bij dezelfde fouten juist vervuld.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Retourneert:</b> Een Promise die wordt vervuld met het antwoord op het verkoopaanbod, of wordt afgewezen met een gestructureerd foutobject.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Retourneert:</b> Een Promise die wordt vervuld met het handelsantwoord, of wordt afgewezen met een gestructureerd foutobject.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Herhaalde berichten en grote aantallen snel verstuurde berichten uit de openbare chat worden niet doorgestuurd naar Discord of opgeslagen in de openbare chatgeschiedenis. Als de spam doorgaat, worden beide tijdelijk geblokkeerd voor je account op die server, totdat je 10 minuten geen openbaar bericht hebt verstuurd. Je berichten verschijnen nog steeds in de livechat van het spel."
 }

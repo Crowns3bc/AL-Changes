@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Promise-hibák:</b> Ha a függvény megjegyzése másként nem rendelkezik, hiba esetén a Promise elutasított állapotba kerül egy <span class='dlabel'>failed: true</span> mezőt és egy <span class='dlabel'>reason</span> értéket tartalmazó objektummal. A <span class='dlabel'>mode_resolve_all()</span> hívása után ugyanezek a hibák ehelyett teljesült állapotot eredményeznek.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Visszatérés:</b> Promise, amely az eladásra kínálás válaszával teljesül, vagy strukturált hibaobjektummal kerül elutasított állapotba.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Visszatérés:</b> Promise, amely a kereskedés válaszával teljesül, vagy strukturált hibaobjektummal kerül elutasított állapotba.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "A nyilvános csevegés ismétlődő üzenetei és üzenetáradatai nem kerülnek át a Discord felületére, és nem mentődnek a nyilvános csevegés előzményeibe. Ha a spam folytatódik, az adott szerveren a fiókod üzeneteinek továbbítása és mentése átmenetileg leáll. A korlátozás akkor szűnik meg, ha 10 percig nem küldesz nyilvános üzenetet. Üzeneteid továbbra is megjelennek a játék élő csevegésében."
 }

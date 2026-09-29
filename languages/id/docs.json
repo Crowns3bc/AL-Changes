@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Kegagalan Promise:</b> Kecuali catatan khusus fungsi menyatakan lain, kegagalan membuat Promise ditolak dengan objek berisi <span class='dlabel'>failed: true</span> dan <span class='dlabel'>reason</span>. Setelah <span class='dlabel'>mode_resolve_all()</span>, kegagalan yang sama justru membuat Promise terpenuhi.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Nilai kembalian:</b> Promise yang terpenuhi dengan respons pemasangan penawaran, atau ditolak dengan objek kegagalan terstruktur.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Nilai kembalian:</b> Promise yang terpenuhi dengan respons perdagangan, atau ditolak dengan objek kegagalan terstruktur.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Pesan berulang dan kiriman pesan bertubi-tubi di obrolan publik tidak diteruskan ke Discord atau disimpan dalam riwayat obrolan publik. Jika spam berlanjut, penerusan dan penyimpanan pesan dari akunmu di server tersebut akan dihentikan sementara sampai kamu tidak mengirim pesan publik selama 10 menit berturut-turut. Pesanmu tetap muncul dalam obrolan langsung di game."
 }

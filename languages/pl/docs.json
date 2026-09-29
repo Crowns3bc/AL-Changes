@@ -2694,5 +2694,6 @@
 	"docs.functions.trade_swap.promise-failures-unless-a-function-specific-note-says": "<b>Błędy Promise:</b> Jeśli opis danej funkcji nie mówi inaczej, błąd odrzuca Promise z obiektem zawierającym <span class='dlabel'>failed: true</span> i <span class='dlabel'>reason</span>. Po wywołaniu <span class='dlabel'>mode_resolve_all()</span> te same błędy zamiast tego spełniają Promise.",
 	"docs.functions.trade_offer.returns-promise-resolving-with-the-listing-response-or": "<b>Zwraca:</b> Promise spełniane odpowiedzią na wystawienie oferty lub odrzucane obiektem ze szczegółami błędu.",
 	"docs.functions.trade_swap.returns-promise-resolving-with-the-trade-response-or": "<b>Zwraca:</b> Promise spełniane odpowiedzią na transakcję lub odrzucane obiektem ze szczegółami błędu.",
-	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>"
+	"docs.articles.events-game.swap": "<span class=\"dlabel\" data-event=\"swap\">swap</span>",
+	"docs.functions.say.spam_filter": "Powtarzające się wiadomości i zalew wiadomości na czacie publicznym nie są przekazywane do Discord ani zapisywane w historii czatu publicznego. Dalszy spam tymczasowo blokuje oba działania dla twojego konta na tym serwerze. Blokada znika po 10 minutach bez wysłania wiadomości publicznej. Twoje wiadomości nadal pojawiają się na bieżąco na czacie w grze."
 }

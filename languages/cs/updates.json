@@ -809,5 +809,6 @@
 	"update.26_09_26.trade_offers.title": "Nabídky výměny",
 	"update.24_09_26.rare_drops": "15 nových doplňků padá z nestvůr po celém světě. Po Underground Cliffs se teď toulají nestvůry Kobold. Many Eye, Mimic a Pale Dino jsou nové vzácné nestvůry. Obchodníci teď mohou vyměnit předmět za jiný.",
 	"update.24_09_26.rare_drops.title": "Vzácné nestvůry, 15 doplňků a nabídky výměny",
-	"update.24_09_26.rare_drops.false_jail": "Chůze u pokerového stolu v Tavern a na několika dalších místech tě už nepošle do vězení."
+	"update.24_09_26.rare_drops.false_jail": "Chůze u pokerového stolu v Tavern a na několika dalších místech tě už nepošle do vězení.",
+	"update.29_09_26.chat_spam": "Opakované zprávy z veřejného chatu se nyní filtrují a nepřeposílají se na Discord ani neukládají do historie chatu."
 }
