@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Opravy chyb",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "Příšery se nyní začnou nudit a přestanou bojovat podle míry svého vzteku",
 	"update.29_08_22.nerfed_the_dark_mage": "Dark Mage oslaben",
+	"update.29_09_26.encouragement_loot": "Kořist z povzbuzujících bonusů se nyní zobrazuje v události loot v CODE.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Lepší jmenovky! (co do vykreslování písma)",
 	"update.29_11_18.small_changes": "Drobné změny",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Opraveny Full Guard a Vyhýbání u Snowmana",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Událost <span class=\"dlabel\">loot</span> zahrnuje předměty z povzbuzujících bonusů v poli <span class=\"dlabel\">items</span> a <span class=\"dlabel\">looter</span> uvádí příjemce. Pokud truhlu otevře někdo mimo tvou současnou skupinu, i tak obdržíš soukromou událost <span class=\"dlabel\">loot</span> se svými vlastními bonusovými odměnami.",
+	"docs.articles.events-character.encouragement-reserved": "Pokud máš plný inventář, tyto odměny počkají ve vyhrazené truhle a v <span class=\"dlabel\">loot</span> se objeví, až vyzvedneš její obsah.",
 	"docs.guide.golden-bat.intro": "Létá po jeskyni, dokud ho někdo nechytí. Má 24 000 HP, útočí jen občas a nikdy se nebrání.",
 	"docs.guide.cute-bee.intro": "Toulá se po Mainland s pouhými 300 HP a každého poblíž bodne za úctyhodných 16 poškození.",
 	"docs.guide.golden-bot.intro": "Toulá se po Underground Hills, dokud ho někdo nezastaví. Má 500 000 HP, ale útočí zřídka a nikdy se nebrání.",

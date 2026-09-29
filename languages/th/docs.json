@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "อีเวนต์ <span class=\"dlabel\">loot</span> จะรวมไอเทมจากโบนัสให้กำลังใจไว้ใน <span class=\"dlabel\">items</span> โดย <span class=\"dlabel\">looter</span> ระบุผู้รับ หากคนที่อยู่นอกปาร์ตี้ปัจจุบันของคุณเปิดหีบ คุณก็ยังได้รับอีเวนต์ <span class=\"dlabel\">loot</span> ส่วนตัวสำหรับรางวัลจากโบนัสให้กำลังใจของคุณเอง",
+	"docs.articles.events-character.encouragement-reserved": "หากอินเวนทอรีเต็ม รางวัลเหล่านั้นจะรออยู่ในหีบที่สงวนไว้ และจะปรากฏใน <span class=\"dlabel\">loot</span> เมื่อคุณเก็บของในหีบนั้น",
 	"docs.guide.golden-bat.intro": "มันบินวนไปทั่วถ้ำจนกว่าจะมีคนจับได้ มี HP 24,000 โจมตีแค่บางครั้งและไม่เคยโต้กลับ",
 	"docs.guide.cute-bee.intro": "มันเดินเตร่ไปทั่ว Mainland ด้วย HP เพียง 300 และต่อยทุกคนที่อยู่ใกล้ด้วยความเสียหายมหาศาลถึง 16",
 	"docs.guide.golden-bot.intro": "มันเดินเตร่ไปทั่ว Underground Hills จนกว่าจะมีคนหยุดมัน มี HP 500,000 แต่แทบไม่โจมตีและไม่เคยโต้กลับ",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "<span class=\"dlabel\">loot</span>-tapahtuma sisältää kannustusbonusten esineet <span class=\"dlabel\">items</span>-kentässä, ja <span class=\"dlabel\">looter</span> kertoo vastaanottajan. Jos joku nykyisen ryhmäsi ulkopuolelta avaa arkun, saat silti yksityisen <span class=\"dlabel\">loot</span>-tapahtuman omista kannustuspalkinnoistasi.",
+	"docs.articles.events-character.encouragement-reserved": "Jos tavaraluettelosi on täynnä, nämä palkinnot odottavat varatussa arkussa ja näkyvät <span class=\"dlabel\">loot</span>-tapahtumassa, kun keräät sen sisällön.",
 	"docs.guide.golden-bat.intro": "Se lepattaa luolassa, kunnes joku nappaa sen. Sillä on 24 000 HP, se hyökkää vain joskus eikä koskaan lyö takaisin.",
 	"docs.guide.cute-bee.intro": "Se kiertelee Mainland-alueella vain 300 HP:lla ja pistää kaikkia lähellä olevia huimalla 16 vahingolla.",
 	"docs.guide.golden-bot.intro": "Se kiertelee Underground Hills -alueella, kunnes joku pysäyttää sen. Sillä on 500 000 HP, mutta se hyökkää harvoin eikä koskaan lyö takaisin.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Zdarzenie <span class=\"dlabel\">loot</span> zawiera przedmioty z premii na zachętę w polu <span class=\"dlabel\">items</span>, a <span class=\"dlabel\">looter</span> wskazuje odbiorcę. Jeśli skrzynię otworzy ktoś spoza twojej obecnej drużyny, nadal otrzymasz prywatne zdarzenie <span class=\"dlabel\">loot</span> z własnymi nagrodami z tych premii.",
+	"docs.articles.events-character.encouragement-reserved": "Jeśli ekwipunek jest pełny, te nagrody czekają w zarezerwowanej skrzyni i pojawiają się w <span class=\"dlabel\">loot</span>, gdy odbierzesz jej zawartość.",
 	"docs.guide.golden-bat.intro": "Lata po jaskini, dopóki ktoś go nie złapie. Ma 24 000 HP, atakuje tylko czasami i nigdy nie oddaje.",
 	"docs.guide.cute-bee.intro": "Wędruje po Mainland z zaledwie 300 HP i żądli każdego w pobliżu za potężne 16 obrażeń.",
 	"docs.guide.golden-bot.intro": "Wędruje po Underground Hills, dopóki ktoś go nie zatrzyma. Ma 500 000 HP, ale rzadko atakuje i nigdy nie oddaje.",

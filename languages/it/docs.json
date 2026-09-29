@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "L’evento <span class=\"dlabel\">loot</span> include gli oggetti dei bonus di incoraggiamento in <span class=\"dlabel\">items</span>, mentre <span class=\"dlabel\">looter</span> indica chi li riceve. Se qualcuno al di fuori del tuo gruppo attuale apre il forziere, ricevi comunque un evento <span class=\"dlabel\">loot</span> privato con le tue ricompense di incoraggiamento.",
+	"docs.articles.events-character.encouragement-reserved": "Se l’inventario è pieno, queste ricompense aspettano in un forziere riservato e compaiono in <span class=\"dlabel\">loot</span> quando ne raccogli il contenuto.",
 	"docs.guide.golden-bat.intro": "Svolazza per la grotta finché qualcuno non lo prende. Ha 24.000 HP, attacca solo ogni tanto e non risponde mai.",
 	"docs.guide.cute-bee.intro": "Vaga per Mainland con appena 300 HP e punge chiunque sia vicino per ben 16 danni.",
 	"docs.guide.golden-bot.intro": "Vaga per Underground Hills finché qualcuno non lo ferma. Ha 500.000 HP, ma attacca raramente e non risponde mai.",

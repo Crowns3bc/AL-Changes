@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Correzioni",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "I mostri ora si annoiano e si disimpegnano in base al loro livello di rabbia",
 	"update.29_08_22.nerfed_the_dark_mage": "Dark Mage indebolito",
+	"update.29_09_26.encouragement_loot": "Il bottino dei bonus di incoraggiamento ora compare nell’evento loot di CODE.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Targhette dei nomi migliori! (a livello di resa dei caratteri)",
 	"update.29_11_18.small_changes": "Piccoli cambiamenti",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Corretti Full Guard ed Elusione di Snowman",

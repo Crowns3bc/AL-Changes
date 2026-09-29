@@ -1753,6 +1753,12 @@ module.exports = {
 	// docs/articles/events-character.html:97; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged.
 	"docs.articles.events-character.emitted-for-chests-opened-by-you-or-your":
 		"Emitted for chests opened by you or your party. Item entries may include additional item properties and PVP loot markers.",
+	// docs/articles/events-character.html; Loot event reward fields and delivery outside the opener's party. Preserve HTML and the CODE identifiers loot, items and looter.
+	"docs.articles.events-character.encouragement-items":
+		'The <span class="dlabel">loot</span> event includes encouragement items in <span class="dlabel">items</span>, with <span class="dlabel">looter</span> naming the recipient. If someone outside your current party opens the chest, you still receive a private <span class="dlabel">loot</span> event for your own encouragement rewards.',
+	// docs/articles/events-character.html; Full-inventory bonus rewards appear in loot only when the reserved chest is collected. Preserve HTML and the CODE identifier loot.
+	"docs.articles.events-character.encouragement-reserved":
+		'If your inventory is full, those rewards wait in a reserved chest and appear in <span class="dlabel">loot</span> when you collect it.',
 	// docs/articles/events-character.html:51; Documentation p prose block. Keep Adventure Land, CODE symbols, and item/NPC/map/monster names unchanged. Fixed HTML: preserve every tag, attribute, handler and URL exactly; translate visible prose only. Locked inline code: ["hit"].
 	"docs.articles.events-character.emitted-when-an-action-is-sent-toward-your":
 		'Emitted when an action is sent toward your character. It describes the launch; use <span class="dlabel">hit</span> for the resolved result.',

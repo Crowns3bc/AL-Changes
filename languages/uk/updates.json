@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Виправлення помилок",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "Монстрам тепер набридає, і вони припиняють бій залежно від рівня своєї люті",
 	"update.29_08_22.nerfed_the_dark_mage": "Послаблено Dark Mage",
+	"update.29_09_26.encouragement_loot": "Здобич від бонусів заохочення тепер відображається в події loot у CODE.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Кращі таблички з іменами! (щодо промальовування шрифту)",
 	"update.29_11_18.small_changes": "Дрібні зміни",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Виправлено Full Guard / Ухилення у Snowman",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Το συμβάν <span class=\"dlabel\">loot</span> περιλαμβάνει τα αντικείμενα από τα μπόνους ενθάρρυνσης στο <span class=\"dlabel\">items</span>, ενώ το <span class=\"dlabel\">looter</span> ονομάζει τον παραλήπτη. Αν ανοίξει το σεντούκι κάποιος εκτός του τρέχοντος party σου, εξακολουθείς να λαμβάνεις ένα ιδιωτικό συμβάν <span class=\"dlabel\">loot</span> με τις δικές σου ανταμοιβές ενθάρρυνσης.",
+	"docs.articles.events-character.encouragement-reserved": "Αν το inventory σου είναι γεμάτο, αυτές οι ανταμοιβές περιμένουν σε ένα δεσμευμένο σεντούκι και εμφανίζονται στο <span class=\"dlabel\">loot</span> όταν συλλέξεις το περιεχόμενό του.",
 	"docs.guide.golden-bat.intro": "Φτερουγίζει στη σπηλιά μέχρι να το πιάσει κάποιος. Με 24.000 HP επιτίθεται μόνο κάπου κάπου και δεν ανταποδίδει ποτέ.",
 	"docs.guide.cute-bee.intro": "Περιπλανιέται στο Mainland με μόλις 300 HP και τσιμπάει όποιον βρίσκεται κοντά για τρομερή ζημιά 16.",
 	"docs.guide.golden-bot.intro": "Περιπλανιέται στο Underground Hills μέχρι να το σταματήσει κάποιος. Έχει 500.000 HP, αλλά σπάνια επιτίθεται και δεν ανταποδίδει ποτέ.",

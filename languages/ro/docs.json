@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Evenimentul <span class=\"dlabel\">loot</span> include obiectele din bonusurile de încurajare în <span class=\"dlabel\">items</span>, iar <span class=\"dlabel\">looter</span> indică destinatarul. Dacă cineva din afara echipei tale actuale deschide cufărul, primești în continuare un eveniment <span class=\"dlabel\">loot</span> privat cu propriile recompense de încurajare.",
+	"docs.articles.events-character.encouragement-reserved": "Dacă inventarul este plin, acele recompense așteaptă într-un cufăr rezervat și apar în <span class=\"dlabel\">loot</span> când îi colectezi conținutul.",
 	"docs.guide.golden-bat.intro": "Fâlfâie prin peșteră până îl prinde cineva. Cu 24.000 HP, atacă doar uneori și nu ripostează niciodată.",
 	"docs.guide.cute-bee.intro": "Rătăcește prin Mainland cu doar 300 HP și înțeapă pe oricine e aproape cu formidabilele 16 daune.",
 	"docs.guide.golden-bot.intro": "Rătăcește prin Underground Hills până îl oprește cineva. Are 500.000 HP, dar atacă rar și nu ripostează niciodată.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Sự kiện <span class=\"dlabel\">loot</span> chứa vật phẩm từ thưởng khích lệ trong <span class=\"dlabel\">items</span>, còn <span class=\"dlabel\">looter</span> cho biết người nhận. Nếu người ngoài nhóm hiện tại của bạn mở rương, bạn vẫn nhận được một sự kiện <span class=\"dlabel\">loot</span> riêng chứa phần thưởng khích lệ của chính mình.",
+	"docs.articles.events-character.encouragement-reserved": "Nếu túi đồ đầy, các phần thưởng đó sẽ chờ trong một rương dành riêng và xuất hiện trong <span class=\"dlabel\">loot</span> khi bạn lấy đồ trong rương.",
 	"docs.guide.golden-bat.intro": "Nó bay lượn khắp hang cho đến khi có người bắt được. Với 24.000 HP, nó chỉ thỉnh thoảng tấn công và không bao giờ đánh trả.",
 	"docs.guide.cute-bee.intro": "Nó lang thang khắp Mainland với vỏn vẹn 300 HP, chích bất kỳ ai ở gần với những 16 sát thương.",
 	"docs.guide.golden-bot.intro": "Nó lang thang khắp Underground Hills cho đến khi có người chặn lại. Nó có 500.000 HP nhưng hiếm khi tấn công và không bao giờ đánh trả.",

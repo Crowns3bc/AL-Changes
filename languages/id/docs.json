@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Event <span class=\"dlabel\">loot</span> menyertakan barang dari bonus penyemangat dalam <span class=\"dlabel\">items</span>, dengan <span class=\"dlabel\">looter</span> menunjukkan penerimanya. Jika seseorang di luar party-mu saat ini membuka peti, kamu tetap menerima event <span class=\"dlabel\">loot</span> pribadi untuk hadiah penyemangatmu sendiri.",
+	"docs.articles.events-character.encouragement-reserved": "Jika inventarismu penuh, hadiah tersebut menunggu di peti khusus dan muncul dalam <span class=\"dlabel\">loot</span> saat kamu mengambil isinya.",
 	"docs.guide.golden-bat.intro": "Ia melayang-layang di gua sampai ada yang menangkapnya. Dengan 24.000 HP, ia hanya sesekali menyerang dan tidak pernah membalas.",
 	"docs.guide.cute-bee.intro": "Ia berkeliaran di Mainland dengan hanya 300 HP, menyengat siapa pun di dekatnya dengan 16 kerusakan yang dahsyat.",
 	"docs.guide.golden-bot.intro": "Ia berkeliaran di Underground Hills sampai ada yang menghentikannya. Ia memiliki 500.000 HP, tetapi jarang menyerang dan tidak pernah membalas.",

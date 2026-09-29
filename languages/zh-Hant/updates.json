@@ -127,6 +127,7 @@
 	"update.17_01_23.lunar_new_year_event": "農曆新年活動",
 	"update.09_01_23.each_20_in_shells_purchase_will_fractionally_count_towards": "今後每購買$20貝殼，都會按比例計入開源進度，零頭也算",
 	"update.16_12_22.bugfixes": "錯誤修復",
+	"update.29_09_26.encouragement_loot": "鼓勵加成掉落現在會出現在 CODE 的 loot 事件中。",
 	"update.29_11_22.happy_holidays": "節日快樂！",
 	"update.29_11_22.reduced_3shot_5shot_mp_costs": "降低3shot/5shot魔力消耗",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "修復Snowman的全面防禦／傷害迴避",

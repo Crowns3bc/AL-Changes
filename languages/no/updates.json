@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Feilrettinger",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "Monstre blir nå lei og trekker seg ut av kampen ut fra sitt eget sinnenivå",
 	"update.29_08_22.nerfed_the_dark_mage": "Svekket Dark Mage",
+	"update.29_09_26.encouragement_loot": "Bytte fra oppmuntringsbonuser vises nå i CODEs loot-hendelse.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Bedre navneskilt! (når det gjelder skrifttegnvisningen)",
 	"update.29_11_18.small_changes": "Små endringer",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Rettet Full Guard og Unnvikelse hos Snowman",

@@ -127,6 +127,7 @@
 	"update.17_01_23.lunar_new_year_event": "旧正月イベント",
 	"update.09_01_23.each_20_in_shells_purchase_will_fractionally_count_towards": "今後、シェル購入額20ドルを1として、端数も含めてオープンソース化カウンターに加算されます",
 	"update.16_12_22.bugfixes": "不具合修正",
+	"update.29_09_26.encouragement_loot": "応援ボーナスのドロップが CODE の loot イベントに表示されるようになりました。",
 	"update.29_11_22.happy_holidays": "楽しいホリデーシーズンを！",
 	"update.29_11_22.reduced_3shot_5shot_mp_costs": "3shot/5shotの消費MPを軽減",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Snowmanの完全防御／全攻撃回避を修正",

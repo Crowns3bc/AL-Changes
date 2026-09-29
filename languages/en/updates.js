@@ -1,6 +1,8 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.encouragement_loot": "Encouragement drops now appear in CODE’s loot event.",
+	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.chat_spam": "Repeated public messages are now filtered out of Discord and saved chat history.",
 	// Fixed bug listed in the [24/09/26] update post "Rare Monsters, 15 Accessories and Trade Offers". Keep names from the game and CODE identifiers unchanged.
 	"update.24_09_26.rare_drops.false_jail": "Walking by the Tavern poker table and a few other spots no longer sends you to jail.",

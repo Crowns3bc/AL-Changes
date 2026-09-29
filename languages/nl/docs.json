@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Het <span class=\"dlabel\">loot</span>-event bevat voorwerpen uit aanmoedigingsbonussen in <span class=\"dlabel\">items</span>; <span class=\"dlabel\">looter</span> vermeldt de ontvanger. Als iemand buiten je huidige groep de kist opent, ontvang je nog steeds een privé-<span class=\"dlabel\">loot</span>-event met je eigen aanmoedigingsbeloningen.",
+	"docs.articles.events-character.encouragement-reserved": "Als je inventaris vol is, wachten die beloningen in een gereserveerde kist en verschijnen ze in <span class=\"dlabel\">loot</span> wanneer je de inhoud ophaalt.",
 	"docs.guide.golden-bat.intro": "Hij fladdert door de grot tot iemand hem vangt. Met 24.000 HP valt hij maar af en toe aan en slaat hij nooit terug.",
 	"docs.guide.cute-bee.intro": "Hij zwerft met maar 300 HP door Mainland en steekt iedereen in de buurt voor maar liefst 16 schade.",
 	"docs.guide.golden-bot.intro": "Hij zwerft door Underground Hills tot iemand hem tegenhoudt. Hij heeft 500.000 HP, maar valt zelden aan en slaat nooit terug.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Acara <span class=\"dlabel\">loot</span> menyertakan barang daripada bonus galakan dalam <span class=\"dlabel\">items</span>, dengan <span class=\"dlabel\">looter</span> menamakan penerima. Jika seseorang di luar parti semasa anda membuka peti, anda masih menerima acara <span class=\"dlabel\">loot</span> peribadi untuk ganjaran galakan anda sendiri.",
+	"docs.articles.events-character.encouragement-reserved": "Jika inventori anda penuh, ganjaran tersebut menunggu dalam peti yang dikhaskan dan muncul dalam <span class=\"dlabel\">loot</span> apabila anda mengambil kandungannya.",
 	"docs.guide.golden-bat.intro": "Ia berterbangan di dalam gua sehingga ada yang menangkapnya. Dengan 24,000 HP, ia hanya sekali-sekala menyerang dan tidak pernah membalas.",
 	"docs.guide.cute-bee.intro": "Ia merayau di Mainland dengan hanya 300 HP, menyengat sesiapa yang berdekatan dengan 16 kerosakan yang dahsyat.",
 	"docs.guide.golden-bot.intro": "Ia merayau di Underground Hills sehingga ada yang menghentikannya. Ia mempunyai 500,000 HP, tetapi jarang menyerang dan tidak pernah membalas.",

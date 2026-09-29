@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Подія <span class=\"dlabel\">loot</span> містить предмети від бонусів заохочення в полі <span class=\"dlabel\">items</span>, а <span class=\"dlabel\">looter</span> вказує одержувача. Якщо скриню відкриє хтось поза вашою поточною групою, ви все одно отримаєте приватну подію <span class=\"dlabel\">loot</span> зі своїми бонусними нагородами.",
+	"docs.articles.events-character.encouragement-reserved": "Якщо інвентар заповнений, ці нагороди чекають у зарезервованій скрині й з’являються в <span class=\"dlabel\">loot</span>, коли ви заберете її вміст.",
 	"docs.guide.golden-bat.intro": "Він літає печерою, доки хтось його не впіймає. Має 24 000 HP, лише зрідка нападає й ніколи не відповідає на атаку.",
 	"docs.guide.cute-bee.intro": "Він блукає Mainland, маючи лише 300 HP, і жалить усіх поблизу на цілих 16 шкоди.",
 	"docs.guide.golden-bot.intro": "Він блукає Underground Hills, доки хтось його не зупинить. Має 500 000 HP, але рідко нападає й ніколи не відповідає на атаку.",

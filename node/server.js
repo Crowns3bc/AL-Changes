@@ -11353,7 +11353,7 @@ function init_socket_io(socket_server, server_index) {
 					if (player.t) {
 						player.t.cgold += r.gold;
 					}
-					r.gold += encouragement_loot(chest, r.goldm, [player.name])[player.id] || 0;
+					r.gold += encouragement_loot(chest, r, [player.name])[player.id] || 0;
 					if (r.gold) {
 						socket.emit(
 							"game_log",
@@ -11504,7 +11504,7 @@ function init_socket_io(socket_server, server_index) {
 							party_emit(player.party, "game_log", item_message("server.item.lost", item, {}, { color: "#AB4E4F" }));
 						}
 					});
-					var encouragement_gold = encouragement_loot(chest, r.goldm, parties[player.party]);
+					var encouragement_gold = encouragement_loot(chest, r, parties[player.party]);
 					parties[player.party].forEach(function (name) {
 						var current = players[name_to_id[name]];
 						var cgold =

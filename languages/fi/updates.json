@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Virhekorjauksia",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "Hirviöt kyllästyvät nyt ja irtautuvat taistelusta vihatasonsa perusteella",
 	"update.29_08_22.nerfed_the_dark_mage": "Heikennettiin Dark Magea",
+	"update.29_09_26.encouragement_loot": "Kannustusbonusten saalis näkyy nyt CODEn loot-tapahtumassa.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Paremmat nimikyltit! (kirjasinten piirtämisen osalta)",
 	"update.29_11_18.small_changes": "Pieniä muutoksia",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Korjattiin Snowmanin Full Guard ja Väistö",

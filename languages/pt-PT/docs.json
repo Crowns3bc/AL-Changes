@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "O evento <span class=\"dlabel\">loot</span> inclui os artigos dos bónus de incentivo em <span class=\"dlabel\">items</span>, e <span class=\"dlabel\">looter</span> indica quem os recebe. Se alguém de fora do teu grupo atual abrir o baú, recebes na mesma um evento <span class=\"dlabel\">loot</span> privado com as tuas próprias recompensas de incentivo.",
+	"docs.articles.events-character.encouragement-reserved": "Se o inventário estiver cheio, essas recompensas ficam à espera num baú reservado e aparecem em <span class=\"dlabel\">loot</span> quando recolhes o seu conteúdo.",
 	"docs.guide.golden-bat.intro": "Esvoaça pela gruta até alguém o apanhar. Com 24 000 HP, só ataca de vez em quando e nunca riposta.",
 	"docs.guide.cute-bee.intro": "Vagueia por Mainland com apenas 300 HP e pica quem estiver perto com uns temíveis 16 de dano.",
 	"docs.guide.golden-bot.intro": "Vagueia por Underground Hills até alguém o travar. Tem 500 000 HP, mas raramente ataca e nunca riposta.",

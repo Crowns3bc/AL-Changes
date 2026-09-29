@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "L’événement <span class=\"dlabel\">loot</span> inclut les objets des bonus d’encouragement dans <span class=\"dlabel\">items</span>, et <span class=\"dlabel\">looter</span> indique leur destinataire. Si quelqu’un en dehors de votre groupe actuel ouvre le coffre, vous recevez tout de même un événement <span class=\"dlabel\">loot</span> privé contenant vos propres récompenses d’encouragement.",
+	"docs.articles.events-character.encouragement-reserved": "Si votre inventaire est plein, ces récompenses attendent dans un coffre réservé et apparaissent dans <span class=\"dlabel\">loot</span> lorsque vous récupérez son contenu.",
 	"docs.guide.golden-bat.intro": "Il voltige dans la grotte jusqu’à ce que quelqu’un l’attrape. Avec 24 000 HP, il n’attaque que de temps en temps et ne riposte jamais.",
 	"docs.guide.cute-bee.intro": "Il erre dans Mainland avec seulement 300 HP et pique tout ce qui l’approche pour de redoutables 16 dégâts.",
 	"docs.guide.golden-bot.intro": "Il erre dans Underground Hills jusqu’à ce que quelqu’un l’arrête. Il a 500 000 HP, mais attaque rarement et ne riposte jamais.",

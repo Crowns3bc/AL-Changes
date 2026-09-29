@@ -3,7 +3,7 @@ const PUBLIC_PATHS = ["/", "/docs", "/linux", "/mainframe", "/vscode", "/hub"];
 
 const DOCS_PATHS = [
 	"/docs/code",
-	"/docs/code/character/events",
+	"/docs/code/character/events", // Includes loot events for encouragement rewards.
 	"/docs/code/character/reference",
 	"/docs/code/data",
 	"/docs/code/functions",

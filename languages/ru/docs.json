@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Событие <span class=\"dlabel\">loot</span> включает предметы от бонусов поддержки в поле <span class=\"dlabel\">items</span>, а <span class=\"dlabel\">looter</span> указывает получателя. Если сундук откроет кто-то вне вашей текущей группы, вы всё равно получите личное событие <span class=\"dlabel\">loot</span> со своими бонусными наградами.",
+	"docs.articles.events-character.encouragement-reserved": "Если инвентарь заполнен, эти награды ждут в зарезервированном сундуке и появляются в <span class=\"dlabel\">loot</span>, когда вы заберёте его содержимое.",
 	"docs.guide.golden-bat.intro": "Он летает по пещере, пока кто-нибудь его не поймает. У него 24 000 HP, он лишь изредка нападает и никогда не отвечает на атаку.",
 	"docs.guide.cute-bee.intro": "Он бродит по Mainland, имея всего 300 HP, и жалит всех поблизости на целых 16 урона.",
 	"docs.guide.golden-bot.intro": "Он бродит по Underground Hills, пока кто-нибудь его не остановит. У него 500 000 HP, но он редко нападает и никогда не отвечает на атаку.",

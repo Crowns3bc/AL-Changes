@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Поправки на грешки",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "Чудовищата вече се отегчават и се отказват от боя според нивото си на ярост",
 	"update.29_08_22.nerfed_the_dark_mage": "Отслабихме Dark Mage",
+	"update.29_09_26.encouragement_loot": "Плячката от насърчителните бонуси вече се показва в събитието loot в CODE.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "По-добри табелки с имена! (по отношение на изчертаването на шрифта)",
 	"update.29_11_18.small_changes": "Дребни промени",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Поправени са Full Guard и Избягване при Snowman",

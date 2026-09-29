@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Hændelsen <span class=\"dlabel\">loot</span> indeholder genstande fra opmuntringsbonusser i <span class=\"dlabel\">items</span>, og <span class=\"dlabel\">looter</span> angiver modtageren. Hvis nogen uden for din nuværende gruppe åbner kisten, modtager du stadig en privat <span class=\"dlabel\">loot</span>-hændelse med dine egne opmuntringsbelønninger.",
+	"docs.articles.events-character.encouragement-reserved": "Hvis dit inventory er fuldt, venter de belønninger i en reserveret kiste og vises i <span class=\"dlabel\">loot</span>, når du henter indholdet.",
 	"docs.guide.golden-bat.intro": "Den flagrer rundt i hulen, indtil nogen fanger den. Med 24.000 HP angriber den kun nogle gange og slår aldrig igen.",
 	"docs.guide.cute-bee.intro": "Den vandrer rundt i Mainland med kun 300 HP og stikker alle i nærheden for mægtige 16 skade.",
 	"docs.guide.golden-bot.intro": "Den vandrer rundt i Underground Hills, indtil nogen stopper den. Den har 500.000 HP, men angriber sjældent og slår aldrig igen.",

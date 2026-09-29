@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "<span class=\"dlabel\">loot</span> olayı, teşvik eşyalarını <span class=\"dlabel\">items</span> alanında içerir; alıcıyı <span class=\"dlabel\">looter</span> belirtir. Sandığı mevcut grubunuzun dışından biri açsa da kendi teşvik ödülleriniz için yalnızca size gönderilen bir <span class=\"dlabel\">loot</span> olayı alırsınız.",
+	"docs.articles.events-character.encouragement-reserved": "Envanteriniz doluysa bu ödüller size ayrılmış bir sandıkta bekler ve sandıktakileri aldığınızda <span class=\"dlabel\">loot</span> olayında görünür.",
 	"docs.guide.golden-bat.intro": "Biri onu yakalayana kadar mağarada uçup durur. 24.000 HP'si vardır; yalnızca ara sıra saldırır ve asla karşılık vermez.",
 	"docs.guide.cute-bee.intro": "Yalnızca 300 HP ile Mainland'de dolaşır ve yakınındaki herkesi tam tamına 16 hasarla sokar.",
 	"docs.guide.golden-bot.intro": "Biri onu durdurana kadar Underground Hills'te dolaşır. 500.000 HP'si vardır ama nadiren saldırır ve asla karşılık vermez.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Събитието <span class=\"dlabel\">loot</span> включва предметите от насърчителните бонуси в <span class=\"dlabel\">items</span>, а <span class=\"dlabel\">looter</span> посочва получателя. Ако сандъкът бъде отворен от някого извън текущата ви група, пак получавате лично събитие <span class=\"dlabel\">loot</span> със собствените си насърчителни награди.",
+	"docs.articles.events-character.encouragement-reserved": "Ако инвентарът ви е пълен, тези награди чакат в запазен сандък и се появяват в <span class=\"dlabel\">loot</span>, когато вземете съдържанието му.",
 	"docs.guide.golden-bat.intro": "Лети из пещерата, докато някой не го хване. Има 24 000 HP, напада само понякога и никога не отвръща.",
 	"docs.guide.cute-bee.intro": "Броди из Mainland само с 300 HP и жили всеки наблизо за цели 16 щети.",
 	"docs.guide.golden-bot.intro": "Броди из Underground Hills, докато някой не го спре. Има 500 000 HP, но рядко напада и никога не отвръща.",

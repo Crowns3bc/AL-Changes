@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "يتضمن الحدث <span class=\"dlabel\">loot</span> أغراض مكافآت التشجيع في <span class=\"dlabel\">items</span>، ويحدد <span class=\"dlabel\">looter</span> المستلم. إذا فتح الصندوق شخص من خارج مجموعتك الحالية، فستتلقى مع ذلك حدث <span class=\"dlabel\">loot</span> خاصًا بك يتضمن مكافآت التشجيع الخاصة بك.",
+	"docs.articles.events-character.encouragement-reserved": "إذا كان مخزونك ممتلئًا، تنتظر تلك المكافآت في صندوق محجوز وتظهر في <span class=\"dlabel\">loot</span> عندما تجمع محتوياته.",
 	"docs.guide.golden-bat.intro": "يرفرف في الكهف حتى يمسكه أحد. لديه 24,000 HP، لا يهاجم إلا أحيانًا ولا يرد الضربة أبدًا.",
 	"docs.guide.cute-bee.intro": "يتجول في Mainland بـ300 HP فقط، ويلسع كل من بالقرب منه بضرر هائل قدره 16.",
 	"docs.guide.golden-bot.intro": "يتجول في Underground Hills حتى يوقفه أحد. لديه 500,000 HP، لكنه نادرًا ما يهاجم ولا يرد الضربة أبدًا.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "El evento <span class=\"dlabel\">loot</span> incluye los objetos de las bonificaciones de ánimo en <span class=\"dlabel\">items</span>, y <span class=\"dlabel\">looter</span> indica quién los recibe. Si alguien que no está en tu grupo actual abre el cofre, recibirás de todos modos un evento <span class=\"dlabel\">loot</span> privado con tus propias recompensas de ánimo.",
+	"docs.articles.events-character.encouragement-reserved": "Si tu inventario está lleno, esas recompensas esperan en un cofre reservado y aparecen en <span class=\"dlabel\">loot</span> cuando recoges su contenido.",
 	"docs.guide.golden-bat.intro": "Revolotea por la cueva hasta que alguien lo atrapa. Con 24,000 HP, solo ataca de vez en cuando y nunca devuelve el golpe.",
 	"docs.guide.cute-bee.intro": "Deambula por Mainland con apenas 300 HP y pica a quien esté cerca con unos temibles 16 de daño.",
 	"docs.guide.golden-bot.intro": "Deambula por Underground Hills hasta que alguien lo detiene. Tiene 500,000 HP, pero rara vez ataca y nunca devuelve el golpe.",

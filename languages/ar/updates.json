@@ -127,6 +127,7 @@
 	"update.17_01_23.lunar_new_year_event": "فعالية رأس السنة القمرية",
 	"update.09_01_23.each_20_in_shells_purchase_will_fractionally_count_towards": "من الآن فصاعدا، تُحتسب مشتريات الأصداف في عداد فتح المصدر بنسبة ما تمثله من كل $20",
 	"update.16_12_22.bugfixes": "إصلاحات أخطاء",
+	"update.29_09_26.encouragement_loot": "غنائم مكافآت التشجيع تظهر الآن في حدث loot في CODE.",
 	"update.29_11_22.happy_holidays": "أعيادا سعيدة!",
 	"update.29_11_22.reduced_3shot_5shot_mp_costs": "خُفضت تكلفة MP لـ 3shot/5shot",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "أُصلحت حراسة كاملة / تجنب لدى Snowman",

@@ -713,6 +713,7 @@
 	"update.29_08_22.bugfixes": "Hibajavítások",
 	"update.29_08_22.monsters_now_get_bored_and_disengage_based_on_their": "A szörnyek mostantól megunják a harcot, és a dühük szintje alapján hagyják abba",
 	"update.29_08_22.nerfed_the_dark_mage": "Gyengítettük a Dark Mage-et",
+	"update.29_09_26.encouragement_loot": "Az ösztönző bónuszok zsákmánya mostantól megjelenik a CODE loot eseményében.",
 	"update.29_11_18.better_name_tags_font_rendering_wise": "Jobb névtáblák! (a betűk megjelenítése szempontjából)",
 	"update.29_11_18.small_changes": "Apró változások",
 	"update.29_11_22.fixed_snowman_s_full_guard_avoidance": "Javítottuk a Snowman Full Guard és Kitérés képességét",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "O evento <span class=\"dlabel\">loot</span> inclui os itens dos bônus de incentivo em <span class=\"dlabel\">items</span>, e <span class=\"dlabel\">looter</span> indica quem os recebe. Se alguém de fora do seu grupo atual abrir o baú, você ainda receberá um evento <span class=\"dlabel\">loot</span> privado com suas próprias recompensas de incentivo.",
+	"docs.articles.events-character.encouragement-reserved": "Se seu inventário estiver cheio, essas recompensas ficam em um baú reservado e aparecem em <span class=\"dlabel\">loot</span> quando você recolhe o conteúdo dele.",
 	"docs.guide.golden-bat.intro": "Ele voa pela caverna até alguém pegá-lo. Com 24.000 HP, só ataca de vez em quando e nunca revida.",
 	"docs.guide.cute-bee.intro": "Ele vaga por Mainland com só 300 HP, picando quem estiver por perto com impressionantes 16 de dano.",
 	"docs.guide.golden-bot.intro": "Ele vaga por Underground Hills até alguém detê-lo. Tem 500.000 HP, mas raramente ataca e nunca revida.",

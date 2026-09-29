@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "A <span class=\"dlabel\">loot</span> esemény az ösztönző bónuszok tárgyait is tartalmazza az <span class=\"dlabel\">items</span> mezőben, a címzettet pedig a <span class=\"dlabel\">looter</span> jelöli. Ha a jelenlegi partydon kívül valaki nyitja ki a ládát, akkor is kapsz egy privát <span class=\"dlabel\">loot</span> eseményt a saját ösztönző jutalmaidról.",
+	"docs.articles.events-character.encouragement-reserved": "Ha tele az inventoryd, ezek a jutalmak egy fenntartott ládában várnak, és akkor jelennek meg a <span class=\"dlabel\">loot</span> eseményben, amikor begyűjtöd a láda tartalmát.",
 	"docs.guide.golden-bat.intro": "Addig röpköd a barlangban, amíg valaki el nem kapja. 24 000 HP-ja van, csak néha támad, és sosem üt vissza.",
 	"docs.guide.cute-bee.intro": "Mindössze 300 HP-val kóborol Mainland területén, és a közelében mindenkit megcsíp elsöprő 16 sebzéssel.",
 	"docs.guide.golden-bot.intro": "Addig kóborol Underground Hills területén, amíg valaki meg nem állítja. 500 000 HP-ja van, de ritkán támad, és sosem üt vissza.",

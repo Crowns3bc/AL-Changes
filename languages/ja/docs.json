@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "<span class=\"dlabel\">loot</span> イベントの <span class=\"dlabel\">items</span> には応援ボーナスのアイテムも含まれ、<span class=\"dlabel\">looter</span> に受取人が示されます。現在のパーティー外の誰かが箱を開けた場合も、自分の応援報酬について、自分だけに届く <span class=\"dlabel\">loot</span> イベントを受け取れます。",
+	"docs.articles.events-character.encouragement-reserved": "インベントリが満杯の場合、その報酬は専用の箱で待機し、中身を受け取ったときに <span class=\"dlabel\">loot</span> に表示されます。",
 	"docs.guide.golden-bat.intro": "誰かに捕まるまで洞窟を飛び回ります。HPは24,000で、たまにしか攻撃せず、決して反撃しません。",
 	"docs.guide.cute-bee.intro": "HPわずか300でMainlandをうろつき、近くの者を16という強烈なダメージで刺します。",
 	"docs.guide.golden-bot.intro": "誰かに止められるまでUnderground Hillsをうろつきます。HPは500,000ですが、めったに攻撃せず、決して反撃しません。",

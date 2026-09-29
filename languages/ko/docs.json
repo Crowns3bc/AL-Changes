@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "<span class=\"dlabel\">loot</span> 이벤트의 <span class=\"dlabel\">items</span>에는 응원 보너스 아이템도 포함되며, <span class=\"dlabel\">looter</span>는 수령자를 나타냅니다. 현재 파티 밖의 누군가가 상자를 열어도 자신의 응원 보상에 대한 비공개 <span class=\"dlabel\">loot</span> 이벤트를 받습니다.",
+	"docs.articles.events-character.encouragement-reserved": "인벤토리가 가득 차면 해당 보상은 전용 상자에서 기다리며, 상자 내용물을 수령할 때 <span class=\"dlabel\">loot</span>에 표시됩니다.",
 	"docs.guide.golden-bat.intro": "누군가 잡을 때까지 동굴을 날아다녀요. HP는 24,000이고, 가끔만 공격하며 절대 반격하지 않아요.",
 	"docs.guide.cute-bee.intro": "HP 겨우 300으로 Mainland를 돌아다니며 근처의 누구든 무려 16의 피해로 쏘아요.",
 	"docs.guide.golden-bot.intro": "누군가 멈출 때까지 Underground Hills를 돌아다녀요. HP는 500,000이지만 거의 공격하지 않고 절대 반격하지 않아요.",

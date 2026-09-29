@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Kasama sa <span class=\"dlabel\">items</span> ng <span class=\"dlabel\">loot</span> event ang mga item mula sa pampasiglang bonus, at tinutukoy ng <span class=\"dlabel\">looter</span> ang tatanggap. Kung may nagbukas ng chest na hindi kasali sa kasalukuyan mong party, makakatanggap ka pa rin ng pribadong <span class=\"dlabel\">loot</span> event para sa sarili mong mga pampasiglang reward.",
+	"docs.articles.events-character.encouragement-reserved": "Kung punô ang inventory mo, maghihintay ang mga reward na iyon sa isang nakareserbang chest at lalabas sa <span class=\"dlabel\">loot</span> kapag kinuha mo ang laman nito.",
 	"docs.guide.golden-bat.intro": "Lumilipad-lipad ito sa kuweba hanggang may makahuli rito. May 24,000 HP ito, paminsan-minsan lang umaatake at hindi kailanman gumaganti.",
 	"docs.guide.cute-bee.intro": "Gumagala ito sa Mainland na may 300 HP lang, at tinutusok ang sinumang malapit nang may napakalakas na 16 na pinsala.",
 	"docs.guide.golden-bot.intro": "Gumagala ito sa Underground Hills hanggang may pumigil dito. May 500,000 HP ito, pero bihirang umatake at hindi kailanman gumaganti.",

@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Händelsen <span class=\"dlabel\">loot</span> innehåller föremål från uppmuntransbonusar i <span class=\"dlabel\">items</span>, och <span class=\"dlabel\">looter</span> anger mottagaren. Om någon utanför din nuvarande grupp öppnar kistan får du ändå en privat <span class=\"dlabel\">loot</span>-händelse med dina egna bonusbelöningar.",
+	"docs.articles.events-character.encouragement-reserved": "Om inventariet är fullt väntar de belöningarna i en reserverad kista och visas i <span class=\"dlabel\">loot</span> när du hämtar innehållet.",
 	"docs.guide.golden-bat.intro": "Den fladdrar runt i grottan tills någon fångar den. Med 24 000 HP anfaller den bara ibland och slår aldrig tillbaka.",
 	"docs.guide.cute-bee.intro": "Den vandrar runt i Mainland med bara 300 HP och sticker alla i närheten för mäktiga 16 skada.",
 	"docs.guide.golden-bot.intro": "Den vandrar runt i Underground Hills tills någon stoppar den. Den har 500 000 HP men anfaller sällan och slår aldrig tillbaka.",

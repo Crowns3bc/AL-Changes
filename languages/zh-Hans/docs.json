@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "<span class=\"dlabel\">loot</span> 事件的 <span class=\"dlabel\">items</span> 中会包含鼓励加成物品，<span class=\"dlabel\">looter</span> 标明领取者。即使开箱的人不在你当前的队伍中，你仍会收到一个仅发给你的 <span class=\"dlabel\">loot</span> 事件，其中包含你自己的鼓励奖励。",
+	"docs.articles.events-character.encouragement-reserved": "如果物品栏已满，这些奖励会留在专属箱子中，等你领取箱内物品时才会出现在 <span class=\"dlabel\">loot</span> 中。",
 	"docs.guide.golden-bat.intro": "它会在洞穴里飞来飞去，直到有人抓住它。它有24,000 HP，只是偶尔攻击，从不反击。",
 	"docs.guide.cute-bee.intro": "它只有300 HP，在Mainland四处游荡，用足足16点伤害蜇附近的人。",
 	"docs.guide.golden-bot.intro": "它会在Underground Hills游荡，直到有人拦住它。它有500,000 HP，但很少攻击，从不反击。",

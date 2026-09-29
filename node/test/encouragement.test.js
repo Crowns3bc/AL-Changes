@@ -686,6 +686,18 @@ test("opener, party changes and forged conditions cannot steal a sealed personal
 	assert.equal(p.gold, 140000);
 	assert.equal(h.inventory.get(p.real_id).length, 1);
 	assert.equal(h.inventory.get(opener.real_id).length, 1);
+	for (const current of [p, opener]) {
+		const opened = h.events.filter((e) => e.name === current.name && e.event === "chest_opened");
+		assert.equal(opened.length, 1);
+		assert.equal(opened[0].data.id, id);
+		assert.equal(opened[0].data.opener, opener.name);
+		assert.equal(opened[0].data.goldm, 10);
+		assert.equal(opened[0].data.gold, current.gold);
+		assert.deepEqual(
+			opened[0].data.items.map((item) => item.looter),
+			[current.name],
+		);
+	}
 	assert.deepEqual(
 		h.events.filter((e) => e.event === "game_log" && e.data.color === "gold").map((e) => [e.name, e.data.message]),
 		[
@@ -825,6 +837,7 @@ test("full inventory reserves one fixed result; another character and duplicate 
 	h.c.drop_something(p, m);
 	p.full = true;
 	h.open(other, Object.keys(h.c.chests)[0]);
+	assert.equal(h.events.filter((e) => e.name === p.name && e.event === "chest_opened").length, 0);
 	const id = Object.keys(h.c.chests)[0];
 	assert(h.c.chests[id].character === p.real_id);
 	h.open(other, id);
@@ -836,12 +849,142 @@ test("full inventory reserves one fixed result; another character and duplicate 
 	h.open(p, id);
 	assert.equal(p.gold, 14000);
 	assert.equal(h.inventory.get(p.real_id).length, 1);
+	const opened = h.events.filter((e) => e.name === p.name && e.event === "chest_opened" && !e.data.gone);
+	assert.equal(opened.length, 1);
+	assert.equal(opened[0].data.id, id);
+	assert.equal(opened[0].data.goldm, 1);
+	assert.equal(opened[0].data.gold, 14000);
+	assert.deepEqual(
+		opened[0].data.items.map((item) => [item.name, item.looter]),
+		[["ringsj", p.name]],
+	);
 	assert.deepEqual(
 		h.events
 			.filter((e) => e.name === p.name && e.event === "game_log" && e.data.color === "gold")
 			.map((e) => e.data.message),
 		["14000 gold"],
 	);
+});
+
+for (const party of [false, true])
+	for (const ordinaryDrop of [false, true])
+		test(`non-coop Bee loot event includes ${ordinaryDrop ? "normal and bonus" : "bonus-only"} drops ${party ? "for the party" : "solo"}`, () => {
+			const h = harness(),
+				p = h.player("Reporter", { goldm: 1.815 }),
+				other = h.player("Other");
+			h.eligible(p);
+			if (party) {
+				p.party = other.party = "team";
+				p.share = other.share = 0.5;
+				h.c.parties.team = [p.name, other.name];
+			}
+			assert(!G.monsters.bee.cooperative);
+			h.c.D.drops.monsters.bee = plain(G.drops.monsters.bee);
+			h.c.D.monster_gold.bee = G.monster_gold.bee;
+			const m = h.monster(p, { type: "bee", hp: 0, max_hp: G.monsters.bee.hp });
+			h.c.encouragement_points(m, p, m.max_hp);
+			h.roll(ordinaryDrop ? 0.005 : 0.5);
+			h.c.drop_something(p, m);
+			const id = Object.keys(h.c.chests)[0];
+			assert.equal(h.c.chests[id].items.length, ordinaryDrop ? 1 : 0);
+			h.roll(0.05);
+			h.open(p, id);
+			const received = h.inventory.get(p.real_id).slice();
+			assert.equal(received.length, ordinaryDrop ? 2 : 1);
+			for (const current of party ? [p, other] : [p]) {
+				const opened = h.events.filter((e) => e.name === current.name && e.event === "chest_opened");
+				assert.equal(opened.length, 1);
+				assert.equal(opened[0].data.gold, current.gold);
+				assert.deepEqual(
+					opened[0].data.items,
+					received.map((item) => ({ ...item, looter: p.name })),
+				);
+				assert(opened[0].data.items.every((item) => item.name === "beewings" && (item.q || 1) === 1));
+			}
+			h.open(p, id);
+			assert.equal(h.inventory.get(p.real_id).length, received.length);
+			assert.equal(h.events.filter((e) => e.name === p.name && e.event === "chest_opened" && !e.data.gone).length, 1);
+			assert.equal(h.queries.length, 0, "loot reporting does not query the database");
+		});
+
+test("loot caches only the awarded quantity when both drops join an existing stack", () => {
+	const h = harness(),
+		p = h.player();
+	h.eligible(p);
+	const source = read("node/server_functions.js");
+	vm.runInContext(source.slice(source.indexOf("var item_p_ignore ="), source.indexOf("function cache_item(")), h.c);
+	load(h.c, "node/server_functions.js", ["cache_item"]);
+	load(h.c, "node/server.js", ["add_item"]);
+	h.c.a_score = {};
+	h.c.can_stack = (a, b) => a && b && a.name === b.name;
+	p.items = [{ name: "beewings", q: 100 }];
+	p.citems = [];
+	p.esize = 41;
+	h.c.D.drops.monsters.bee = [[1, "beewings", 7]];
+	const m = h.monster(p, { type: "bee", hp: 0 });
+	h.c.encouragement_points(m, p, 1000);
+	h.c.drop_something(p, m);
+	h.open(p, Object.keys(h.c.chests)[0]);
+	assert.equal(p.items.length, 1);
+	assert.equal(p.items[0].q, 114);
+	const opened = h.events.find((e) => e.name === p.name && e.event === "chest_opened").data;
+	assert.equal(opened.items.length, 2);
+	for (const item of opened.items) assert.deepEqual(item, { name: "beewings", q: 7, looter: p.name });
+});
+
+test("party loot keeps each bonus item's recipient and does not report reserved items early", () => {
+	for (const full of [false, true]) {
+		const h = harness(),
+			p = h.player(),
+			other = h.player("Other");
+		h.eligible(p);
+		h.eligible(other);
+		p.party = other.party = "team";
+		p.share = other.share = 0.5;
+		h.c.parties.team = [p.name, other.name];
+		h.c.D.drops.monsters.goo = [[1, "ringsj"]];
+		const m = h.monster(p, { hp: 0 });
+		h.c.encouragement_points(m, p, 500);
+		h.c.encouragement_points(m, other, 500);
+		h.c.drop_something(p, m);
+		// The ordinary item fits, but the first recipient's next item may not.
+		h.c.can_add_items = (current) => !full || current !== p || !h.inventory.get(p.real_id).length;
+		h.roll(0);
+		h.open(p, Object.keys(h.c.chests)[0]);
+		for (const current of [p, other]) {
+			const opened = h.events.filter((e) => e.name === current.name && e.event === "chest_opened");
+			assert.equal(opened.length, 1);
+			assert.deepEqual(
+				opened[0].data.items.map((item) => item.looter),
+				full ? [p.name, other.name] : [p.name, p.name, other.name],
+			);
+		}
+		assert.equal(h.inventory.get(p.real_id).length, full ? 1 : 2);
+		assert.equal(h.inventory.get(other.real_id).length, 1);
+		assert.equal(Object.keys(h.c.chests).length, full ? 1 : 0);
+	}
+});
+
+test("outside-party receipts preserve dry/stale flags and omit empty item lists", () => {
+	for (const reward of ["gold", "none", "invalid"]) {
+		const h = harness(),
+			p = h.player(),
+			opener = h.player("Opener", { goldm: 100 });
+		h.eligible(p);
+		const m = h.monster(p, { hp: 0 });
+		h.c.encouragement_points(m, p, 1000);
+		h.c.drop_something(p, m);
+		const id = Object.keys(h.c.chests)[0];
+		if (reward === "none") h.c.chests[id].encouragement_gold = 0;
+		if (reward === "invalid") p.owner = "changed-owner";
+		h.c.simple_distance = () => 401;
+		h.time(h.now() + 9 * 60000);
+		h.open(opener, id);
+		const opened = h.events.filter((e) => e.name === p.name && e.event === "chest_opened");
+		assert.equal(opened.length, reward === "gold" ? 1 : 0);
+		if (reward === "gold")
+			assert.deepEqual(opened[0].data, { id, goldm: 1, opener: opener.name, gold: 14000, dry: true, stale: true });
+	}
 });
 
 test("PvP reduces both sides by the persistent XP maximum without awarding new encouragement", () => {
@@ -1352,9 +1495,11 @@ test("a finalized personal receipt is consumed once, even if the completion help
 	h.c.encouragement_points(m, p, 1000);
 	h.c.drop_something(p, m);
 	const chest = Object.values(h.c.chests)[0];
-	h.c.encouragement_loot(chest, 1);
-	h.c.encouragement_loot(chest, 1);
+	const result = { id: chest.id, goldm: 1, opener: p.name, items: [] };
+	h.c.encouragement_loot(chest, result, [p.name]);
+	h.c.encouragement_loot(chest, result, [p.name]);
 	assert.equal(h.inventory.get(p.real_id).length, 1);
+	assert.equal(result.items.length, 1);
 	assert.equal(p.gold, 14000);
 });
 

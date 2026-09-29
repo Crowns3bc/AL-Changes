@@ -442,7 +442,7 @@ function encouragement_chest(player, monster, chest, share) {
 		};
 }
 
-function encouragement_loot(chest, goldm, looters) {
+function encouragement_loot(chest, r, looters) {
 	var receipts = chest.encouragement || [],
 		golds = {};
 	delete chest.encouragement;
@@ -465,27 +465,41 @@ function encouragement_loot(chest, goldm, looters) {
 				receipt.luck,
 				{ home: receipt.home, pvp: receipt.pvp },
 			);
-		var gold = Math.floor(((chest.encouragement_gold || 0) * goldm + (chest.egold || 0)) * receipt.gold);
+		var gold = Math.floor(((chest.encouragement_gold || 0) * r.goldm + (chest.egold || 0)) * receipt.gold);
 		// A reserved ordinary chest keeps a full inventory from losing or rerolling the result.
 		if (!can_add_items(player, drop.items)) {
 			drop_one_thing(player, [], { reserved: drop, gold: gold, character: receipt.id, group: receipt.group });
 			continue;
 		}
+		var result = in_arr(player.name, looters) ? r : { id: r.id, goldm: r.goldm, opener: r.opener, items: [] };
 		for (var item of drop.items) {
 			add_item(player, item, { found: 1, m: 1, v: B.v });
+			var ritem = cache_item(item);
+			ritem.looter = player.name;
+			result.items.push(ritem);
 			player.socket.emit("game_log", item_message("server.item.found", item, {}, { color: "#4BAEAA" }));
 		}
 		if (drop.cash) add_shells(player, drop.cash, "chest", true, "override");
 		gold = server_tax(gold);
 		player.gold += gold;
 		if (player.t) player.t.cgold += gold;
-		if (looters && in_arr(player.name, looters)) golds[player.id] = gold;
+		if (result === r) golds[player.id] = gold;
 		else if (gold)
 			player.socket.emit(
 				"game_log",
 				localization.message("server.game_log.gold", { amount: String(to_pretty_num(gold)) }, { color: "gold" }),
 			);
-		if (gold || drop.items.length || drop.cash) resend(player, "reopen+nc+inv");
+		if (gold || drop.items.length || drop.cash) {
+			resend(player, "reopen+nc+inv");
+			// Contributors outside the opener's current party do not receive its chest event.
+			if (result !== r) {
+				result.gold = gold;
+				if (r.dry) result.dry = true;
+				if (r.stale) result.stale = true;
+				if (!result.items.length) delete result.items;
+				player.socket.emit("chest_opened", result);
+			}
+		}
 	}
 	return golds;
 }

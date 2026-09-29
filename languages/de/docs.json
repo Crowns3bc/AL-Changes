@@ -1,4 +1,6 @@
 {
+	"docs.articles.events-character.encouragement-items": "Das Ereignis <span class=\"dlabel\">loot</span> enthält Gegenstände aus Ermutigungsboni in <span class=\"dlabel\">items</span>; <span class=\"dlabel\">looter</span> nennt den Empfänger. Öffnet jemand außerhalb deiner aktuellen Gruppe die Truhe, erhältst du trotzdem ein privates <span class=\"dlabel\">loot</span>-Ereignis mit deinen eigenen Bonusbelohnungen.",
+	"docs.articles.events-character.encouragement-reserved": "Ist dein Inventar voll, warten diese Belohnungen in einer reservierten Truhe und erscheinen in <span class=\"dlabel\">loot</span>, wenn du ihren Inhalt einsammelst.",
 	"docs.guide.golden-bat.intro": "Er flattert durch die Höhle, bis ihn jemand fängt. Mit 24.000 HP greift er nur manchmal an und schlägt nie zurück.",
 	"docs.guide.cute-bee.intro": "Er streift mit nur 300 HP durch Mainland und sticht alle in der Nähe für gewaltige 16 Schaden.",
 	"docs.guide.golden-bot.intro": "Er streift durch Underground Hills, bis ihn jemand aufhält. Er hat 500.000 HP, greift aber selten an und schlägt nie zurück.",
