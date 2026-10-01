@@ -53,22 +53,37 @@ var socket_cors = {
 	// credentials: true,
 };
 var json_socket_parser = json_parser.createParser();
-// #performance spree [26/09/26]: compress frames over 1KB - entity payloads repeat the same keys, egress at 150 players ~15 -> ~5 Mbit/s with the rest of the spree
-// level 1 and no context takeover: zlib runs on libuv threads, one window per message instead of a live stream per socket
-var socket_deflate = {
-	threshold: 1024, // action/hit/player packets stay raw, framing would cost more than it saves
-	serverNoContextTakeover: true,
-	clientNoContextTakeover: true,
-	zlibDeflateOptions: { level: 1 },
-	concurrencyLimit: 20, // zlib jobs in flight on the thread pool
-};
+// #performance spree [01/10/26]: no permessage-deflate - it halved egress but cost ~20% of the game server's CPU (zlib per socket)
+// and turned off socket.io's broadcast fast path (one pre-encoded frame for every recipient) - bandwidth is free, the shared host's CPU isn't
+// each engine.io socket also flushes once per tick: the packets it gets in one synchronous run leave as one write instead of one write each
+// fewer syscalls and TCP packets for nginx to proxy - both together: CPU -18..22%, instance loop -7..14% on a replay of EU I's population
+function coalesce_socket_writes(socket_server) {
+	socket_server.engine.on("connection", function (conn) {
+		var flush = conn.flush,
+			queued = false;
+		function run() {
+			queued = false;
+			var raw = conn.transport && conn.transport.socket && conn.transport.socket._socket; // ws keeps its net.Socket here, polling has none
+			if (raw) raw.cork();
+			try {
+				flush.call(conn);
+			} finally {
+				if (raw) raw.uncork();
+			}
+		}
+		conn.flush = function () {
+			if (queued) return;
+			queued = true;
+			process.nextTick(run);
+		};
+	});
+}
 var io = new SocketIOServer(http_server, {
 	path: server_def.path,
 	pingInterval: 4000,
 	pingTimeout: 12000,
 	cors: socket_cors,
 	parser: json_socket_parser, // node/json_parser.js - pre-built entity frames skip socket.io's per-recipient JSON.stringify
-	perMessageDeflate: socket_deflate,
 }); // default is 25000 to 60000
 var msgpack_path = server_def.msgpack_path;
 if (!msgpack_path) throw new Error("Missing msgpack_path for server " + server_key);
@@ -80,9 +95,9 @@ var msgpack_io = new SocketIOServer(http_server, {
 	pingTimeout: 12000,
 	cors: socket_cors,
 	parser: msgpack_parser.createParser({ maxPacketBytes: 64 * 1024 }),
-	perMessageDeflate: socket_deflate,
 });
 var game_ios = [io, msgpack_io];
+game_ios.forEach(coalesce_socket_writes);
 var url = require("url");
 const path = require("node:path");
 var { Worker, SHARE_ENV } = require("worker_threads");

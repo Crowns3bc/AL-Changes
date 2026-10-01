@@ -26,18 +26,19 @@ test("shared fan-out and full entity packets reach JSON, polling and MessagePack
 	const c = vm.createContext({});
 	const source = read("node/server.js");
 	vm.runInContext(
-		source.slice(source.indexOf("var socket_deflate ="), source.indexOf("var io = new SocketIOServer")),
+		source.slice(source.indexOf("function coalesce_socket_writes"), source.indexOf("var io = new SocketIOServer")),
 		c,
 	);
-	const legacy = new Server(httpServer, { path: "/ws1/", parser: createParser(), perMessageDeflate: c.socket_deflate });
+	const legacy = new Server(httpServer, { path: "/ws1/", parser: createParser() });
 	const compact = new Server(httpServer, {
 		path: "/ws1-msgpack/",
 		transports: ["websocket"],
 		maxHttpBufferSize: 64 * 1024,
 		parser: parserModule.createParser({ maxPacketBytes: 64 * 1024 }),
-		perMessageDeflate: c.socket_deflate,
 	});
 	c.game_ios = [legacy, compact];
+	c.process = process;
+	c.game_ios.forEach(c.coalesce_socket_writes); // every packet below goes through the once-per-tick flush
 	load(c, "node/server_functions.js", ["collect_fanout", "emit_fanout"]);
 	const clients = [];
 	context.after(() => {
@@ -67,8 +68,8 @@ test("shared fan-out and full entity packets reach JSON, polling and MessagePack
 	clients.push(legacyClient, compactClient, pollingClient, excludedClient);
 
 	await Promise.all(clients.map((client) => once(client, "connect")));
-	assert.match(legacyClient.io.engine.transport.ws.extensions, /permessage-deflate/);
-	assert.match(compactClient.io.engine.transport.ws.extensions, /permessage-deflate/);
+	assert.doesNotMatch(legacyClient.io.engine.transport.ws.extensions, /permessage-deflate/);
+	assert.doesNotMatch(compactClient.io.engine.transport.ws.extensions, /permessage-deflate/);
 	const legacyAck = new Promise((resolve) => legacyClient.emit("echo", { transport: "json" }, resolve));
 	const compactAck = new Promise((resolve) => compactClient.emit("echo", { transport: "msgpack" }, resolve));
 	assert.deepEqual(await legacyAck, { transport: "json" });
@@ -115,4 +116,47 @@ test("shared fan-out and full entity packets reach JSON, polling and MessagePack
 	for (const delivery of await Promise.all(deliveries)) assert.deepEqual(delivery, [value]);
 	await barrier;
 	assert.equal(unexpected, 0, "grouped broadcasts must not widen the recipient set");
+});
+
+test("packets a socket gets in one tick leave in one write and keep their order", async (context) => {
+	const httpServer = http.createServer();
+	const c = vm.createContext({ process });
+	const source = read("node/server.js");
+	vm.runInContext(
+		source.slice(source.indexOf("function coalesce_socket_writes"), source.indexOf("var io = new SocketIOServer")),
+		c,
+	);
+	const server = new Server(httpServer, { path: "/ws1/", parser: createParser() });
+	c.coalesce_socket_writes(server);
+	let client;
+	context.after(() => {
+		if (client) client.close();
+		server.close();
+		httpServer.close();
+	});
+	const connected = new Promise((resolve) => server.on("connection", resolve));
+	await new Promise((resolve) => httpServer.listen(0, "127.0.0.1", resolve));
+	client = connect(`http://127.0.0.1:${httpServer.address().port}`, {
+		path: "/ws1/",
+		transports: ["websocket"],
+		forceNew: true,
+	});
+	await once(client, "connect");
+	const socket = await connected;
+	const raw = socket.conn.transport.socket._socket;
+	let writes = 0;
+	const writeGeneric = raw._writeGeneric.bind(raw); // every write and writev goes through here once
+	raw._writeGeneric = (...args) => (writes++, writeGeneric(...args));
+
+	const received = [];
+	const all = new Promise((resolve) => client.on("step", (n) => received.push(n) === 6 && resolve()));
+	socket.emit("step", 0);
+	socket.emit("step", 1);
+	server.to(socket.id).emit("step", 2); // a room broadcast joins the same write (socket.to would skip the sender)
+	socket.emit("step", 3);
+	server.emit("step", 4);
+	socket.emit("step", 5, new RawFrame({ big: "x".repeat(4096) }).json.length);
+	await all;
+	assert.deepEqual(received, [0, 1, 2, 3, 4, 5]);
+	assert.equal(writes, 1, "six packets queued in one tick must go out in a single write");
 });
