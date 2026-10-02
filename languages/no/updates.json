@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Sjeldne monstre, 15 tilbehør og byttetilbud",
 	"update.24_09_26.rare_drops.false_jail": "Å gå forbi pokerbordet i Tavern og noen få andre steder sender deg ikke lenger i fengsel.",
 	"update.29_09_26.chat_spam": "Gjentatte meldinger i den offentlige chatten blir nå filtrert bort fra Discord og lagret chattehistorikk.",
-	"update.29_09_26.monster_combat_bounds": "Rekkeviddesjekker for monstre i CODE samsvarer nå med serverens, også for Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "Rekkeviddesjekker for monstre i CODE samsvarer nå med serverens, også for Tiny Crab.",
+	"update.29_09_26.character_shells": "Figurplassene som er inkludert, koster ikke lenger skjell. Endringer av figurer kan ikke lenger gjøre skjellsaldoen din negativ."
 }

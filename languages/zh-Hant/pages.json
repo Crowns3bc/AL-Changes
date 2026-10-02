@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Marketplace頁面尚未上線。安裝套件在此伺服器可用後，這裡會顯示VSIX直接下載連結。",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "在VS Code或Cursor中使用<span class=\"shell\">{id}</span>。它以基於API的自動同步替代舊的用戶端資料夾同步，因此可以與Steam、瀏覽器和普通桌面編輯器配合使用。",
 	"pages.vscode.your-token": "你的權杖",
-	"pages.contents.announcement_email.holiday_code_example": "附言3：這裡有一段可自動領取聖誕增益的<a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>。\n\t\t\t\t\t附言4：還有一些新內容和新技能！"
+	"pages.contents.announcement_email.holiday_code_example": "附言3：這裡有一段可自動領取聖誕增益的<a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>。\n\t\t\t\t\t附言4：還有一些新內容和新技能！",
+	"pages.contents.selection.slots-in-use": "你的角色欄位已全部使用。"
 }

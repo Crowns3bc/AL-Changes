@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Monstros raros, 15 acessórios e ofertas de troca",
 	"update.24_09_26.rare_drops.false_jail": "Andar junto à mesa de póquer da Tavern e em alguns outros sítios já não te manda para a prisão.",
 	"update.29_09_26.chat_spam": "As mensagens repetidas do chat público passam a ser filtradas e não são enviadas para o Discord nem guardadas no histórico do chat.",
-	"update.29_09_26.monster_combat_bounds": "As verificações de alcance contra monstros no CODE correspondem agora às do servidor, incluindo para Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "As verificações de alcance contra monstros no CODE correspondem agora às do servidor, incluindo para Tiny Crab.",
+	"update.29_09_26.character_shells": "Os espaços de personagem incluídos já não custam conchas. As alterações de personagem já não podem deixar o teu saldo de conchas negativo."
 }

@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Harvinaisia hirviöitä, 15 asustetta ja vaihtotarjoukset",
 	"update.24_09_26.rare_drops.false_jail": "Tavernin pokeripöydän vieressä ja muutamassa muussa paikassa käveleminen ei enää lähetä sinua vankilaan.",
 	"update.29_09_26.chat_spam": "Julkisen chatin toistuvia viestejä ei enää välitetä Discordiin eikä tallenneta chat-historiaan.",
-	"update.29_09_26.monster_combat_bounds": "CODEn hirviöiden kantamatarkistukset vastaavat nyt palvelimen tarkistuksia, myös Tiny Crabille."
+	"update.29_09_26.monster_combat_bounds": "CODEn hirviöiden kantamatarkistukset vastaavat nyt palvelimen tarkistuksia, myös Tiny Crabille.",
+	"update.29_09_26.character_shells": "Tiliin sisältyvät hahmopaikat eivät enää maksa simpukoita. Hahmoihin tehtävät muutokset eivät enää voi laskea simpukkasaldoasi miinukselle."
 }

@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "La página de Marketplace aún no está publicada. La descarga directa del VSIX aparecerá aquí cuando el paquete esté disponible en este servidor.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "Usa <span class=\"shell\">{id}</span> en VS Code o Cursor. Reemplaza la antigua sincronización de carpetas del cliente por una sincronización automática mediante API, así que funciona desde Steam, el navegador y los editores de escritorio habituales.",
 	"pages.vscode.your-token": "Tu token",
-	"pages.contents.announcement_email.holiday_code_example": "P. D. 3. Aquí tienes un <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> que automatiza la bonificación navideña\n\t\t\t\t\tP. D. 4. ¡También hay cosas y habilidades nuevas!"
+	"pages.contents.announcement_email.holiday_code_example": "P. D. 3. Aquí tienes un <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> que automatiza la bonificación navideña\n\t\t\t\t\tP. D. 4. ¡También hay cosas y habilidades nuevas!",
+	"pages.contents.selection.slots-in-use": "Todos tus espacios de personaje están ocupados."
 }

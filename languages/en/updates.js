@@ -1,6 +1,8 @@
 // Release highlights. Dates, item/character names and CODE identifiers stay unchanged.
 module.exports = {
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
+	"update.29_09_26.character_shells": "Included character slots no longer cost shells. Character changes can no longer overdraw your shell balance.",
+	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.encouragement_loot": "Encouragement drops now appear in CODE’s loot event.",
 	// Fixed bug listed in the [29/09/26] update post "Cave Fixes and Orb Compounding". Keep names from the game and CODE identifiers unchanged.
 	"update.29_09_26.chat_spam": "Repeated public messages are now filtered out of Discord and saved chat history.",

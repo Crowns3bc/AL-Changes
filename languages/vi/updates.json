@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Quái vật hiếm, 15 phụ kiện và đề nghị trao đổi",
 	"update.24_09_26.rare_drops.false_jail": "Đi ngang bàn poker ở Tavern và vài chỗ khác sẽ không còn khiến bạn bị tống vào tù nữa.",
 	"update.29_09_26.chat_spam": "Tin nhắn lặp lại trong trò chuyện công khai giờ đây sẽ không được chuyển đến Discord hoặc lưu vào lịch sử trò chuyện.",
-	"update.29_09_26.monster_combat_bounds": "Việc kiểm tra tầm đánh quái vật trong CODE giờ khớp với máy chủ, kể cả với Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "Việc kiểm tra tầm đánh quái vật trong CODE giờ khớp với máy chủ, kể cả với Tiny Crab.",
+	"update.29_09_26.character_shells": "Các ô nhân vật có sẵn trong tài khoản không còn tốn vỏ sò. Các thao tác thay đổi nhân vật cũng không còn khiến số dư vỏ sò bị âm."
 }

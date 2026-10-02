@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Marketplace sayfası henüz yayında değil. Paket bu sunucuda hazır olduğunda doğrudan VSIX indirmesi burada görünecek.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "VS Code veya Cursor'da <span class=\"shell\">{id}</span> kullanın. Eski istemci klasör eşitlemesinin yerine API tabanlı otomatik eşitleme getirir; Steam, tarayıcı ve normal masaüstü editörleriyle çalışır.",
 	"pages.vscode.your-token": "Anahtarınız",
-	"pages.contents.announcement_email.holiday_code_example": "Not 3. Noel güçlendirmesini otomatikleştiren bir <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> örneği.\n\t\t\t\t\tNot 4. Yeni şeyler ve yeni yetenekler de var!"
+	"pages.contents.announcement_email.holiday_code_example": "Not 3. Noel güçlendirmesini otomatikleştiren bir <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> örneği.\n\t\t\t\t\tNot 4. Yeni şeyler ve yeni yetenekler de var!",
+	"pages.contents.selection.slots-in-use": "Tüm karakter yuvalarınız dolu."
 }

@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Sällsynta monster, 15 accessoarer och bytesanbud",
 	"update.24_09_26.rare_drops.false_jail": "Att gå förbi pokerbordet i Tavern och på några andra ställen skickar dig inte längre till fängelset.",
 	"update.29_09_26.chat_spam": "Upprepade meddelanden i den offentliga chatten filtreras nu bort från Discord och sparad chatthistorik.",
-	"update.29_09_26.monster_combat_bounds": "Räckviddskontroller för monster i CODE stämmer nu med serverns, även för Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "Räckviddskontroller för monster i CODE stämmer nu med serverns, även för Tiny Crab.",
+	"update.29_09_26.character_shells": "Karaktärsplatser som ingår kostar inte längre snäckor. Ändringar av karaktärer kan inte längre ge ett negativt snäcksaldo."
 }

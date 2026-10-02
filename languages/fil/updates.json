@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Mga bihirang halimaw, 15 aksesorya at mga alok na palitan",
 	"update.24_09_26.rare_drops.false_jail": "Hindi ka na mapupunta sa kulungan kapag naglakad ka malapit sa poker table sa Tavern at sa ilang iba pang lugar.",
 	"update.29_09_26.chat_spam": "Hindi na ipinapasa sa Discord o sine-save sa chat history ang mga paulit-ulit na mensahe sa pampublikong chat.",
-	"update.29_09_26.monster_combat_bounds": "Tugma na sa server ang mga pagsusuri ng abot sa mga halimaw sa CODE, pati para sa Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "Tugma na sa server ang mga pagsusuri ng abot sa mga halimaw sa CODE, pati para sa Tiny Crab.",
+	"update.29_09_26.character_shells": "Hindi na nagkakahalaga ng kabibe ang mga slot ng karakter na kasama sa account. Hindi na rin maaaring maging negatibo ang balanse mong kabibe dahil sa mga pagbabago sa karakter."
 }

@@ -1,5 +1,7 @@
 // English page catalog. Usage notes protect code, names and dynamic parameters.
 module.exports = {
+	// Character creation, below the existing 200-shell price. All included or purchased slots are occupied; the total varies by account. No fixed count.
+	"pages.contents.selection.slots-in-use": "All your character slots are in use.",
 	// Existing account-menu toggle; ON. Steam login defaults to ON. Keep Steam and the leading arrow; preserve span markup.
 	"pages.steam_signin.on": "> Steam sign-in: <span style=\"color: green\">ON</span>",
 	// Existing account-menu toggle; OFF. Steam login defaults to ON. Keep Steam and the leading arrow; preserve span markup.

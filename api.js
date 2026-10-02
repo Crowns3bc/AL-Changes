@@ -12,11 +12,10 @@ function sint(x) {
 }
 
 function can_create_character_check(user, ip) {
-	if (user.pid) user.info.slots = Math.max(gf(user, "slots", 8), 8);
 	if (ip && gf(ip, "limit_create_character", 0) > 12) return { can: false, reason: "ip" };
 	if (gf(user, "characters", []).length >= 18) return { can: false, reason: "abs" };
-	if (gf(user, "characters", []).length >= gf(user, "slots", 5)) {
-		if (user.cash >= 200) return { can: true, paid: true };
+	if (gf(user, "characters", []).length >= get_character_slots(user)) {
+		if (can_spend_shells(user.cash, 200)) return { can: true, paid: true };
 		return { can: false, reason: "limit" };
 	}
 	return { can: true };
@@ -502,6 +501,11 @@ async function create_character_api(args) {
 			var mark = await tx_get("MK_character-" + simplify_name(A.name));
 			if (mark) ex("character_exists");
 			var owner = await tx_get(A.user);
+			if (!owner) ex("creation_failed");
+			if (owner.server) ex("cant_make_changes_while_in_bank");
+			var check = can_create_character_check(owner);
+			if (!check.can) ex(check.reason === "abs" ? "cant_create_more_than_18" : "reached_character_limit");
+			if (check.paid && !A.paid) ex("reached_character_limit");
 
 			R.character = {
 				_id: "CH_" + random_string(29),
@@ -552,8 +556,9 @@ async function create_character_api(args) {
 
 			if (!owner.info.characters) owner.info.characters = [];
 			if (!owner.info.characters.length) owner.name = A.name;
-			if (owner.info.characters.length >= gf(owner, "slots", 5)) {
-				owner.info.slots = gf(owner, "slots", 5) + 1;
+			owner.info.slots = get_character_slots(owner);
+			if (check.paid) {
+				owner.info.slots++;
 				owner.cash -= 200;
 			}
 			owner.info.characters.push(character_to_dict(R.character));
@@ -563,7 +568,7 @@ async function create_character_api(args) {
 			await tx_save({ _id: "MK_character-" + simplify_name(A.name), type: "character", phrase: simplify_name(A.name), owner: get_id(R.character), created: new Date() });
 			R.owner = owner;
 		},
-		{ name: name, user: user, char_type: char_type, look: look, base: base, spawn: spawn, characterth: characterth },
+		{ name: name, user: user, char_type: char_type, look: look, base: base, spawn: spawn, characterth: characterth, paid: !!check.paid },
 	);
 
 	if (R.failed) return { failed: true, reason: R.reason || "creation_failed" };
@@ -654,12 +659,13 @@ async function rename_character_api(args) {
 		if (!gf(character, "last_rename", null) && (character.level < 60 || hsince(character.created) < 72)) price = 0;
 		price = 640;
 	}
-	if (user.cash < price) return { failed: true, reason: "not_enough_shells" };
+	if (!can_spend_shells(user.cash, price)) return { failed: true, reason: "not_enough_shells" };
 
 	var R = await tx(
 		async () => {
 			if (await tx_get("MK_character-" + simplify_name(A.nname))) ex("name_used");
 			var owner = await tx_get(A.user);
+			if (!owner || !can_spend_shells(owner.cash, A.price)) ex("not_enough_shells");
 			var c = await tx_get(A.character);
 			if (c.name === simplify_name(A.nname)) ex("duplicate_click");
 			for (var i = 0; i < (owner.info.characters || []).length; i++) {
@@ -725,13 +731,14 @@ async function transfer_character_api(args) {
 	var receiver = await get(id);
 	if (!receiver || gf(receiver, "transfer_auth") !== auth) return { failed: true, reason: "receiver_not_found_or_wrong_auth" };
 	if (user.server || receiver.server) return { failed: true, reason: "cant_make_changes_while_in_bank" };
-	if (user.cash < 500) return { failed: true, reason: "not_enough_shells" };
+	if (!can_spend_shells(user.cash, 500)) return { failed: true, reason: "not_enough_shells" };
 
 	var R = await tx(
 		async () => {
 			var owner = await tx_get(A.user);
 			var c = await tx_get(A.character);
 			if (c.owner !== get_id(A.user)) ex("duplicate_click");
+			if (!owner || !can_spend_shells(owner.cash, 500)) ex("not_enough_shells");
 			var new_characters = [];
 			for (var i = 0; i < (owner.info.characters || []).length; i++) {
 				if (simplify_name(owner.info.characters[i].name) !== simplify_name(A.name)) new_characters.push(owner.info.characters[i]);

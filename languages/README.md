@@ -98,6 +98,8 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+Character slots: the slot notice and shell-charge release note are translated and proofread in all 32 languages. Slot entitlements, existing prices and negative-balance wording were checked on 2026-10-02.
+
 Monster combat range: the geometry paragraph and release note are translated and proofread in all 32 languages. The default bounds, optional size multiplier, rounding and CODE identifiers were checked on 2026-10-02.
 
 Encouragement loot events: the two CODE documentation paragraphs and release note are translated and proofread in all 32 languages. Reward ownership, reserved-chest timing, markup and CODE identifiers were checked on 2026-09-30.

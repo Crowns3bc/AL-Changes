@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "Rzadkie potwory, 15 dodatków i oferty wymiany",
 	"update.24_09_26.rare_drops.false_jail": "Chodzenie obok stołu do pokera w Tavern i w kilku innych miejscach nie kończy się już więzieniem.",
 	"update.29_09_26.chat_spam": "Powtarzające się wiadomości z czatu publicznego nie są już przekazywane do Discord ani zapisywane w historii czatu.",
-	"update.29_09_26.monster_combat_bounds": "Sprawdzanie zasięgu do potworów w CODE jest teraz zgodne z serwerem, także dla Tiny Crab."
+	"update.29_09_26.monster_combat_bounds": "Sprawdzanie zasięgu do potworów w CODE jest teraz zgodne z serwerem, także dla Tiny Crab.",
+	"update.29_09_26.character_shells": "Miejsca na postacie dostępne w ramach konta nie kosztują już muszli. Zmiany dotyczące postaci nie mogą już spowodować ujemnego salda muszli."
 }

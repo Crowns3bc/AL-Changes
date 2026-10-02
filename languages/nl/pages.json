@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "De Marketplace-pagina is nog niet beschikbaar. De rechtstreekse VSIX-download verschijnt hier zodra het pakket beschikbaar is op deze server.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "Gebruik <span class=\"shell\">{id}</span> in VS Code of Cursor. Deze extensie vervangt de oude mapsynchronisatie via de client door automatische synchronisatie via de API. Daardoor werkt ze vanuit Steam, de browser en gewone desktopeditors.",
 	"pages.vscode.your-token": "Je token",
-	"pages.contents.announcement_email.holiday_code_example": "Ps 3. Hier is <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> die de kerstbonus automatiseert\n\t\t\t\t\tPs 4. Er zijn ook wat nieuwe dingen en nieuwe vaardigheden!"
+	"pages.contents.announcement_email.holiday_code_example": "Ps 3. Hier is <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> die de kerstbonus automatiseert\n\t\t\t\t\tPs 4. Er zijn ook wat nieuwe dingen en nieuwe vaardigheden!",
+	"pages.contents.selection.slots-in-use": "Al je personageslots zijn bezet."
 }

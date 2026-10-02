@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Marketplaceのページはまだ公開されていません。このサーバーでパッケージが利用可能になると、ここにVSIXの直接ダウンロードが表示されます。",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "VS CodeまたはCursorで<span class=\"shell\">{id}</span>を使ってください。旧クライアントのフォルダー同期をAPIによる自動同期に置き換えるため、Steam、ブラウザー、通常のデスクトップエディターから利用できます。",
 	"pages.vscode.your-token": "自分のトークン",
-	"pages.contents.announcement_email.holiday_code_example": "追伸3：クリスマスの強化効果を自動で受け取る<a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>です。\n\t\t\t\t\t追伸4：他にも新しいものやスキルがあります！"
+	"pages.contents.announcement_email.holiday_code_example": "追伸3：クリスマスの強化効果を自動で受け取る<a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>です。\n\t\t\t\t\t追伸4：他にも新しいものやスキルがあります！",
+	"pages.contents.selection.slots-in-use": "キャラクター枠はすべて使用中です。"
 }

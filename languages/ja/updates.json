@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "レアモンスター、15個のアクセサリー、交換募集",
 	"update.24_09_26.rare_drops.false_jail": "Tavernのポーカーテーブルのそばなど、いくつかの場所を歩いても牢屋に送られなくなりました。",
 	"update.29_09_26.chat_spam": "公開チャットの繰り返しメッセージは、Discordへの転送とチャット履歴への保存の対象外になりました。",
-	"update.29_09_26.monster_combat_bounds": "CODE のモンスターに対する射程判定が、Tiny Crab を含めサーバーと一致するようになりました。"
+	"update.29_09_26.monster_combat_bounds": "CODE のモンスターに対する射程判定が、Tiny Crab を含めサーバーと一致するようになりました。",
+	"update.29_09_26.character_shells": "アカウントに含まれるキャラクター枠でシェルが消費されなくなりました。キャラクターの変更操作でシェル残高がマイナスになることもなくなりました。"
 }

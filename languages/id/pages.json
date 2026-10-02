@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Halaman Marketplace belum tersedia. Unduhan VSIX langsung akan muncul di sini saat paketnya tersedia di server ini.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "Gunakan <span class=\"shell\">{id}</span> di VS Code atau Cursor. Ekstensi ini menggantikan sinkronisasi folder klien lama dengan sinkronisasi otomatis berbasis API, sehingga bisa digunakan dari Steam, browser, dan editor desktop biasa.",
 	"pages.vscode.your-token": "Token kamu",
-	"pages.contents.announcement_email.holiday_code_example": "PS 3. Ini <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> yang mengotomatiskan bonus Natal\n\t\t\t\t\tPS 4. Ada beberapa hal baru dan kemampuan baru juga!"
+	"pages.contents.announcement_email.holiday_code_example": "PS 3. Ini <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a> yang mengotomatiskan bonus Natal\n\t\t\t\t\tPS 4. Ada beberapa hal baru dan kemampuan baru juga!",
+	"pages.contents.selection.slots-in-use": "Semua slot karaktermu sudah terisi."
 }

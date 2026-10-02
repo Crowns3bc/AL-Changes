@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Marketplace 페이지는 아직 공개되지 않았어요. 이 서버에 패키지가 준비되면 여기에 VSIX 직접 다운로드가 나타나요.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "VS Code나 Cursor에서 <span class=\"shell\">{id}</span>를 사용하세요. 기존 클라이언트 폴더 동기화를 API 기반 자동 동기화로 대체하므로 Steam, 브라우저, 일반 데스크톱 편집기에서도 작동해요.",
 	"pages.vscode.your-token": "내 토큰",
-	"pages.contents.announcement_email.holiday_code_example": "추신 3. 크리스마스 버프를 자동으로 받는 <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>예요.\n\t\t\t\t\t추신 4. 새로운 것들과 새 스킬도 있어요!"
+	"pages.contents.announcement_email.holiday_code_example": "추신 3. 크리스마스 버프를 자동으로 받는 <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>예요.\n\t\t\t\t\t추신 4. 새로운 것들과 새 스킬도 있어요!",
+	"pages.contents.selection.slots-in-use": "캐릭터 슬롯을 모두 사용 중이에요."
 }

@@ -812,5 +812,6 @@
 	"update.24_09_26.rare_drops.title": "稀有怪物、15 件饰品和交换报价",
 	"update.24_09_26.rare_drops.false_jail": "在 Tavern 的扑克桌旁和其他几处走动，不会再被送进监狱。",
 	"update.29_09_26.chat_spam": "公开聊天中的重复消息现在不会再转发到 Discord，也不会保存到聊天记录中。",
-	"update.29_09_26.monster_combat_bounds": "CODE 中对怪物的距离判定现已与服务器一致，包括 Tiny Crab。"
+	"update.29_09_26.monster_combat_bounds": "CODE 中对怪物的距离判定现已与服务器一致，包括 Tiny Crab。",
+	"update.29_09_26.character_shells": "账户自带的角色栏位不再消耗贝壳。角色变更操作也不会再让贝壳余额变成负数。"
 }

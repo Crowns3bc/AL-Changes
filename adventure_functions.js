@@ -161,6 +161,16 @@ function gf(element, name, def) {
 	return def;
 }
 
+function get_character_slots(user) {
+	var included = user && user.pid ? 8 : 5;
+	var slots = gf(user, "slots", included);
+	return Math.min(18, Math.max(included, Number.isSafeInteger(slots) ? slots : included));
+}
+
+function can_spend_shells(balance, amount) {
+	return Number.isSafeInteger(balance) && Number.isSafeInteger(amount) && amount >= 0 && (amount === 0 || balance >= amount);
+}
+
 function item_value(item) {
 	var gold = items[item.name].g;
 	if (item.q) gold *= item.q;
@@ -1609,6 +1619,7 @@ async function render_selection(req, res, user, domain, level, server) {
 			servers: servers,
 			total: total,
 			characters: characters,
+			character_slots: get_character_slots(user),
 		}),
 	);
 }
@@ -1627,6 +1638,7 @@ async function selection_info(req, user, domain) {
 			server: server,
 			servers: servers,
 			characters: characters,
+			character_slots: get_character_slots(user),
 		}),
 	};
 }

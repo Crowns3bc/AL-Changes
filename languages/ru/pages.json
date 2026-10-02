@@ -1496,5 +1496,6 @@
 	"pages.vscode.the-marketplace-page-is-not-live-yet-the": "Страница Marketplace пока недоступна. Прямая загрузка VSIX появится здесь, когда пакет станет доступен на этом сервере.",
 	"pages.vscode.use-in-vs-code-or-cursor-it-replaces": "Используйте <span class=\"shell\">{id}</span> в VS Code или Cursor. Расширение заменяет старую синхронизацию папки клиента автосинхронизацией через API, поэтому работает со Steam, браузером и обычными настольными редакторами.",
 	"pages.vscode.your-token": "Ваш токен доступа",
-	"pages.contents.announcement_email.holiday_code_example": "P. S. 3. Вот <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>, который автоматизирует рождественское усиление.\n\t\t\t\t\tP. S. 4. Ещё появились новые вещи и умения!"
+	"pages.contents.announcement_email.holiday_code_example": "P. S. 3. Вот <a style=\"color: #33BF6D\" href=\"https://raw.githubusercontent.com/kaansoral/adventureland/master/examples/happy_holidays.js\"><span style=\"color: #33BF6D\">CODE</span></a>, который автоматизирует рождественское усиление.\n\t\t\t\t\tP. S. 4. Ещё появились новые вещи и умения!",
+	"pages.contents.selection.slots-in-use": "Все ваши места для персонажей заняты."
 }
