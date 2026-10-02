@@ -7,7 +7,7 @@ const vm = require("node:vm");
 const { Server } = require("socket.io");
 const { io: connect } = require("socket.io-client");
 const { RawFrame, createParser } = require("../json_parser");
-const { load, read } = require("./helpers/server_vm");
+const { extract, read } = require("./helpers/server_vm");
 const parserModule = require("../msgpack_parser");
 const browserParser = require("../../js/socket.io-msgpack-parser.min.js");
 
@@ -39,7 +39,8 @@ test("shared fan-out and full entity packets reach JSON, polling and MessagePack
 	c.game_ios = [legacy, compact];
 	c.process = process;
 	c.game_ios.forEach(c.coalesce_socket_writes); // every packet below goes through the once-per-tick flush
-	load(c, "node/server_functions.js", ["collect_fanout", "emit_fanout"]);
+	const fanoutSource = read("node/server_functions.js");
+	vm.runInContext(["collect_fanout", "emit_fanout"].map((name) => extract(fanoutSource, name)).join("\n"), c);
 	const clients = [];
 	context.after(() => {
 		for (const client of clients) client.close();
