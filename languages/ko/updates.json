@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "세계 곳곳의 몬스터에게서 새 액세서리 15종이 떨어져요. 이제 Kobold가 Underground Cliffs를 돌아다녀요. Many Eye, Mimic, Pale Dino는 새 희귀 몬스터예요. 상인이 아이템을 다른 아이템과 교환할 수 있어요.",
 	"update.24_09_26.rare_drops.title": "희귀 몬스터, 액세서리 15종, 교환 제안",
 	"update.24_09_26.rare_drops.false_jail": "Tavern의 포커 테이블 옆과 몇몇 다른 곳을 걸어도 이제 감옥에 가지 않아요.",
-	"update.29_09_26.chat_spam": "이제 공개 채팅의 반복 메시지는 Discord로 전달되거나 채팅 기록에 저장되지 않습니다."
+	"update.29_09_26.chat_spam": "이제 공개 채팅의 반복 메시지는 Discord로 전달되거나 채팅 기록에 저장되지 않습니다.",
+	"update.29_09_26.monster_combat_bounds": "CODE의 몬스터 사거리 판정이 이제 Tiny Crab을 포함해 서버와 일치합니다."
 }

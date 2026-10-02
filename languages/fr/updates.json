@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 nouveaux accessoires tombent de monstres partout dans le monde. Les Kobolds parcourent maintenant Underground Cliffs. Many Eye, Mimic et Pale Dino sont de nouveaux monstres rares. Les marchands peuvent désormais échanger un objet contre un autre.",
 	"update.24_09_26.rare_drops.title": "Monstres rares, 15 accessoires et offres d’échange",
 	"update.24_09_26.rare_drops.false_jail": "Marcher près de la table de poker de la Tavern et à quelques autres endroits ne vous envoie plus en prison.",
-	"update.29_09_26.chat_spam": "Les messages répétés du chat public ne sont désormais plus transmis à Discord ni enregistrés dans l’historique du chat."
+	"update.29_09_26.chat_spam": "Les messages répétés du chat public ne sont désormais plus transmis à Discord ni enregistrés dans l’historique du chat.",
+	"update.29_09_26.monster_combat_bounds": "Les vérifications de portée contre les monstres dans CODE correspondent désormais à celles du serveur, y compris pour Tiny Crab."
 }

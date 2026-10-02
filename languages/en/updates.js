@@ -1629,3 +1629,6 @@ module.exports = {
 
 // Section text in the [16/09/26] update post "Cave of Many Dreams, Tavern Games and Rime Djinn". Keep names from the game and CODE identifiers unchanged.
 module.exports["update.14_09_26.cave"] = "A new dungeon for your party of up to 3. You get 1 run per day and 24 minutes to get through 3 floors. Monsters give 10× XP, and dying inside costs no XP or gold. Find axes, scythes and Cave Amber, and use the Amber to craft rare equipment.";
+
+// Fix in the [29/09/26] update post. Keep CODE and Tiny Crab unchanged; this describes client range checks matching server combat bounds.
+module.exports["update.29_09_26.monster_combat_bounds"] = "Monster range checks in CODE now match the server, including for Tiny Crab.";

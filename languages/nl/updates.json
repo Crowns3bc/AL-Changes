@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 nieuwe accessoires vallen van monsters over de hele wereld. Kobold zwerven nu door Underground Cliffs. Many Eye, Mimic en Pale Dino zijn nieuwe zeldzame monsters. Handelaars kunnen nu een voorwerp ruilen voor een ander voorwerp.",
 	"update.24_09_26.rare_drops.title": "Zeldzame monsters, 15 accessoires en ruilaanbiedingen",
 	"update.24_09_26.rare_drops.false_jail": "Lopen langs de pokertafel in de Tavern en op een paar andere plekken stuurt je niet meer naar de gevangenis.",
-	"update.29_09_26.chat_spam": "Herhaalde berichten uit de openbare chat worden nu niet meer doorgestuurd naar Discord of opgeslagen in de chatgeschiedenis."
+	"update.29_09_26.chat_spam": "Herhaalde berichten uit de openbare chat worden nu niet meer doorgestuurd naar Discord of opgeslagen in de chatgeschiedenis.",
+	"update.29_09_26.monster_combat_bounds": "Bereikcontroles voor monsters in CODE komen nu overeen met die van de server, ook voor Tiny Crab."
 }

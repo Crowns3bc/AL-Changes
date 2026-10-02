@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 stykker nyt tilbehør falder fra monstre over hele verden. Kobold strejfer nu rundt i Underground Cliffs. Many Eye, Mimic og Pale Dino er nye sjældne monstre. Købmænd kan nu bytte en genstand for en anden.",
 	"update.24_09_26.rare_drops.title": "Sjældne monstre, 15 stykker tilbehør og byttetilbud",
 	"update.24_09_26.rare_drops.false_jail": "At gå forbi pokerbordet i Tavern og et par andre steder sender dig ikke længere i fængsel.",
-	"update.29_09_26.chat_spam": "Gentagne beskeder i den offentlige chat bliver nu filtreret fra på Discord og i den gemte chathistorik."
+	"update.29_09_26.chat_spam": "Gentagne beskeder i den offentlige chat bliver nu filtreret fra på Discord og i den gemte chathistorik.",
+	"update.29_09_26.monster_combat_bounds": "Rækkeviddetjek for monstre i CODE stemmer nu overens med serverens, også for Tiny Crab."
 }

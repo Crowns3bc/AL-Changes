@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 nya accessoarer faller från monster över hela världen. Kobold strövar nu omkring i Underground Cliffs. Many Eye, Mimic och Pale Dino är nya sällsynta monster. Handlare kan nu byta ett föremål mot ett annat.",
 	"update.24_09_26.rare_drops.title": "Sällsynta monster, 15 accessoarer och bytesanbud",
 	"update.24_09_26.rare_drops.false_jail": "Att gå förbi pokerbordet i Tavern och på några andra ställen skickar dig inte längre till fängelset.",
-	"update.29_09_26.chat_spam": "Upprepade meddelanden i den offentliga chatten filtreras nu bort från Discord och sparad chatthistorik."
+	"update.29_09_26.chat_spam": "Upprepade meddelanden i den offentliga chatten filtreras nu bort från Discord och sparad chatthistorik.",
+	"update.29_09_26.monster_combat_bounds": "Räckviddskontroller för monster i CODE stämmer nu med serverns, även för Tiny Crab."
 }

@@ -51,6 +51,7 @@ const DOCS_PATHS = [
 	"/docs/guide/code/7-using-skills",
 	"/docs/guide/code/8-code-slots-and-files",
 	"/docs/guide/code/code-api",
+	"/docs/guide/code/4-basicmath/4.G-geometry", // Combat bounds used by CODE range checks.
 	"/docs/guide/code-globals",
 	"/docs/guide/multi",
 	"/docs/guide/adventure-api",

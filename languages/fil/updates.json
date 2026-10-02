@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 bagong aksesorya ang nahuhulog mula sa mga halimaw sa buong mundo. Gumagala na ngayon ang mga Kobold sa Underground Cliffs. Mga bagong bihirang halimaw ang Many Eye, Mimic at Pale Dino. Maaari na ngayong ipagpalit ng mga mangangalakal ang isang gamit sa iba.",
 	"update.24_09_26.rare_drops.title": "Mga bihirang halimaw, 15 aksesorya at mga alok na palitan",
 	"update.24_09_26.rare_drops.false_jail": "Hindi ka na mapupunta sa kulungan kapag naglakad ka malapit sa poker table sa Tavern at sa ilang iba pang lugar.",
-	"update.29_09_26.chat_spam": "Hindi na ipinapasa sa Discord o sine-save sa chat history ang mga paulit-ulit na mensahe sa pampublikong chat."
+	"update.29_09_26.chat_spam": "Hindi na ipinapasa sa Discord o sine-save sa chat history ang mga paulit-ulit na mensahe sa pampublikong chat.",
+	"update.29_09_26.monster_combat_bounds": "Tugma na sa server ang mga pagsusuri ng abot sa mga halimaw sa CODE, pati para sa Tiny Crab."
 }

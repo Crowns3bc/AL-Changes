@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "15 aksesori baru jatuh dari monster di seluruh dunia. Kobold kini berkeliaran di Underground Cliffs. Many Eye, Mimic, dan Pale Dino adalah monster langka baru. Pedagang kini bisa menukar item dengan item lain.",
 	"update.24_09_26.rare_drops.title": "Monster langka, 15 aksesori, dan penawaran tukar",
 	"update.24_09_26.rare_drops.false_jail": "Berjalan di dekat meja poker di Tavern dan beberapa tempat lain tidak lagi mengirimmu ke penjara.",
-	"update.29_09_26.chat_spam": "Pesan berulang di obrolan publik kini tidak diteruskan ke Discord atau disimpan dalam riwayat obrolan."
+	"update.29_09_26.chat_spam": "Pesan berulang di obrolan publik kini tidak diteruskan ke Discord atau disimpan dalam riwayat obrolan.",
+	"update.29_09_26.monster_combat_bounds": "Pemeriksaan jangkauan monster di CODE kini sesuai dengan server, termasuk untuk Tiny Crab."
 }

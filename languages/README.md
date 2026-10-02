@@ -98,6 +98,8 @@ Tauri reads the selected Steam game language once off the UI thread, with a 750 
 
 ## Catalog status
 
+Monster combat range: the geometry paragraph and release note are translated and proofread in all 32 languages. The default bounds, optional size multiplier, rounding and CODE identifiers were checked on 2026-10-02.
+
 Encouragement loot events: the two CODE documentation paragraphs and release note are translated and proofread in all 32 languages. Reward ownership, reserved-chest timing, markup and CODE identifiers were checked on 2026-09-30.
 
 Public chat filtering: the release note and `say()` documentation are translated and proofread in all 32 languages. Discord forwarding, saved history, the server scope and recovery after 10 minutes without public messages were checked on 2026-09-29.

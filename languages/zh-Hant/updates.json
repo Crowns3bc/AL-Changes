@@ -811,5 +811,6 @@
 	"update.24_09_26.rare_drops": "世界各地的怪物會掉落 15 件新飾品。Kobold 現在在 Underground Cliffs 四處遊蕩。Many Eye、Mimic 和 Pale Dino 是新的稀有怪物。商人現在可以用一件物品交換另一件物品。",
 	"update.24_09_26.rare_drops.title": "稀有怪物、15 件飾品和交換報價",
 	"update.24_09_26.rare_drops.false_jail": "在 Tavern 的撲克桌旁和其他幾處走動，不會再被送進監獄。",
-	"update.29_09_26.chat_spam": "公開聊天中的重複訊息現在不會再轉發到 Discord，也不會儲存至聊天紀錄。"
+	"update.29_09_26.chat_spam": "公開聊天中的重複訊息現在不會再轉發到 Discord，也不會儲存至聊天紀錄。",
+	"update.29_09_26.monster_combat_bounds": "CODE 對怪物的距離判定現在與伺服器一致，Tiny Crab 也適用。"
 }
