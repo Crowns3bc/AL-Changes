@@ -193,7 +193,7 @@ var drops = {
 			[0.1, "candycane"],
 			[0.1, "candycane"],
 			[0.1, "mistletoe"],
-			[1.0 / 1225, "offering"], // incraesed from 1/1,333
+			[1.0 / 1225, "offering"], // incraesed from 1/1,333 for thematic sake
 			[1, "carrot"],
 			[1, "snowball"],
 			[1, "snowball"],
@@ -791,6 +791,7 @@ var drops = {
 			[0.01, "wbookhs"],
 		],
 		grinch: [
+			[1 / 250, "ringhs"],
 			[10, "wbookhs"],
 			[5, "wbookhs"],
 			[3, "wbookhs"],
